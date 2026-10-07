@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEARCOIL — classic Snake with one dangerous rule (Android)</title>
+<meta name="description" content="Skim your own tail and your score multiplies. 70 Campaign levels, Ranked leaderboards, a Daily Challenge, replays and video clips. No ads.">
+<link rel="canonical" href="https://nikkittap.github.io/nearcoil-game/">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0d0e12">
+<link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="img/favicon-512.png" sizes="512x512" type="image/png">
+<link rel="apple-touch-icon" href="img/favicon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="NEARCOIL — classic Snake with one dangerous rule">
+<meta property="og:description" content="Skim your own tail and your score multiplies. STAY CLOSE. SCORE MORE.">
+<meta property="og:url" content="https://nikkittap.github.io/nearcoil-game/">
+<meta property="og:site_name" content="NEARCOIL">
+<meta property="og:image" content="https://nikkittap.github.io/nearcoil-game/img/feature_big.jpg">
+<meta property="og:image:width" content="1794">
+<meta property="og:image:height" content="876">
+<meta property="og:image:alt" content="NEARCOIL wordmark next to a cream snake coiled inside its own body">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NEARCOIL — classic Snake with one dangerous rule">
+<meta name="twitter:description" content="Skim your own tail and your score multiplies. STAY CLOSE. SCORE MORE.">
+<meta name="twitter:image" content="https://nikkittap.github.io/nearcoil-game/img/feature_big.jpg">
+<style>
+:root{
+  --bg:#0d0e12; --panel:#15161b; --fg:#efe9db; --muted:#9a968c;
+  --accent:#ff5a3c; --border:#26272d; --radius:14px;
+}
+*{box-sizing:border-box}
+body{margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--fg); line-height:1.6}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:880px; margin:0 auto; padding:0 20px}
+header{padding:56px 0 40px; text-align:center}
+.badge-pill{display:inline-block; font-size:13px; letter-spacing:.12em; color:var(--accent); border:1px solid var(--border); border-radius:999px; padding:5px 14px; margin-bottom:22px; background:rgba(255,90,60,.07)}
+h1{font-size:2.1rem; line-height:1.25; margin:0 0 16px; letter-spacing:-.02em}
+h1 .hot{color:var(--accent)}
+.sub{font-size:1.15rem; color:var(--muted); max-width:640px; margin:0 auto 30px}
+.hero-art img{width:100%; height:auto; display:block; border-radius:var(--radius); box-shadow:0 18px 44px rgba(0,0,0,.5)}
+.cta-row{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:30px}
+.ghost{display:inline-flex; align-items:center; gap:8px; padding:14px 22px; border:1px solid var(--border); border-radius:12px; color:var(--fg)}
+.ghost:hover{text-decoration:none; border-color:var(--accent)}
+.ghost.accent{border-color:var(--accent); color:var(--accent)}
+.note{margin-top:14px; color:var(--muted); font-size:.95rem}
+section{padding:36px 0; border-top:1px solid var(--border)}
+h2{font-size:1.5rem; margin:0 0 18px; letter-spacing:-.01em}
+.grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+.card{background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:20px}
+.card h3{margin:0 0 6px; font-size:1.05rem; letter-spacing:.04em}
+.card p{margin:0; color:var(--muted); font-size:.96rem}
+.themes{display:grid; grid-template-columns:repeat(6,1fr); gap:12px; margin-top:8px}
+.themes figure{margin:0; text-align:center}
+.themes img{width:100%; height:auto; display:block; border-radius:22%}
+.themes figcaption{font-size:.8rem; color:var(--muted); margin-top:6px; letter-spacing:.06em}
+footer{padding:40px 0 60px; text-align:center; color:var(--muted); font-size:.9rem; border-top:1px solid var(--border)}
+@media(max-width:640px){
+  h1{font-size:1.7rem}
+  .grid{grid-template-columns:1fr}
+  .themes{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="badge-pill">STAY CLOSE. SCORE MORE.</span>
+    <h1>Classic Snake. <span class="hot">One dangerous rule.</span></h1>
+    <p class="sub">Skim your own body and your score multiplies. Every Close Call charges the chain and fills a pot of points; eat to cash it in. Linger too long and you may not get out.</p>
+
+    <div class="hero-art">
+      <picture>
+        <source srcset="img/feature_big.webp" type="image/webp">
+        <img src="img/feature_big.jpg" width="1794" height="876"
+             alt="NEARCOIL wordmark next to a cream snake coiled inside its own body">
+      </picture>
+    </div>
+
+    <div class="cta-row">
+      <a class="ghost accent" href="https://play.google.com/store/apps/details?id=com.nearcoil.game">Get it on Google Play</a>
+      <a class="ghost" href="privacy/">Privacy policy</a>
+      <a class="ghost" href="mailto:nikitapetrovapps@gmail.com">Contact the developer</a>
+    </div>
+    <p class="note">Currently in closed testing — the Play link works once you've joined as a tester.</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section>
+      <h2>What's inside</h2>
+      <div class="grid">
+        <div class="card"><h3>CAMPAIGN</h3><p>70 hand-made levels in 7 chapters: gates, circuits, moving boards, power modules and a final meltdown. Up to three medals each.</p></div>
+        <div class="card"><h3>RANKED</h3><p>World, country and weekly leaderboards, with weekly leagues as the player base grows. Tap a name to watch how that run was played.</p></div>
+        <div class="card"><h3>DAILY CHALLENGE</h3><p>One board a day, the same for everyone. Three attempts count, then practice until tomorrow.</p></div>
+        <div class="card"><h3>REPLAYS AND CLIPS</h3><p>Watch any run at 1×, 2× or 4×, jump to the best moment, and share a result card or a short vertical video.</p></div>
+        <div class="card"><h3>ONE THUMB</h3><p>Flick the way you want to go, or tap the left / right half to turn. Smooth on 90 and 120 Hz screens.</p></div>
+        <div class="card"><h3>FAIR BY DESIGN</h3><p>No ads. Ranked and Daily are always free, and nothing you can buy changes the score.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Themes</h2>
+      <p style="color:var(--muted); margin:0 0 18px">Signature and LCD are free. Six premium themes each bring their own look and sound — cosmetic only, they never change the game.</p>
+      <div class="themes">
+        <figure><img src="img/theme_vector.webp" width="240" height="240" loading="lazy" alt="Vector Lab theme icon"><figcaption>VECTOR LAB</figcaption></figure>
+        <figure><img src="img/theme_glass.webp" width="240" height="240" loading="lazy" alt="Glass Signal theme icon"><figcaption>GLASS SIGNAL</figcaption></figure>
+        <figure><img src="img/theme_plasma.webp" width="240" height="240" loading="lazy" alt="Plasma theme icon"><figcaption>PLASMA</figcaption></figure>
+        <figure><img src="img/theme_blueprint.webp" width="240" height="240" loading="lazy" alt="Blueprint theme icon"><figcaption>BLUEPRINT</figcaption></figure>
+        <figure><img src="img/theme_hazard.webp" width="240" height="240" loading="lazy" alt="Hazard theme icon"><figcaption>HAZARD</figcaption></figure>
+        <figure><img src="img/theme_paper.webp" width="240" height="240" loading="lazy" alt="Paper theme icon"><figcaption>PAPER</figcaption></figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>Privacy in short</h2>
+      <p>No ads, no advertising ID, no registration. Online boards use an anonymous account; gameplay statistics can be switched off in Settings, and <em>DELETE ONLINE DATA</em> erases everything on the server at once. Details in the <a href="privacy/">privacy policy</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>NEARCOIL · <a href="privacy/">Privacy policy</a> · <a href="mailto:nikitapetrovapps@gmail.com">nikitapetrovapps@gmail.com</a></p>
+    <p>© 2026 Nikita Petrov Apps · not affiliated with Google.</p>
+  </div>
+</footer>
+
+</body>
+</html>
