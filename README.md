@@ -1,6 +1,6 @@
 # NEARCOIL — website
 
-Public pages for the Android game **NEARCOIL: Snake Arcade** (`com.nearcoil.game`),
+Public pages for the Android game **NEARCOIL: Snake Arcade** (`com.nikitapetrovapps.nearcoil`),
 served by GitHub Pages from the `main` branch, root folder.
 
 - `index.html` — landing page
