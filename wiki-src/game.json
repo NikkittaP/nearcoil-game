@@ -1,5 +1,5 @@
 {
-	"generated": "2026-10-12 12:40:03 UTC",
+	"generated": "2026-10-12 13:02:11 UTC",
 	"version": "0.1.4",
 	"GameSim": {
 		"RULES_VERSION": 8,
@@ -1155,9 +1155,9 @@
 						"how": "ENTER THE DOOR BETWEEN THE PYLONS AND LEAVE ON THE FAR SIDE WITHOUT TURNING",
 						"demo": "gate",
 						"targets": [
-							1150,
-							2450,
-							3750
+							1000,
+							2850,
+							5375
 						],
 						"time": 60,
 						"speed_pct": 88,
@@ -1191,9 +1191,9 @@
 						"how": "DEPTH IS THE LENGTH OF THE PASSAGE BETWEEN THE PYLONS",
 						"demo": "gate",
 						"targets": [
-							1050,
-							2250,
-							3675
+							1175,
+							3325,
+							6325
 						],
 						"time": 60,
 						"speed_pct": 90,
@@ -1229,9 +1229,9 @@
 						"how": "THE NEXT GATE APPEARS AHEAD, RIGHT PAST THE LAST EXIT",
 						"demo": "",
 						"targets": [
-							1625,
-							3500,
-							5250
+							1125,
+							3200,
+							5925
 						],
 						"time": 60,
 						"speed_pct": 100,
@@ -1265,9 +1265,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							950,
-							2050,
-							4350
+							1250,
+							3575,
+							6850
 						],
 						"time": 60,
 						"speed_pct": 100,
@@ -1301,9 +1301,9 @@
 						"how": "ONLY THE FIRST DOOR YOU DRIVE THROUGH COUNTS",
 						"demo": "",
 						"targets": [
-							1250,
-							2700,
-							4050
+							1125,
+							3200,
+							5925
 						],
 						"time": 60,
 						"speed_pct": 100,
@@ -1337,9 +1337,9 @@
 						"how": "DRIVE THROUGH THE SAME GATE THREE TIMES: THERE, BACK, THERE AGAIN",
 						"demo": "echo",
 						"targets": [
-							650,
-							1375,
-							2175
+							725,
+							2050,
+							3375
 						],
 						"time": 60,
 						"speed_pct": 100,
@@ -1373,9 +1373,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1225,
-							2650,
-							4450
+							1400,
+							4025,
+							7050
 						],
 						"time": 60,
 						"speed_pct": 100,
@@ -1410,9 +1410,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1875,
-							4000,
-							6000
+							1200,
+							3425,
+							7975
 						],
 						"time": 70,
 						"speed_pct": 100,
@@ -1448,9 +1448,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1550,
-							3325,
-							5000
+							1575,
+							4475,
+							8300
 						],
 						"time": 70,
 						"speed_pct": 100,
@@ -1484,12 +1484,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1575,
-							3375,
-							5500
+							1800,
+							5425,
+							10925
 						],
 						"time": 75,
-						"speed_pct": 100,
+						"speed_pct": 104,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -1536,9 +1536,9 @@
 						"how": "STEER ONTO TERMINALS 1, 2, 3 IN ORDER BEFORE TIME RUNS OUT",
 						"demo": "",
 						"targets": [
-							900,
-							1950,
-							3150
+							925,
+							2650,
+							4550
 						],
 						"time": 65,
 						"speed_pct": 90,
@@ -1572,9 +1572,9 @@
 						"how": "PASS IN THE CELL NEXT TO A LIVE TERMINAL FOR CHARGE. HITTING IT KILLS",
 						"demo": "graze",
 						"targets": [
-							1350,
-							2875,
-							4500
+							1250,
+							3550,
+							6175
 						],
 						"time": 65,
 						"speed_pct": 100,
@@ -1610,8 +1610,8 @@
 						"demo": "",
 						"targets": [
 							1500,
-							3225,
-							4850
+							4275,
+							6950
 						],
 						"time": 65,
 						"speed_pct": 100,
@@ -1645,9 +1645,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1350,
-							2875,
-							4325
+							1250,
+							3575,
+							6050
 						],
 						"time": 65,
 						"speed_pct": 100,
@@ -1682,8 +1682,8 @@
 						"demo": "",
 						"targets": [
 							1125,
-							2400,
-							3750
+							3200,
+							5400
 						],
 						"time": 65,
 						"speed_pct": 100,
@@ -1717,9 +1717,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1450,
-							3100,
-							4650
+							1475,
+							4200,
+							6825
 						],
 						"time": 65,
 						"speed_pct": 100,
@@ -1753,9 +1753,9 @@
 						"how": "WHILE YOUR HEAD IS IN THE SQUARE, POINTS BANK UP. LEAVE BEFORE IT OVERLOADS",
 						"demo": "hot",
 						"targets": [
-							525,
-							1125,
-							2375
+							550,
+							1500,
+							3175
 						],
 						"time": 65,
 						"speed_pct": 100,
@@ -1789,9 +1789,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							500,
-							1050,
-							2275
+							625,
+							1425,
+							3300
 						],
 						"time": 65,
 						"speed_pct": 100,
@@ -1825,9 +1825,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1375,
-							2950,
-							4425
+							1775,
+							5100,
+							8275
 						],
 						"time": 70,
 						"speed_pct": 100,
@@ -1862,12 +1862,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1250,
-							2650,
-							4150
+							1200,
+							3625,
+							8250
 						],
 						"time": 80,
-						"speed_pct": 100,
+						"speed_pct": 104,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -1906,9 +1906,9 @@
 						"how": "DRIVE INTO YOUR BODY OR A PYLON: THE PHASE CARRIES YOU OVER IT ONCE",
 						"demo": "phase",
 						"targets": [
-							300,
-							650,
-							975
+							340,
+							950,
+							1625
 						],
 						"time": 45,
 						"speed_pct": 100,
@@ -1937,8 +1937,8 @@
 						"demo": "",
 						"targets": [
 							1350,
-							2875,
-							4425
+							3875,
+							7050
 						],
 						"time": 75,
 						"speed_pct": 100,
@@ -1970,9 +1970,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1150,
-							2475,
-							3725
+							1000,
+							2825,
+							5900
 						],
 						"time": 55,
 						"speed_pct": 100,
@@ -2002,9 +2002,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1300,
-							2800,
-							4700
+							1450,
+							4125,
+							7550
 						],
 						"time": 75,
 						"speed_pct": 100,
@@ -2037,9 +2037,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							380,
-							800,
-							1275
+							390,
+							1100,
+							1825
 						],
 						"time": 50,
 						"speed_pct": 100,
@@ -2068,8 +2068,8 @@
 						"demo": "",
 						"targets": [
 							1300,
-							2775,
-							4250
+							3675,
+							6225
 						],
 						"time": 75,
 						"speed_pct": 100,
@@ -2102,9 +2102,9 @@
 						"how": "AFTER AN EVENT TWO PORTS APPEAR: DRIVE INTO THE ONE YOU WANT",
 						"demo": "",
 						"targets": [
-							1375,
-							2925,
-							5300
+							1325,
+							3825,
+							8025
 						],
 						"time": 75,
 						"speed_pct": 100,
@@ -2138,9 +2138,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1400,
-							3000,
-							5200
+							1475,
+							4200,
+							7900
 						],
 						"time": 80,
 						"speed_pct": 100,
@@ -2175,9 +2175,9 @@
 						"how": "WITH A PHASE, DRIVE STRAIGHT INTO A BARRIER: YOU HOP THROUGH",
 						"demo": "phase",
 						"targets": [
-							1300,
-							2800,
-							5725
+							1725,
+							4950,
+							8175
 						],
 						"time": 75,
 						"speed_pct": 100,
@@ -2210,12 +2210,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1350,
-							2875,
-							4425
+							1650,
+							4975,
+							8425
 						],
 						"time": 85,
-						"speed_pct": 100,
+						"speed_pct": 104,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -2258,12 +2258,12 @@
 						"how": "PASS IN THE CELL NEXT TO THE MOVING WIRE 3 TIMES. TOUCHING IT KILLS",
 						"demo": "wire",
 						"targets": [
-							1150,
-							2450,
-							4650
+							1500,
+							4375,
+							7250
 						],
 						"time": 75,
-						"speed_pct": 100,
+						"speed_pct": 102,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -2294,12 +2294,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1525,
-							3250,
-							4925
+							1550,
+							4550,
+							7975
 						],
 						"time": 75,
-						"speed_pct": 100,
+						"speed_pct": 102,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -2333,12 +2333,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1550,
-							3300,
-							5775
+							1350,
+							3975,
+							7825
 						],
 						"time": 75,
-						"speed_pct": 100,
+						"speed_pct": 102,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -2374,12 +2374,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							800,
-							1575,
-							2925
+							825,
+							2225,
+							4500
 						],
 						"time": 75,
-						"speed_pct": 100,
+						"speed_pct": 102,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -2413,12 +2413,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1525,
-							3275,
-							5825
+							1800,
+							5300,
+							9050
 						],
 						"time": 75,
-						"speed_pct": 100,
+						"speed_pct": 102,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -2452,12 +2452,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1650,
-							3550,
-							5875
+							1550,
+							4575,
+							8900
 						],
 						"time": 75,
-						"speed_pct": 100,
+						"speed_pct": 102,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -2491,12 +2491,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1225,
-							2425,
-							4250
+							1175,
+							3475,
+							6725
 						],
 						"time": 75,
-						"speed_pct": 100,
+						"speed_pct": 102,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -2533,12 +2533,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							700,
-							1325,
-							2275
+							625,
+							1875,
+							4050
 						],
 						"time": 75,
-						"speed_pct": 100,
+						"speed_pct": 102,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -2572,12 +2572,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1625,
-							3500,
-							6175
+							1900,
+							5625,
+							9850
 						],
 						"time": 80,
-						"speed_pct": 100,
+						"speed_pct": 102,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -2619,12 +2619,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1725,
-							3700,
-							5550
+							1750,
+							5425,
+							10000
 						],
 						"time": 85,
-						"speed_pct": 100,
+						"speed_pct": 106,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -2687,12 +2687,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1550,
-							3325,
-							6200
+							1650,
+							4925,
+							11450
 						],
 						"time": 85,
-						"speed_pct": 100,
+						"speed_pct": 104,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -2728,12 +2728,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1625,
-							3475,
-							5325
+							1900,
+							5700,
+							9350
 						],
 						"time": 85,
-						"speed_pct": 100,
+						"speed_pct": 104,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 22,
@@ -2767,12 +2767,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1250,
-							1875,
-							3525
+							1150,
+							2750,
+							5800
 						],
 						"time": 85,
-						"speed_pct": 100,
+						"speed_pct": 104,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -2809,11 +2809,11 @@
 						"demo": "",
 						"targets": [
 							1700,
-							3625,
-							5450
+							5100,
+							8625
 						],
 						"time": 85,
-						"speed_pct": 100,
+						"speed_pct": 104,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -2854,12 +2854,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1150,
-							2425,
-							3850
+							1175,
+							3500,
+							6275
 						],
 						"time": 85,
-						"speed_pct": 100,
+						"speed_pct": 104,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -2898,12 +2898,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							750,
-							1375,
-							2600
+							875,
+							2650,
+							4950
 						],
 						"time": 85,
-						"speed_pct": 100,
+						"speed_pct": 104,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -2940,12 +2940,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1375,
-							2950,
-							5450
+							1500,
+							4500,
+							8875
 						],
 						"time": 85,
-						"speed_pct": 100,
+						"speed_pct": 104,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -2982,12 +2982,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1400,
-							3025,
-							5250
+							1450,
+							4325,
+							7650
 						],
 						"time": 85,
-						"speed_pct": 100,
+						"speed_pct": 104,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -3024,12 +3024,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1550,
-							3300,
-							4950
+							1775,
+							5350,
+							8775
 						],
 						"time": 90,
-						"speed_pct": 100,
+						"speed_pct": 104,
 						"charge_pct": 100,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -3063,12 +3063,12 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1350,
-							2900,
-							4675
+							1475,
+							4600,
+							9225
 						],
 						"time": 95,
-						"speed_pct": 100,
+						"speed_pct": 108,
 						"charge_pct": 110,
 						"decay_pct": 100,
 						"start_len": 6,
@@ -3112,9 +3112,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1825,
-							3900,
-							7575
+							1600,
+							4925,
+							9125
 						],
 						"time": 90,
 						"speed_pct": 106,
@@ -3149,9 +3149,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							2025,
-							4375,
-							6550
+							1850,
+							5700,
+							10075
 						],
 						"time": 90,
 						"speed_pct": 106,
@@ -3187,9 +3187,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1575,
-							3375,
-							5200
+							1600,
+							4925,
+							8825
 						],
 						"time": 90,
 						"speed_pct": 106,
@@ -3226,9 +3226,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1950,
-							4150,
-							6250
+							2550,
+							5375,
+							8825
 						],
 						"time": 90,
 						"speed_pct": 106,
@@ -3265,9 +3265,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1275,
-							2725,
-							5100
+							1075,
+							3300,
+							7700
 						],
 						"time": 90,
 						"speed_pct": 106,
@@ -3313,9 +3313,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1025,
-							2200,
-							3900
+							1300,
+							4000,
+							6550
 						],
 						"time": 95,
 						"speed_pct": 106,
@@ -3352,9 +3352,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1650,
-							3550,
-							5600
+							1500,
+							4650,
+							9950
 						],
 						"time": 90,
 						"speed_pct": 106,
@@ -3391,9 +3391,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							2125,
-							4525,
-							6800
+							1725,
+							5300,
+							8925
 						],
 						"time": 90,
 						"speed_pct": 106,
@@ -3426,9 +3426,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1475,
-							3175,
-							4875
+							1650,
+							5100,
+							9025
 						],
 						"time": 90,
 						"speed_pct": 106,
@@ -3469,9 +3469,9 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							2325,
-							4950,
-							7425
+							2750,
+							8875,
+							15800
 						],
 						"time": 120,
 						"speed_pct": 110,

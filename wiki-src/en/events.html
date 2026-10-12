@@ -12,7 +12,7 @@ lead: Every so often the board throws a short challenge at you: a Circuit Event.
 </ul>
 <h3>Which event (Ranked and Daily)</h3>
 <p>The kinds come from a shuffled bag that never gives the same kind twice in a row. {{ t('LIVE WIRE') }} joins only after the first {{ Circuit.WIRE_AFTER }} events. Harder variants unlock with the run's <b>intensity</b> — the number of events completed so far, plus one while you are at ×5 or more. The tables below give the intensity each variant needs and its weight in the draw. Campaign levels list exactly which events and variants they use (see <a href="campaign.html">all levels</a>).</p>
-<p>Modifiers can be added on top:</p>
+<p>Modifiers can be added on top (in Ranked and Daily by chance, as below; a Campaign level that lists a modifier puts it on every event it fits):</p>
 {{ table(['Modifier', 'For', 'From intensity', 'Chance', 'Effect'], [
   ['<code>narrow</code>', t('GATE'), n(Circuit.MODIFIERS.narrow[1]), pct(Circuit.MODIFIERS.narrow[2]), 'every door is one cell deeper (up to 4)'],
   ['<code>drift</code>', t('GATE'), n(Circuit.MODIFIERS.drift[1]), pct(Circuit.MODIFIERS.drift[2]), 'the gate slides sideways one cell every ' + n(Circuit.DRIFT_PERIOD) + ' steps (' + t('DRIFT GATE') + ')'],
