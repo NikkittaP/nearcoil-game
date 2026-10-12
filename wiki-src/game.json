@@ -1,5 +1,5 @@
 {
-	"generated": "2026-10-12 09:44:16 UTC",
+	"generated": "2026-10-12 09:51:33 UTC",
 	"version": "0.1.4",
 	"GameSim": {
 		"RULES_VERSION": 8,
@@ -5299,8 +5299,8 @@
 			"ru": "ПЕРЕЗАПУСК"
 		},
 		"UPDATE_READY_STRIP": {
-			"en": "UPDATE READY: RESTART",
-			"ru": "ОБНОВЛЕНИЕ ГОТОВО: ПЕРЕЗАПУСК"
+			"en": "RESTART TO UPDATE",
+			"ru": "ПЕРЕЗАПУСТИТЬ И ОБНОВИТЬ"
 		},
 		"UPDATE_FAILED_TITLE": {
 			"en": "UPDATE FAILED",
