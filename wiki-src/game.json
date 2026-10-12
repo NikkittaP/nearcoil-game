@@ -1,5 +1,5 @@
 {
-	"generated": "2026-10-12 11:24:02 UTC",
+	"generated": "2026-10-12 12:40:03 UTC",
 	"version": "0.1.4",
 	"GameSim": {
 		"RULES_VERSION": 8,
@@ -4543,8 +4543,8 @@
 			"ru": "ТЁМНОЕ РЕЛЕ"
 		},
 		"LIVE RELAY": {
-			"en": "LIVE RELAY",
-			"ru": "ЖИВОЕ РЕЛЕ"
+			"en": "MOVING RELAY",
+			"ru": "ПОДВИЖНОЕ РЕЛЕ"
 		},
 		"BRIDGE RELAY": {
 			"en": "BRIDGE RELAY",
@@ -4683,8 +4683,8 @@
 			"ru": "ПЕРВЫЙ КОНТАКТ"
 		},
 		"STEER INTO THE RED NODES": {
-			"en": "STEER INTO THE RED NODES",
-			"ru": "НАПРАВЛЯЙ ГОЛОВУ К КРАСНЫМ УЗЛАМ"
+			"en": "STEER YOUR HEAD INTO THE NODES",
+			"ru": "НАПРАВЛЯЙ ГОЛОВУ В УЗЛЫ"
 		},
 		"LONGER LINE": {
 			"en": "LONGER BODY",
@@ -4744,11 +4744,11 @@
 		},
 		"CHARGE TO X2 AND HOLD IT": {
 			"en": "CHARGE TO X2 AND HOLD IT",
-			"ru": "РАЗГОНИСЬ ДО X2 И УДЕРЖИ"
+			"ru": "НАБЕРИ X2 И УДЕРЖИ ЕГО"
 		},
 		"THREAD THE NEEDLE": {
 			"en": "THREAD THE NEEDLE",
-			"ru": "ПРОДЕНЬ ИГЛУ"
+			"ru": "ПРОЙДИ В ИГОЛЬНОЕ УШКО"
 		},
 		"DRIVE STRAIGHT THROUGH THE GATE": {
 			"en": "DRIVE STRAIGHT THROUGH THE GATE",
@@ -4788,7 +4788,7 @@
 		},
 		"PILLAR GATES": {
 			"en": "PILLAR GATES",
-			"ru": "ВОРОТА СРЕДИ СТОЛБОВ"
+			"ru": "ВОРОТА И ИЗОЛЯТОРЫ"
 		},
 		"GATES AMONG THE INSULATORS": {
 			"en": "GATES AMONG THE INSULATORS",
@@ -4799,8 +4799,8 @@
 			"ru": "ПОЛОСА ПРЕПЯТСТВИЙ"
 		},
 		"EVERY KIND OF GATE": {
-			"en": "EVERY KIND OF GATE",
-			"ru": "ВСЕ ВИДЫ ВОРОТ"
+			"en": "THREE KINDS OF GATE, MIXED",
+			"ru": "ТРИ ВИДА ВОРОТ ВПЕРЕМЕШКУ"
 		},
 		"HIGH STAKES": {
 			"en": "HIGH STAKES",
@@ -4824,7 +4824,7 @@
 		},
 		"BUILD YOUR OWN GEOMETRY": {
 			"en": "BUILD YOUR OWN GEOMETRY",
-			"ru": "СТРОЙ СВОЮ ГЕОМЕТРИЮ"
+			"ru": "СОБЕРИ СВОЮ ЦЕПЬ"
 		},
 		"TOUCH THE TERMINALS IN ORDER": {
 			"en": "TOUCH THE TERMINALS IN ORDER",
@@ -4832,11 +4832,11 @@
 		},
 		"LIVE POSTS": {
 			"en": "LIVE POSTS",
-			"ru": "ЖИВЫЕ СТОЙКИ"
+			"ru": "КЛЕММЫ ПОД ТОКОМ"
 		},
 		"TOUCHED TERMINALS STAY LIVE. GRAZE THEM": {
 			"en": "TOUCHED TERMINALS STAY LIVE. SKIM THEM",
-			"ru": "ТРОНУТЫЕ КЛЕММЫ ПОД ТОКОМ. ПРОХОДИ ВПРИТИРКУ"
+			"ru": "ПРОЙДЕННЫЕ КЛЕММЫ ПОД ТОКОМ. ПРОХОДИ ВПРИТИРКУ"
 		},
 		"FOUR POINT": {
 			"en": "FOUR POINT",
@@ -4984,7 +4984,7 @@
 		},
 		"THE GATE SLIDES. MEET IT": {
 			"en": "THE GATE SLIDES. MEET IT",
-			"ru": "ВОРОТА ЕДУТ. ПОЙМАЙ ИХ"
+			"ru": "ВОРОТА СЪЕЗЖАЮТ. ЛОВИ ИХ"
 		},
 		"THE HOT ZONE WANDERS": {
 			"en": "THE HOT ZONE WANDERS",
@@ -5007,8 +5007,8 @@
 			"ru": "БЫСТРЫЙ ПРОВОД"
 		},
 		"FASTER. SAME RULE": {
-			"en": "FASTER. SAME RULE",
-			"ru": "БЫСТРЕЕ. ПРАВИЛО ТО ЖЕ"
+			"en": "FASTER. SAME RULES",
+			"ru": "БЫСТРЕЕ. ПРАВИЛА ТЕ ЖЕ"
 		},
 		"THE ZONE CLOSES IN. CASH IN TIME": {
 			"en": "THE ZONE CLOSES IN. CASH IN TIME",
@@ -5019,8 +5019,8 @@
 			"ru": "ДВИЖУЩИЕСЯ ЧАСТИ"
 		},
 		"WIRES, DRIFT AND LIVE TERMINALS": {
-			"en": "WIRES, DRIFT AND LIVE TERMINALS",
-			"ru": "ПРОВОДА, ДРЕЙФ И ЖИВЫЕ КЛЕММЫ"
+			"en": "WIRES, DRIFT AND MOVING TERMINALS",
+			"ru": "ПРОВОДА, ДРЕЙФ И ПОДВИЖНЫЕ КЛЕММЫ"
 		},
 		"MOTION TEST": {
 			"en": "MOTION TEST",
@@ -5076,7 +5076,7 @@
 		},
 		"THE ZONE GIVES LITTLE WARNING": {
 			"en": "THE ZONE GIVES LITTLE WARNING",
-			"ru": "ЗОНА ПОЧТИ НЕ ПРЕДУПРЕЖДАЕТ"
+			"ru": "ЗОНА ПЕРЕГРЕВАЕТСЯ ПОЧТИ БЕЗ ПРЕДУПРЕЖДЕНИЯ"
 		},
 		"ECHO DRIFT": {
 			"en": "ECHO DRIFT",
@@ -5167,7 +5167,7 @@
 			"ru": "ПРОВОДА И ЖАР"
 		},
 		"GLASS JAW": {
-			"en": "GLASS JAW",
+			"en": "GLASS CEILING",
 			"ru": "СТЕКЛЯННЫЙ ПОТОЛОК"
 		},
 		"X3 IS THE CEILING. SCORE ANYWAY": {
@@ -5188,15 +5188,15 @@
 		},
 		"NO HELP. NO PORTS": {
 			"en": "NO HELP. NO PORTS",
-			"ru": "НИКАКИХ ПОРТОВ И ПОДСКАЗОК"
+			"ru": "НИ МОДУЛЕЙ, НИ ПОРТОВ"
 		},
 		"CRITICAL MASS": {
 			"en": "CRITICAL MASS",
 			"ru": "КРИТИЧЕСКАЯ МАССА"
 		},
 		"EVERY MODIFIER IS LIVE": {
-			"en": "EVERY MODIFIER IS LIVE",
-			"ru": "ВСЕ МОДИФИКАТОРЫ ВКЛЮЧЕНЫ"
+			"en": "NARROW, DRIFTING GATES. FAST WIRES",
+			"ru": "УЗКИЕ ПЛАВАЮЩИЕ ВОРОТА. БЫСТРЫЕ ПРОВОДА"
 		},
 		"THE WHOLE MACHINE. FULL POWER": {
 			"en": "THE WHOLE MACHINE. FULL POWER",
@@ -5476,11 +5476,11 @@
 		},
 		"MEDAL_KEEPS": {
 			"en": "IT STAYS EVEN IF YOU CRASH NOW",
-			"ru": "ОН ОСТАНЕТСЯ, ДАЖЕ ЕСЛИ РАЗОБЬЁШЬСЯ"
+			"ru": "ЭТО УЖЕ ТВОЁ, ДАЖЕ ЕСЛИ РАЗОБЬЁШЬСЯ"
 		},
 		"MEDAL_NEXT": {
 			"en": "GO ON FOR %s OR FINISH FROM PAUSE",
-			"ru": "ДАЛЬШЕ — РАДИ «%s» ИЛИ ЗАВЕРШИ В ПАУЗЕ"
+			"ru": "ИГРАЙ ДАЛЬШЕ РАДИ «%s» ИЛИ ЗАВЕРШИ ЧЕРЕЗ ПАУЗУ"
 		},
 		"FINISH_WITH": {
 			"en": "FINISH: %s",
@@ -5520,7 +5520,7 @@
 		},
 		"REACH X2, THEN KEEP CLOSE CALLS COMING SO IT DOESN'T DRAIN": {
 			"en": "REACH X2, THEN KEEP CLOSE CALLS COMING SO IT DOESN'T DRAIN",
-			"ru": "НАБЕРИ X2 И ПРОДОЛЖАЙ СБЛИЖЕНИЯ, ЧТОБЫ ЗАРЯД НЕ УПАЛ"
+			"ru": "ДОЙДИ ДО X2 И НЕ ПРЕРЫВАЙ СБЛИЖЕНИЯ, ЧТОБЫ ЗАРЯД НЕ УПАЛ"
 		},
 		"ENTER THE DOOR BETWEEN THE PYLONS AND LEAVE ON THE FAR SIDE WITHOUT TURNING": {
 			"en": "ENTER THE DOOR BETWEEN THE PYLONS AND LEAVE ON THE FAR SIDE WITHOUT TURNING",
@@ -5544,7 +5544,7 @@
 		},
 		"STEER ONTO TERMINALS 1, 2, 3 IN ORDER BEFORE TIME RUNS OUT": {
 			"en": "STEER ONTO TERMINALS 1, 2, 3 IN ORDER BEFORE TIME RUNS OUT",
-			"ru": "ВЕДИ ГОЛОВУ НА КЛЕММЫ 1, 2, 3 ПО ПОРЯДКУ, ПОКА НЕ ВЫШЛО ВРЕМЯ"
+			"ru": "НАЕЗЖАЙ НА КЛЕММЫ 1, 2, 3 ПО ПОРЯДКУ, ПОКА НЕ ВЫШЛО ВРЕМЯ"
 		},
 		"PASS IN THE CELL NEXT TO A LIVE TERMINAL FOR CHARGE. HITTING IT KILLS": {
 			"en": "PASS IN THE CELL NEXT TO A LIVE TERMINAL FOR CHARGE. HITTING IT KILLS",
@@ -5552,15 +5552,15 @@
 		},
 		"WHEN THE RELAY IS DONE ITS TERMINALS JOIN WITH LIVE BARS: SKIM THEM": {
 			"en": "WHEN THE RELAY IS DONE ITS TERMINALS JOIN WITH LIVE BARS: SKIM THEM",
-			"ru": "ПОСЛЕ РЕЛЕ КЛЕММЫ СОЕДИНЯТСЯ ШИНАМИ ПОД ТОКОМ: ПРОХОДИ ВДОЛЬ НИХ"
+			"ru": "КОГДА РЕЛЕ ЗАМКНЁТСЯ, МЕЖДУ КЛЕММАМИ ВСТАНУТ ШИНЫ ПОД ТОКОМ: ПРОХОДИ ВПРИТИРКУ"
 		},
 		"WHILE YOUR HEAD IS IN THE SQUARE, POINTS BANK UP. LEAVE BEFORE IT OVERLOADS": {
 			"en": "WHILE YOUR HEAD IS IN THE SQUARE, POINTS BANK UP. LEAVE BEFORE IT OVERLOADS",
 			"ru": "ПОКА ГОЛОВА В КВАДРАТЕ, КОПЯТСЯ ОЧКИ. ВЫЙДИ ДО ПЕРЕГРЕВА, ИНАЧЕ ОНИ СГОРЯТ"
 		},
 		"DRIVE INTO YOUR BODY OR A PYLON: THE PHASE CARRIES YOU OVER IT ONCE": {
-			"en": "DRIVE INTO YOUR BODY OR A PYLON: THE PHASE CARRIES YOU OVER IT ONCE",
-			"ru": "ВЪЕДЬ В СВОЁ ТЕЛО ИЛИ СТОЛБ: ФАЗА ОДИН РАЗ ПЕРЕНЕСЁТ ЧЕРЕЗ НЕГО"
+			"en": "DRIVE STRAIGHT INTO THE BARRIER OR YOUR BODY: THE PHASE CARRIES YOU OVER IT ONCE",
+			"ru": "ВЪЕДЬ ПРЯМО В БАРЬЕР ИЛИ В СВОЁ ТЕЛО: ФАЗА ОДИН РАЗ ПЕРЕНЕСЁТ ТЕБЯ ЧЕРЕЗ НЕГО"
 		},
 		"FINISH AN EVENT, THEN DRIVE INTO THE PORT THAT APPEARS": {
 			"en": "FINISH AN EVENT, THEN DRIVE INTO THE PORT THAT APPEARS",
@@ -5625,6 +5625,42 @@
 		"DPAD_SHOW_ALWAYS": {
 			"en": "ALWAYS",
 			"ru": "ВСЕГДА"
+		},
+		"WELCOME_TITLE": {
+			"en": "WELCOME TO NEARCOIL",
+			"ru": "ДОБРО ПОЖАЛОВАТЬ В NEARCOIL"
+		},
+		"WELCOME_BODY": {
+			"en": "PICK A NAME AND A COUNTRY FOR THE LEADERBOARDS",
+			"ru": "ВЫБЕРИ ИМЯ И СТРАНУ ДЛЯ ТАБЛИЦ РЕКОРДОВ"
+		},
+		"WELCOME_NAME_PH": {
+			"en": "YOUR NAME",
+			"ru": "ТВОЁ ИМЯ"
+		},
+		"WELCOME_COUNTRY_AUTO": {
+			"en": "SUGGESTED FROM YOUR SYSTEM LANGUAGE",
+			"ru": "ПОДОБРАНА ПО ЯЗЫКУ СИСТЕМЫ"
+		},
+		"WELCOME_COUNTRY_NOTE": {
+			"en": "FOR THE COUNTRY BOARDS. NONE IS FINE TOO",
+			"ru": "ДЛЯ ТАБЛИЦ ПО СТРАНАМ. МОЖНО И БЕЗ НЕЁ"
+		},
+		"WELCOME_SAVE": {
+			"en": "SAVE AND PLAY",
+			"ru": "СОХРАНИТЬ И ИГРАТЬ"
+		},
+		"WELCOME_SKIP": {
+			"en": "NOT NOW, JUST PLAY",
+			"ru": "НЕ СЕЙЧАС, ПРОСТО ИГРАТЬ"
+		},
+		"WELCOME_LATER": {
+			"en": "YOU CAN CHANGE YOUR NAME AND COUNTRY ANY TIME IN SETTINGS",
+			"ru": "ИМЯ И СТРАНУ МОЖНО ПОМЕНЯТЬ В ЛЮБОЙ МОМЕНТ В НАСТРОЙКАХ"
+		},
+		"WELCOME_OFFLINE": {
+			"en": "NO CONNECTION. SKIP NOW AND SET IT LATER IN SETTINGS",
+			"ru": "НЕТ ПОДКЛЮЧЕНИЯ. ПРОПУСТИ И ЗАДАЙ ПОЗЖЕ В НАСТРОЙКАХ"
 		}
 	}
 }
