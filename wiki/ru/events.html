@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>События — NEARCOIL Справочник</title>
+<meta name="description" content="События NEARCOIL — ВОРОТА, РЕЛЕ, ГОРЯЧАЯ ЗОНА и ПРОВОД ПОД ТОКОМ: как работают, таймеры, выплаты, все варианты и модификаторы, когда появляются.">
+<link rel="canonical" href="https://nikkittap.github.io/nearcoil-game/wiki/ru/events.html">
+<link rel="alternate" hreflang="en" href="https://nikkittap.github.io/nearcoil-game/wiki/en/events.html">
+<link rel="alternate" hreflang="ru" href="https://nikkittap.github.io/nearcoil-game/wiki/ru/events.html">
+<meta name="theme-color" content="#0d0e12">
+<link rel="icon" href="../../img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../img/favicon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="События — NEARCOIL Справочник">
+<meta property="og:description" content="События NEARCOIL — ВОРОТА, РЕЛЕ, ГОРЯЧАЯ ЗОНА и ПРОВОД ПОД ТОКОМ: как работают, таймеры, выплаты, все варианты и модификаторы, когда появляются.">
+<meta property="og:image" content="https://nikkittap.github.io/nearcoil-game/img/feature_big.jpg">
+<link rel="stylesheet" href="../wiki.css">
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="brand" href="index.html"><img src="../../img/favicon-32.png" width="22" height="22" alt="">NEARCOIL <span>Справочник</span></a>
+    <nav class="links"><a href="../../">NEARCOIL</a><a href="../en/events.html" hreflang="en" lang="en">English</a></nav>
+  </div>
+</header>
+<div class="layout">
+  <aside class="side">
+    <details open><summary>Разделы</summary>
+    <ol><li><a href="index.html">Справочник NEARCOIL</a></li><li><a href="basics.html">Поле, управление, скорость</a></li><li><a href="close-calls.html">Сближения и манёвры</a></li><li><a href="charge.html">Заряд и множитель</a></li><li class="on"><a href="events.html">События</a></li><li><a href="modules.html">Модули</a></li><li><a href="modes.html">Режимы игры</a></li><li><a href="campaign.html">Все уровни кампании</a></li><li><a href="glossary.html">Словарь</a></li></ol>
+    </details>
+  </aside>
+  <main class="content">
+    <h1>События</h1>
+    <p class="lead">Время от времени поле подкидывает короткое испытание — событие. Их четыре вида: ВОРОТА, РЕЛЕ, ГОРЯЧАЯ ЗОНА и ПРОВОД ПОД ТОКОМ, и у каждого есть варианты. Выигранное событие приносит очки и заряд и открывает <a href="modules.html">выбор модуля</a>.</p>
+    <nav class="toc"><b>На этой странице</b><ol><li><a href="#rhythm">Когда приходят события</a></li><li><a href="#gate">ВОРОТА</a></li><li><a href="#relay">РЕЛЕ</a></li><li><a href="#hot">ГОРЯЧАЯ ЗОНА</a></li><li><a href="#wire">ПРОВОД ПОД ТОКОМ</a></li></ol></nav>
+    <h2 id="rhythm">Когда приходят события</h2>
+<ul>
+  <li>Первое событие начинается после <b>95 шагов (около 14,2 с)</b> свободной игры.</li>
+  <li>Между событиями — 95–140 шагов свободной игры. Пауза сокращается на 6 шагов с каждым пройденным событием, но не меньше 70. Если событие закончилось, когда у тебя было ×5 или больше, добавляется ещё 18 спокойных шагов.</li>
+  <li>Событие не начинается, пока ты внутри щели, а новые конструкции появляются не ближе 4 клеток от головы и никогда прямо у тебя на пути. Если поле слишком забито, событие чуть ждёт и пробует снова.</li>
+  <li>Название, прогресс и таймер события — в полосе под шкалой. При первой встрече с каждым видом игра показывает карточку с объяснением.</li>
+  <li>Если время вышло, событие просто кончается без награды. Конструкции исчезают вместе с событием (стойки реле держатся ещё немного).</li>
+</ul>
+<h3>Какое событие (на рекорд и испытание дня)</h3>
+<p>Виды тянутся из перемешанного мешка, который не выдаёт один вид дважды подряд. ПРОВОД ПОД ТОКОМ добавляется только после первых 2 событий. Сложные варианты открываются с ростом <b>интенсивности</b> забега — это число уже пройденных событий плюс один, пока у тебя ×5 и выше. В таблицах ниже — с какой интенсивности доступен вариант и его вес при выборе. Уровни кампании задают события и варианты явно (см. <a href="campaign.html">все уровни</a>).</p>
+<p>Сверху могут добавиться модификаторы:</p>
+<div class="tw"><table class=""><thead><tr><th>Модификатор</th><th>Для</th><th>С интенсивности</th><th>Шанс</th><th>Что делает</th></tr></thead><tbody><tr><td><code>narrow</code></td><td>ВОРОТА</td><td>4</td><td>30 %</td><td>каждая дверь на клетку глубже (максимум 4)</td></tr><tr><td><code>drift</code></td><td>ВОРОТА</td><td>5</td><td>30 %</td><td>ворота сдвигаются вбок на клетку каждые 7 шагов (ПЛАВАЮЩИЕ ВОРОТА)</td></tr><tr><td><code>fast</code></td><td>ПРОВОД ПОД ТОКОМ</td><td>5</td><td>40 %</td><td>провод движется каждые 2 шага вместо 3</td></tr></tbody></table></div>
+
+<h2 id="gate">ВОРОТА</h2>
+<div class="shots"><figure><a href="../img/ru/gate.webp"><img src="../img/ru/gate.webp" width="720" height="1280" loading="lazy" alt="Серия ворот: два ряда столбов, между ними дверь; следующие ворота уже ждут."></a><figcaption>Серия ворот: два ряда столбов, между ними дверь; следующие ворота уже ждут.</figcaption></figure><figure><a href="../img/ru/gate_pass.webp"><img src="../img/ru/gate_pass.webp" width="720" height="1280" loading="lazy" alt="Ворота пройдены: надпись показывает их номер в серии."></a><figcaption>Ворота пройдены: надпись показывает их номер в серии.</figcaption></figure><figure><a href="../img/ru/gate_double.webp"><img src="../img/ru/gate_double.webp" width="720" height="1280" loading="lazy" alt="ДВОЙНЫЕ ВОРОТА: две двери, подойдёт любая."></a><figcaption>ДВОЙНЫЕ ВОРОТА: две двери, подойдёт любая.</figcaption></figure><figure><a href="../img/ru/gate_risk.webp"><img src="../img/ru/gate_risk.webp" width="720" height="1280" loading="lazy" alt="ВОРОТА РИСКА: мелкая дверь даёт +25, глубокая +90."></a><figcaption>ВОРОТА РИСКА: мелкая дверь даёт +25, глубокая +90.</figcaption></figure></div>
+<p>Ворота — это <b>дверь</b> (прямой проход длиной 1–4 клетки) и смертельный <b>столб</b> с каждой стороны от каждой клетки двери. Чтобы пройти ворота, въедь в дверь и выедь с другой стороны <b>насквозь</b>, не поворачивая внутри. Направление любое. Длина двери — её <b>глубина</b>; глубокие двери платят больше.</p>
+<ul>
+  <li>Каждые ворота нужно пройти за <b>85 шагов (около 12,8 с)</b>; для следующих ворот серии таймер начинается заново.</li>
+  <li>Новая дверь появляется в 4–11 клетках от головы. Столб никогда не ставится на твою линию ближе 6 клеток впереди и на соседние линии ближе 2 клеток.</li>
+  <li>Столбы — проводники: проход впритирку к ним — сближение (оплачивается полностью), проезд между ними — тесные шаги. Щель из одних столбов манёвром не считается — за неё платят ворота.</li>
+</ul>
+<div class="tw"><table class="num"><thead><tr><th>Ворота в серии</th><th>1-е</th><th>2-е</th><th>3-и</th></tr></thead><tbody><tr><td>Глубина двери</td><td>1</td><td>2</td><td>3</td></tr><tr><td>Очки (× множитель)</td><td>30</td><td>60</td><td>120</td></tr><tr><td>Заряд</td><td>60</td><td>90</td><td>130</td></tr></tbody></table></div>
+<h3>Варианты</h3>
+<div class="tw"><table class=""><thead><tr><th>Вариант</th><th>На экране</th><th>С интенсивности</th><th>Вес</th><th>Что меняется</th></tr></thead><tbody><tr><td><code>course</code></td><td>ИГОЛЬНЫЕ ВОРОТА</td><td>0</td><td>4</td><td>трое ворот подряд, двери глубиной 1, 2 и 3 клетки</td></tr><tr><td><code>chain</code></td><td>ЦЕПЬ ВОРОТ</td><td>1</td><td>3</td><td>следующие ворота встают в 3–8 клетках прямо за выходом из прошлых</td></tr><tr><td><code>risk</code></td><td>ВОРОТА РИСКА</td><td>2</td><td>3</td><td>мелкая и глубокая дверь; засчитывается только первая, в которую проехал</td></tr><tr><td><code>double</code></td><td>ДВОЙНЫЕ ВОРОТА</td><td>3</td><td>2</td><td>две двери сразу, подойдёт любая</td></tr><tr><td><code>echo</code></td><td>ВОРОТА-ЭХО</td><td>3</td><td>2</td><td>одни ворота: туда, обратно и снова туда</td></tr></tbody></table></div>
+<ul>
+  <li><b>ВОРОТА РИСКА</b>: мелкая дверь (глубина 1) — +25 очков и 40 заряда; глубокая (глубина 3) — +90 очков и 200 заряда. Первая пройденная дверь заканчивает событие.</li>
+  <li><b>ВОРОТА-ЭХО</b>: одна дверь глубиной 2, её надо пройти 3 раза — туда, обратно и снова туда, каждый раз за 60 шагов. Проходы платят 40, 70, 110 очков и 70, 100, 150 заряда. Уже один проход — победа, остальное — бонус.</li>
+  <li><b>ЦЕПЬ ВОРОТ</b>: следующие ворота встают в 3–8 клетках прямо перед местом, где ты вышел из прошлых, на одной линии с выходом.</li>
+</ul>
+
+<h2 id="relay">РЕЛЕ</h2>
+<div class="shots"><figure><a href="../img/ru/relay.webp"><img src="../img/ru/relay.webp" width="720" height="1280" loading="lazy" alt="Реле: клемма 1 тронута, следующая — 2."></a><figcaption>Реле: клемма 1 тронута, следующая — 2.</figcaption></figure><figure><a href="../img/ru/relay_posts.webp"><img src="../img/ru/relay_posts.webp" width="720" height="1280" loading="lazy" alt="После реле: тронутые клеммы стали живыми стойками."></a><figcaption>После реле: тронутые клеммы стали живыми стойками.</figcaption></figure><figure><a href="../img/ru/relay_bridge.webp"><img src="../img/ru/relay_bridge.webp" width="720" height="1280" loading="lazy" alt="РЕЛЕ-МОСТ: стойки соединены шинами под током."></a><figcaption>РЕЛЕ-МОСТ: стойки соединены шинами под током.</figcaption></figure></div>
+<p>По полю расставляются пронумерованные <b>клеммы</b>, не ближе 5 клеток друг к другу. Проведи по ним голову <b>по порядку номеров</b>, пока не вышло время.</p>
+<ul>
+  <li>Время: 135 шагов (около 20,2 с) на три клеммы и ещё 35 шагов на каждую следующую.</li>
+  <li>Каждая клемма: +15 очков (× множитель) и +30 заряда.</li>
+  <li>Завершение: +90 очков и минимум 120 заряда — всегда достаточно, чтобы дойти до следующего множителя (пока ты ниже ×5). Сложные варианты (четыре клеммы, быстрое, тёмное, живое) платят за завершение ×1,50.</li>
+  <li>Тронутая клемма становится <b>живой стойкой</b>, как только с неё ушло тело: врезаться нельзя, а для сближений годится. Стойки держатся 70 шагов (около 10,5 с) после конца реле (110 с мостом).</li>
+</ul>
+<h3>Варианты</h3>
+<div class="tw"><table class=""><thead><tr><th>Вариант</th><th>На экране</th><th>С интенсивности</th><th>Вес</th><th>Что меняется</th></tr></thead><tbody><tr><td><code>three</code></td><td>РЕЛЕ</td><td>0</td><td>4</td><td>три клеммы по порядку номеров</td></tr><tr><td><code>timed</code></td><td>БЫСТРОЕ РЕЛЕ</td><td>2</td><td>2</td><td>две трети времени, больше награда</td></tr><tr><td><code>four</code></td><td>РЕЛЕ 4</td><td>3</td><td>2</td><td>четыре клеммы, больше времени, больше награда</td></tr><tr><td><code>hidden</code></td><td>ТЁМНОЕ РЕЛЕ</td><td>3</td><td>2</td><td>последняя клемма видна, только когда до неё очередь</td></tr><tr><td><code>bridge</code></td><td>РЕЛЕ-МОСТ</td><td>4</td><td>2</td><td>после завершения клеммы соединяются шинами под током</td></tr><tr><td><code>moving</code></td><td>ЖИВОЕ РЕЛЕ</td><td>5</td><td>2</td><td>последняя клемма смещается каждые 6 шагов</td></tr></tbody></table></div>
+
+<h2 id="hot">ГОРЯЧАЯ ЗОНА</h2>
+<div class="shots"><figure><a href="../img/ru/hot.webp"><img src="../img/ru/hot.webp" width="720" height="1280" loading="lazy" alt="Появилась горячая зона — квадрат 5×5."></a><figcaption>Появилась горячая зона — квадрат 5×5.</figcaption></figure><figure><a href="../img/ru/hot_in.webp"><img src="../img/ru/hot_in.webp" width="720" height="1280" loading="lazy" alt="Голова в зоне: копилка растёт, это видно на полосе события."></a><figcaption>Голова в зоне: копилка растёт, это видно на полосе события.</figcaption></figure><figure><a href="../img/ru/hot_cash.webp"><img src="../img/ru/hot_cash.webp" width="720" height="1280" loading="lazy" alt="ВЫПЛАТА: выход из квадрата выплачивает накопленное."></a><figcaption>ВЫПЛАТА: выход из квадрата выплачивает накопленное.</figcaption></figure></div>
+<p>Квадрат 5×5. Пока голова внутри, заряд и очки <b>копятся</b>; выйди из квадрата, чтобы <b>забрать</b> их (ВЫПЛАТА). Входить и выходить можно несколько раз. Если зона перегреется, когда голова ещё внутри, накопленное сгорает (СГОРЕЛО).</p>
+<ul>
+  <li>Зона живёт 84 шага (около 12,6 с); последние 18 шагов — предупреждение.</li>
+  <li>Каждый шаг внутри копит 2, 3, 4, 6 заряда (растёт по четвертям срока зоны) и 2 очка.</li>
+  <li>Всё, что ты зарабатываешь внутри, начисляется как обычно, <i>и ещё</i> 50 % от этого откладывается в копилку.</li>
+  <li>В зоне сближения заряжают полностью на любом множителе, и <a href="charge.html#hunger">голод</a> не действует.</li>
+  <li>Накопленные очки умножаются на множитель в момент выплаты. Событие засчитано, когда ты забрал в сумме не меньше 70 заряда.</li>
+</ul>
+<h3>Варианты</h3>
+<div class="tw"><table class=""><thead><tr><th>Вариант</th><th>На экране</th><th>С интенсивности</th><th>Вес</th><th>Что меняется</th></tr></thead><tbody><tr><td><code>static</code></td><td>ГОРЯЧАЯ ЗОНА</td><td>0</td><td>4</td><td>обычная зона</td></tr><tr><td><code>escalate</code></td><td>РАСТУЩАЯ ЗОНА</td><td>2</td><td>2</td><td>живёт дольше, во второй половине копит вдвое быстрее</td></tr><tr><td><code>drift</code></td><td>ПЛАВАЮЩАЯ ЗОНА</td><td>3</td><td>2</td><td>плывёт по диагонали, на клетку каждые 9 шагов</td></tr><tr><td><code>shrink</code></td><td>СЖИМАЮЩАЯСЯ ЗОНА</td><td>3</td><td>2</td><td>к середине срока сжимается до 3×3</td></tr><tr><td><code>preserve</code></td><td>ЗОНА УДЕРЖАНИЯ</td><td>4</td><td>2</td><td>пока голова внутри, заряд не утекает</td></tr><tr><td><code>unstable</code></td><td>НЕСТАБИЛЬНАЯ ЗОНА</td><td>5</td><td>2</td><td>случайный срок жизни, предупреждение в самом конце</td></tr></tbody></table></div>
+<p class="small">РАСТУЩАЯ ЗОНА живёт 100 шагов и во второй половине копит вдвое быстрее. НЕСТАБИЛЬНАЯ ЗОНА живёт 66–96 шагов и предупреждает всего за 7 шагов.</p>
+
+<h2 id="wire">ПРОВОД ПОД ТОКОМ</h2>
+<div class="float"><figure><a href="../img/ru/wire.webp"><img src="../img/ru/wire.webp" width="720" height="1280" loading="lazy" alt="Провод под током: первый из трёх проходов (ПРОХОД 1/3)."></a><figcaption>Провод под током: первый из трёх проходов (ПРОХОД 1/3).</figcaption></figure></div>
+<p>Смертельная шина длиной 3 клетки ездит туда-сюда по своей полосе, на клетку каждые 3 шага. Пройди впритирку к ней <b>3 раза</b> за 140 шагов (около 21 с). Касание — конец забега.</p>
+<ul>
+  <li>Проходы засчитываются не чаще чем раз в 5 шагов.</li>
+  <li>Каждый проход: +25 очков (× множитель) и +45 заряда; победа над проводом: +100 очков и +110 заряда.</li>
+  <li>Провод никогда не въезжает в голову или вплотную к ней и не встаёт на 3 клетки прямо перед ней.</li>
+</ul>
+<h3>Варианты</h3>
+<div class="tw"><table class=""><thead><tr><th>Вариант</th><th>На экране</th><th>С интенсивности</th><th>Вес</th><th>Что меняется</th></tr></thead><tbody><tr><td><code>patrol</code></td><td>ПРОВОД ПОД ТОКОМ</td><td>0</td><td>4</td><td>одна шина в 3 клетки</td></tr><tr><td><code>long</code></td><td>ПРОВОД ПОД ТОКОМ</td><td>3</td><td>2</td><td>одна шина в 5 клеток</td></tr><tr><td><code>twin</code></td><td>ПРОВОД ПОД ТОКОМ</td><td>4</td><td>2</td><td>две шины, у каждой своя полоса</td></tr></tbody></table></div>
+<div class="clear"></div>
+
+    <nav class="pager"><a href="charge.html">← Заряд и множитель</a><span></span><a href="modules.html">Модули →</a></nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Числа и скриншоты взяты из игры, версия 0.1.4 (2026-10-12).</p>
+  <p><a href="https://play.google.com/store/apps/details?id=com.nikitapetrovapps.nearcoil">Скачать в Google Play</a> · <a href="../../privacy/">Политика конфиденциальности</a> · <a href="mailto:nikitapetrovapps@gmail.com">nikitapetrovapps@gmail.com</a></p>
+</footer>
+</body>
+</html>

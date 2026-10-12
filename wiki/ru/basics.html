@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Поле, управление, скорость — NEARCOIL Справочник</title>
+<meta name="description" content="Основы NEARCOIL: поле 13×21, управление смахиванием, поворотами и крестовиной, скорость шага, рост за узел и где появляются узлы.">
+<link rel="canonical" href="https://nikkittap.github.io/nearcoil-game/wiki/ru/basics.html">
+<link rel="alternate" hreflang="en" href="https://nikkittap.github.io/nearcoil-game/wiki/en/basics.html">
+<link rel="alternate" hreflang="ru" href="https://nikkittap.github.io/nearcoil-game/wiki/ru/basics.html">
+<meta name="theme-color" content="#0d0e12">
+<link rel="icon" href="../../img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../img/favicon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Поле, управление, скорость — NEARCOIL Справочник">
+<meta property="og:description" content="Основы NEARCOIL: поле 13×21, управление смахиванием, поворотами и крестовиной, скорость шага, рост за узел и где появляются узлы.">
+<meta property="og:image" content="https://nikkittap.github.io/nearcoil-game/img/feature_big.jpg">
+<link rel="stylesheet" href="../wiki.css">
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="brand" href="index.html"><img src="../../img/favicon-32.png" width="22" height="22" alt="">NEARCOIL <span>Справочник</span></a>
+    <nav class="links"><a href="../../">NEARCOIL</a><a href="../en/basics.html" hreflang="en" lang="en">English</a></nav>
+  </div>
+</header>
+<div class="layout">
+  <aside class="side">
+    <details open><summary>Разделы</summary>
+    <ol><li><a href="index.html">Справочник NEARCOIL</a></li><li class="on"><a href="basics.html">Поле, управление, скорость</a></li><li><a href="close-calls.html">Сближения и манёвры</a></li><li><a href="charge.html">Заряд и множитель</a></li><li><a href="events.html">События</a></li><li><a href="modules.html">Модули</a></li><li><a href="modes.html">Режимы игры</a></li><li><a href="campaign.html">Все уровни кампании</a></li><li><a href="glossary.html">Словарь</a></li></ol>
+    </details>
+  </aside>
+  <main class="content">
+    <h1>Поле, управление, скорость</h1>
+    <p class="lead">Правила обычного движения: поле, управление, скорость змейки и её длина.</p>
+    <nav class="toc"><b>На этой странице</b><ol><li><a href="#board">Поле</a></li><li><a href="#controls">Управление</a></li><li><a href="#speed">Скорость</a></li><li><a href="#growth">Узлы и рост</a></li></ol></nav>
+    <h2 id="board">Поле</h2>
+<ul>
+  <li>Поле — <b>13 клеток в ширину и 21 в высоту</b> (273 клеток). Края убивают.</li>
+  <li>Змейка стартует длиной <b>6 клеток</b> внизу по центру, головой вверх.</li>
+  <li>Один шаг сдвигает голову ровно на одну клетку. Развернуться назад, в собственную шею, нельзя: поворот на 180° игнорируется.</li>
+  <li>Въехать в клетку, которую на этом же шаге освобождает хвост, можно.</li>
+  <li>Забег кончается, когда голова врезается в край, в своё тело или в любую смертельную конструкцию (столб, живая стойка, провод, изолятор). В кампании он ещё кончается, когда выходит время или набран ИДЕАЛ.</li>
+</ul>
+
+<h2 id="controls">Управление</h2>
+<div class="float"><figure><a href="../img/ru/controls.webp"><img src="../img/ru/controls.webp" width="720" height="1280" loading="lazy" alt="Выбор при первом запуске. Его можно сменить в Настройках → Управление."></a><figcaption>Выбор при первом запуске. Его можно сменить в Настройках → Управление.</figcaption></figure></div>
+<p>Три схемы. Выбираешь при первом запуске, менять можно в настройках:</p>
+<h3>СМАХИВАНИЕ (по умолчанию)</h3>
+<p>Смахни туда, куда хочешь ехать. Поворот срабатывает прямо во время жеста, как только палец сдвинулся примерно на 16 dp, так что хватает совсем короткого движения, а жест буквой «Г» делает два поворота, не отрывая пальца. Направление на экране = направление движения — это помогает, когда змейка едет вниз или вбок.</p>
+<h3>ПОВОРОТ ВЛЕВО / ВПРАВО</h3>
+<p>Нажми на левую или правую половину экрана, чтобы повернуть налево или направо <i>от головы змеи</i> (когда она едет вниз, «налево» — это правая сторона экрана). Срабатывает в момент касания. Удобно играть одной рукой.</p>
+<h3>КРЕСТОВИНА</h3>
+<p>Четыре кнопки-стрелки — в полосе под полем или поверх поля; кнопки можно показывать всегда или только при касании.</p>
+<div class="box tip"><p><b>Очередь ввода:</b> запоминается до двух поворотов, так что быстрый двойной ввод делает разворот за два шага. Повороты применяются на ближайшем шаге.</p></div>
+<p class="small">Клавиатура (версии для компьютера): стрелки / WASD — руль, P — пауза.</p>
+<div class="clear"></div>
+
+<h2 id="speed">Скорость</h2>
+<p>Длина шага зависит от того, сколько узлов ты съел (не от времени: терпеливого игрока никто не торопит), и от множителя.</p>
+<div class="tw"><table class="num"><thead><tr><th>Съедено узлов</th><th>Шаг</th><th>Клеток в секунду</th></tr></thead><tbody><tr><td>0+</td><td>165 мс</td><td>6,1</td></tr><tr><td>5+</td><td>158 мс</td><td>6,3</td></tr><tr><td>10+</td><td>152 мс</td><td>6,6</td></tr><tr><td>15+</td><td>147 мс</td><td>6,8</td></tr><tr><td>20+</td><td>143 мс</td><td>7</td></tr><tr><td>25+</td><td>140 мс</td><td>7,1</td></tr><tr><td>30+</td><td>137 мс</td><td>7,3</td></tr></tbody></table></div>
+<p>Сверху множитель ускоряет змейку: +5% на ×2 и до +30% на ×8 (см. <a href="charge.html#levels">таблицу</a>), а модуль ФОРСАЖ добавляет ещё +14%. Шаг никогда не бывает короче 84 мс.</p>
+<div class="formula">шаг = базовый шаг × 100 / (100 + прибавка множителя % + прибавка ФОРСАЖА %), но не меньше 84 мс</div>
+<p class="small">Поле живёт в своём темпе при любой частоте экрана: 60, 90 или 120 Гц делают движение только плавнее.</p>
+
+<h2 id="growth">Узлы и рост</h2>
+<p>Каждый узел приносит <b>10 × множитель</b> очков и удлиняет тело. Первые узлы удлиняют сильнее — так быстрее появляется тело, вдоль которого можно строить коридоры:</p>
+<div class="tw"><table class="num"><thead><tr><th>Узел</th><th>Рост</th><th>Длина после</th></tr></thead><tbody><tr><td>1</td><td>+4</td><td>10</td></tr><tr><td>2</td><td>+4</td><td>14</td></tr><tr><td>3</td><td>+4</td><td>18</td></tr><tr><td>4</td><td>+4</td><td>22</td></tr><tr><td>5</td><td>+3</td><td>25</td></tr><tr><td>6</td><td>+3</td><td>28</td></tr><tr><td>7</td><td>+3</td><td>31</td></tr><tr><td>8</td><td>+3</td><td>34</td></tr><tr><td>9</td><td>+3</td><td>37</td></tr><tr><td>10</td><td>+3</td><td>40</td></tr><tr><td>11</td><td>+2</td><td>42</td></tr><tr><td>12</td><td>+2</td><td>44</td></tr></tbody></table></div>
+<p>После 10-го узла каждый следующий добавляет 2 клетки.</p>
+<h3>Где появляются узлы</h3>
+<ul>
+  <li>Никогда на теле или конструкции, никогда на цели события, и всегда так, чтобы до узла можно было добраться.</li>
+  <li>Не ближе 4 клеток (по шагам) к голове.</li>
+  <li>Клетки вплотную к телу и на средней дистанции (до 11 клеток) выпадают чаще: узлы тянут тебя обратно вдоль твоих же коридоров.</li>
+  <li>Расстановка зависит от зерна забега, поэтому в повторе и в испытании дня при тех же ходах узлы всегда те же.</li>
+</ul>
+<p>Долго не есть — себе дороже: см. <a href="charge.html#hunger">голод</a>.</p>
+
+    <nav class="pager"><a href="index.html">← Справочник NEARCOIL</a><span></span><a href="close-calls.html">Сближения и манёвры →</a></nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Числа и скриншоты взяты из игры, версия 0.1.4 (2026-10-12).</p>
+  <p><a href="https://play.google.com/store/apps/details?id=com.nikitapetrovapps.nearcoil">Скачать в Google Play</a> · <a href="../../privacy/">Политика конфиденциальности</a> · <a href="mailto:nikitapetrovapps@gmail.com">nikitapetrovapps@gmail.com</a></p>
+</footer>
+</body>
+</html>

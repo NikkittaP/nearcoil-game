@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Заряд и множитель — NEARCOIL Справочник</title>
+<meta name="description" content="Шкала заряда NEARCOIL: пороги ×2–×8, как заряд набирается, держится и утекает, прибавка скорости, стадии машины и голод.">
+<link rel="canonical" href="https://nikkittap.github.io/nearcoil-game/wiki/ru/charge.html">
+<link rel="alternate" hreflang="en" href="https://nikkittap.github.io/nearcoil-game/wiki/en/charge.html">
+<link rel="alternate" hreflang="ru" href="https://nikkittap.github.io/nearcoil-game/wiki/ru/charge.html">
+<meta name="theme-color" content="#0d0e12">
+<link rel="icon" href="../../img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../img/favicon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Заряд и множитель — NEARCOIL Справочник">
+<meta property="og:description" content="Шкала заряда NEARCOIL: пороги ×2–×8, как заряд набирается, держится и утекает, прибавка скорости, стадии машины и голод.">
+<meta property="og:image" content="https://nikkittap.github.io/nearcoil-game/img/feature_big.jpg">
+<link rel="stylesheet" href="../wiki.css">
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="brand" href="index.html"><img src="../../img/favicon-32.png" width="22" height="22" alt="">NEARCOIL <span>Справочник</span></a>
+    <nav class="links"><a href="../../">NEARCOIL</a><a href="../en/charge.html" hreflang="en" lang="en">English</a></nav>
+  </div>
+</header>
+<div class="layout">
+  <aside class="side">
+    <details open><summary>Разделы</summary>
+    <ol><li><a href="index.html">Справочник NEARCOIL</a></li><li><a href="basics.html">Поле, управление, скорость</a></li><li><a href="close-calls.html">Сближения и манёвры</a></li><li class="on"><a href="charge.html">Заряд и множитель</a></li><li><a href="events.html">События</a></li><li><a href="modules.html">Модули</a></li><li><a href="modes.html">Режимы игры</a></li><li><a href="campaign.html">Все уровни кампании</a></li><li><a href="glossary.html">Словарь</a></li></ol>
+    </details>
+  </aside>
+  <main class="content">
+    <h1>Заряд и множитель</h1>
+    <p class="lead">Шкала над полем — сердце счёта. Она задаёт множитель от ×1 до ×8, а множитель умножает каждое очко.</p>
+    <nav class="toc"><b>На этой странице</b><ol><li><a href="#meter">Шкала</a></li><li><a href="#levels">Ступени множителя</a></li><li><a href="#earn">Как набирается заряд</a></li><li><a href="#hold">Удержание и утечка</a></li><li><a href="#stages">Стадии машины</a></li><li><a href="#hunger">Голод</a></li></ol></nav>
+    <h2 id="meter">Шкала</h2>
+<p>Заряд — число от 0 до 2450. Шкала показывает его сегментами, по одному на ступень множителя; заполнил сегмент — множитель вырос на единицу.</p>
+<figure class="strip"><img src="../img/ru/meter_x1.webp" width="720" height="168" loading="lazy" alt="×1"><figcaption>×1: пустой забег.</figcaption></figure>
+<figure class="strip"><img src="../img/ru/meter_x3.webp" width="720" height="168" loading="lazy" alt="×3"><figcaption>×3: два сегмента полны, третий заполняется.</figcaption></figure>
+<figure class="strip"><img src="../img/ru/meter_x5.webp" width="720" height="168" loading="lazy" alt="×5"><figcaption>×5: начинается перегрузка — последние сегменты дрожат и искрят.</figcaption></figure>
+<figure class="strip"><img src="../img/ru/meter_x8.webp" width="720" height="168" loading="lazy" alt="×8"><figcaption>×8: максимум.</figcaption></figure>
+
+<h2 id="levels">Ступени множителя</h2>
+<div class="tw"><table class="num"><thead><tr><th>Множитель</th><th>Заряд от</th><th>Шаг шкалы</th><th>Прибавка скорости</th><th>Заряд за сближения</th><th>Утечка на просторе</th><th>Утечка у тела</th></tr></thead><tbody><tr><td><b>×1</b></td><td>0</td><td>90</td><td>+0 %</td><td>100 %</td><td>2/шаг</td><td>1/шаг</td></tr><tr><td><b>×2</b></td><td>90</td><td>160</td><td>+5 %</td><td>75 %</td><td>3/шаг</td><td>2/шаг</td></tr><tr><td><b>×3</b></td><td>250</td><td>230</td><td>+9 %</td><td>45 %</td><td>4/шаг</td><td>3/шаг</td></tr><tr><td><b>×4</b></td><td>480</td><td>340</td><td>+14 %</td><td>25 %</td><td>7/шаг</td><td>5/шаг</td></tr><tr><td><b>×5</b></td><td>820</td><td>400</td><td>+20 %</td><td>15 %</td><td>10/шаг</td><td>7/шаг</td></tr><tr><td><b>×6</b></td><td>1220</td><td>460</td><td>+25 %</td><td>10 %</td><td>13/шаг</td><td>9/шаг</td></tr><tr><td><b>×7</b></td><td>1680</td><td>520</td><td>+28 %</td><td>8 %</td><td>16/шаг</td><td>11/шаг</td></tr><tr><td><b>×8</b></td><td>2200</td><td>250</td><td>+30 %</td><td>8 %</td><td>19/шаг</td><td>13/шаг</td></tr></tbody></table></div>
+<ul>
+  <li><b>Заряд от</b> — сколько заряда нужно для этого множителя. ×2 — это примерно три обычных сближения; ×5 и выше требуют манёвров и событий.</li>
+  <li><b>Прибавка скорости</b> — насколько быстрее едет змейка на этом множителе.</li>
+  <li><b>Заряд за сближения</b> — какая доля заряда от сближений, скольжения и тесных шагов доходит до тебя на этой ступени (манёвры и события не урезаются).</li>
+  <li><b>Утечка</b> — сколько заряда теряется за шаг после окончания удержания: меньше, когда голова в пределах 2 клеток от проводника (ты готовишь следующий манёвр), больше — на просторе.</li>
+</ul>
+
+<h2 id="earn">Как набирается заряд</h2>
+<div class="tw"><table class=""><thead><tr><th>Источник</th><th>Заряд</th></tr></thead><tbody><tr><td>Сближение / скольжение / двойное</td><td>30 / 9 / 45 (на высоких ступенях меньше)</td></tr><tr><td>Тесный шаг со свежей стороной</td><td>12 (на высоких ступенях меньше)</td></tr><tr><td>ЗАЖИМ / СКВОЗЬ / ИГЛА</td><td>100, 240, 340, ×1–×2 за серию</td></tr><tr><td>Ворота</td><td>60, 90, 130 за ворота</td></tr><tr><td>Реле</td><td>30 за клемму; завершение даёт минимум 120 и всегда достаточно для следующего множителя (до ×5)</td></tr><tr><td>Горячая зона</td><td>всё накопленное, при выходе</td></tr><tr><td>Провод под током</td><td>45 за проход, 110 за победу</td></tr><tr><td>Прыжок ФАЗЫ</td><td>170</td></tr><tr><td>СРЕЗ</td><td>4 за каждую отрезанную клетку</td></tr></tbody></table></div>
+<p>На ФОРСАЖЕ любой прирост умножается на 1,4. Некоторые уровни кампании масштабируют весь прирост (например, «заряд 130%»).</p>
+
+<h2 id="hold">Удержание и утечка</h2>
+<ul>
+  <li>После прироста шкала держится <b>16 шагов (около 2,4 с)</b>. Прирост от сближений на высоких ступенях покупает удержание короче (в той же доле, что и заряд); манёвр или событие — полное.</li>
+  <li>Внутри щели (на тесном шаге) шкала не утекает вообще.</li>
+  <li>После удержания шкала теряет за каждый шаг столько, сколько указано в таблице выше.</li>
+  <li>Ступени теряются <b>по одной</b>: после падения на ступень есть передышка в 10 шагов, прежде чем начнёт утекать следующая.</li>
+  <li>В ЗОНА УДЕРЖАНИЯ шкала не утекает, пока голова в квадрате.</li>
+</ul>
+<div class="box tip"><p>Держать высокий множитель — значит идти сериями: сближение или манёвр каждые пару секунд. Скольжение вдоль коридора держит шкалу ровной, даже когда каждый проход добавляет мало.</p></div>
+
+<h2 id="stages">Стадии машины</h2>
+<div class="float"><figure><a href="../img/ru/slam.webp"><img src="../img/ru/slam.webp" width="720" height="1280" loading="lazy" alt="Выход на ×3: гигантский ×N на полсекунды врезается в свободную часть поля."></a><figcaption>Выход на ×3: гигантский ×N на полсекунды врезается в свободную часть поля.</figcaption></figure></div>
+<p>Вид поля меняется вместе с множителем ступенями, чтобы уровень чувствовался без взгляда на шкалу:</p>
+<ul>
+  <li><b>×1</b> — спокойное чистое поле.</li>
+  <li><b>×2</b> — машина включается: двойное мигание реле.</li>
+  <li><b>×3–×4</b> — заряд: по телу бегут импульсы-удары сердца, по краям экрана — всплески.</li>
+  <li><b>×5 и выше</b> — перегрузка: раскалённая сердцевина, искры и дуги между соседними участками тела, вспышки по всем краям.</li>
+</ul>
+<p>Каждый рост множителя вбивает огромный <code>×N</code> в часть поля подальше от головы. Падение на стадию — «обесточивание»: края гаснут, от головы к хвосту бежит тёмная волна. Всё это только оформление, одинаковое во всех темах; в настройках можно уменьшить тряску и вспышки.</p>
+<div class="clear"></div>
+
+<h2 id="hunger">Голод</h2>
+<div class="float"><figure><a href="../img/ru/hud.webp"><img src="../img/ru/hud.webp" width="720" height="1280" loading="lazy" alt="Обычный забег: узлы съедаются регулярно, сближения оплачиваются полностью."></a><figcaption>Обычный забег: узлы съедаются регулярно, сближения оплачиваются полностью.</figcaption></figure></div>
+<p>Игра вплотную к <b>собственному телу</b> слабеет, если долго не есть. 200 шагов (около 30 с) после последнего узла (или старта) она оплачивается полностью; затем за следующие 200 шагов (около 30 с) её стоимость равномерно падает до нуля. Следующий узел сразу возвращает всё в полном объёме.</p>
+<p>Голод уменьшает <b>очки</b> за сближения и за ЗАЖИМ / СКВОЗЬ / ИГЛУ у своего тела. Он не трогает:</p>
+<ul>
+  <li>заряд (множитель всё равно растёт);</li>
+  <li>узлы, любые выплаты событий и ФАЗУ;</li>
+  <li>сближения со столбами, стойками, проводами и изоляторами;</li>
+  <li>всё, что происходит в горячей зоне, и уровни без узлов.</li>
+</ul>
+<p>Игра это показывает: узел начинает пульсировать скобками (чем сильнее голод, тем быстрее и ярче), дуги у тела тускнеют, а первое сближение за половину цены или меньше выводит <code>СБЛИЖЕНИЯ СЛАБЕЮТ - ЕШЬ, ЧТОБЫ ЗАРЯДИТЬСЯ</code>. В обычной игре ешь гораздо чаще и голода не замечаешь; он нужен, чтобы бесконечное кружение вдоль своего тела не приносило очков.</p>
+<div class="clear"></div>
+
+    <nav class="pager"><a href="close-calls.html">← Сближения и манёвры</a><span></span><a href="events.html">События →</a></nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Числа и скриншоты взяты из игры, версия 0.1.4 (2026-10-12).</p>
+  <p><a href="https://play.google.com/store/apps/details?id=com.nikitapetrovapps.nearcoil">Скачать в Google Play</a> · <a href="../../privacy/">Политика конфиденциальности</a> · <a href="mailto:nikitapetrovapps@gmail.com">nikitapetrovapps@gmail.com</a></p>
+</footer>
+</body>
+</html>

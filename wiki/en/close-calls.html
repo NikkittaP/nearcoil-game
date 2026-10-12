@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Close calls and maneuvers — NEARCOIL Guide</title>
+<meta name="description" content="Exactly what counts as a close call in NEARCOIL, and how SQUEEZE, THREAD and NEEDLE are detected, chained and paid.">
+<link rel="canonical" href="https://nikkittap.github.io/nearcoil-game/wiki/en/close-calls.html">
+<link rel="alternate" hreflang="en" href="https://nikkittap.github.io/nearcoil-game/wiki/en/close-calls.html">
+<link rel="alternate" hreflang="ru" href="https://nikkittap.github.io/nearcoil-game/wiki/ru/close-calls.html">
+<meta name="theme-color" content="#0d0e12">
+<link rel="icon" href="../../img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../img/favicon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Close calls and maneuvers — NEARCOIL Guide">
+<meta property="og:description" content="Exactly what counts as a close call in NEARCOIL, and how SQUEEZE, THREAD and NEEDLE are detected, chained and paid.">
+<meta property="og:image" content="https://nikkittap.github.io/nearcoil-game/img/feature_big.jpg">
+<link rel="stylesheet" href="../wiki.css">
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="brand" href="index.html"><img src="../../img/favicon-32.png" width="22" height="22" alt="">NEARCOIL <span>Guide</span></a>
+    <nav class="links"><a href="../../">NEARCOIL</a><a href="../ru/close-calls.html" hreflang="ru" lang="ru">Русский</a></nav>
+  </div>
+</header>
+<div class="layout">
+  <aside class="side">
+    <details open><summary>Pages</summary>
+    <ol><li><a href="index.html">NEARCOIL guide</a></li><li><a href="basics.html">Board, controls, speed</a></li><li class="on"><a href="close-calls.html">Close calls and maneuvers</a></li><li><a href="charge.html">Charge and multiplier</a></li><li><a href="events.html">Circuit Events</a></li><li><a href="modules.html">Modules</a></li><li><a href="modes.html">Game modes</a></li><li><a href="campaign.html">All Campaign levels</a></li><li><a href="glossary.html">Glossary</a></li></ol>
+    </details>
+  </aside>
+  <main class="content">
+    <h1>Close calls and maneuvers</h1>
+    <p class="lead">Everything that charges the meter by being close: single close calls, skimming along your body, and the three maneuvers through gaps — SQUEEZE, THREAD and NEEDLE.</p>
+    <nav class="toc"><b>On this page</b><ol><li><a href="#close-call">Close call (GRAZE)</a></li><li><a href="#tight">Tight steps and maneuvers</a></li><li><a href="#insulators">Insulators</a></li></ol></nav>
+    <h2 id="close-call">Close call (GRAZE)</h2>
+<div class="float"><figure><a href="../img/en/graze.webp"><img src="../img/en/graze.webp" width="720" height="1280" loading="lazy" alt="Lesson 1-03: the head runs along its own body; every new body cell beside it is a close call."></a><figcaption>Lesson 1-03: the head runs along its own body; every new body cell beside it is a close call.</figcaption></figure></div>
+<p>After each step the game looks at the four cells around the head (up, down, left, right — <b>not diagonals</b>). Each one that holds a <b>conductor</b> is a close call:</p>
+<ul>
+  <li><b>Your own body</b>, but only its older part: the 5 cells right behind the head (the neck and a tight hairpin) don't count, and neither does the very tip of the tail that is about to move away. You have to actually run alongside your body.</li>
+  <li><b>Structures</b>: Campaign insulators, gate pylons, live relay posts and bridge bars, live wires. They kill on contact but are good for close calls.</li>
+</ul>
+<p>Rules that keep it fair:</p>
+<ul>
+  <li>Each body cell pays <b>once</b>. After that it shows a thin spark line inside (it is "charged") and never pays again.</li>
+  <li>A cell of the board that just produced a close call can't produce another for <b>60 steps</b> — this stops endless loops chasing your own tail.</li>
+  <li>An insulator pays, goes dark, and lights up again after 40 steps (<a href="#insulators">below</a>).</li>
+</ul>
+<h3>What it is worth</h3>
+<div class="tw"><table class=""><thead><tr><th>Kind</th><th>When</th><th>Charge</th><th>Points</th></tr></thead><tbody><tr><td>Close call</td><td>the first after a pause</td><td>30</td><td>2 per cell × multiplier</td></tr><tr><td>SKIM</td><td>another close call within 3 steps of the last one (riding along a lane)</td><td>9</td><td>2 per cell × multiplier</td></tr><tr><td>Double</td><td>two or more cells at once in one step (say, body on both sides)</td><td>45</td><td>2 per cell × multiplier</td></tr></tbody></table></div>
+<p>This charge from close calls is "minor": the higher the multiplier, the less of it you keep — 100% at ×1, 45% at ×3, only 15% at ×5. Close calls alone top out around ×3; higher stages need maneuvers. Inside a hot zone every close call charges in full.</p>
+<div class="clear"></div>
+
+<h2 id="tight">Tight steps and maneuvers</h2>
+<p>A <b>tight step</b> is a step where both side cells of the head (left and right of the direction of travel) hold a conductor: you are in a one-cell gap. Each tight step with a fresh side adds 12 charge, and the meter does not drain while you are inside a gap.</p>
+<p>When the head leaves the gap, the run of tight steps is judged:</p>
+<div class="tw"><table class=""><thead><tr><th>Maneuver</th><th>Gap length</th><th>Condition</th><th>Points (× multiplier)</th><th>Charge</th></tr></thead><tbody><tr><td><b class="term">SQUEEZE</b></td><td>2–5 steps</td><td>not a THREAD</td><td>15 + 4 per step</td><td>100</td></tr><tr><td><b class="term">THREAD</b></td><td>1–4 steps</td><td>the gap separates the two sides: no way round shorter than 10 cells</td><td>60 + 4 per step</td><td>240</td></tr><tr><td><b class="term">NEEDLE</b></td><td>6+ steps</td><td>a long corridor</td><td>150 + 4 per step</td><td>340</td></tr></tbody></table></div>
+<p>So a one-step gap is a THREAD only if it really goes <i>through</i> a wall of your body; a short gap with an easy way round is a SQUEEZE (two steps or more) or nothing (one step).</p>
+<div class="shots"><figure><a href="../img/en/squeeze.webp"><img src="../img/en/squeeze.webp" width="720" height="1280" loading="lazy" alt="Lesson 1-07: between the body and a row of insulators — SQUEEZE."></a><figcaption>Lesson 1-07: between the body and a row of insulators — SQUEEZE.</figcaption></figure><figure><a href="../img/en/thread.webp"><img src="../img/en/thread.webp" width="720" height="1280" loading="lazy" alt="Lesson 1-08: through the one-cell gap in a wall of body and insulators — THREAD."></a><figcaption>Lesson 1-08: through the one-cell gap in a wall of body and insulators — THREAD.</figcaption></figure><figure><a href="../img/en/needle.webp"><img src="../img/en/needle.webp" width="720" height="1280" loading="lazy" alt="Lesson 1-09: a long corridor between the body and insulators — NEEDLE."></a><figcaption>Lesson 1-09: a long corridor between the body and insulators — NEEDLE.</figcaption></figure></div>
+<h3>Fresh sides only</h3>
+<p>A gap only pays if at least one of its sides is <b>fresh body</b>, never used as a side of a gap before. Driving the same corridor again pays nothing. A gap made only of pylons is not a maneuver either — the gate pays for it.</p>
+<h3>Chains</h3>
+<p>A maneuver less than <b>30 steps</b> after the previous one continues a chain (shown as CHAIN N). The chain multiplies both points and charge of the maneuver:</p>
+<div class="tw"><table class="num"><thead><tr><th>Maneuver in the chain</th><th>1st</th><th>2nd</th><th>3rd</th><th>4th</th><th>5th and on</th></tr></thead><tbody><tr><td>Bonus</td><td>×1</td><td>×1.25</td><td>×1.5</td><td>×1.75</td><td>×2</td></tr></tbody></table></div>
+<p>The chain breaks when 30 steps pass without a maneuver or the meter runs empty.</p>
+<h3>Example</h3>
+<p>A THREAD through a 1-cell gap at ×3, second in a chain: (60 + 4 × 1) × 1.25 = 80 base points, × 3 = <b>240</b> points, and 300 charge.</p>
+<div class="box"><p><b>Crashing in a gap</b> pays nothing for it: the run ends with THREAD or SQUEEZE failed.</p></div>
+
+<h2 id="insulators">Insulators</h2>
+<div class="float"><figure><a href="../img/en/insulator.webp"><img src="../img/en/insulator.webp" width="720" height="1280" loading="lazy" alt="Lesson 1-06: lit blocks on the board; one just brushed has gone dark."></a><figcaption>Lesson 1-06: lit blocks on the board; one just brushed has gone dark.</figcaption></figure></div>
+<p>Campaign boards can have fixed blocks, <b>insulators</b>. Hitting one ends the run. Brushing one is a close call that is always paid in full (it is not your body, so <a href="charge.html#hunger">hunger</a> does not apply). After a close call the block goes dark and re-arms after 40 steps. Insulators also work as sides of a gap: a SQUEEZE between your body and a row of blocks counts.</p>
+<div class="clear"></div>
+
+    <nav class="pager"><a href="basics.html">← Board, controls, speed</a><span></span><a href="charge.html">Charge and multiplier →</a></nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Numbers and screenshots are taken from the game, version 0.1.4 (2026-10-12).</p>
+  <p><a href="https://play.google.com/store/apps/details?id=com.nikitapetrovapps.nearcoil">Get it on Google Play</a> · <a href="../../privacy/">Privacy policy</a> · <a href="mailto:nikitapetrovapps@gmail.com">nikitapetrovapps@gmail.com</a></p>
+</footer>
+</body>
+</html>

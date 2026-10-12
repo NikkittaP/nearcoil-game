@@ -1,0 +1,46 @@
+title: NEARCOIL guide
+description: How NEARCOIL works: close calls, charge and the multiplier, maneuvers, Circuit Events, modules, game modes and all 70 Campaign levels, with the exact numbers.
+lead: Classic Snake with one dangerous rule: <b>passing right next to your own body charges a multiplier</b>. This guide explains every mechanic with the exact numbers from the game, so you can see what each word on the screen means and how the score is made.
+---
+<div class="float">{{ img('hud', 'A Ranked run at ×3: score on top, the multiplier and the charge meter under it, the snake skimming its own body.') }}</div>
+
+<h2 id="rule">The one rule</h2>
+<p>You steer a snake on a {{ GameSim.W }} × {{ GameSim.H }} grid and eat red <b>nodes</b>, as in classic Snake. The difference: every time your head passes through a cell right beside an older part of your own body, that is a <b>close call</b> ({{ term('GRAZE') }}). Close calls fill the <b>charge meter</b>; a fuller meter means a higher <b>multiplier</b> (×1 to ×{{ len(GameSim.FLOW_LEVELS) }}), and the multiplier multiplies <i>every</i> point you score.</p>
+<p>Charge drains when you play safe. So the game keeps asking: stay close to your body for one more turn, or get out while there is still room?</p>
+<div class="box tip"><p><b>In one line:</b> skim your body to charge the multiplier, eat nodes and pull off maneuvers while it is high, and don't box yourself in.</p></div>
+
+<h2 id="screen">What is on the screen</h2>
+<ul>
+  <li><b>Score</b> — top centre. Your best (Ranked) or the level target (Campaign) is on the right, the level timer on the left.</li>
+  <li><b>Multiplier</b> — the <code>×N</code> plate under the score.</li>
+  <li><b>Charge meter</b> — the segmented bar next to it. One segment per multiplier step; when the bar reaches the end of a segment, the multiplier goes up. See <a href="charge.html">Charge and multiplier</a>.</li>
+  <li><b>Event bar</b> — under the meter while a <a href="events.html">Circuit Event</a> is live: its name, progress and the time left. A module you carry (PHASE, SURGE, CUT) is shown on the right.</li>
+  <li><b>Board</b> — your snake (the head is the chamfered block with a contact face), the red node, and any structures of the current event.</li>
+</ul>
+<div class="clear"></div>
+
+<h2 id="pages">Sections</h2>
+<div class="cards">
+  <a class="card" href="basics.html"><b>Board, controls, speed</b><span>Grid, steering schemes, how fast the snake goes and how much it grows.</span></a>
+  <a class="card" href="close-calls.html"><b>Close calls and maneuvers</b><span>{{ t('GRAZE') }}, skim, {{ t('SQUEEZE') }}, {{ t('THREAD') }}, {{ t('NEEDLE') }}, chains and every point value.</span></a>
+  <a class="card" href="charge.html"><b>Charge and multiplier</b><span>The meter, ×1–×{{ len(GameSim.FLOW_LEVELS) }}, drain, speed bonus and hunger.</span></a>
+  <a class="card" href="events.html"><b>Circuit Events</b><span>{{ t('GATE') }}, {{ t('RELAY') }}, {{ t('HOT ZONE') }}, {{ t('LIVE WIRE') }} and all their variants.</span></a>
+  <a class="card" href="modules.html"><b>Modules</b><span>Ports and the three powers: {{ t('PHASE') }}, {{ t('SURGE') }}, {{ t('CUT') }}.</span></a>
+  <a class="card" href="modes.html"><b>Game modes</b><span>{{ t('RANKED') }}, {{ t('DAILY') }}, {{ t('CAMPAIGN') }}, fuses, medals, leagues.</span></a>
+  <a class="card" href="campaign.html"><b>All Campaign levels</b><span>{{ derived.levels_total }} levels in {{ derived.chapters_total }} chapters with targets and conditions.</span></a>
+  <a class="card" href="glossary.html"><b>Glossary</b><span>Every game term with its Russian name.</span></a>
+</div>
+
+<h2 id="how-score">Where points come from</h2>
+<p>Every source below is multiplied by the current multiplier at the moment it is scored.</p>
+{{ table(['Source', 'Base points'], [
+  ['Eating a node', n(GameSim.FOOD_POINTS)],
+  ['Close call (' + t('GRAZE') + '), per body cell', n(GameSim.PTS_GRAZE)],
+  [t('SQUEEZE') + ' / ' + t('THREAD') + ' / ' + t('NEEDLE'), lst([GameSim.PTS_SQUEEZE, GameSim.PTS_THREAD, GameSim.PTS_NEEDLE]) + ' + ' + n(GameSim.PTS_TIGHT) + ' per cell of the gap, ×1–×2 for a chain'],
+  ['Gates passed', lst(Circuit.GATE_PTS) + ' (1st / 2nd / 3rd gate)'],
+  ['Relay', n(Circuit.RELAY_NODE_PTS) + ' per terminal, ' + n(Circuit.RELAY_DONE_PTS) + ' on completion'],
+  ['Hot zone', 'what it banked, paid on leaving'],
+  ['Live wire', n(Circuit.WIRE_SKIM_PTS) + ' per skim, ' + n(Circuit.WIRE_DONE_PTS) + ' when beaten'],
+  ['PHASE hop', n(Circuit.PHASE_PTS)],
+]) }}
+<p>Points are never taken away: a crash ends the run, but the score you made stays. The multiplier is what you risk.</p>

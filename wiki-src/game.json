@@ -1,0 +1,5582 @@
+{
+	"generated": "2026-10-12 08:47:08 UTC",
+	"version": "0.1.4",
+	"GameSim": {
+		"RULES_VERSION": 8,
+		"FIX_SERIAL_BASE": 67108864,
+		"W": 13,
+		"H": 21,
+		"START_LEN": 6,
+		"GROWTH": [
+			4,
+			4,
+			4,
+			4,
+			3,
+			3,
+			3,
+			3,
+			3,
+			3
+		],
+		"GROW_LATE": 2,
+		"FOOD_POINTS": 10,
+		"BASE_INTERVAL": [
+			165,
+			158,
+			152,
+			147,
+			143,
+			140,
+			137
+		],
+		"FOODS_PER_SPEED": 5,
+		"MIN_INTERVAL": 84,
+		"MIN_AGE": 5,
+		"GRAZE_COOLDOWN": 60,
+		"SQUEEZE_MIN": 2,
+		"NEEDLE_MIN": 6,
+		"THREAD_MAX": 4,
+		"DETOUR_MIN": 10,
+		"CHAIN_WINDOW": 30,
+		"WALL_REARM": 40,
+		"PTS_GRAZE": 2,
+		"PTS_TIGHT": 4,
+		"PTS_SQUEEZE": 15,
+		"PTS_THREAD": 60,
+		"PTS_NEEDLE": 150,
+		"HUNGER_GRACE": 200,
+		"HUNGER_FADE": 200,
+		"FLOW_GRAZE": 30,
+		"FLOW_SKIM": 9,
+		"FLOW_DOUBLE": 45,
+		"FLOW_TIGHT": 12,
+		"FLOW_SQUEEZE": 100,
+		"FLOW_THREAD": 240,
+		"FLOW_NEEDLE": 340,
+		"SKIM_GAP": 2,
+		"FLOW_MINOR_TAPER": [
+			100,
+			75,
+			45,
+			25,
+			15,
+			10,
+			8,
+			8
+		],
+		"FLOW_LEVELS": [
+			0,
+			90,
+			250,
+			480,
+			820,
+			1220,
+			1680,
+			2200
+		],
+		"FLOW_MAX": 2450,
+		"FLOW_GRACE": 16,
+		"FLOW_DROP_GRACE": 10,
+		"FLOW_DECAY_OPEN": [
+			2,
+			3,
+			4,
+			7,
+			10,
+			13,
+			16,
+			19
+		],
+		"FLOW_DECAY_NEAR": [
+			1,
+			2,
+			3,
+			5,
+			7,
+			9,
+			11,
+			13
+		],
+		"OPEN_RADIUS": 2,
+		"FLOW_SPEED_PCT": [
+			0,
+			5,
+			9,
+			14,
+			20,
+			25,
+			28,
+			30
+		],
+		"DIRS": [
+			[
+				1,
+				0
+			],
+			[
+				0,
+				1
+			],
+			[
+				-1,
+				0
+			],
+			[
+				0,
+				-1
+			]
+		],
+		"RIGHT": 0,
+		"DOWN": 1,
+		"LEFT": 2,
+		"UP": 3,
+		"Death": {
+			"NONE": 0,
+			"WALL": 1,
+			"SELF": 2,
+			"WIRE": 3,
+			"TIME": 4,
+			"CLEAR": 5
+		},
+		"Ev": {
+			"GRAZE": 0,
+			"SQUEEZE_START": 1,
+			"SQUEEZE_END": 2,
+			"THREAD_ENTER": 3,
+			"THREAD_SUCCESS": 4,
+			"THREAD_FAIL": 5,
+			"NEEDLE_START": 6,
+			"NEEDLE_SUCCESS": 7,
+			"FLOW_LEVEL_CHANGED": 8,
+			"FOOD": 9,
+			"DEATH": 10,
+			"STALE_RUN": 11,
+			"SQUEEZE_FAIL": 12,
+			"EVENT_START": 13,
+			"EVENT_END": 14,
+			"GATE_PASS": 15,
+			"RELAY_NODE": 16,
+			"RELAY_DONE": 17,
+			"HOT_ENTER": 18,
+			"HOT_CASH": 19,
+			"HOT_BURN": 20,
+			"MODULE_PICK": 21,
+			"PHASE_THROUGH": 22,
+			"CUT": 23,
+			"WIRE_SKIM": 24,
+			"FINISH": 25
+		},
+		"EV_NAMES": [
+			"GRAZE",
+			"SQUEEZE_START",
+			"SQUEEZE_END",
+			"THREAD_ENTER",
+			"THREAD_SUCCESS",
+			"THREAD_FAIL",
+			"NEEDLE_START",
+			"NEEDLE_SUCCESS",
+			"FLOW_LEVEL_CHANGED",
+			"FOOD",
+			"DEATH",
+			"STALE_RUN",
+			"SQUEEZE_FAIL",
+			"EVENT_START",
+			"EVENT_END",
+			"GATE_PASS",
+			"RELAY_NODE",
+			"RELAY_DONE",
+			"HOT_ENTER",
+			"HOT_CASH",
+			"HOT_BURN",
+			"MODULE_PICK",
+			"PHASE_THROUGH",
+			"CUT",
+			"WIRE_SKIM",
+			"FINISH"
+		]
+	},
+	"Circuit": {
+		"Kind": {
+			"NONE": 0,
+			"GATE": 1,
+			"RELAY": 2,
+			"HOT": 3,
+			"WIRE": 4,
+			"PORTS": 5
+		},
+		"Mod": {
+			"PHASE": 0,
+			"SURGE": 1,
+			"CUT": 2
+		},
+		"KIND_NAMES": [
+			"",
+			"GATE",
+			"RELAY",
+			"HOT",
+			"WIRE",
+			"PORTS"
+		],
+		"MOD_NAMES": [
+			"PHASE",
+			"SURGE",
+			"CUT"
+		],
+		"FIRST_EVENT": 95,
+		"GAP_MIN": 95,
+		"GAP_MAX": 140,
+		"GAP_SHRINK": 6,
+		"GAP_FLOOR": 70,
+		"RECOVERY_HOT": 18,
+		"RETRY": 6,
+		"SAFE_DIST": 4,
+		"NEAR_CLEAR": 2,
+		"GATE_DEPTH": [
+			1,
+			2,
+			3
+		],
+		"GATE_TIME": 85,
+		"GATE_FLOW": [
+			60,
+			90,
+			130
+		],
+		"GATE_PTS": [
+			30,
+			60,
+			120
+		],
+		"GATE_REACH": [
+			4,
+			11
+		],
+		"RISK_SAFE": [
+			1,
+			25,
+			40
+		],
+		"RISK_DEEP": [
+			3,
+			90,
+			200
+		],
+		"ECHO_DEPTH": 2,
+		"ECHO_PASSES": 3,
+		"ECHO_TIME": 60,
+		"ECHO_PTS": [
+			40,
+			70,
+			110
+		],
+		"ECHO_FLOW": [
+			70,
+			100,
+			150
+		],
+		"CHAIN_AHEAD": [
+			3,
+			8
+		],
+		"GATE_LANE_CLEAR": 6,
+		"GATE_SIDE_CLEAR": 2,
+		"DRIFT_PERIOD": 7,
+		"RELAY_TIME": 135,
+		"RELAY_TIME_PER_EXTRA": 35,
+		"RELAY_TIMED_PCT": 65,
+		"RELAY_SPREAD": 5,
+		"RELAY_NODE_FLOW": 30,
+		"RELAY_NODE_PTS": 15,
+		"RELAY_DONE_FLOW": 120,
+		"RELAY_STAGE_MARGIN": 25,
+		"RELAY_STAGE_CAP": 4,
+		"RELAY_DONE_PTS": 90,
+		"RELAY_BONUS_PCT": 150,
+		"RELAY_POST_LIFE": 70,
+		"RELAY_BRIDGE_LIFE": 110,
+		"RELAY_MOVE_PERIOD": 6,
+		"HOT_SIZE": 5,
+		"HOT_LIFE": 84,
+		"HOT_CRITICAL": 18,
+		"HOT_CRITICAL_UNSTABLE": 7,
+		"HOT_TICK": [
+			2,
+			3,
+			4,
+			6
+		],
+		"HOT_TICK_PTS": 2,
+		"HOT_GAIN_PCT": 50,
+		"HOT_SUCCESS": 70,
+		"HOT_ESCALATE_PCT": 200,
+		"HOT_DRIFT_PERIOD": 9,
+		"WIRE_TIME": 140,
+		"WIRE_LEN": 3,
+		"WIRE_LONG": 5,
+		"WIRE_PERIOD": 3,
+		"WIRE_SKIMS": 3,
+		"WIRE_SKIM_GAP": 5,
+		"WIRE_SKIM_FLOW": 45,
+		"WIRE_SKIM_PTS": 25,
+		"WIRE_DONE_FLOW": 110,
+		"WIRE_DONE_PTS": 100,
+		"WIRE_AHEAD": 3,
+		"PORT_TIME": 75,
+		"PORT_REACH": [
+			4,
+			10
+		],
+		"PORT_SPREAD": 5,
+		"PHASE_FLOW": 170,
+		"PHASE_PTS": 50,
+		"SURGE_TIME": 60,
+		"SURGE_SPEED_PCT": 14,
+		"SURGE_GAIN_PCT": 140,
+		"SURGE_PTS_PCT": 150,
+		"CUT_CHARGES": 1,
+		"CUT_PCT": 35,
+		"CUT_FLOW_PER_CELL": 4,
+		"CUT_MIN_LEN": 24,
+		"DIRECTOR": {
+			"gate": [
+				[
+					"course",
+					0,
+					4
+				],
+				[
+					"chain",
+					1,
+					3
+				],
+				[
+					"risk",
+					2,
+					3
+				],
+				[
+					"double",
+					3,
+					2
+				],
+				[
+					"echo",
+					3,
+					2
+				]
+			],
+			"relay": [
+				[
+					"three",
+					0,
+					4
+				],
+				[
+					"timed",
+					2,
+					2
+				],
+				[
+					"four",
+					3,
+					2
+				],
+				[
+					"hidden",
+					3,
+					2
+				],
+				[
+					"bridge",
+					4,
+					2
+				],
+				[
+					"moving",
+					5,
+					2
+				]
+			],
+			"hot": [
+				[
+					"static",
+					0,
+					4
+				],
+				[
+					"escalate",
+					2,
+					2
+				],
+				[
+					"drift",
+					3,
+					2
+				],
+				[
+					"shrink",
+					3,
+					2
+				],
+				[
+					"preserve",
+					4,
+					2
+				],
+				[
+					"unstable",
+					5,
+					2
+				]
+			],
+			"wire": [
+				[
+					"patrol",
+					0,
+					4
+				],
+				[
+					"long",
+					3,
+					2
+				],
+				[
+					"twin",
+					4,
+					2
+				]
+			]
+		},
+		"MODIFIERS": {
+			"narrow": [
+				"gate",
+				4,
+				30
+			],
+			"drift": [
+				"gate",
+				5,
+				30
+			],
+			"fast": [
+				"wire",
+				5,
+				40
+			]
+		},
+		"WIRE_AFTER": 2,
+		"VARIANT_IDS": [
+			"course",
+			"chain",
+			"risk",
+			"double",
+			"echo",
+			"three",
+			"four",
+			"timed",
+			"hidden",
+			"moving",
+			"bridge",
+			"static",
+			"escalate",
+			"drift",
+			"shrink",
+			"preserve",
+			"unstable",
+			"patrol",
+			"long",
+			"twin"
+		]
+	},
+	"Economy": {
+		"FUSE_MAX": 5,
+		"FUSE_REGEN_S": 1200,
+		"FUSE_DAILY_REWARD": 1,
+		"FUSE_FREE_CHAPTERS": [
+			1
+		],
+		"DAILY_RANKED_ATTEMPTS": 3,
+		"DAILY_BOARD": "best_of",
+		"PRODUCT_PLUS": "nearcoil_plus",
+		"PRODUCT_RECHARGE": "nearcoil_fuse_recharge",
+		"PRODUCT_THEME_PREFIX": "nearcoil_theme_",
+		"PRICE_FALLBACK": {
+			"nearcoil_plus": "$4.99",
+			"nearcoil_fuse_recharge": "$0.99",
+			"theme": "$1.99"
+		},
+		"PRICE_FALLBACK_MICROS": {
+			"nearcoil_plus": 4990000,
+			"theme": 1990000
+		}
+	},
+	"RunRules": {
+		"KINDS": [
+			"gate",
+			"relay",
+			"hot",
+			"wire"
+		],
+		"MODS": [
+			"phase",
+			"surge",
+			"cut"
+		],
+		"SPECIALS": [
+			"",
+			"no_food"
+		],
+		"LONG_START": 12,
+		"LONG_PATH": [
+			[
+				6,
+				12
+			],
+			[
+				6,
+				16
+			],
+			[
+				1,
+				16
+			],
+			[
+				1,
+				19
+			],
+			[
+				11,
+				19
+			],
+			[
+				11,
+				10
+			]
+		]
+	},
+	"DailySeed": {
+		"DAILY_TAG": "NEARCOIL_DAILY_v8_"
+	},
+	"Main": {
+		"HUD_H": 166.0,
+		"FLICK_DP": 16.0,
+		"DPAD_H": 250.0,
+		"SLOW_FRAME_MS": 19.0,
+		"DPAD_EDGE": 18.0,
+		"DPAD_OVER_K": 0.42,
+		"BACK_DEBOUNCE_MS": 250
+	},
+	"ranked": {
+		"id": "ranked",
+		"mode": "ranked",
+		"start_len": 6,
+		"start_body": [],
+		"start_dir": 3,
+		"walls": [],
+		"speed_pct": 100,
+		"speed_ramp": true,
+		"min_interval": 84,
+		"charge_pct": 100,
+		"decay_pct": 100,
+		"max_level": 7,
+		"start_level": 0,
+		"food": true,
+		"events": [
+			"gate",
+			"relay",
+			"hot",
+			"wire"
+		],
+		"variants": {},
+		"mods_allowed": {},
+		"first_event": -1,
+		"gate_first": false,
+		"gap_pct": 100,
+		"script": [],
+		"intensity_bias": 0,
+		"modules": [
+			"phase",
+			"surge",
+			"cut"
+		],
+		"ports": true,
+		"start_phase": 0,
+		"start_surge": false,
+		"start_cut": 0,
+		"time_limit_ms": 0,
+		"targets": [],
+		"special": ""
+	},
+	"derived": {
+		"speed_tiers": [
+			{
+				"foods": 0,
+				"ms": 165,
+				"cells_per_s": 6.1
+			},
+			{
+				"foods": 5,
+				"ms": 158,
+				"cells_per_s": 6.3
+			},
+			{
+				"foods": 10,
+				"ms": 152,
+				"cells_per_s": 6.6
+			},
+			{
+				"foods": 15,
+				"ms": 147,
+				"cells_per_s": 6.8
+			},
+			{
+				"foods": 20,
+				"ms": 143,
+				"cells_per_s": 7.0
+			},
+			{
+				"foods": 25,
+				"ms": 140,
+				"cells_per_s": 7.1
+			},
+			{
+				"foods": 30,
+				"ms": 137,
+				"cells_per_s": 7.3
+			}
+		],
+		"levels": [
+			{
+				"mult": 1,
+				"from": 0,
+				"span": 90,
+				"speed_pct": 0,
+				"minor_pct": 100,
+				"decay_open": 2,
+				"decay_near": 1,
+				"fastest_ms": 137
+			},
+			{
+				"mult": 2,
+				"from": 90,
+				"span": 160,
+				"speed_pct": 5,
+				"minor_pct": 75,
+				"decay_open": 3,
+				"decay_near": 2,
+				"fastest_ms": 130
+			},
+			{
+				"mult": 3,
+				"from": 250,
+				"span": 230,
+				"speed_pct": 9,
+				"minor_pct": 45,
+				"decay_open": 4,
+				"decay_near": 3,
+				"fastest_ms": 125
+			},
+			{
+				"mult": 4,
+				"from": 480,
+				"span": 340,
+				"speed_pct": 14,
+				"minor_pct": 25,
+				"decay_open": 7,
+				"decay_near": 5,
+				"fastest_ms": 120
+			},
+			{
+				"mult": 5,
+				"from": 820,
+				"span": 400,
+				"speed_pct": 20,
+				"minor_pct": 15,
+				"decay_open": 10,
+				"decay_near": 7,
+				"fastest_ms": 114
+			},
+			{
+				"mult": 6,
+				"from": 1220,
+				"span": 460,
+				"speed_pct": 25,
+				"minor_pct": 10,
+				"decay_open": 13,
+				"decay_near": 9,
+				"fastest_ms": 109
+			},
+			{
+				"mult": 7,
+				"from": 1680,
+				"span": 520,
+				"speed_pct": 28,
+				"minor_pct": 8,
+				"decay_open": 16,
+				"decay_near": 11,
+				"fastest_ms": 107
+			},
+			{
+				"mult": 8,
+				"from": 2200,
+				"span": 250,
+				"speed_pct": 30,
+				"minor_pct": 8,
+				"decay_open": 19,
+				"decay_near": 13,
+				"fastest_ms": 105
+			}
+		],
+		"growth": [
+			{
+				"food": 1,
+				"grow": 4,
+				"length": 10
+			},
+			{
+				"food": 2,
+				"grow": 4,
+				"length": 14
+			},
+			{
+				"food": 3,
+				"grow": 4,
+				"length": 18
+			},
+			{
+				"food": 4,
+				"grow": 4,
+				"length": 22
+			},
+			{
+				"food": 5,
+				"grow": 3,
+				"length": 25
+			},
+			{
+				"food": 6,
+				"grow": 3,
+				"length": 28
+			},
+			{
+				"food": 7,
+				"grow": 3,
+				"length": 31
+			},
+			{
+				"food": 8,
+				"grow": 3,
+				"length": 34
+			},
+			{
+				"food": 9,
+				"grow": 3,
+				"length": 37
+			},
+			{
+				"food": 10,
+				"grow": 3,
+				"length": 40
+			},
+			{
+				"food": 11,
+				"grow": 2,
+				"length": 42
+			},
+			{
+				"food": 12,
+				"grow": 2,
+				"length": 44
+			},
+			{
+				"food": 13,
+				"grow": 2,
+				"length": 46
+			},
+			{
+				"food": 14,
+				"grow": 2,
+				"length": 48
+			}
+		],
+		"cells": 273,
+		"chain_bonus": [
+			100,
+			125,
+			150,
+			175,
+			200
+		],
+		"levels_total": 70,
+		"chapters_total": 7
+	},
+	"league": {
+		"mode": "auto",
+		"min_players": 300,
+		"group_size": 30,
+		"promote": 5,
+		"demote": 5,
+		"tiers": 6,
+		"tier": 0
+	},
+	"campaign": {
+		"chapters": [
+			{
+				"n": 1,
+				"id": "signal",
+				"name": "SIGNAL",
+				"tag": "LEARN THE LINE",
+				"reward": "COBALT",
+				"fuse_free": true,
+				"levels": [
+					{
+						"id": "1-01",
+						"name": "FIRST CONTACT",
+						"hint": "STEER INTO THE RED NODES",
+						"how": "",
+						"demo": "",
+						"targets": [
+							95,
+							220,
+							600
+						],
+						"time": 35,
+						"speed_pct": 78,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 4,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [],
+						"variants": {},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "1-02",
+						"name": "LONGER LINE",
+						"hint": "EVERY NODE MAKES YOUR LINE LONGER",
+						"how": "",
+						"demo": "",
+						"targets": [
+							140,
+							390,
+							750
+						],
+						"time": 40,
+						"speed_pct": 82,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [],
+						"variants": {},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "1-03",
+						"name": "CLOSE PASS",
+						"hint": "PASS RIGHT NEXT TO YOUR OWN LINE",
+						"how": "DRIVE IN THE CELL RIGHT BESIDE YOUR BODY. EACH CLOSE CALL CHARGES THE METER",
+						"demo": "graze",
+						"targets": [
+							250,
+							590,
+							1000
+						],
+						"time": 40,
+						"speed_pct": 85,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 18,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [],
+						"variants": {},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "1-04",
+						"name": "SKIM",
+						"hint": "RIDE ALONG A LINE TO KEEP THE CHARGE",
+						"how": "KEEP CLOSE CALLS COMING AND THE CHARGE WON'T DRAIN",
+						"demo": "",
+						"targets": [
+							230,
+							625,
+							1000
+						],
+						"time": 40,
+						"speed_pct": 85,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 18,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 8,
+						"events": [],
+						"variants": {},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "1-05",
+						"name": "X2",
+						"hint": "FILL THE METER. X2 DOUBLES EVERY POINT",
+						"how": "CLOSE CALLS FILL THE METER UP TOP. FULL METER: X2",
+						"demo": "",
+						"targets": [
+							290,
+							590,
+							1325
+						],
+						"time": 45,
+						"speed_pct": 85,
+						"charge_pct": 130,
+						"decay_pct": 100,
+						"start_len": 10,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [],
+						"variants": {},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "1-06",
+						"name": "INSULATORS",
+						"hint": "BRUSH A LIT BLOCK FOR CHARGE. NEVER HIT IT",
+						"how": "PASS IN THE CELL NEXT TO A LIT BLOCK. IT LIGHTS AGAIN SOON",
+						"demo": "graze",
+						"targets": [
+							250,
+							710,
+							1175
+						],
+						"time": 45,
+						"speed_pct": 85,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 6,
+						"events": [],
+						"variants": {},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "1-07",
+						"name": "SQUEEZE",
+						"hint": "SLIP BETWEEN YOUR LINE AND A BLOCK",
+						"how": "DRIVE 2 OR MORE CELLS WITH BODY OR BLOCK ON BOTH SIDES",
+						"demo": "squeeze",
+						"targets": [
+							270,
+							750,
+							1525
+						],
+						"time": 40,
+						"speed_pct": 85,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 30,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 3,
+						"events": [],
+						"variants": {},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "1-08",
+						"name": "THREAD",
+						"hint": "GO THROUGH THE GAP IN YOUR OWN LINE",
+						"how": "LEAVE A ONE-CELL GAP IN YOUR BODY AND DRIVE THROUGH IT TO THE OTHER SIDE",
+						"demo": "thread",
+						"targets": [
+							350,
+							1000,
+							1675
+						],
+						"time": 40,
+						"speed_pct": 85,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 17,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 6,
+						"events": [],
+						"variants": {},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "1-09",
+						"name": "NEEDLE",
+						"hint": "HOLD A LONG CORRIDOR TO THE END",
+						"how": "DRIVE 6 OR MORE CELLS IN A ONE-CELL CORRIDOR OF YOUR BODY",
+						"demo": "needle",
+						"targets": [
+							900,
+							1600,
+							2525
+						],
+						"time": 40,
+						"speed_pct": 85,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 38,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 8,
+						"events": [],
+						"variants": {},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "1-10",
+						"name": "SIGNAL TEST",
+						"hint": "CHARGE TO X2 AND HOLD IT",
+						"how": "REACH X2, THEN KEEP CLOSE CALLS COMING SO IT DOESN'T DRAIN",
+						"demo": "",
+						"targets": [
+							370,
+							975,
+							1700
+						],
+						"time": 55,
+						"speed_pct": 92,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 3,
+						"events": [],
+						"variants": {},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					}
+				]
+			},
+			{
+				"n": 2,
+				"id": "gates",
+				"name": "GATES",
+				"tag": "THREAD THE NEEDLE",
+				"reward": "VIOLET",
+				"fuse_free": false,
+				"levels": [
+					{
+						"id": "2-01",
+						"name": "NEEDLE GATE",
+						"hint": "DRIVE STRAIGHT THROUGH THE GATE",
+						"how": "ENTER THE DOOR BETWEEN THE PYLONS AND LEAVE ON THE FAR SIDE WITHOUT TURNING",
+						"demo": "gate",
+						"targets": [
+							1150,
+							2450,
+							3750
+						],
+						"time": 60,
+						"speed_pct": 88,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate"
+						],
+						"variants": {
+							"gate": [
+								"course"
+							]
+						},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "2-02",
+						"name": "DEEP DOORS",
+						"hint": "DEEPER DOORS PAY MORE",
+						"how": "DEPTH IS THE LENGTH OF THE PASSAGE BETWEEN THE PYLONS",
+						"demo": "gate",
+						"targets": [
+							1050,
+							2250,
+							3675
+						],
+						"time": 60,
+						"speed_pct": 90,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate"
+						],
+						"variants": {
+							"gate": [
+								"course"
+							]
+						},
+						"modifiers": [
+							"narrow"
+						],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "2-03",
+						"name": "CHAIN",
+						"hint": "EACH GATE LINES UP BEHIND THE LAST",
+						"how": "THE NEXT GATE APPEARS AHEAD, RIGHT PAST THE LAST EXIT",
+						"demo": "",
+						"targets": [
+							1625,
+							3500,
+							5250
+						],
+						"time": 60,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate"
+						],
+						"variants": {
+							"gate": [
+								"chain"
+							]
+						},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "2-04",
+						"name": "DOUBLE GATE",
+						"hint": "TWO DOORS. TAKE EITHER",
+						"how": "",
+						"demo": "",
+						"targets": [
+							950,
+							2050,
+							4350
+						],
+						"time": 60,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate"
+						],
+						"variants": {
+							"gate": [
+								"double"
+							]
+						},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "2-05",
+						"name": "RISK",
+						"hint": "SHALLOW DOOR +25. DEEP DOOR +90",
+						"how": "ONLY THE FIRST DOOR YOU DRIVE THROUGH COUNTS",
+						"demo": "",
+						"targets": [
+							1250,
+							2700,
+							4050
+						],
+						"time": 60,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate"
+						],
+						"variants": {
+							"gate": [
+								"risk"
+							]
+						},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "2-06",
+						"name": "ECHO",
+						"hint": "PASS THROUGH, THEN BACK THROUGH AGAIN",
+						"how": "DRIVE THROUGH THE SAME GATE THREE TIMES: THERE, BACK, THERE AGAIN",
+						"demo": "echo",
+						"targets": [
+							650,
+							1375,
+							2175
+						],
+						"time": 60,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate"
+						],
+						"variants": {
+							"gate": [
+								"echo"
+							]
+						},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "2-07",
+						"name": "PILLAR GATES",
+						"hint": "GATES AMONG THE INSULATORS",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1225,
+							2650,
+							4450
+						],
+						"time": 60,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 6,
+						"events": [
+							"gate"
+						],
+						"variants": {
+							"gate": [
+								"course",
+								"chain"
+							]
+						},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "2-08",
+						"name": "GAUNTLET",
+						"hint": "EVERY KIND OF GATE",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1875,
+							4000,
+							6000
+						],
+						"time": 70,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate"
+						],
+						"variants": {
+							"gate": [
+								"course",
+								"chain",
+								"double"
+							]
+						},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "2-09",
+						"name": "HIGH STAKES",
+						"hint": "ALWAYS TAKE THE DEEP DOOR",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1550,
+							3325,
+							5000
+						],
+						"time": 70,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate"
+						],
+						"variants": {
+							"gate": [
+								"risk"
+							]
+						},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "2-10",
+						"name": "GATE TEST",
+						"hint": "ALL GATES. KEEP YOUR CHARGE",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1575,
+							3375,
+							5500
+						],
+						"time": 75,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate"
+						],
+						"variants": {
+							"gate": [
+								"course",
+								"chain",
+								"double",
+								"risk",
+								"echo"
+							]
+						},
+						"modifiers": [
+							"narrow"
+						],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					}
+				]
+			},
+			{
+				"n": 3,
+				"id": "circuit",
+				"name": "CIRCUIT",
+				"tag": "BUILD YOUR OWN GEOMETRY",
+				"reward": "ACID",
+				"fuse_free": false,
+				"levels": [
+					{
+						"id": "3-01",
+						"name": "RELAY",
+						"hint": "TOUCH THE TERMINALS IN ORDER",
+						"how": "STEER ONTO TERMINALS 1, 2, 3 IN ORDER BEFORE TIME RUNS OUT",
+						"demo": "",
+						"targets": [
+							900,
+							1950,
+							3150
+						],
+						"time": 65,
+						"speed_pct": 90,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"relay"
+						],
+						"variants": {
+							"relay": [
+								"three"
+							]
+						},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "3-02",
+						"name": "LIVE POSTS",
+						"hint": "TOUCHED TERMINALS STAY LIVE. GRAZE THEM",
+						"how": "PASS IN THE CELL NEXT TO A LIVE TERMINAL FOR CHARGE. HITTING IT KILLS",
+						"demo": "graze",
+						"targets": [
+							1350,
+							2875,
+							4500
+						],
+						"time": 65,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"relay",
+							"gate"
+						],
+						"variants": {
+							"relay": [
+								"three"
+							]
+						},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "3-03",
+						"name": "FOUR POINT",
+						"hint": "FOUR TERMINALS. MORE TIME, MORE PAY",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1500,
+							3225,
+							4850
+						],
+						"time": 65,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"relay"
+						],
+						"variants": {
+							"relay": [
+								"four"
+							]
+						},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "3-04",
+						"name": "FAST RELAY",
+						"hint": "LESS TIME. BIGGER PAYOUT",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1350,
+							2875,
+							4325
+						],
+						"time": 65,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"relay"
+						],
+						"variants": {
+							"relay": [
+								"timed"
+							]
+						},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "3-05",
+						"name": "BRIDGE",
+						"hint": "THE RELAY LEAVES ITS WIRING BEHIND",
+						"how": "WHEN THE RELAY IS DONE ITS TERMINALS JOIN WITH LIVE BARS: SKIM THEM",
+						"demo": "",
+						"targets": [
+							1125,
+							2400,
+							3750
+						],
+						"time": 65,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"relay"
+						],
+						"variants": {
+							"relay": [
+								"bridge"
+							]
+						},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "3-06",
+						"name": "DARK RELAY",
+						"hint": "THE LAST TERMINAL APPEARS LATE",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1450,
+							3100,
+							4650
+						],
+						"time": 65,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"relay"
+						],
+						"variants": {
+							"relay": [
+								"hidden"
+							]
+						},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "3-07",
+						"name": "HOT ZONE",
+						"hint": "BANK INSIDE THE ZONE. LEAVE TO CASH",
+						"how": "WHILE YOUR HEAD IS IN THE SQUARE, POINTS BANK UP. LEAVE BEFORE IT OVERLOADS",
+						"demo": "hot",
+						"targets": [
+							525,
+							1125,
+							2375
+						],
+						"time": 65,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"hot"
+						],
+						"variants": {
+							"hot": [
+								"static"
+							]
+						},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "3-08",
+						"name": "RISING HEAT",
+						"hint": "THE ZONE PAYS MORE THE LONGER YOU STAY",
+						"how": "",
+						"demo": "",
+						"targets": [
+							500,
+							1050,
+							2275
+						],
+						"time": 65,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"hot"
+						],
+						"variants": {
+							"hot": [
+								"escalate"
+							]
+						},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "3-09",
+						"name": "MAZE",
+						"hint": "RELAYS IN A MAZE OF INSULATORS",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1375,
+							2950,
+							4425
+						],
+						"time": 70,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 18,
+						"events": [
+							"relay"
+						],
+						"variants": {
+							"relay": [
+								"three",
+								"bridge"
+							]
+						},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "3-10",
+						"name": "CIRCUIT TEST",
+						"hint": "GATES, RELAYS AND HEAT",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1250,
+							2650,
+							4150
+						],
+						"time": 80,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate",
+							"relay",
+							"hot"
+						],
+						"variants": {},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 2
+					}
+				]
+			},
+			{
+				"n": 4,
+				"id": "modules",
+				"name": "MODULES",
+				"tag": "ONE POWER AT A TIME",
+				"reward": "ROSE",
+				"fuse_free": false,
+				"levels": [
+					{
+						"id": "4-01",
+						"name": "PHASE",
+						"hint": "YOU CARRY A PHASE. HOP ONE CONDUCTOR",
+						"how": "DRIVE INTO YOUR BODY OR A PYLON: THE PHASE CARRIES YOU OVER IT ONCE",
+						"demo": "phase",
+						"targets": [
+							300,
+							650,
+							975
+						],
+						"time": 45,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 7,
+						"events": [],
+						"variants": {},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 1,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "4-02",
+						"name": "PHASE PORT",
+						"hint": "WIN AN EVENT, STEER INTO THE PORT",
+						"how": "FINISH AN EVENT, THEN DRIVE INTO THE PORT THAT APPEARS",
+						"demo": "",
+						"targets": [
+							1350,
+							2875,
+							4425
+						],
+						"time": 75,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate"
+						],
+						"variants": {},
+						"modifiers": [],
+						"modules": [
+							"phase"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "4-03",
+						"name": "SURGE",
+						"hint": "SURGE: FASTER, MORE CHARGE, MORE POINTS",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1150,
+							2475,
+							3725
+						],
+						"time": 55,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate"
+						],
+						"variants": {},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": true,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "4-04",
+						"name": "SURGE PORT",
+						"hint": "TAKE THE SURGE, THEN CHASE THE GATE",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1300,
+							2800,
+							4700
+						],
+						"time": 75,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate",
+							"relay"
+						],
+						"variants": {},
+						"modifiers": [],
+						"modules": [
+							"surge"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "4-05",
+						"name": "CUT",
+						"hint": "THE NEXT NODE SEVERS YOUR OLDEST LINE",
+						"how": "",
+						"demo": "",
+						"targets": [
+							380,
+							800,
+							1275
+						],
+						"time": 50,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 26,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [],
+						"variants": {},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 1,
+						"intensity": 0
+					},
+					{
+						"id": "4-06",
+						"name": "CUT PORT",
+						"hint": "GROW LONG. CUT FREE",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1300,
+							2775,
+							4250
+						],
+						"time": 75,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 20,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"relay"
+						],
+						"variants": {},
+						"modifiers": [],
+						"modules": [
+							"cut",
+							"surge"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "4-07",
+						"name": "CHOICE",
+						"hint": "PHASE OR SURGE. CHOOSE BY STEERING",
+						"how": "AFTER AN EVENT TWO PORTS APPEAR: DRIVE INTO THE ONE YOU WANT",
+						"demo": "",
+						"targets": [
+							1375,
+							2925,
+							5300
+						],
+						"time": 75,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate",
+							"relay"
+						],
+						"variants": {},
+						"modifiers": [],
+						"modules": [
+							"phase",
+							"surge"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "4-08",
+						"name": "FULL KIT",
+						"hint": "EVERY MODULE IN THE POOL",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1400,
+							3000,
+							5200
+						],
+						"time": 80,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 14,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate",
+							"relay"
+						],
+						"variants": {},
+						"modifiers": [],
+						"modules": [
+							"phase",
+							"surge",
+							"cut"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "4-09",
+						"name": "PHASE RUN",
+						"hint": "HOP THE BARRIERS",
+						"how": "WITH A PHASE, DRIVE STRAIGHT INTO A BARRIER: YOU HOP THROUGH",
+						"demo": "phase",
+						"targets": [
+							1300,
+							2800,
+							5725
+						],
+						"time": 75,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 14,
+						"events": [
+							"gate",
+							"relay"
+						],
+						"variants": {},
+						"modifiers": [],
+						"modules": [
+							"phase"
+						],
+						"ports": true,
+						"start_phase": 1,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "4-10",
+						"name": "MODULE TEST",
+						"hint": "USE EVERYTHING",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1350,
+							2875,
+							4425
+						],
+						"time": 85,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate",
+							"relay",
+							"hot"
+						],
+						"variants": {},
+						"modifiers": [],
+						"modules": [
+							"phase",
+							"surge",
+							"cut"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 2
+					}
+				]
+			},
+			{
+				"n": 5,
+				"id": "motion",
+				"name": "MOTION",
+				"tag": "THE BOARD FIGHTS BACK",
+				"reward": "ICE",
+				"fuse_free": false,
+				"levels": [
+					{
+						"id": "5-01",
+						"name": "LIVE WIRE",
+						"hint": "SKIM THE MOVING WIRE THREE TIMES",
+						"how": "PASS IN THE CELL NEXT TO THE MOVING WIRE 3 TIMES. TOUCHING IT KILLS",
+						"demo": "wire",
+						"targets": [
+							1150,
+							2450,
+							4650
+						],
+						"time": 75,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"wire"
+						],
+						"variants": {
+							"wire": [
+								"patrol"
+							]
+						},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "5-02",
+						"name": "LONG WIRE",
+						"hint": "A LONGER BAR SWEEPS THE LANE",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1525,
+							3250,
+							4925
+						],
+						"time": 75,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"wire"
+						],
+						"variants": {
+							"wire": [
+								"long"
+							]
+						},
+						"modifiers": [],
+						"modules": [
+							"phase",
+							"surge"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "5-03",
+						"name": "DRIFT GATE",
+						"hint": "THE GATE SLIDES. MEET IT",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1550,
+							3300,
+							5775
+						],
+						"time": 75,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate"
+						],
+						"variants": {
+							"gate": [
+								"course"
+							]
+						},
+						"modifiers": [
+							"drift"
+						],
+						"modules": [
+							"phase",
+							"surge"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "5-04",
+						"name": "DRIFT ZONE",
+						"hint": "THE HOT ZONE WANDERS",
+						"how": "",
+						"demo": "",
+						"targets": [
+							800,
+							1575,
+							2925
+						],
+						"time": 75,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"hot"
+						],
+						"variants": {
+							"hot": [
+								"drift"
+							]
+						},
+						"modifiers": [],
+						"modules": [
+							"phase",
+							"surge"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "5-05",
+						"name": "LIVE RELAY",
+						"hint": "THE LAST TERMINAL KEEPS MOVING",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1525,
+							3275,
+							5825
+						],
+						"time": 75,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"relay"
+						],
+						"variants": {
+							"relay": [
+								"moving"
+							]
+						},
+						"modifiers": [],
+						"modules": [
+							"phase",
+							"surge"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "5-06",
+						"name": "TWIN WIRES",
+						"hint": "TWO WIRES. ONE LANE EACH",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1650,
+							3550,
+							5875
+						],
+						"time": 75,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"wire"
+						],
+						"variants": {
+							"wire": [
+								"twin"
+							]
+						},
+						"modifiers": [],
+						"modules": [
+							"phase",
+							"surge"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "5-07",
+						"name": "FAST WIRE",
+						"hint": "FASTER. SAME RULE",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1225,
+							2425,
+							4250
+						],
+						"time": 75,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"wire"
+						],
+						"variants": {
+							"wire": [
+								"patrol",
+								"long"
+							]
+						},
+						"modifiers": [
+							"fast"
+						],
+						"modules": [
+							"phase",
+							"surge"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "5-08",
+						"name": "SHRINK ZONE",
+						"hint": "THE ZONE CLOSES IN. CASH IN TIME",
+						"how": "",
+						"demo": "",
+						"targets": [
+							700,
+							1325,
+							2275
+						],
+						"time": 75,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"hot"
+						],
+						"variants": {
+							"hot": [
+								"shrink"
+							]
+						},
+						"modifiers": [],
+						"modules": [
+							"phase",
+							"surge"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "5-09",
+						"name": "MOVING PARTS",
+						"hint": "WIRES, DRIFT AND LIVE TERMINALS",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1625,
+							3500,
+							6175
+						],
+						"time": 80,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"wire",
+							"gate",
+							"relay"
+						],
+						"variants": {
+							"gate": [
+								"course",
+								"chain"
+							],
+							"relay": [
+								"moving"
+							]
+						},
+						"modifiers": [
+							"drift"
+						],
+						"modules": [
+							"phase",
+							"surge"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					},
+					{
+						"id": "5-10",
+						"name": "MOTION TEST",
+						"hint": "NOTHING STANDS STILL",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1725,
+							3700,
+							5550
+						],
+						"time": 85,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"wire",
+							"gate",
+							"relay",
+							"hot"
+						],
+						"variants": {
+							"gate": [
+								"course",
+								"double"
+							],
+							"relay": [
+								"moving",
+								"three"
+							],
+							"hot": [
+								"drift",
+								"shrink"
+							],
+							"wire": [
+								"patrol",
+								"twin"
+							]
+						},
+						"modifiers": [
+							"drift",
+							"fast"
+						],
+						"modules": [
+							"phase",
+							"surge"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 0
+					}
+				]
+			},
+			{
+				"n": 6,
+				"id": "overload",
+				"name": "OVERLOAD",
+				"tag": "COMBINE WHAT YOU KNOW",
+				"reward": "GOLD",
+				"fuse_free": false,
+				"levels": [
+					{
+						"id": "6-01",
+						"name": "SURGE GATES",
+						"hint": "SURGE INTO DEEP GATES",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1550,
+							3325,
+							6200
+						],
+						"time": 85,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate"
+						],
+						"variants": {
+							"gate": [
+								"course",
+								"chain"
+							]
+						},
+						"modifiers": [
+							"narrow"
+						],
+						"modules": [
+							"surge"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": true,
+						"start_cut": 0,
+						"intensity": 3
+					},
+					{
+						"id": "6-02",
+						"name": "RELAY CUT",
+						"hint": "LONG LINE, FAST RELAYS, ONE CUT",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1625,
+							3475,
+							5325
+						],
+						"time": 85,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 22,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"relay"
+						],
+						"variants": {
+							"relay": [
+								"timed",
+								"four"
+							]
+						},
+						"modifiers": [],
+						"modules": [
+							"cut"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 1,
+						"intensity": 3
+					},
+					{
+						"id": "6-03",
+						"name": "HOT AT X4",
+						"hint": "START HOT. HOLD THE ZONE",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1250,
+							1875,
+							3525
+						],
+						"time": 85,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 3,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"hot"
+						],
+						"variants": {
+							"hot": [
+								"preserve",
+								"escalate"
+							]
+						},
+						"modifiers": [],
+						"modules": [
+							"phase",
+							"surge",
+							"cut"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 3
+					},
+					{
+						"id": "6-04",
+						"name": "WIRE NEEDLE",
+						"hint": "WIRE, THEN A DEEP GATE",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1700,
+							3625,
+							5450
+						],
+						"time": 85,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"wire",
+							"gate"
+						],
+						"variants": {
+							"gate": [
+								"course"
+							],
+							"wire": [
+								"patrol"
+							]
+						},
+						"modifiers": [
+							"narrow"
+						],
+						"modules": [
+							"phase",
+							"surge",
+							"cut"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 3
+					},
+					{
+						"id": "6-05",
+						"name": "UNSTABLE",
+						"hint": "THE ZONE GIVES LITTLE WARNING",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1150,
+							2425,
+							3850
+						],
+						"time": 85,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"hot",
+							"gate"
+						],
+						"variants": {
+							"hot": [
+								"unstable"
+							],
+							"gate": [
+								"risk"
+							]
+						},
+						"modifiers": [],
+						"modules": [
+							"phase",
+							"surge",
+							"cut"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 3
+					},
+					{
+						"id": "6-06",
+						"name": "ECHO DRIFT",
+						"hint": "AN ECHO GATE THAT WON'T STAY PUT",
+						"how": "",
+						"demo": "",
+						"targets": [
+							750,
+							1375,
+							2600
+						],
+						"time": 85,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate"
+						],
+						"variants": {
+							"gate": [
+								"echo"
+							]
+						},
+						"modifiers": [
+							"drift"
+						],
+						"modules": [
+							"phase",
+							"surge",
+							"cut"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 3
+					},
+					{
+						"id": "6-07",
+						"name": "DARK BRIDGE",
+						"hint": "BUILD THE BRIDGE IN THE DARK",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1375,
+							2950,
+							5450
+						],
+						"time": 85,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"relay",
+							"wire"
+						],
+						"variants": {
+							"relay": [
+								"hidden",
+								"bridge"
+							]
+						},
+						"modifiers": [],
+						"modules": [
+							"phase",
+							"surge",
+							"cut"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 3
+					},
+					{
+						"id": "6-08",
+						"name": "RISK SURGE",
+						"hint": "DEEP DOORS UNDER SURGE",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1400,
+							3025,
+							5250
+						],
+						"time": 85,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate",
+							"hot"
+						],
+						"variants": {
+							"gate": [
+								"risk",
+								"double"
+							]
+						},
+						"modifiers": [],
+						"modules": [
+							"phase",
+							"surge",
+							"cut"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": true,
+						"start_cut": 0,
+						"intensity": 3
+					},
+					{
+						"id": "6-09",
+						"name": "FULL CIRCUIT",
+						"hint": "EVERYTHING AT ONCE",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1550,
+							3300,
+							4950
+						],
+						"time": 90,
+						"speed_pct": 100,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate",
+							"relay",
+							"hot",
+							"wire"
+						],
+						"variants": {},
+						"modifiers": [],
+						"modules": [
+							"phase",
+							"surge",
+							"cut"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 3
+					},
+					{
+						"id": "6-10",
+						"name": "OVERLOAD TEST",
+						"hint": "REACH X5",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1350,
+							2900,
+							4675
+						],
+						"time": 95,
+						"speed_pct": 100,
+						"charge_pct": 110,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate",
+							"relay",
+							"hot",
+							"wire"
+						],
+						"variants": {},
+						"modifiers": [],
+						"modules": [
+							"phase",
+							"surge",
+							"cut"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 4
+					}
+				]
+			},
+			{
+				"n": 7,
+				"id": "meltdown",
+				"name": "MELTDOWN",
+				"tag": "THE FINAL CIRCUIT",
+				"reward": "WHITE",
+				"fuse_free": false,
+				"levels": [
+					{
+						"id": "7-01",
+						"name": "RED LINE",
+						"hint": "FASTER FROM THE FIRST STEP",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1825,
+							3900,
+							7575
+						],
+						"time": 90,
+						"speed_pct": 106,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate",
+							"wire"
+						],
+						"variants": {},
+						"modifiers": [],
+						"modules": [
+							"phase",
+							"surge",
+							"cut"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 5
+					},
+					{
+						"id": "7-02",
+						"name": "COLD START",
+						"hint": "NO TARGETS. ONLY RISK PAYS",
+						"how": "",
+						"demo": "",
+						"targets": [
+							2025,
+							4375,
+							6550
+						],
+						"time": 90,
+						"speed_pct": 106,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 18,
+						"start_level": 0,
+						"max_level": 7,
+						"food": false,
+						"walls": 0,
+						"events": [
+							"gate",
+							"relay",
+							"wire"
+						],
+						"variants": {},
+						"modifiers": [],
+						"modules": [
+							"phase",
+							"surge",
+							"cut"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 5
+					},
+					{
+						"id": "7-03",
+						"name": "HEAVY DRAIN",
+						"hint": "CHARGE DRAINS TWICE AS FAST",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1575,
+							3375,
+							5200
+						],
+						"time": 90,
+						"speed_pct": 106,
+						"charge_pct": 100,
+						"decay_pct": 200,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate",
+							"relay",
+							"hot",
+							"wire"
+						],
+						"variants": {},
+						"modifiers": [],
+						"modules": [
+							"phase",
+							"surge",
+							"cut"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 5
+					},
+					{
+						"id": "7-04",
+						"name": "THE CAGE",
+						"hint": "INSULATORS EVERYWHERE",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1950,
+							4150,
+							6250
+						],
+						"time": 90,
+						"speed_pct": 106,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 20,
+						"events": [
+							"gate",
+							"relay",
+							"hot",
+							"wire"
+						],
+						"variants": {},
+						"modifiers": [],
+						"modules": [
+							"phase",
+							"surge",
+							"cut"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 5
+					},
+					{
+						"id": "7-05",
+						"name": "STORM",
+						"hint": "WIRES AND HEAT",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1275,
+							2725,
+							5100
+						],
+						"time": 90,
+						"speed_pct": 106,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"wire",
+							"hot"
+						],
+						"variants": {
+							"wire": [
+								"twin",
+								"long"
+							],
+							"hot": [
+								"unstable",
+								"drift"
+							]
+						},
+						"modifiers": [
+							"fast"
+						],
+						"modules": [
+							"phase",
+							"surge",
+							"cut"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 5
+					},
+					{
+						"id": "7-06",
+						"name": "GLASS JAW",
+						"hint": "X3 IS THE CEILING. SCORE ANYWAY",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1025,
+							2200,
+							3900
+						],
+						"time": 95,
+						"speed_pct": 106,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 2,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate",
+							"relay",
+							"hot",
+							"wire"
+						],
+						"variants": {},
+						"modifiers": [],
+						"modules": [
+							"phase",
+							"surge",
+							"cut"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 5
+					},
+					{
+						"id": "7-07",
+						"name": "HIGH VOLTAGE",
+						"hint": "START AT X3",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1650,
+							3550,
+							5600
+						],
+						"time": 90,
+						"speed_pct": 106,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 2,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate",
+							"relay",
+							"hot",
+							"wire"
+						],
+						"variants": {},
+						"modifiers": [],
+						"modules": [
+							"phase",
+							"surge",
+							"cut"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 5
+					},
+					{
+						"id": "7-08",
+						"name": "NO MODULES",
+						"hint": "NO HELP. NO PORTS",
+						"how": "",
+						"demo": "",
+						"targets": [
+							2125,
+							4525,
+							6800
+						],
+						"time": 90,
+						"speed_pct": 106,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate",
+							"relay",
+							"hot",
+							"wire"
+						],
+						"variants": {},
+						"modifiers": [],
+						"modules": [],
+						"ports": false,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 5
+					},
+					{
+						"id": "7-09",
+						"name": "CRITICAL MASS",
+						"hint": "EVERY MODIFIER IS LIVE",
+						"how": "",
+						"demo": "",
+						"targets": [
+							1475,
+							3175,
+							4875
+						],
+						"time": 90,
+						"speed_pct": 106,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate",
+							"relay",
+							"hot",
+							"wire"
+						],
+						"variants": {},
+						"modifiers": [
+							"narrow",
+							"drift",
+							"fast"
+						],
+						"modules": [
+							"phase",
+							"surge",
+							"cut"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 7
+					},
+					{
+						"id": "7-10",
+						"name": "MELTDOWN",
+						"hint": "THE WHOLE MACHINE. FULL POWER",
+						"how": "",
+						"demo": "",
+						"targets": [
+							2325,
+							4950,
+							7425
+						],
+						"time": 120,
+						"speed_pct": 110,
+						"charge_pct": 100,
+						"decay_pct": 100,
+						"start_len": 6,
+						"start_level": 0,
+						"max_level": 7,
+						"food": true,
+						"walls": 0,
+						"events": [
+							"gate",
+							"relay",
+							"hot",
+							"wire"
+						],
+						"variants": {},
+						"modifiers": [
+							"narrow",
+							"drift",
+							"fast"
+						],
+						"modules": [
+							"phase",
+							"surge",
+							"cut"
+						],
+						"ports": true,
+						"start_phase": 0,
+						"start_surge": false,
+						"start_cut": 0,
+						"intensity": 7
+					}
+				]
+			}
+		]
+	},
+	"strings": {
+		"PLAY": {
+			"en": "PLAY",
+			"ru": "ИГРАТЬ"
+		},
+		"DAILY": {
+			"en": "DAILY",
+			"ru": "ИСПЫТАНИЕ ДНЯ"
+		},
+		"THEMES": {
+			"en": "THEMES",
+			"ru": "ТЕМЫ"
+		},
+		"STATS": {
+			"en": "STATS",
+			"ru": "СТАТИСТИКА"
+		},
+		"SETTINGS": {
+			"en": "SETTINGS",
+			"ru": "НАСТРОЙКИ"
+		},
+		"TAGLINE": {
+			"en": "BUILD IT. THREAD IT.",
+			"ru": "ПОСТРОЙ. ПРОЙДИ НАСКВОЗЬ."
+		},
+		"CTA": {
+			"en": "CAN YOU GET CLOSER?",
+			"ru": "СМОЖЕШЬ ЕЩЁ БЛИЖЕ?"
+		},
+		"VIDEO_HOOK": {
+			"en": "COULD YOU FIT THROUGH?",
+			"ru": "А ТЫ БЫ ПРОСКОЧИЛ?"
+		},
+		"BEST": {
+			"en": "BEST",
+			"ru": "РЕКОРД"
+		},
+		"NEW_BEST": {
+			"en": "NEW BEST",
+			"ru": "НОВЫЙ РЕКОРД"
+		},
+		"SCORE": {
+			"en": "SCORE",
+			"ru": "СЧЁТ"
+		},
+		"MAX_COMBO": {
+			"en": "MAX FLOW",
+			"ru": "МАКС. МНОЖИТЕЛЬ"
+		},
+		"AGAIN": {
+			"en": "AGAIN",
+			"ru": "ЕЩЁ РАЗ"
+		},
+		"REPLAY": {
+			"en": "REPLAY",
+			"ru": "ПОВТОР"
+		},
+		"SHARE": {
+			"en": "SHARE",
+			"ru": "ПОДЕЛИТЬСЯ"
+		},
+		"HOME": {
+			"en": "HOME",
+			"ru": "МЕНЮ"
+		},
+		"LEN": {
+			"en": "LENGTH",
+			"ru": "ДЛИНА"
+		},
+		"CLOSE_CALLS": {
+			"en": "CLOSE CALLS",
+			"ru": "СБЛИЖЕНИЯ"
+		},
+		"PAUSED": {
+			"en": "PAUSED",
+			"ru": "ПАУЗА"
+		},
+		"RESUME": {
+			"en": "RESUME",
+			"ru": "ПРОДОЛЖИТЬ"
+		},
+		"RESTART": {
+			"en": "RESTART",
+			"ru": "ЗАНОВО"
+		},
+		"HINT_TAP": {
+			"en": "LEFT / RIGHT FROM THE HEAD",
+			"ru": "НАЛЕВО / НАПРАВО ОТ ГОЛОВЫ"
+		},
+		"HINT_SWIPE": {
+			"en": "FLICK TO TURN",
+			"ru": "СМАХНИ, ЧТОБЫ ПОВЕРНУТЬ"
+		},
+		"FLICK_TO_START": {
+			"en": "FLICK OR TAP TO START",
+			"ru": "СМАХНИ ИЛИ НАЖМИ, ЧТОБЫ НАЧАТЬ"
+		},
+		"TAP_TO_START": {
+			"en": "TAP TO START",
+			"ru": "НАЖМИ, ЧТОБЫ НАЧАТЬ"
+		},
+		"HINT_CLOSE": {
+			"en": "GRAZE! HUG YOUR BODY TO BUILD FLOW",
+			"ru": "ВПРИТИРКУ! ДЕРЖИСЬ БЛИЖЕ К СВОЕМУ ТЕЛУ"
+		},
+		"HINT_CASH": {
+			"en": "NOW DRIVE THROUGH A GAP IN YOUR BODY",
+			"ru": "ТЕПЕРЬ ПРОЕДЬ СКВОЗЬ ЩЕЛЬ В СВОЁМ ТЕЛЕ"
+		},
+		"HINT_HUNGRY": {
+			"en": "CLOSE CALLS FADING - EAT TO RECHARGE",
+			"ru": "СБЛИЖЕНИЯ СЛАБЕЮТ - ЕШЬ, ЧТОБЫ ЗАРЯДИТЬСЯ"
+		},
+		"BEST_MOMENT": {
+			"en": "BEST MOMENT",
+			"ru": "ЛУЧШИЙ МОМЕНТ"
+		},
+		"REPLAY_INCOMPATIBLE": {
+			"en": "REPLAY FROM AN OLDER VERSION",
+			"ru": "ПОВТОР ИЗ СТАРОЙ ВЕРСИИ"
+		},
+		"VIDEO_WORKING": {
+			"en": "MAKING VIDEO",
+			"ru": "СОЗДАЮ ВИДЕО"
+		},
+		"VIDEO_FALLBACK": {
+			"en": "SHARED AS IMAGE",
+			"ru": "ОТПРАВЛЕНО КАРТИНКОЙ"
+		},
+		"SHARE_PREPARING": {
+			"en": "PREPARING...",
+			"ru": "ГОТОВЛЮ..."
+		},
+		"SHARE_FAILED": {
+			"en": "COULD NOT CREATE IMAGE",
+			"ru": "НЕ УДАЛОСЬ СОЗДАТЬ КАРТИНКУ"
+		},
+		"SHARE_TEXT": {
+			"en": "I scored %s in NEARCOIL. Can you get closer?",
+			"ru": "Мой счёт в NEARCOIL: %s. Сможешь ближе?"
+		},
+		"THEME_SIGNATURE": {
+			"en": "SIGNATURE",
+			"ru": "SIGNATURE"
+		},
+		"THEME_SIGNATURE_DESC": {
+			"en": "THE ORIGINAL. CREAM ON INK.",
+			"ru": "ОРИГИНАЛ. КРЕМОВЫЙ СВЕТ НА ЧЁРНОМ."
+		},
+		"THEME_LCD": {
+			"en": "LCD",
+			"ru": "LCD"
+		},
+		"THEME_LCD_DESC": {
+			"en": "A POCKET SCREEN FROM ANOTHER TIME.",
+			"ru": "КАРМАННЫЙ ЭКРАН ИЗ ДРУГОЙ ЭПОХИ."
+		},
+		"THEME_PAPER": {
+			"en": "PAPER",
+			"ru": "PAPER"
+		},
+		"THEME_PAPER_DESC": {
+			"en": "INK ON WARM PAPER. BLUE PENCIL SPARKS.",
+			"ru": "ТУШЬ НА ТЁПЛОЙ БУМАГЕ. ИСКРЫ СИНЕГО КАРАНДАША."
+		},
+		"USE_THEME": {
+			"en": "USE THEME",
+			"ru": "ВЫБРАТЬ"
+		},
+		"IN_USE": {
+			"en": "IN USE",
+			"ru": "ВЫБРАНА"
+		},
+		"THANKS_PLUS": {
+			"en": "THANK YOU! EVERY PREMIUM THEME IS YOURS.",
+			"ru": "СПАСИБО! ВСЕ ПРЕМИУМ-ТЕМЫ ОТКРЫТЫ."
+		},
+		"STORE_UNAVAILABLE": {
+			"en": "STORE UNAVAILABLE. TRY AGAIN LATER.",
+			"ru": "МАГАЗИН НЕДОСТУПЕН. ПОПРОБУЙ ПОЗЖЕ."
+		},
+		"PURCHASE_CANCELLED": {
+			"en": "PURCHASE CANCELLED",
+			"ru": "ПОКУПКА ОТМЕНЕНА"
+		},
+		"PURCHASE_PENDING": {
+			"en": "PAYMENT PENDING. IT UNLOCKS WHEN GOOGLE PLAY CONFIRMS IT.",
+			"ru": "ПЛАТЁЖ В ОБРАБОТКЕ. ОТКРОЕТСЯ ПОСЛЕ ПОДТВЕРЖДЕНИЯ GOOGLE PLAY."
+		},
+		"NOTHING_TO_RESTORE": {
+			"en": "NO PURCHASES ON THIS GOOGLE ACCOUNT.",
+			"ru": "НА ЭТОМ АККАУНТЕ GOOGLE ПОКУПОК НЕТ."
+		},
+		"RESTORE": {
+			"en": "RESTORE PURCHASES",
+			"ru": "ВОССТАНОВИТЬ ПОКУПКИ"
+		},
+		"SET_SOUND": {
+			"en": "SOUND",
+			"ru": "ЗВУК"
+		},
+		"SET_MUSIC": {
+			"en": "BEAT",
+			"ru": "РИТМ"
+		},
+		"SET_HAPTICS": {
+			"en": "HAPTICS",
+			"ru": "ВИБРАЦИЯ"
+		},
+		"SET_CONTROLS": {
+			"en": "CONTROLS",
+			"ru": "УПРАВЛЕНИЕ"
+		},
+		"SET_SHAKE": {
+			"en": "REDUCE SHAKE",
+			"ru": "МЕНЬШЕ ТРЯСКИ"
+		},
+		"SET_FLASH": {
+			"en": "REDUCE FLASH",
+			"ru": "МЕНЬШЕ ВСПЫШЕК"
+		},
+		"SET_GRAPHICS": {
+			"en": "GRAPHICS",
+			"ru": "ГРАФИКА"
+		},
+		"GFX_AUTO": {
+			"en": "AUTO",
+			"ru": "АВТО"
+		},
+		"GFX_SHARP": {
+			"en": "SHARP",
+			"ru": "ЧЁТКАЯ"
+		},
+		"GFX_SMOOTH": {
+			"en": "SMOOTH",
+			"ru": "ПЛАВНАЯ"
+		},
+		"SET_REFRESH": {
+			"en": "HIGH REFRESH RATE",
+			"ru": "ЧАСТОТА ЭКРАНА"
+		},
+		"UNIT_HZ": {
+			"en": "HZ",
+			"ru": "ГЦ"
+		},
+		"SET_REFRESH_AUTO": {
+			"en": "SMOOTHER MOTION ON 90-120 HZ SCREENS. USES A LITTLE MORE BATTERY.",
+			"ru": "ПЛАВНЕЕ НА ЭКРАНАХ 90-120 ГЦ. ЧУТЬ БОЛЬШЕ РАСХОД БАТАРЕИ."
+		},
+		"SET_REFRESH_OFF": {
+			"en": "60 FPS: SAVES BATTERY. THE GAME PLAYS EXACTLY THE SAME.",
+			"ru": "60 КАДРОВ: ЭКОНОМИТ БАТАРЕЮ. ИГРА РАБОТАЕТ ТОЧНО ТАК ЖЕ."
+		},
+		"REFRESH_FB_SAVER": {
+			"en": "BATTERY SAVER IS ON: 60 HZ FOR NOW.",
+			"ru": "ВКЛЮЧЕНА ЭКОНОМИЯ БАТАРЕИ: ПОКА 60 ГЦ."
+		},
+		"REFRESH_FB_HOT": {
+			"en": "THE PHONE IS HOT: 60 HZ FOR NOW.",
+			"ru": "ТЕЛЕФОН ПЕРЕГРЕТ: ПОКА 60 ГЦ."
+		},
+		"REFRESH_FB_SLOW": {
+			"en": "THIS PHONE RUNS THE GAME SMOOTHER AT 60 HZ.",
+			"ru": "НА ЭТОМ ТЕЛЕФОНЕ ИГРА ИДЁТ РОВНЕЕ НА 60 ГЦ."
+		},
+		"REFRESH_FB_SYSTEM": {
+			"en": "THE SCREEN RUNS AT %d HZ: SEE THE PHONE'S DISPLAY SETTINGS.",
+			"ru": "ЭКРАН РАБОТАЕТ НА %d ГЦ: СМ. НАСТРОЙКИ ДИСПЛЕЯ ТЕЛЕФОНА."
+		},
+		"SET_TUTORIAL": {
+			"en": "REPLAY TUTORIAL",
+			"ru": "ПОВТОРИТЬ ОБУЧЕНИЕ"
+		},
+		"SET_TUTORIAL_ON": {
+			"en": "TUTORIAL ON NEXT RUN",
+			"ru": "ОБУЧЕНИЕ В СЛЕДУЮЩЕЙ ИГРЕ"
+		},
+		"ON": {
+			"en": "ON",
+			"ru": "ВКЛ"
+		},
+		"OFF": {
+			"en": "OFF",
+			"ru": "ВЫКЛ"
+		},
+		"CTRL_TAP": {
+			"en": "TURN LEFT / RIGHT",
+			"ru": "ПОВОРОТ ВЛЕВО / ВПРАВО"
+		},
+		"CTRL_SWIPE": {
+			"en": "FLICK",
+			"ru": "СМАХИВАНИЕ"
+		},
+		"CTRL_TAP_HELP": {
+			"en": "AS THE SNAKE SEES IT, NOT THE SCREEN.",
+			"ru": "ОТ ГОЛОВЫ ЗМЕИ, А НЕ ОТ ЭКРАНА."
+		},
+		"CTRL_SWIPE_HELP": {
+			"en": "FLICK THE WAY YOU WANT TO GO. SHORT IS ENOUGH.",
+			"ru": "СМАХНИ ТУДА, КУДА ХОЧЕШЬ. ХВАТИТ КОРОТКОГО."
+		},
+		"WATCH_BEST": {
+			"en": "BEST RUN",
+			"ru": "ЛУЧШИЙ ЗАБЕГ"
+		},
+		"WATCH_LAST": {
+			"en": "LAST RUN",
+			"ru": "ПОСЛЕДНИЙ ЗАБЕГ"
+		},
+		"BEST_DAILY": {
+			"en": "BEST DAILY",
+			"ru": "РЕКОРД ИСПЫТАНИЯ"
+		},
+		"HIGHEST_COMBO": {
+			"en": "MAX MULTIPLIER",
+			"ru": "МАКС. МНОЖИТЕЛЬ"
+		},
+		"LONGEST": {
+			"en": "LONGEST SNAKE",
+			"ru": "МАКС. ДЛИНА"
+		},
+		"TOTAL_CLOSE": {
+			"en": "CLOSE CALLS",
+			"ru": "СБЛИЖЕНИЯ"
+		},
+		"TOTAL_RUNS": {
+			"en": "RUNS",
+			"ru": "ЗАБЕГИ"
+		},
+		"PLAY_TIME": {
+			"en": "PLAY TIME",
+			"ru": "ВРЕМЯ В ИГРЕ"
+		},
+		"MONTH_JAN": {
+			"en": "JAN",
+			"ru": "ЯНВ"
+		},
+		"MONTH_FEB": {
+			"en": "FEB",
+			"ru": "ФЕВ"
+		},
+		"MONTH_MAR": {
+			"en": "MAR",
+			"ru": "МАР"
+		},
+		"MONTH_APR": {
+			"en": "APR",
+			"ru": "АПР"
+		},
+		"MONTH_MAY": {
+			"en": "MAY",
+			"ru": "МАЯ"
+		},
+		"MONTH_JUN": {
+			"en": "JUN",
+			"ru": "ИЮН"
+		},
+		"MONTH_JUL": {
+			"en": "JUL",
+			"ru": "ИЮЛ"
+		},
+		"MONTH_AUG": {
+			"en": "AUG",
+			"ru": "АВГ"
+		},
+		"MONTH_SEP": {
+			"en": "SEP",
+			"ru": "СЕН"
+		},
+		"MONTH_OCT": {
+			"en": "OCT",
+			"ru": "ОКТ"
+		},
+		"MONTH_NOV": {
+			"en": "NOV",
+			"ru": "НОЯ"
+		},
+		"MONTH_DEC": {
+			"en": "DEC",
+			"ru": "ДЕК"
+		},
+		"SHARE_IMAGE": {
+			"en": "IMAGE",
+			"ru": "КАРТИНКА"
+		},
+		"SHARE_VIDEO": {
+			"en": "VIDEO CLIP",
+			"ru": "ВИДЕО"
+		},
+		"CAMPAIGN": {
+			"en": "CAMPAIGN",
+			"ru": "КАМПАНИЯ"
+		},
+		"RANKED": {
+			"en": "RANKED",
+			"ru": "НА РЕКОРД"
+		},
+		"RANKED_SUB": {
+			"en": "ONE BOARD. EVERYONE. NO MERCY.",
+			"ru": "ОДНА ТАБЛИЦА НА ВЕСЬ МИР"
+		},
+		"PROGRESS": {
+			"en": "PROGRESS",
+			"ru": "ПРОГРЕСС"
+		},
+		"DAILY_LEFT": {
+			"en": "%d TRIES LEFT TODAY",
+			"ru": "ОСТАЛОСЬ ПОПЫТОК: %d"
+		},
+		"DAILY_PRACTICE": {
+			"en": "PRACTICE UNTIL TOMORROW",
+			"ru": "ТРЕНИРОВКА ДО ЗАВТРА"
+		},
+		"DAILY_FUSE_REWARD": {
+			"en": "DAILY CHALLENGE DONE: +1 FUSE",
+			"ru": "ИСПЫТАНИЕ ДНЯ ПРОЙДЕНО: +1 ПРЕДОХРАНИТЕЛЬ"
+		},
+		"ATTEMPT": {
+			"en": "ATTEMPT",
+			"ru": "ПОПЫТКА"
+		},
+		"PRACTICE": {
+			"en": "PRACTICE",
+			"ru": "ТРЕНИРОВКА"
+		},
+		"WORLD_RANK": {
+			"en": "WORLD",
+			"ru": "МИР"
+		},
+		"LOADING": {
+			"en": "LOADING",
+			"ru": "ЗАГРУЗКА"
+		},
+		"LEADERBOARD": {
+			"en": "LEADERBOARD",
+			"ru": "РЕЙТИНГ"
+		},
+		"LB_EMPTY": {
+			"en": "NO SCORES YET. BE THE FIRST.",
+			"ru": "ПОКА ПУСТО. БУДЬ ПЕРВЫМ."
+		},
+		"LB_NOT_RANKED": {
+			"en": "NO SCORE OF YOURS ON THIS BOARD YET",
+			"ru": "ТЕБЯ ПОКА НЕТ В ЭТОЙ ТАБЛИЦЕ"
+		},
+		"LB_LOCAL": {
+			"en": "OFFLINE. SHOWING YOUR LOCAL BEST.",
+			"ru": "НЕТ СЕТИ. ПОКАЗАН ТВОЙ РЕКОРД."
+		},
+		"LB_CONNECTING": {
+			"en": "CONNECTING",
+			"ru": "ПОДКЛЮЧЕНИЕ"
+		},
+		"LB_OFFLINE": {
+			"en": "NO CONNECTION",
+			"ru": "НЕТ ПОДКЛЮЧЕНИЯ"
+		},
+		"LB_UPDATING": {
+			"en": "UPDATING",
+			"ru": "ОБНОВЛЕНИЕ"
+		},
+		"ALL_TIME": {
+			"en": "ALL TIME",
+			"ru": "ЗА ВСЁ ВРЕМЯ"
+		},
+		"THIS_WEEK": {
+			"en": "THIS WEEK",
+			"ru": "ЗА НЕДЕЛЮ"
+		},
+		"ONLY": {
+			"en": "ONLY",
+			"ru": "ТОЛЬКО"
+		},
+		"ALL_PLATFORMS": {
+			"en": "ALL PLATFORMS",
+			"ru": "ВСЕ ПЛАТФОРМЫ"
+		},
+		"WORLD": {
+			"en": "WORLD",
+			"ru": "МИР"
+		},
+		"COUNTRY": {
+			"en": "COUNTRY",
+			"ru": "СТРАНА"
+		},
+		"PLATFORM": {
+			"en": "PLATFORM",
+			"ru": "ПЛАТФОРМА"
+		},
+		"SET_COUNTRY_FIRST": {
+			"en": "PICK YOUR COUNTRY IN SETTINGS FIRST",
+			"ru": "СНАЧАЛА ВЫБЕРИ СТРАНУ В НАСТРОЙКАХ"
+		},
+		"SET_COUNTRY": {
+			"en": "COUNTRY",
+			"ru": "СТРАНА"
+		},
+		"COUNTRY_NONE": {
+			"en": "NONE",
+			"ru": "НЕТ"
+		},
+		"COUNTRY_NOTE": {
+			"en": "ONLY USED FOR COUNTRY BOARDS. 1 CHANGE PER 30 DAYS",
+			"ru": "НУЖНА ТОЛЬКО ДЛЯ ТАБЛИЦ ПО СТРАНАМ. СМЕНА РАЗ В 30 ДНЕЙ"
+		},
+		"SET_NAME": {
+			"en": "NAME",
+			"ru": "ИМЯ"
+		},
+		"CHAPTER": {
+			"en": "CHAPTER",
+			"ru": "ГЛАВА"
+		},
+		"CHAPTER_REWARD": {
+			"en": "CHAPTER REWARD",
+			"ru": "НАГРАДА ЗА ГЛАВУ"
+		},
+		"ACCENT": {
+			"en": "ACCENT",
+			"ru": "ЦВЕТ"
+		},
+		"FUSES": {
+			"en": "FUSES",
+			"ru": "ПРЕДОХРАНИТЕЛИ"
+		},
+		"FUSES_FULL": {
+			"en": "FUSES FULL",
+			"ru": "ПРЕДОХРАНИТЕЛИ ЗАРЯЖЕНЫ"
+		},
+		"NEXT_FUSE": {
+			"en": "NEXT FUSE IN",
+			"ru": "СЛЕДУЮЩИЙ ЧЕРЕЗ"
+		},
+		"FULL_RECHARGE": {
+			"en": "FULL RECHARGE",
+			"ru": "ПОЛНАЯ ПЕРЕЗАРЯДКА"
+		},
+		"FUSE_BURNED": {
+			"en": "ONE FUSE BURNED",
+			"ru": "ПРЕДОХРАНИТЕЛЬ СГОРЕЛ"
+		},
+		"NO_FUSES": {
+			"en": "OUT OF FUSES",
+			"ru": "ПРЕДОХРАНИТЕЛИ КОНЧИЛИСЬ"
+		},
+		"FAIL_COSTS_FUSE": {
+			"en": "A FAILED RUN BURNS ONE FUSE",
+			"ru": "ПРОВАЛ СЖИГАЕТ ПРЕДОХРАНИТЕЛЬ"
+		},
+		"NO_FUSE_CHAPTER": {
+			"en": "THIS CHAPTER COSTS NO FUSES",
+			"ru": "В ЭТОЙ ГЛАВЕ ПРЕДОХРАНИТЕЛИ НЕ НУЖНЫ"
+		},
+		"REPLAY_FREE": {
+			"en": "REPLAYS ARE FREE",
+			"ru": "ПЕРЕИГРОВКА БЕСПЛАТНА"
+		},
+		"QUIT_COSTS_FUSE": {
+			"en": "QUITTING BURNS ONE FUSE",
+			"ru": "ВЫХОД СЖИГАЕТ ПРЕДОХРАНИТЕЛЬ"
+		},
+		"QUIT_COUNTS": {
+			"en": "QUITTING USES THIS ATTEMPT",
+			"ru": "ВЫХОД ЗАСЧИТАЕТ ЭТУ ПОПЫТКУ"
+		},
+		"START": {
+			"en": "START",
+			"ru": "СТАРТ"
+		},
+		"REPLAY_LEVEL": {
+			"en": "PLAY AGAIN",
+			"ru": "ИГРАТЬ СНОВА"
+		},
+		"NEXT_LEVEL": {
+			"en": "NEXT LEVEL",
+			"ru": "ДАЛЬШЕ"
+		},
+		"RETRY": {
+			"en": "RETRY",
+			"ru": "ЕЩЁ РАЗ"
+		},
+		"LOCKED": {
+			"en": "LOCKED",
+			"ru": "ЗАКРЫТО"
+		},
+		"UNLOCK": {
+			"en": "UNLOCK",
+			"ru": "ОТКРЫТЬ"
+		},
+		"TIME": {
+			"en": "TIME",
+			"ru": "ВРЕМЯ"
+		},
+		"TARGET": {
+			"en": "TARGET",
+			"ru": "ЦЕЛЬ"
+		},
+		"NEED": {
+			"en": "NEED",
+			"ru": "НУЖНО"
+		},
+		"PASS": {
+			"en": "PASS",
+			"ru": "ЗАЧЁТ"
+		},
+		"GREAT": {
+			"en": "GREAT",
+			"ru": "ОТЛИЧНО"
+		},
+		"PERFECT": {
+			"en": "PERFECT",
+			"ru": "ИДЕАЛ"
+		},
+		"LEVEL_CLEAR": {
+			"en": "LEVEL CLEAR",
+			"ru": "УРОВЕНЬ ПРОЙДЕН"
+		},
+		"LEVEL_FAILED": {
+			"en": "LEVEL FAILED",
+			"ru": "УРОВЕНЬ ПРОВАЛЕН"
+		},
+		"UNLOCKED": {
+			"en": "UNLOCKED",
+			"ru": "ОТКРЫТО"
+		},
+		"SPEED": {
+			"en": "SPEED",
+			"ru": "СКОРОСТЬ"
+		},
+		"CREATE_VIDEO": {
+			"en": "CREATE VIDEO",
+			"ru": "СОЗДАТЬ ВИДЕО"
+		},
+		"HIGHLIGHTS": {
+			"en": "HIGHLIGHTS",
+			"ru": "ЛУЧШЕЕ"
+		},
+		"FULL_RUN": {
+			"en": "FULL RUN",
+			"ru": "ВЕСЬ ЗАБЕГ"
+		},
+		"BEST_MOMENTS": {
+			"en": "BEST MOMENTS",
+			"ru": "ЛУЧШИЕ МОМЕНТЫ"
+		},
+		"SHARE_CLIP": {
+			"en": "SHARE VIDEO",
+			"ru": "ОТПРАВИТЬ ВИДЕО"
+		},
+		"GET_THEME": {
+			"en": "GET THIS THEME",
+			"ru": "ПОЛУЧИТЬ ТЕМУ"
+		},
+		"WATCH": {
+			"en": "WATCH",
+			"ru": "СМОТРЕТЬ"
+		},
+		"YOU": {
+			"en": "YOUR RUN",
+			"ru": "ТВОЙ ЗАБЕГ"
+		},
+		"LOADING_REPLAY": {
+			"en": "LOADING REPLAY",
+			"ru": "ЗАГРУЖАЮ ПОВТОР"
+		},
+		"NO_REPLAY": {
+			"en": "THIS RUN HAS NO REPLAY",
+			"ru": "У ЭТОГО ЗАБЕГА НЕТ ПОВТОРА"
+		},
+		"PREVIEW": {
+			"en": "PREVIEW",
+			"ru": "ПРОСМОТР"
+		},
+		"VIDEO_INSTANT": {
+			"en": "READY INSTANTLY FROM YOUR RECORDING",
+			"ru": "ГОТОВО СРАЗУ ИЗ ТВОЕЙ ЗАПИСИ"
+		},
+		"VIDEO_RENDERS": {
+			"en": "RENDERED ON YOUR PHONE. TAKES A MOMENT",
+			"ru": "СОБИРАЕТСЯ НА ТЕЛЕФОНЕ. НУЖНО ПОДОЖДАТЬ"
+		},
+		"BEAT_MY_SCORE": {
+			"en": "BEAT MY SCORE",
+			"ru": "ПОБЕЙ МОЙ СЧЁТ"
+		},
+		"THEME_VECTOR": {
+			"en": "VECTOR LAB",
+			"ru": "VECTOR LAB"
+		},
+		"THEME_VECTOR_DESC": {
+			"en": "PHOSPHOR BEAMS ON DEEP BLACK GLASS.",
+			"ru": "СВЕЧЕНИЕ ЛЮМИНОФОРА НА ЧЁРНОМ СТЕКЛЕ."
+		},
+		"THEME_GLASS": {
+			"en": "GLASS SIGNAL",
+			"ru": "GLASS SIGNAL"
+		},
+		"THEME_GLASS_DESC": {
+			"en": "SMOKED GLASS. LIQUID CHROME. WHITE CORE.",
+			"ru": "ДЫМЧАТОЕ СТЕКЛО. ЖИДКИЙ ХРОМ. БЕЛОЕ ЯДРО."
+		},
+		"THEME_PLASMA": {
+			"en": "PLASMA",
+			"ru": "PLASMA"
+		},
+		"THEME_PLASMA_DESC": {
+			"en": "MOLTEN METAL. MAGENTA ARCS.",
+			"ru": "РАСПЛАВЛЕННЫЙ МЕТАЛЛ. ПУРПУРНЫЕ ДУГИ."
+		},
+		"THEME_BLUEPRINT": {
+			"en": "BLUEPRINT",
+			"ru": "BLUEPRINT"
+		},
+		"THEME_BLUEPRINT_DESC": {
+			"en": "A PROJECTED SIMULATION. CYAN ON NIGHT.",
+			"ru": "ПРОЕКЦИЯ ЧЕРТЕЖА. ГОЛУБОЙ СВЕТ В НОЧИ."
+		},
+		"THEME_HAZARD": {
+			"en": "HAZARD",
+			"ru": "HAZARD"
+		},
+		"THEME_HAZARD_DESC": {
+			"en": "HEAVY MACHINERY. ORANGE SAFETY LIGHT.",
+			"ru": "ТЯЖЁЛЫЕ МАШИНЫ. ОРАНЖЕВЫЕ СИГНАЛЬНЫЕ ОГНИ."
+		},
+		"DAILY_NEEDS_ONLINE": {
+			"en": "DAILY NEEDS A CONNECTION",
+			"ru": "ДЛЯ ИСПЫТАНИЯ ДНЯ НУЖНА СЕТЬ"
+		},
+		"DAILY_OFFLINE_PRACTICE": {
+			"en": "OFFLINE: PRACTICE ONLY",
+			"ru": "БЕЗ СЕТИ: ТОЛЬКО ТРЕНИРОВКА"
+		},
+		"SET_DELETE_ONLINE": {
+			"en": "DELETE ONLINE DATA",
+			"ru": "УДАЛИТЬ ОНЛАЙН-ДАННЫЕ"
+		},
+		"SET_TELEMETRY": {
+			"en": "SEND PLAY STATS",
+			"ru": "ОТПРАВЛЯТЬ СТАТИСТИКУ"
+		},
+		"SET_VIDEO": {
+			"en": "INSTANT VIDEO",
+			"ru": "БЫСТРОЕ ВИДЕО"
+		},
+		"SET_VIDEO_ON": {
+			"en": "USES MORE BATTERY WHILE PLAYING. VIDEOS ARE READY IN SECONDS.",
+			"ru": "ЧУТЬ БОЛЬШЕ РАСХОД БАТАРЕИ В ИГРЕ. ВИДЕО ГОТОВО ЗА СЕКУНДЫ."
+		},
+		"SET_VIDEO_OFF": {
+			"en": "SAVES BATTERY. A VIDEO IS RENDERED WHEN YOU ASK: UP TO A FEW MINUTES.",
+			"ru": "ЭКОНОМИТ БАТАРЕЮ. ВИДЕО СОБИРАЕТСЯ ПО ЗАПРОСУ: ДО НЕСКОЛЬКИХ МИНУТ."
+		},
+		"SET_DELETE_CONFIRM": {
+			"en": "TAP AGAIN TO DELETE",
+			"ru": "НАЖМИ ЕЩЁ РАЗ ДЛЯ УДАЛЕНИЯ"
+		},
+		"SET_DELETE_DONE": {
+			"en": "ONLINE DATA DELETED",
+			"ru": "ОНЛАЙН-ДАННЫЕ УДАЛЕНЫ"
+		},
+		"COUNTRY_COOLDOWN": {
+			"en": "NEXT COUNTRY CHANGE %s",
+			"ru": "СЛЕДУЮЩАЯ СМЕНА СТРАНЫ %s"
+		},
+		"NAME_TITLE": {
+			"en": "YOUR NAME",
+			"ru": "ТВОЁ ИМЯ"
+		},
+		"NAME_HINT": {
+			"en": "3-16 LETTERS OR DIGITS. _ ALLOWED",
+			"ru": "3-16 БУКВ ИЛИ ЦИФР. МОЖНО _"
+		},
+		"NAME_SAVE": {
+			"en": "SAVE",
+			"ru": "СОХРАНИТЬ"
+		},
+		"NAME_RANDOM": {
+			"en": "RANDOM NAME",
+			"ru": "СЛУЧАЙНОЕ ИМЯ"
+		},
+		"NAME_SAVED": {
+			"en": "NAME SAVED",
+			"ru": "ИМЯ СОХРАНЕНО"
+		},
+		"NAME_NEXT": {
+			"en": "NEXT CUSTOM NAME %s",
+			"ru": "СЛЕДУЮЩЕЕ СВОЁ ИМЯ %s"
+		},
+		"NAME_WAIT_IN": {
+			"en": "IN %s",
+			"ru": "ЧЕРЕЗ %s"
+		},
+		"NAME_WAIT_FROM": {
+			"en": "FROM %s",
+			"ru": "С %s"
+		},
+		"NAME_WAIT_HM": {
+			"en": "%dH %02dM",
+			"ru": "%d Ч %02d МИН"
+		},
+		"NAME_WAIT_M": {
+			"en": "%d MIN",
+			"ru": "%d МИН"
+		},
+		"NAME_PUBLIC": {
+			"en": "SHOWN TO EVERYONE. NO REAL NAMES PLEASE.",
+			"ru": "ВИДНО ВСЕМ. БЕЗ НАСТОЯЩИХ ИМЁН."
+		},
+		"NAME_ERR_LENGTH": {
+			"en": "3 TO 16 CHARACTERS",
+			"ru": "ОТ 3 ДО 16 СИМВОЛОВ"
+		},
+		"NAME_ERR_CHARS": {
+			"en": "LETTERS, DIGITS AND _ ONLY",
+			"ru": "ТОЛЬКО БУКВЫ, ЦИФРЫ И _"
+		},
+		"NAME_ERR_MIXED": {
+			"en": "ONE ALPHABET PER NAME",
+			"ru": "ОДИН АЛФАВИТ НА ИМЯ"
+		},
+		"NAME_ERR_LETTERS": {
+			"en": "AT LEAST 2 LETTERS",
+			"ru": "МИНИМУМ 2 БУКВЫ"
+		},
+		"NAME_ERR_UNDERSCORE": {
+			"en": "NO _ AT THE START, THE END OR TWICE IN A ROW",
+			"ru": "_ НЕЛЬЗЯ В НАЧАЛЕ, В КОНЦЕ И ДВАЖДЫ ПОДРЯД"
+		},
+		"NAME_ERR_RESERVED": {
+			"en": "THAT NAME IS RESERVED",
+			"ru": "ЭТО ИМЯ ЗАНЯТО"
+		},
+		"NAME_ERR_BLOCKED": {
+			"en": "THAT NAME IS NOT ALLOWED",
+			"ru": "ЭТО ИМЯ НЕДОПУСТИМО"
+		},
+		"NAME_ERR_COOLDOWN": {
+			"en": "NOT YET. NEW NAME %s",
+			"ru": "ПОКА НЕЛЬЗЯ. НОВОЕ ИМЯ %s"
+		},
+		"REPORT_ASK": {
+			"en": "REPORT NAME %s",
+			"ru": "ПОЖАЛОВАТЬСЯ НА ИМЯ %s"
+		},
+		"REPORTED": {
+			"en": "REPORTED. THANKS",
+			"ru": "ЖАЛОБА ОТПРАВЛЕНА. СПАСИБО"
+		},
+		"LEAGUE": {
+			"en": "LEAGUE",
+			"ru": "ЛИГА"
+		},
+		"LEAGUE_OF": {
+			"en": "%s LEAGUE",
+			"ru": "ЛИГА %s"
+		},
+		"LEAGUE_ENDS": {
+			"en": "ENDS IN %s",
+			"ru": "КОНЕЦ ЧЕРЕЗ %s"
+		},
+		"LEAGUE_NOT_JOINED": {
+			"en": "PLAY RANKED TO JOIN THIS WEEK",
+			"ru": "СЫГРАЙ НА РЕКОРД, ЧТОБЫ ВОЙТИ В ЛИГУ"
+		},
+		"LEAGUE_UP": {
+			"en": "PROMOTED TO %s LEAGUE",
+			"ru": "ПОВЫШЕНИЕ: ЛИГА %s"
+		},
+		"LEAGUE_DOWN": {
+			"en": "DOWN TO %s LEAGUE",
+			"ru": "ПОНИЖЕНИЕ: ЛИГА %s"
+		},
+		"LEAGUE_STAY": {
+			"en": "YOU STAY IN %s LEAGUE",
+			"ru": "ОСТАЁШЬСЯ В ЛИГЕ %s"
+		},
+		"LEAGUE_T0": {
+			"en": "COPPER",
+			"ru": "МЕДЬ"
+		},
+		"LEAGUE_T1": {
+			"en": "SILVER",
+			"ru": "СЕРЕБРО"
+		},
+		"LEAGUE_T2": {
+			"en": "GOLD",
+			"ru": "ЗОЛОТО"
+		},
+		"LEAGUE_T3": {
+			"en": "PLASMA",
+			"ru": "ПЛАЗМА"
+		},
+		"LEAGUE_T4": {
+			"en": "ARC",
+			"ru": "ДУГА"
+		},
+		"LEAGUE_T5": {
+			"en": "CORE",
+			"ru": "ЯДРО"
+		},
+		"TOP_PCT": {
+			"en": "TOP %d%%",
+			"ru": "ТОП %d%%"
+		},
+		"YOUR_RANK": {
+			"en": "YOU #%s",
+			"ru": "ТЫ #%s"
+		},
+		"MENU": {
+			"en": "MENU",
+			"ru": "МЕНЮ"
+		},
+		"LEVELS": {
+			"en": "LEVELS",
+			"ru": "УРОВНИ"
+		},
+		"NO_COUNTRY": {
+			"en": "NO COUNTRY SET",
+			"ru": "СТРАНА НЕ ВЫБРАНА"
+		},
+		"SET_LANGUAGE": {
+			"en": "LANGUAGE",
+			"ru": "ЯЗЫК"
+		},
+		"REWARD_ACCENT": {
+			"en": "CHAPTER REWARD %s ACCENT",
+			"ru": "НАГРАДА ЗА ГЛАВУ: ЦВЕТ «%s»"
+		},
+		"LANG_AUTO": {
+			"en": "SYSTEM",
+			"ru": "КАК В СИСТЕМЕ"
+		},
+		"LANG_en": {
+			"en": "ENGLISH",
+			"ru": "ENGLISH"
+		},
+		"LANG_ru": {
+			"en": "РУССКИЙ",
+			"ru": "РУССКИЙ"
+		},
+		"GRAZE": {
+			"en": "GRAZE",
+			"ru": "ВПРИТИРКУ"
+		},
+		"SQUEEZE": {
+			"en": "SQUEEZE",
+			"ru": "ЗАЖИМ"
+		},
+		"THREAD": {
+			"en": "THREAD",
+			"ru": "СКВОЗЬ"
+		},
+		"THREAD ×%d": {
+			"en": "THREAD ×%d",
+			"ru": "СКВОЗЬ ×%d"
+		},
+		"NEEDLE": {
+			"en": "NEEDLE",
+			"ru": "ИГЛА"
+		},
+		"CHAIN %d": {
+			"en": "CHAIN %d",
+			"ru": "СЕРИЯ %d"
+		},
+		"GATE": {
+			"en": "GATE",
+			"ru": "ВОРОТА"
+		},
+		"GATE %d": {
+			"en": "GATE %d",
+			"ru": "ВОРОТА %d"
+		},
+		"N_OF_M": {
+			"en": "%d OF %d",
+			"ru": "%d ИЗ %d"
+		},
+		"GATES": {
+			"en": "GATES",
+			"ru": "ВОРОТА"
+		},
+		"RELAYS": {
+			"en": "RELAYS",
+			"ru": "РЕЛЕ"
+		},
+		"WIRES": {
+			"en": "WIRES",
+			"ru": "ПРОВОДА"
+		},
+		"MODULES": {
+			"en": "MODULES",
+			"ru": "МОДУЛИ"
+		},
+		"NEEDLE GATE": {
+			"en": "NEEDLE GATE",
+			"ru": "ИГОЛЬНЫЕ ВОРОТА"
+		},
+		"DRIFT GATE": {
+			"en": "DRIFT GATE",
+			"ru": "ПЛАВАЮЩИЕ ВОРОТА"
+		},
+		"RISK GATE": {
+			"en": "RISK GATE",
+			"ru": "ВОРОТА РИСКА"
+		},
+		"DOUBLE GATE": {
+			"en": "DOUBLE GATE",
+			"ru": "ДВОЙНЫЕ ВОРОТА"
+		},
+		"ECHO GATE": {
+			"en": "ECHO GATE",
+			"ru": "ВОРОТА-ЭХО"
+		},
+		"GATE CHAIN": {
+			"en": "GATE CHAIN",
+			"ru": "ЦЕПЬ ВОРОТ"
+		},
+		"RELAY": {
+			"en": "RELAY",
+			"ru": "РЕЛЕ"
+		},
+		"FAST RELAY": {
+			"en": "FAST RELAY",
+			"ru": "БЫСТРОЕ РЕЛЕ"
+		},
+		"RELAY 4": {
+			"en": "RELAY 4",
+			"ru": "РЕЛЕ 4"
+		},
+		"DARK RELAY": {
+			"en": "DARK RELAY",
+			"ru": "ТЁМНОЕ РЕЛЕ"
+		},
+		"LIVE RELAY": {
+			"en": "LIVE RELAY",
+			"ru": "ЖИВОЕ РЕЛЕ"
+		},
+		"BRIDGE RELAY": {
+			"en": "BRIDGE RELAY",
+			"ru": "РЕЛЕ-МОСТ"
+		},
+		"HOT ZONE": {
+			"en": "HOT ZONE",
+			"ru": "ГОРЯЧАЯ ЗОНА"
+		},
+		"DRIFT ZONE": {
+			"en": "DRIFT ZONE",
+			"ru": "ПЛАВАЮЩАЯ ЗОНА"
+		},
+		"SHRINK ZONE": {
+			"en": "SHRINK ZONE",
+			"ru": "СЖИМАЮЩАЯСЯ ЗОНА"
+		},
+		"RISING ZONE": {
+			"en": "RISING ZONE",
+			"ru": "РАСТУЩАЯ ЗОНА"
+		},
+		"HOLD ZONE": {
+			"en": "HOLD ZONE",
+			"ru": "ЗОНА УДЕРЖАНИЯ"
+		},
+		"UNSTABLE ZONE": {
+			"en": "UNSTABLE ZONE",
+			"ru": "НЕСТАБИЛЬНАЯ ЗОНА"
+		},
+		"LIVE WIRE": {
+			"en": "LIVE WIRE",
+			"ru": "ПРОВОД ПОД ТОКОМ"
+		},
+		"CHOOSE": {
+			"en": "CHOOSE",
+			"ru": "ВЫБЕРИ"
+		},
+		"PHASE": {
+			"en": "PHASE",
+			"ru": "ФАЗА"
+		},
+		"SURGE": {
+			"en": "SURGE",
+			"ru": "ФОРСАЖ"
+		},
+		"CUT": {
+			"en": "CUT",
+			"ru": "СРЕЗ"
+		},
+		"CASH": {
+			"en": "CASH",
+			"ru": "ВЫПЛАТА"
+		},
+		"BURNED": {
+			"en": "BURNED",
+			"ru": "СГОРЕЛО"
+		},
+		"MISSED": {
+			"en": "MISSED",
+			"ru": "ПРОПУЩЕНО"
+		},
+		"THROUGH": {
+			"en": "THROUGH",
+			"ru": "НАСКВОЗЬ"
+		},
+		"ECHO": {
+			"en": "ECHO",
+			"ru": "ЭХО"
+		},
+		"SKIM %d/%d": {
+			"en": "SKIM %d/%d",
+			"ru": "ПРОХОД %d/%d"
+		},
+		"WIRE BEATEN": {
+			"en": "WIRE BEATEN",
+			"ru": "ПРОВОД ПОБЕЖДЁН"
+		},
+		"COBALT": {
+			"en": "COBALT",
+			"ru": "КОБАЛЬТ"
+		},
+		"VIOLET": {
+			"en": "VIOLET",
+			"ru": "ФИАЛКА"
+		},
+		"ACID": {
+			"en": "ACID",
+			"ru": "КИСЛОТА"
+		},
+		"ROSE": {
+			"en": "ROSE",
+			"ru": "РОЗА"
+		},
+		"ICE": {
+			"en": "ICE",
+			"ru": "ЛЁД"
+		},
+		"GOLD": {
+			"en": "GOLD",
+			"ru": "ЗОЛОТО"
+		},
+		"WHITE": {
+			"en": "WHITE",
+			"ru": "БЕЛЫЙ"
+		},
+		"ACCENT_ORIGINAL": {
+			"en": "ORIGINAL",
+			"ru": "ОРИГИНАЛ"
+		},
+		"ACCENT_LOCKED": {
+			"en": "CHAPTER %d REWARD",
+			"ru": "НАГРАДА ЗА ГЛАВУ %d"
+		},
+		"ACCENT_NEW": {
+			"en": "NEW SIGNATURE ACCENT: %s",
+			"ru": "НОВЫЙ ЦВЕТ SIGNATURE: «%s»"
+		},
+		"ACCENT_WHERE": {
+			"en": "ON NOW. CHANGE IT IN THEMES",
+			"ru": "УЖЕ ВКЛЮЧЁН. СМЕНИТЬ МОЖНО В ТЕМАХ"
+		},
+		"ACCENT_WHERE_OTHER": {
+			"en": "FOR THE SIGNATURE THEME. PICK IT IN THEMES",
+			"ru": "ДЛЯ ТЕМЫ SIGNATURE. ВЫБРАТЬ МОЖНО В ТЕМАХ"
+		},
+		"SIGNAL": {
+			"en": "SIGNAL",
+			"ru": "СИГНАЛ"
+		},
+		"LEARN THE LINE": {
+			"en": "LEARN THE LINE",
+			"ru": "ПЕРВЫЕ ШАГИ"
+		},
+		"FIRST CONTACT": {
+			"en": "FIRST CONTACT",
+			"ru": "ПЕРВЫЙ КОНТАКТ"
+		},
+		"STEER INTO THE RED NODES": {
+			"en": "STEER INTO THE RED NODES",
+			"ru": "НАПРАВЛЯЙ ГОЛОВУ К КРАСНЫМ УЗЛАМ"
+		},
+		"LONGER LINE": {
+			"en": "LONGER BODY",
+			"ru": "ДЛИННЕЕ ТЕЛО"
+		},
+		"EVERY NODE MAKES YOUR LINE LONGER": {
+			"en": "EVERY NODE MAKES YOUR BODY LONGER",
+			"ru": "КАЖДЫЙ УЗЕЛ УДЛИНЯЕТ ТЕЛО"
+		},
+		"CLOSE PASS": {
+			"en": "CLOSE PASS",
+			"ru": "БЛИЗКИЙ ПРОХОД"
+		},
+		"PASS RIGHT NEXT TO YOUR OWN LINE": {
+			"en": "PASS RIGHT NEXT TO YOUR OWN BODY",
+			"ru": "ПРОЙДИ ВПРИТИРКУ К СВОЕМУ ТЕЛУ"
+		},
+		"SKIM": {
+			"en": "SKIM",
+			"ru": "СКОЛЬЖЕНИЕ"
+		},
+		"RIDE ALONG A LINE TO KEEP THE CHARGE": {
+			"en": "RIDE ALONG YOUR BODY TO KEEP THE CHARGE",
+			"ru": "СКОЛЬЗИ ВДОЛЬ ТЕЛА, ЧТОБЫ ДЕРЖАТЬ ЗАРЯД"
+		},
+		"X2": {
+			"en": "X2",
+			"ru": "X2"
+		},
+		"FILL THE METER. X2 DOUBLES EVERY POINT": {
+			"en": "FILL THE METER. X2 DOUBLES EVERY POINT",
+			"ru": "ЗАПОЛНИ ШКАЛУ. X2 УДВАИВАЕТ КАЖДОЕ ОЧКО"
+		},
+		"INSULATORS": {
+			"en": "INSULATORS",
+			"ru": "ИЗОЛЯТОРЫ"
+		},
+		"BRUSH A LIT BLOCK FOR CHARGE. NEVER HIT IT": {
+			"en": "BRUSH A LIT BLOCK FOR CHARGE. NEVER HIT IT",
+			"ru": "ПРОЙДИ ВПРИТИРКУ К ГОРЯЩЕМУ БЛОКУ. НЕ ВРЕЗАЙСЯ"
+		},
+		"SLIP BETWEEN YOUR LINE AND A BLOCK": {
+			"en": "SLIP BETWEEN YOUR BODY AND A BLOCK",
+			"ru": "ПРОСКОЧИ МЕЖДУ ТЕЛОМ И БЛОКОМ"
+		},
+		"GO THROUGH THE GAP IN YOUR OWN LINE": {
+			"en": "DRIVE THROUGH A GAP IN YOUR OWN BODY",
+			"ru": "ПРОЕДЬ СКВОЗЬ ЩЕЛЬ В СВОЁМ ТЕЛЕ"
+		},
+		"HOLD A LONG CORRIDOR TO THE END": {
+			"en": "HOLD A LONG CORRIDOR TO THE END",
+			"ru": "ПРОЙДИ ДЛИННЫЙ КОРИДОР ДО КОНЦА"
+		},
+		"SIGNAL TEST": {
+			"en": "SIGNAL TEST",
+			"ru": "ЭКЗАМЕН: СИГНАЛ"
+		},
+		"CHARGE TO X2 AND HOLD IT": {
+			"en": "CHARGE TO X2 AND HOLD IT",
+			"ru": "РАЗГОНИСЬ ДО X2 И УДЕРЖИ"
+		},
+		"THREAD THE NEEDLE": {
+			"en": "THREAD THE NEEDLE",
+			"ru": "ПРОДЕНЬ ИГЛУ"
+		},
+		"DRIVE STRAIGHT THROUGH THE GATE": {
+			"en": "DRIVE STRAIGHT THROUGH THE GATE",
+			"ru": "ПРОЙДИ ПРЯМО СКВОЗЬ ВОРОТА"
+		},
+		"DEEP DOORS": {
+			"en": "DEEP DOORS",
+			"ru": "ГЛУБОКИЕ ДВЕРИ"
+		},
+		"DEEPER DOORS PAY MORE": {
+			"en": "DEEPER DOORS PAY MORE",
+			"ru": "ЧЕМ ГЛУБЖЕ ДВЕРЬ, ТЕМ БОЛЬШЕ ОЧКОВ"
+		},
+		"CHAIN": {
+			"en": "CHAIN",
+			"ru": "ЦЕПОЧКА"
+		},
+		"EACH GATE LINES UP BEHIND THE LAST": {
+			"en": "EACH GATE LINES UP BEHIND THE LAST",
+			"ru": "КАЖДЫЕ ВОРОТА ВСТАЮТ ЗА ПРЕДЫДУЩИМИ"
+		},
+		"TWO DOORS. TAKE EITHER": {
+			"en": "TWO DOORS. TAKE EITHER",
+			"ru": "ДВЕ ДВЕРИ. ЛЮБАЯ ПОДОЙДЁТ"
+		},
+		"RISK": {
+			"en": "RISK",
+			"ru": "РИСК"
+		},
+		"SHALLOW DOOR +25. DEEP DOOR +90": {
+			"en": "SHALLOW DOOR +25. DEEP DOOR +90",
+			"ru": "МЕЛКАЯ ДВЕРЬ +25. ГЛУБОКАЯ +90"
+		},
+		"PASS THROUGH, THEN BACK THROUGH AGAIN": {
+			"en": "PASS THROUGH, THEN BACK THROUGH AGAIN",
+			"ru": "ПРОЙДИ НАСКВОЗЬ, ПОТОМ ОБРАТНО"
+		},
+		"PILLAR GATES": {
+			"en": "PILLAR GATES",
+			"ru": "ВОРОТА СРЕДИ СТОЛБОВ"
+		},
+		"GATES AMONG THE INSULATORS": {
+			"en": "GATES AMONG THE INSULATORS",
+			"ru": "ВОРОТА СРЕДИ ИЗОЛЯТОРОВ"
+		},
+		"GAUNTLET": {
+			"en": "GAUNTLET",
+			"ru": "ПОЛОСА ПРЕПЯТСТВИЙ"
+		},
+		"EVERY KIND OF GATE": {
+			"en": "EVERY KIND OF GATE",
+			"ru": "ВСЕ ВИДЫ ВОРОТ"
+		},
+		"HIGH STAKES": {
+			"en": "HIGH STAKES",
+			"ru": "ВЫСОКИЕ СТАВКИ"
+		},
+		"ALWAYS TAKE THE DEEP DOOR": {
+			"en": "ALWAYS TAKE THE DEEP DOOR",
+			"ru": "ВСЕГДА БЕРИ ГЛУБОКУЮ ДВЕРЬ"
+		},
+		"GATE TEST": {
+			"en": "GATE TEST",
+			"ru": "ЭКЗАМЕН: ВОРОТА"
+		},
+		"ALL GATES. KEEP YOUR CHARGE": {
+			"en": "ALL GATES. KEEP YOUR CHARGE",
+			"ru": "ВСЕ ВОРОТА. СОХРАНИ ЗАРЯД"
+		},
+		"CIRCUIT": {
+			"en": "CIRCUIT",
+			"ru": "ЦЕПЬ"
+		},
+		"BUILD YOUR OWN GEOMETRY": {
+			"en": "BUILD YOUR OWN GEOMETRY",
+			"ru": "СТРОЙ СВОЮ ГЕОМЕТРИЮ"
+		},
+		"TOUCH THE TERMINALS IN ORDER": {
+			"en": "TOUCH THE TERMINALS IN ORDER",
+			"ru": "КОСНИСЬ КЛЕММ ПО ПОРЯДКУ"
+		},
+		"LIVE POSTS": {
+			"en": "LIVE POSTS",
+			"ru": "ЖИВЫЕ СТОЙКИ"
+		},
+		"TOUCHED TERMINALS STAY LIVE. GRAZE THEM": {
+			"en": "TOUCHED TERMINALS STAY LIVE. SKIM THEM",
+			"ru": "ТРОНУТЫЕ КЛЕММЫ ПОД ТОКОМ. ПРОХОДИ ВПРИТИРКУ"
+		},
+		"FOUR POINT": {
+			"en": "FOUR POINT",
+			"ru": "ЧЕТЫРЕ ТОЧКИ"
+		},
+		"FOUR TERMINALS. MORE TIME, MORE PAY": {
+			"en": "FOUR TERMINALS. MORE TIME, MORE PAY",
+			"ru": "ЧЕТЫРЕ КЛЕММЫ. БОЛЬШЕ ВРЕМЕНИ И ОЧКОВ"
+		},
+		"LESS TIME. BIGGER PAYOUT": {
+			"en": "LESS TIME. BIGGER PAYOUT",
+			"ru": "МЕНЬШЕ ВРЕМЕНИ. БОЛЬШЕ НАГРАДА"
+		},
+		"BRIDGE": {
+			"en": "BRIDGE",
+			"ru": "МОСТ"
+		},
+		"THE RELAY LEAVES ITS WIRING BEHIND": {
+			"en": "THE RELAY LEAVES ITS WIRING BEHIND",
+			"ru": "РЕЛЕ ОСТАВЛЯЕТ ЗА СОБОЙ ПРОВОДКУ"
+		},
+		"THE LAST TERMINAL APPEARS LATE": {
+			"en": "THE LAST TERMINAL APPEARS LATE",
+			"ru": "ПОСЛЕДНЯЯ КЛЕММА ПОЯВЛЯЕТСЯ ПОЗДНО"
+		},
+		"BANK INSIDE THE ZONE. LEAVE TO CASH": {
+			"en": "BANK INSIDE THE ZONE. LEAVE TO CASH",
+			"ru": "КОПИ В ЗОНЕ. ВЫЙДИ, ЧТОБЫ ЗАБРАТЬ"
+		},
+		"RISING HEAT": {
+			"en": "RISING HEAT",
+			"ru": "РАСТУЩИЙ ЖАР"
+		},
+		"THE ZONE PAYS MORE THE LONGER YOU STAY": {
+			"en": "THE ZONE PAYS MORE THE LONGER YOU STAY",
+			"ru": "ЧЕМ ДОЛЬШЕ В ЗОНЕ, ТЕМ БОЛЬШЕ ОЧКОВ"
+		},
+		"MAZE": {
+			"en": "MAZE",
+			"ru": "ЛАБИРИНТ"
+		},
+		"RELAYS IN A MAZE OF INSULATORS": {
+			"en": "RELAYS IN A MAZE OF INSULATORS",
+			"ru": "РЕЛЕ В ЛАБИРИНТЕ ИЗОЛЯТОРОВ"
+		},
+		"CIRCUIT TEST": {
+			"en": "CIRCUIT TEST",
+			"ru": "ЭКЗАМЕН: ЦЕПЬ"
+		},
+		"GATES, RELAYS AND HEAT": {
+			"en": "GATES, RELAYS AND HEAT",
+			"ru": "ВОРОТА, РЕЛЕ И ЖАР"
+		},
+		"ONE POWER AT A TIME": {
+			"en": "ONE POWER AT A TIME",
+			"ru": "ПО ОДНОМУ МОДУЛЮ ЗА РАЗ"
+		},
+		"YOU CARRY A PHASE. HOP ONE CONDUCTOR": {
+			"en": "YOU CARRY A PHASE: HOP OVER ONE OBSTACLE",
+			"ru": "У ТЕБЯ ФАЗА: ОДНО ПРЕПЯТСТВИЕ МОЖНО ПЕРЕПРЫГНУТЬ"
+		},
+		"PHASE PORT": {
+			"en": "PHASE PORT",
+			"ru": "ПОРТ ФАЗЫ"
+		},
+		"WIN AN EVENT, STEER INTO THE PORT": {
+			"en": "WIN AN EVENT, STEER INTO THE PORT",
+			"ru": "ВЫИГРАЙ СОБЫТИЕ И НАПРАВЬ ГОЛОВУ В ПОРТ"
+		},
+		"SURGE: FASTER, MORE CHARGE, MORE POINTS": {
+			"en": "SURGE: FASTER, MORE CHARGE, MORE POINTS",
+			"ru": "ФОРСАЖ: БЫСТРЕЕ, БОЛЬШЕ ЗАРЯДА И ОЧКОВ"
+		},
+		"SURGE PORT": {
+			"en": "SURGE PORT",
+			"ru": "ПОРТ ФОРСАЖА"
+		},
+		"TAKE THE SURGE, THEN CHASE THE GATE": {
+			"en": "TAKE THE SURGE, THEN CHASE THE GATE",
+			"ru": "ВОЗЬМИ ФОРСАЖ И ЛЕТИ К ВОРОТАМ"
+		},
+		"THE NEXT NODE SEVERS YOUR OLDEST LINE": {
+			"en": "THE NEXT NODE CUTS OFF YOUR TAIL",
+			"ru": "СЛЕДУЮЩИЙ УЗЕЛ ОТРЕЖЕТ ХВОСТ"
+		},
+		"CUT PORT": {
+			"en": "CUT PORT",
+			"ru": "ПОРТ СРЕЗА"
+		},
+		"GROW LONG. CUT FREE": {
+			"en": "GROW LONG. CUT FREE",
+			"ru": "ОТРАСТИ ПОДЛИННЕЕ. СРЕЖЬ ХВОСТ"
+		},
+		"CHOICE": {
+			"en": "CHOICE",
+			"ru": "ВЫБОР"
+		},
+		"PHASE OR SURGE. CHOOSE BY STEERING": {
+			"en": "PHASE OR SURGE. CHOOSE BY STEERING",
+			"ru": "ФАЗА ИЛИ ФОРСАЖ. ВЫБИРАЙ ПОВОРОТОМ"
+		},
+		"FULL KIT": {
+			"en": "FULL KIT",
+			"ru": "ПОЛНЫЙ НАБОР"
+		},
+		"EVERY MODULE IN THE POOL": {
+			"en": "EVERY MODULE IN THE POOL",
+			"ru": "ВСЕ МОДУЛИ В ИГРЕ"
+		},
+		"PHASE RUN": {
+			"en": "PHASE RUN",
+			"ru": "ФАЗОВЫЙ ЗАБЕГ"
+		},
+		"HOP THE BARRIERS": {
+			"en": "HOP THE BARRIERS",
+			"ru": "ПЕРЕПРЫГИВАЙ БАРЬЕРЫ"
+		},
+		"MODULE TEST": {
+			"en": "MODULE TEST",
+			"ru": "ЭКЗАМЕН: МОДУЛИ"
+		},
+		"USE EVERYTHING": {
+			"en": "USE EVERYTHING",
+			"ru": "ИСПОЛЬЗУЙ ВСЁ"
+		},
+		"MOTION": {
+			"en": "MOTION",
+			"ru": "ДВИЖЕНИЕ"
+		},
+		"THE BOARD FIGHTS BACK": {
+			"en": "THE BOARD FIGHTS BACK",
+			"ru": "ПОЛЕ ДАЁТ СДАЧИ"
+		},
+		"SKIM THE MOVING WIRE THREE TIMES": {
+			"en": "SKIM THE MOVING WIRE THREE TIMES",
+			"ru": "ТРИЖДЫ ПРОСКОЛЬЗНИ ВДОЛЬ ПРОВОДА"
+		},
+		"LONG WIRE": {
+			"en": "LONG WIRE",
+			"ru": "ДЛИННЫЙ ПРОВОД"
+		},
+		"A LONGER BAR SWEEPS THE LANE": {
+			"en": "A LONGER BAR SWEEPS THE LANE",
+			"ru": "ДЛИННЫЙ ПРОВОД МЕТЁТ ПОЛОСУ"
+		},
+		"THE GATE SLIDES. MEET IT": {
+			"en": "THE GATE SLIDES. MEET IT",
+			"ru": "ВОРОТА ЕДУТ. ПОЙМАЙ ИХ"
+		},
+		"THE HOT ZONE WANDERS": {
+			"en": "THE HOT ZONE WANDERS",
+			"ru": "ГОРЯЧАЯ ЗОНА БЛУЖДАЕТ"
+		},
+		"THE LAST TERMINAL KEEPS MOVING": {
+			"en": "THE LAST TERMINAL KEEPS MOVING",
+			"ru": "ПОСЛЕДНЯЯ КЛЕММА ДВИЖЕТСЯ"
+		},
+		"TWIN WIRES": {
+			"en": "TWIN WIRES",
+			"ru": "ДВА ПРОВОДА"
+		},
+		"TWO WIRES. ONE LANE EACH": {
+			"en": "TWO WIRES. ONE LANE EACH",
+			"ru": "ДВА ПРОВОДА. У КАЖДОГО СВОЯ ПОЛОСА"
+		},
+		"FAST WIRE": {
+			"en": "FAST WIRE",
+			"ru": "БЫСТРЫЙ ПРОВОД"
+		},
+		"FASTER. SAME RULE": {
+			"en": "FASTER. SAME RULE",
+			"ru": "БЫСТРЕЕ. ПРАВИЛО ТО ЖЕ"
+		},
+		"THE ZONE CLOSES IN. CASH IN TIME": {
+			"en": "THE ZONE CLOSES IN. CASH IN TIME",
+			"ru": "ЗОНА СЖИМАЕТСЯ. ЗАБЕРИ ВОВРЕМЯ"
+		},
+		"MOVING PARTS": {
+			"en": "MOVING PARTS",
+			"ru": "ДВИЖУЩИЕСЯ ЧАСТИ"
+		},
+		"WIRES, DRIFT AND LIVE TERMINALS": {
+			"en": "WIRES, DRIFT AND LIVE TERMINALS",
+			"ru": "ПРОВОДА, ДРЕЙФ И ЖИВЫЕ КЛЕММЫ"
+		},
+		"MOTION TEST": {
+			"en": "MOTION TEST",
+			"ru": "ЭКЗАМЕН: ДВИЖЕНИЕ"
+		},
+		"NOTHING STANDS STILL": {
+			"en": "NOTHING STANDS STILL",
+			"ru": "НИЧТО НЕ СТОИТ НА МЕСТЕ"
+		},
+		"OVERLOAD": {
+			"en": "OVERLOAD",
+			"ru": "ПЕРЕГРУЗКА"
+		},
+		"COMBINE WHAT YOU KNOW": {
+			"en": "COMBINE WHAT YOU KNOW",
+			"ru": "СОВМЕЩАЙ ВСЁ, ЧТО ЗНАЕШЬ"
+		},
+		"SURGE GATES": {
+			"en": "SURGE GATES",
+			"ru": "ФОРСАЖ И ВОРОТА"
+		},
+		"SURGE INTO DEEP GATES": {
+			"en": "SURGE INTO DEEP GATES",
+			"ru": "НА ФОРСАЖЕ В ГЛУБОКИЕ ВОРОТА"
+		},
+		"RELAY CUT": {
+			"en": "RELAY CUT",
+			"ru": "РЕЛЕ И СРЕЗ"
+		},
+		"LONG LINE, FAST RELAYS, ONE CUT": {
+			"en": "LONG BODY, FAST RELAYS, ONE CUT",
+			"ru": "ДЛИННОЕ ТЕЛО, БЫСТРЫЕ РЕЛЕ, ОДИН СРЕЗ"
+		},
+		"HOT AT X4": {
+			"en": "HOT AT X4",
+			"ru": "ЖАР НА X4"
+		},
+		"START HOT. HOLD THE ZONE": {
+			"en": "START AT X4. STAY IN THE ZONE",
+			"ru": "СТАРТ С X4. ДЕРЖИСЬ В ЗОНЕ"
+		},
+		"WIRE NEEDLE": {
+			"en": "WIRE NEEDLE",
+			"ru": "ПРОВОД И ИГЛА"
+		},
+		"WIRE, THEN A DEEP GATE": {
+			"en": "WIRE, THEN A DEEP GATE",
+			"ru": "ПРОВОД, ПОТОМ ГЛУБОКИЕ ВОРОТА"
+		},
+		"UNSTABLE": {
+			"en": "UNSTABLE",
+			"ru": "НЕСТАБИЛЬНО"
+		},
+		"THE ZONE GIVES LITTLE WARNING": {
+			"en": "THE ZONE GIVES LITTLE WARNING",
+			"ru": "ЗОНА ПОЧТИ НЕ ПРЕДУПРЕЖДАЕТ"
+		},
+		"ECHO DRIFT": {
+			"en": "ECHO DRIFT",
+			"ru": "ДРЕЙФУЮЩЕЕ ЭХО"
+		},
+		"AN ECHO GATE THAT WON'T STAY PUT": {
+			"en": "AN ECHO GATE THAT WON'T STAY PUT",
+			"ru": "ВОРОТА-ЭХО НЕ СТОЯТ НА МЕСТЕ"
+		},
+		"DARK BRIDGE": {
+			"en": "DARK BRIDGE",
+			"ru": "ТЁМНЫЙ МОСТ"
+		},
+		"BUILD THE BRIDGE IN THE DARK": {
+			"en": "BUILD THE BRIDGE IN THE DARK",
+			"ru": "ПОСТРОЙ МОСТ В ТЕМНОТЕ"
+		},
+		"RISK SURGE": {
+			"en": "RISK SURGE",
+			"ru": "РИСК НА ФОРСАЖЕ"
+		},
+		"DEEP DOORS UNDER SURGE": {
+			"en": "DEEP DOORS UNDER SURGE",
+			"ru": "ГЛУБОКИЕ ДВЕРИ НА ФОРСАЖЕ"
+		},
+		"FULL CIRCUIT": {
+			"en": "FULL CIRCUIT",
+			"ru": "ПОЛНАЯ ЦЕПЬ"
+		},
+		"EVERYTHING AT ONCE": {
+			"en": "EVERYTHING AT ONCE",
+			"ru": "ВСЁ СРАЗУ"
+		},
+		"OVERLOAD TEST": {
+			"en": "OVERLOAD TEST",
+			"ru": "ЭКЗАМЕН: ПЕРЕГРУЗКА"
+		},
+		"REACH X5": {
+			"en": "REACH X5",
+			"ru": "РАЗГОНИСЬ ДО X5"
+		},
+		"MELTDOWN": {
+			"en": "MELTDOWN",
+			"ru": "РАСПЛАВ"
+		},
+		"THE FINAL CIRCUIT": {
+			"en": "THE FINAL CIRCUIT",
+			"ru": "ПОСЛЕДНЯЯ ЦЕПЬ"
+		},
+		"RED LINE": {
+			"en": "RED LINE",
+			"ru": "КРАСНАЯ ЧЕРТА"
+		},
+		"FASTER FROM THE FIRST STEP": {
+			"en": "FASTER FROM THE FIRST STEP",
+			"ru": "БЫСТРЕЕ С ПЕРВОГО ШАГА"
+		},
+		"COLD START": {
+			"en": "COLD START",
+			"ru": "ХОЛОДНЫЙ СТАРТ"
+		},
+		"NO TARGETS. ONLY RISK PAYS": {
+			"en": "NO NODES. ONLY RISK PAYS",
+			"ru": "НЕТ УЗЛОВ. ОЧКИ ТОЛЬКО ЗА РИСК"
+		},
+		"HEAVY DRAIN": {
+			"en": "HEAVY DRAIN",
+			"ru": "БЫСТРАЯ УТЕЧКА"
+		},
+		"CHARGE DRAINS TWICE AS FAST": {
+			"en": "CHARGE DRAINS TWICE AS FAST",
+			"ru": "ЗАРЯД УХОДИТ ВДВОЕ БЫСТРЕЕ"
+		},
+		"THE CAGE": {
+			"en": "THE CAGE",
+			"ru": "КЛЕТКА"
+		},
+		"INSULATORS EVERYWHERE": {
+			"en": "INSULATORS EVERYWHERE",
+			"ru": "ИЗОЛЯТОРЫ ПОВСЮДУ"
+		},
+		"STORM": {
+			"en": "STORM",
+			"ru": "ШТОРМ"
+		},
+		"WIRES AND HEAT": {
+			"en": "WIRES AND HEAT",
+			"ru": "ПРОВОДА И ЖАР"
+		},
+		"GLASS JAW": {
+			"en": "GLASS JAW",
+			"ru": "СТЕКЛЯННЫЙ ПОТОЛОК"
+		},
+		"X3 IS THE CEILING. SCORE ANYWAY": {
+			"en": "X3 IS THE CEILING. SCORE ANYWAY",
+			"ru": "ВЫШЕ X3 НЕ ПОДНЯТЬСЯ. НАБИРАЙ ВСЁ РАВНО"
+		},
+		"HIGH VOLTAGE": {
+			"en": "HIGH VOLTAGE",
+			"ru": "ВЫСОКОЕ НАПРЯЖЕНИЕ"
+		},
+		"START AT X3": {
+			"en": "START AT X3",
+			"ru": "СТАРТ С X3"
+		},
+		"NO MODULES": {
+			"en": "NO MODULES",
+			"ru": "БЕЗ МОДУЛЕЙ"
+		},
+		"NO HELP. NO PORTS": {
+			"en": "NO HELP. NO PORTS",
+			"ru": "НИКАКИХ ПОРТОВ И ПОДСКАЗОК"
+		},
+		"CRITICAL MASS": {
+			"en": "CRITICAL MASS",
+			"ru": "КРИТИЧЕСКАЯ МАССА"
+		},
+		"EVERY MODIFIER IS LIVE": {
+			"en": "EVERY MODIFIER IS LIVE",
+			"ru": "ВСЕ МОДИФИКАТОРЫ ВКЛЮЧЕНЫ"
+		},
+		"THE WHOLE MACHINE. FULL POWER": {
+			"en": "THE WHOLE MACHINE. FULL POWER",
+			"ru": "ВСЯ МАШИНА. ПОЛНАЯ МОЩНОСТЬ"
+		},
+		"REVIEW_MODE": {
+			"en": "REVIEW MODE",
+			"ru": "РЕЖИМ ПРОВЕРКИ"
+		},
+		"REVIEW_TITLE": {
+			"en": "REVIEW ACCESS",
+			"ru": "ДОСТУП ДЛЯ ПРОВЕРКИ"
+		},
+		"REVIEW_HINT": {
+			"en": "ENTER THE REVIEW CODE",
+			"ru": "ВВЕДИ КОД ПРОВЕРКИ"
+		},
+		"REVIEW_ACTIVATE": {
+			"en": "ACTIVATE",
+			"ru": "АКТИВИРОВАТЬ"
+		},
+		"REVIEW_LEAVE": {
+			"en": "EXIT REVIEW MODE",
+			"ru": "ВЫЙТИ ИЗ РЕЖИМА ПРОВЕРКИ"
+		},
+		"REVIEW_ON": {
+			"en": "REVIEW MODE ON",
+			"ru": "РЕЖИМ ПРОВЕРКИ ВКЛЮЧЁН"
+		},
+		"REVIEW_OFF": {
+			"en": "REVIEW MODE OFF",
+			"ru": "РЕЖИМ ПРОВЕРКИ ВЫКЛЮЧЕН"
+		},
+		"REVIEW_ACTIVE_UNTIL": {
+			"en": "ACTIVE UNTIL %s",
+			"ru": "ДЕЙСТВУЕТ ДО %s"
+		},
+		"REVIEW_WHAT": {
+			"en": "ALL PREMIUM THEMES UNLOCKED. CAMPAIGN FUSES NEVER RUN OUT. NOTHING IS PURCHASED.",
+			"ru": "ВСЕ ПРЕМИУМ-ТЕМЫ ОТКРЫТЫ. ПРЕДОХРАНИТЕЛИ КАМПАНИИ НЕ КОНЧАЮТСЯ. НИЧЕГО НЕ КУПЛЕНО."
+		},
+		"REVIEW_NOTE": {
+			"en": "FOR APP STORE REVIEW ONLY. NEEDS AN INTERNET CONNECTION.",
+			"ru": "ТОЛЬКО ДЛЯ ПРОВЕРКИ МАГАЗИНОМ. НУЖЕН ИНТЕРНЕТ."
+		},
+		"REVIEW_LENT": {
+			"en": "UNLOCKED FOR REVIEW. NOT PURCHASED",
+			"ru": "ОТКРЫТО ДЛЯ ПРОВЕРКИ. НЕ КУПЛЕНО"
+		},
+		"REVIEW_ERR_CODE": {
+			"en": "CODE NOT ACCEPTED",
+			"ru": "КОД НЕ ПРИНЯТ"
+		},
+		"REVIEW_ERR_WAIT": {
+			"en": "TOO MANY TRIES. TRY AGAIN IN AN HOUR",
+			"ru": "СЛИШКОМ МНОГО ПОПЫТОК. ПОПРОБУЙ ЧЕРЕЗ ЧАС"
+		},
+		"REVIEW_ERR_FULL": {
+			"en": "THIS CODE IS IN USE ON TOO MANY DEVICES",
+			"ru": "КОД УЖЕ НА СЛИШКОМ МНОГИХ УСТРОЙСТВАХ"
+		},
+		"REVIEW_ERR_SERVER": {
+			"en": "SERVER ERROR. TRY AGAIN",
+			"ru": "ОШИБКА СЕРВЕРА. ПОПРОБУЙ ЕЩЁ РАЗ"
+		},
+		"REVIEW_ERR_UNAVAILABLE": {
+			"en": "NOT AVAILABLE IN THIS BUILD",
+			"ru": "НЕДОСТУПНО В ЭТОЙ СБОРКЕ"
+		},
+		"UPDATE_TITLE": {
+			"en": "UPDATE AVAILABLE",
+			"ru": "ДОСТУПНО ОБНОВЛЕНИЕ"
+		},
+		"UPDATE_BODY": {
+			"en": "A NEW VERSION OF NEARCOIL IS ON GOOGLE PLAY. IT DOWNLOADS WHILE YOU PLAY.",
+			"ru": "НОВАЯ ВЕРСИЯ NEARCOIL УЖЕ В GOOGLE PLAY. ОНА СКАЧАЕТСЯ ПРЯМО ВО ВРЕМЯ ИГРЫ."
+		},
+		"UPDATE_NOW": {
+			"en": "UPDATE",
+			"ru": "ОБНОВИТЬ"
+		},
+		"UPDATE_LATER": {
+			"en": "NOT NOW",
+			"ru": "НЕ СЕЙЧАС"
+		},
+		"CTRL_DPAD": {
+			"en": "D-PAD",
+			"ru": "КРЕСТОВИНА"
+		},
+		"CTRL_DPAD_HELP": {
+			"en": "PRESS THE WAY YOU WANT TO GO.",
+			"ru": "ЖМИ В ТУ СТОРОНУ, КУДА ПОВЕРНУТЬ."
+		},
+		"HINT_DPAD": {
+			"en": "PRESS THE PAD TO TURN",
+			"ru": "ЖМИ КРЕСТОВИНУ ДЛЯ ПОВОРОТА"
+		},
+		"BUY_THEME": {
+			"en": "BUY THIS THEME  %s",
+			"ru": "КУПИТЬ ТЕМУ  %s"
+		},
+		"PLUS_ALL_ONE": {
+			"en": "ALL %d PREMIUM THEME  %s",
+			"ru": "ВСЯ %d ПРЕМИУМ-ТЕМА  %s"
+		},
+		"PLUS_ALL_FEW": {
+			"en": "ALL %d PREMIUM THEMES  %s",
+			"ru": "ВСЕ %d ПРЕМИУМ-ТЕМЫ  %s"
+		},
+		"PLUS_ALL_MANY": {
+			"en": "ALL %d PREMIUM THEMES  %s",
+			"ru": "ВСЕ %d ПРЕМИУМ-ТЕМ  %s"
+		},
+		"PLUS_MORE_ONE": {
+			"en": "%d MORE THEME  %s",
+			"ru": "ЕЩЁ %d ТЕМА  %s"
+		},
+		"PLUS_MORE_FEW": {
+			"en": "%d MORE THEMES  %s",
+			"ru": "ЕЩЁ %d ТЕМЫ  %s"
+		},
+		"PLUS_MORE_MANY": {
+			"en": "%d MORE THEMES  %s",
+			"ru": "ЕЩЁ %d ТЕМ  %s"
+		},
+		"PREMIUM_NOTE": {
+			"en": "PREMIUM THEME — ONE-TIME PURCHASE",
+			"ru": "ПРЕМИУМ-ТЕМА — РАЗОВАЯ ПОКУПКА"
+		},
+		"THANKS_THEME": {
+			"en": "THANK YOU! %s IS YOURS.",
+			"ru": "СПАСИБО! ТЕМА %s ОТКРЫТА."
+		},
+		"RESTORE_DONE": {
+			"en": "PURCHASES RESTORED",
+			"ru": "ПОКУПКИ ВОССТАНОВЛЕНЫ"
+		},
+		"DAILY_HUD": {
+			"en": "DAILY",
+			"ru": "ПОПЫТКА"
+		},
+		"NAV_LEADERS": {
+			"en": "LEADERS",
+			"ru": "РЕЙТИНГ"
+		},
+		"SET_EXIT": {
+			"en": "EXIT GAME",
+			"ru": "ВЫЙТИ ИЗ ИГРЫ"
+		},
+		"INTRO_GATE": {
+			"en": "DRIVE THROUGH THE DOOR BETWEEN THE PYLONS BEFORE TIME RUNS OUT. DEEPER DOORS PAY MORE. PYLONS KILL.",
+			"ru": "ПРОЕДЬ СКВОЗЬ ДВЕРЬ МЕЖДУ СТОЛБАМИ, ПОКА НЕ ВЫШЛО ВРЕМЯ. ЧЕМ ГЛУБЖЕ ДВЕРЬ, ТЕМ БОЛЬШЕ ОЧКОВ. СТОЛБЫ УБИВАЮТ."
+		},
+		"INTRO_RELAY": {
+			"en": "TOUCH THE TERMINALS IN NUMBER ORDER BEFORE TIME RUNS OUT. TOUCHED ONES STAY LIVE: SKIM THEM FOR CHARGE, DON'T HIT THEM.",
+			"ru": "КОСНИСЬ КЛЕММ ПО ПОРЯДКУ НОМЕРОВ, ПОКА НЕ ВЫШЛО ВРЕМЯ. ТРОНУТЫЕ ОСТАЮТСЯ ПОД ТОКОМ: ПРОХОДИ ВПРИТИРКУ, НО НЕ ВРЕЗАЙСЯ."
+		},
+		"INTRO_HOT": {
+			"en": "INSIDE THE ZONE CHARGE AND POINTS BANK UP. LEAVE IT TO CASH THEM IN BEFORE IT OVERLOADS, OR THEY BURN.",
+			"ru": "ПОКА ТЫ В ЗОНЕ, КОПЯТСЯ ЗАРЯД И ОЧКИ. ВЫЙДИ, ЧТОБЫ ЗАБРАТЬ ИХ, ПОКА ЗОНА НЕ ПЕРЕГРЕЛАСЬ, ИНАЧЕ ВСЁ СГОРИТ."
+		},
+		"INTRO_WIRE": {
+			"en": "THE WIRE SLIDES ALONG ITS LANE. PASS RIGHT NEXT TO IT 3 TIMES. TOUCHING IT KILLS.",
+			"ru": "ПРОВОД ЕЗДИТ ПО СВОЕЙ ЛИНИИ. ПРОЙДИ ВПРИТИРКУ К НЕМУ 3 РАЗА. КАСАНИЕ УБИВАЕТ."
+		},
+		"INTRO_PORTS_T": {
+			"en": "MODULE PORTS",
+			"ru": "ПОРТЫ МОДУЛЕЙ"
+		},
+		"INTRO_PORTS": {
+			"en": "EVENT WON. DRIVE INTO ONE OF THE PORTS TO TAKE ITS MODULE.",
+			"ru": "СОБЫТИЕ ПРОЙДЕНО. ВЪЕДЬ В ОДИН ИЗ ПОРТОВ, ЧТОБЫ ВЗЯТЬ ЕГО МОДУЛЬ."
+		},
+		"INTRO_PHASE": {
+			"en": "YOUR NEXT CRASH INTO YOUR BODY, A PYLON, A TERMINAL OR A WIRE HOPS OVER IT FOR A BONUS INSTEAD. WALLS STILL KILL.",
+			"ru": "СЛЕДУЮЩЕЕ СТОЛКНОВЕНИЕ С ТЕЛОМ, СТОЛБОМ, КЛЕММОЙ ИЛИ ПРОВОДОМ НЕ УБЬЁТ: ТЫ ПЕРЕПРЫГНЕШЬ ЕГО И ПОЛУЧИШЬ БОНУС. СТЕНЫ УБИВАЮТ."
+		},
+		"INTRO_SURGE": {
+			"en": "ABOUT 8 SECONDS OF OVERLOAD: FASTER, +40% CHARGE, POINTS ×1.5.",
+			"ru": "ОКОЛО 8 СЕКУНД ПЕРЕГРУЗКИ: БЫСТРЕЕ, ЗАРЯД +40%, ОЧКИ ×1,5."
+		},
+		"INTRO_CUT": {
+			"en": "THE NEXT NODE YOU EAT CUTS OFF THE OLDEST PART OF YOUR BODY.",
+			"ru": "СЛЕДУЮЩИЙ СЪЕДЕННЫЙ УЗЕЛ ОТРЕЖЕТ САМУЮ СТАРУЮ ЧАСТЬ ТЕЛА."
+		},
+		"TAP_CONTINUE": {
+			"en": "TAP TO CONTINUE",
+			"ru": "НАЖМИ, ЧТОБЫ ПРОДОЛЖИТЬ"
+		},
+		"INTRO_DAILY_1": {
+			"en": "ONE BOARD FOR EVERYONE: THE SAME FIELD AND NODES",
+			"ru": "ОДНО ПОЛЕ ДЛЯ ВСЕХ: ТЕ ЖЕ КЛЕТКИ И УЗЛЫ"
+		},
+		"INTRO_DAILY_2": {
+			"en": "%d RANKED TRIES A DAY, THEN PRACTICE",
+			"ru": "%d ЗАЧЁТНЫЕ ПОПЫТКИ В ДЕНЬ, ДАЛЬШЕ ТРЕНИРОВКА"
+		},
+		"INTRO_DAILY_3": {
+			"en": "YOUR BEST TRY GOES ON THE DAY'S BOARD",
+			"ru": "В РЕЙТИНГ ДНЯ ИДЁТ ЛУЧШАЯ ПОПЫТКА"
+		},
+		"INTRO_DAILY_4": {
+			"en": "THE FIRST TRY OF THE DAY REFILLS A FUSE",
+			"ru": "ПЕРВАЯ ПОПЫТКА ДНЯ: +1 ПРЕДОХРАНИТЕЛЬ"
+		},
+		"INTRO_DAILY_5": {
+			"en": "A NEW CHALLENGE EVERY DAY AT %s",
+			"ru": "НОВОЕ ИСПЫТАНИЕ КАЖДЫЙ ДЕНЬ В %s"
+		},
+		"INTRO_DAILY_6": {
+			"en": "RANKED TRIES NEED A CONNECTION",
+			"ru": "ДЛЯ ЗАЧЁТНЫХ ПОПЫТОК НУЖНА СЕТЬ"
+		},
+		"PICK_CONTROLS_T": {
+			"en": "HOW DO YOU WANT TO STEER?",
+			"ru": "КАК УПРАВЛЯТЬ?"
+		},
+		"PICK_CONTROLS_TRY": {
+			"en": "TRY IT ON THE BOARD BELOW",
+			"ru": "ПОПРОБУЙ НА ПОЛЕ НИЖЕ"
+		},
+		"PICK_CONTROLS_NOTE": {
+			"en": "YOU CAN CHANGE IT LATER IN SETTINGS",
+			"ru": "МОЖНО ПОМЕНЯТЬ ПОТОМ В НАСТРОЙКАХ"
+		},
+		"MEDAL_GOT_1": {
+			"en": "PASS IS YOURS",
+			"ru": "ЗАЧЁТ ПОЛУЧЕН"
+		},
+		"MEDAL_GOT_2": {
+			"en": "GREAT IS YOURS",
+			"ru": "«ОТЛИЧНО» ПОЛУЧЕНО"
+		},
+		"MEDAL_GOT_3": {
+			"en": "PERFECT!",
+			"ru": "ИДЕАЛ!"
+		},
+		"MEDAL_KEEPS": {
+			"en": "IT STAYS EVEN IF YOU CRASH NOW",
+			"ru": "ОН ОСТАНЕТСЯ, ДАЖЕ ЕСЛИ РАЗОБЬЁШЬСЯ"
+		},
+		"MEDAL_NEXT": {
+			"en": "GO ON FOR %s OR FINISH FROM PAUSE",
+			"ru": "ДАЛЬШЕ — РАДИ «%s» ИЛИ ЗАВЕРШИ В ПАУЗЕ"
+		},
+		"FINISH_WITH": {
+			"en": "FINISH: %s",
+			"ru": "ЗАВЕРШИТЬ: %s"
+		},
+		"MEDAL_BEFORE_CRASH": {
+			"en": "EARNED BEFORE THE CRASH",
+			"ru": "ПОЛУЧЕНО ДО СТОЛКНОВЕНИЯ"
+		},
+		"DRIVE IN THE CELL RIGHT BESIDE YOUR BODY. EACH CLOSE CALL CHARGES THE METER": {
+			"en": "DRIVE IN THE CELL RIGHT BESIDE YOUR BODY. EACH CLOSE CALL CHARGES THE METER",
+			"ru": "ЕДЬ В СОСЕДНЕЙ КЛЕТКЕ ВДОЛЬ СВОЕГО ТЕЛА. КАЖДОЕ СБЛИЖЕНИЕ ЗАРЯЖАЕТ ШКАЛУ"
+		},
+		"KEEP CLOSE CALLS COMING AND THE CHARGE WON'T DRAIN": {
+			"en": "KEEP CLOSE CALLS COMING AND THE CHARGE WON'T DRAIN",
+			"ru": "ПОКА ИДУТ СБЛИЖЕНИЯ, ЗАРЯД НЕ ПАДАЕТ"
+		},
+		"CLOSE CALLS FILL THE METER UP TOP. FULL METER: X2": {
+			"en": "CLOSE CALLS FILL THE METER UP TOP. FULL METER: X2",
+			"ru": "СБЛИЖЕНИЯ ЗАПОЛНЯЮТ ШКАЛУ ВВЕРХУ. ПОЛНАЯ ШКАЛА: X2"
+		},
+		"PASS IN THE CELL NEXT TO A LIT BLOCK. IT LIGHTS AGAIN SOON": {
+			"en": "PASS IN THE CELL NEXT TO A LIT BLOCK. IT LIGHTS AGAIN SOON",
+			"ru": "ПРОЕЗЖАЙ В СОСЕДНЕЙ КЛЕТКЕ ОТ ГОРЯЩЕГО БЛОКА. ОН СКОРО ЗАГОРИТСЯ СНОВА"
+		},
+		"DRIVE 2 OR MORE CELLS WITH BODY OR BLOCK ON BOTH SIDES": {
+			"en": "DRIVE 2 OR MORE CELLS WITH BODY OR BLOCK ON BOTH SIDES",
+			"ru": "ПРОЕДЬ 2+ КЛЕТКИ ТАК, ЧТОБЫ С ОБЕИХ СТОРОН БЫЛИ ТЕЛО ИЛИ БЛОК"
+		},
+		"LEAVE A ONE-CELL GAP IN YOUR BODY AND DRIVE THROUGH IT TO THE OTHER SIDE": {
+			"en": "LEAVE A ONE-CELL GAP IN YOUR BODY AND DRIVE THROUGH IT TO THE OTHER SIDE",
+			"ru": "ОСТАВЬ В ТЕЛЕ ЩЕЛЬ В ОДНУ КЛЕТКУ И ПРОЕДЬ ЧЕРЕЗ НЕЁ НА ДРУГУЮ СТОРОНУ"
+		},
+		"DRIVE 6 OR MORE CELLS IN A ONE-CELL CORRIDOR OF YOUR BODY": {
+			"en": "DRIVE 6 OR MORE CELLS IN A ONE-CELL CORRIDOR OF YOUR BODY",
+			"ru": "ПРОЕДЬ 6+ КЛЕТОК ПО КОРИДОРУ ШИРИНОЙ В КЛЕТКУ МЕЖДУ ЛИНИЯМИ ТЕЛА"
+		},
+		"REACH X2, THEN KEEP CLOSE CALLS COMING SO IT DOESN'T DRAIN": {
+			"en": "REACH X2, THEN KEEP CLOSE CALLS COMING SO IT DOESN'T DRAIN",
+			"ru": "НАБЕРИ X2 И ПРОДОЛЖАЙ СБЛИЖЕНИЯ, ЧТОБЫ ЗАРЯД НЕ УПАЛ"
+		},
+		"ENTER THE DOOR BETWEEN THE PYLONS AND LEAVE ON THE FAR SIDE WITHOUT TURNING": {
+			"en": "ENTER THE DOOR BETWEEN THE PYLONS AND LEAVE ON THE FAR SIDE WITHOUT TURNING",
+			"ru": "ВЪЕДЬ В ДВЕРЬ МЕЖДУ СТОЛБАМИ И ВЫЕДИ С ДРУГОЙ СТОРОНЫ, НЕ ПОВОРАЧИВАЯ"
+		},
+		"DEPTH IS THE LENGTH OF THE PASSAGE BETWEEN THE PYLONS": {
+			"en": "DEPTH IS THE LENGTH OF THE PASSAGE BETWEEN THE PYLONS",
+			"ru": "ГЛУБИНА: ДЛИНА ПРОХОДА МЕЖДУ СТОЛБАМИ"
+		},
+		"THE NEXT GATE APPEARS AHEAD, RIGHT PAST THE LAST EXIT": {
+			"en": "THE NEXT GATE APPEARS AHEAD, RIGHT PAST THE LAST EXIT",
+			"ru": "СЛЕДУЮЩИЕ ВОРОТА ПОЯВЛЯЮТСЯ ВПЕРЕДИ, СРАЗУ ЗА ВЫХОДОМ ИЗ ПРОШЛЫХ"
+		},
+		"ONLY THE FIRST DOOR YOU DRIVE THROUGH COUNTS": {
+			"en": "ONLY THE FIRST DOOR YOU DRIVE THROUGH COUNTS",
+			"ru": "ЗАСЧИТЫВАЕТСЯ ТОЛЬКО ПЕРВАЯ ДВЕРЬ, ЧЕРЕЗ КОТОРУЮ ПРОЕДЕШЬ"
+		},
+		"DRIVE THROUGH THE SAME GATE THREE TIMES: THERE, BACK, THERE AGAIN": {
+			"en": "DRIVE THROUGH THE SAME GATE THREE TIMES: THERE, BACK, THERE AGAIN",
+			"ru": "ПРОЕДЬ ОДНИ ВОРОТА ТРИЖДЫ: ТУДА, ОБРАТНО И СНОВА ТУДА"
+		},
+		"STEER ONTO TERMINALS 1, 2, 3 IN ORDER BEFORE TIME RUNS OUT": {
+			"en": "STEER ONTO TERMINALS 1, 2, 3 IN ORDER BEFORE TIME RUNS OUT",
+			"ru": "ВЕДИ ГОЛОВУ НА КЛЕММЫ 1, 2, 3 ПО ПОРЯДКУ, ПОКА НЕ ВЫШЛО ВРЕМЯ"
+		},
+		"PASS IN THE CELL NEXT TO A LIVE TERMINAL FOR CHARGE. HITTING IT KILLS": {
+			"en": "PASS IN THE CELL NEXT TO A LIVE TERMINAL FOR CHARGE. HITTING IT KILLS",
+			"ru": "ПРОЕЗЖАЙ В СОСЕДНЕЙ КЛЕТКЕ ОТ ЖИВОЙ КЛЕММЫ ЗА ЗАРЯДОМ. ВРЕЗАТЬСЯ НЕЛЬЗЯ"
+		},
+		"WHEN THE RELAY IS DONE ITS TERMINALS JOIN WITH LIVE BARS: SKIM THEM": {
+			"en": "WHEN THE RELAY IS DONE ITS TERMINALS JOIN WITH LIVE BARS: SKIM THEM",
+			"ru": "ПОСЛЕ РЕЛЕ КЛЕММЫ СОЕДИНЯТСЯ ШИНАМИ ПОД ТОКОМ: ПРОХОДИ ВДОЛЬ НИХ"
+		},
+		"WHILE YOUR HEAD IS IN THE SQUARE, POINTS BANK UP. LEAVE BEFORE IT OVERLOADS": {
+			"en": "WHILE YOUR HEAD IS IN THE SQUARE, POINTS BANK UP. LEAVE BEFORE IT OVERLOADS",
+			"ru": "ПОКА ГОЛОВА В КВАДРАТЕ, КОПЯТСЯ ОЧКИ. ВЫЙДИ ДО ПЕРЕГРЕВА, ИНАЧЕ ОНИ СГОРЯТ"
+		},
+		"DRIVE INTO YOUR BODY OR A PYLON: THE PHASE CARRIES YOU OVER IT ONCE": {
+			"en": "DRIVE INTO YOUR BODY OR A PYLON: THE PHASE CARRIES YOU OVER IT ONCE",
+			"ru": "ВЪЕДЬ В СВОЁ ТЕЛО ИЛИ СТОЛБ: ФАЗА ОДИН РАЗ ПЕРЕНЕСЁТ ЧЕРЕЗ НЕГО"
+		},
+		"FINISH AN EVENT, THEN DRIVE INTO THE PORT THAT APPEARS": {
+			"en": "FINISH AN EVENT, THEN DRIVE INTO THE PORT THAT APPEARS",
+			"ru": "ЗАВЕРШИ СОБЫТИЕ, ПОТОМ ВЪЕДЬ В ПОЯВИВШИЙСЯ ПОРТ"
+		},
+		"AFTER AN EVENT TWO PORTS APPEAR: DRIVE INTO THE ONE YOU WANT": {
+			"en": "AFTER AN EVENT TWO PORTS APPEAR: DRIVE INTO THE ONE YOU WANT",
+			"ru": "ПОСЛЕ СОБЫТИЯ ПОЯВЯТСЯ ДВА ПОРТА: ВЪЕДЬ В НУЖНЫЙ"
+		},
+		"WITH A PHASE, DRIVE STRAIGHT INTO A BARRIER: YOU HOP THROUGH": {
+			"en": "WITH A PHASE, DRIVE STRAIGHT INTO A BARRIER: YOU HOP THROUGH",
+			"ru": "С ФАЗОЙ ВЪЕЗЖАЙ ПРЯМО В БАРЬЕР: ПЕРЕПРЫГНЕШЬ ЕГО"
+		},
+		"PASS IN THE CELL NEXT TO THE MOVING WIRE 3 TIMES. TOUCHING IT KILLS": {
+			"en": "PASS IN THE CELL NEXT TO THE MOVING WIRE 3 TIMES. TOUCHING IT KILLS",
+			"ru": "ПРОЕДЬ В СОСЕДНЕЙ КЛЕТКЕ ОТ ДВИЖУЩЕГОСЯ ПРОВОДА 3 РАЗА. КАСАНИЕ УБИВАЕТ"
+		},
+		"SHOW_DEMO": {
+			"en": "SHOW ME",
+			"ru": "ПОКАЗАТЬ"
+		},
+		"SETP_CONTROLS": {
+			"en": "CONTROLS",
+			"ru": "УПРАВЛЕНИЕ"
+		},
+		"SETP_SOUND": {
+			"en": "SOUND AND HAPTICS",
+			"ru": "ЗВУК И ВИБРАЦИЯ"
+		},
+		"SETP_DISPLAY": {
+			"en": "SCREEN AND GRAPHICS",
+			"ru": "ЭКРАН И ГРАФИКА"
+		},
+		"SETP_ONLINE": {
+			"en": "PROFILE AND ONLINE",
+			"ru": "ПРОФИЛЬ И ОНЛАЙН"
+		},
+		"SETP_OTHER": {
+			"en": "OTHER",
+			"ru": "ДРУГОЕ"
+		},
+		"SET_DPAD_POS": {
+			"en": "D-PAD",
+			"ru": "КРЕСТОВИНА"
+		},
+		"DPAD_STRIP": {
+			"en": "UNDER THE BOARD",
+			"ru": "ПОД ПОЛЕМ"
+		},
+		"DPAD_OVERLAY": {
+			"en": "OVER THE BOARD",
+			"ru": "ПОВЕРХ ПОЛЯ"
+		},
+		"SET_DPAD_SHOW": {
+			"en": "SHOW BUTTONS",
+			"ru": "ПОКАЗЫВАТЬ КНОПКИ"
+		},
+		"DPAD_SHOW_TOUCH": {
+			"en": "WHILE TOUCHED",
+			"ru": "ПРИ КАСАНИИ"
+		},
+		"DPAD_SHOW_ALWAYS": {
+			"en": "ALWAYS",
+			"ru": "ВСЕГДА"
+		}
+	}
+}

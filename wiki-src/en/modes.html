@@ -1,0 +1,68 @@
+title: Game modes
+description: NEARCOIL modes — Ranked and its leaderboards and weekly leagues, the Daily Challenge, and the Campaign with medals, fuses and chapter rewards.
+lead: Three ways to play the same rules: {{ t('RANKED') }} for the high score, the {{ t('DAILY') }} for one shared board a day, and the {{ t('CAMPAIGN') }} of {{ derived.levels_total }} hand-made levels.
+---
+<div class="float">{{ img('title', 'The main menu: Campaign, Ranked and the Daily Challenge.') }}</div>
+<h2 id="ranked">{{ t('RANKED') }}</h2>
+<p>The endless mode. One canonical ruleset for everyone: the standard board and speed, all four <a href="events.html">Circuit Events</a> and all three <a href="modules.html">modules</a>. The run lasts until you crash.</p>
+<ul>
+  <li>Your best score goes on the online leaderboard: the world, your country (set in Settings, can be changed once in 30 days) or your platform, for all time or this week.</li>
+  <li>Every run on a board comes with its replay: tap a name to watch how it was played. The server re-plays submitted runs to check them.</li>
+  <li>Without a connection the run still counts locally and is sent later.</li>
+</ul>
+<h3 id="leagues">Weekly leagues</h3>
+<p>Once enough people play ({{ league.min_players }} a week), the weekly board splits into leagues, Duolingo-style:</p>
+<ul>
+  <li>Your first Ranked run of the week puts you in a group of about {{ league.group_size }} players of your tier. Your league score is your best run of the week.</li>
+  <li>The week ends on Monday 00:00 UTC: the top {{ league.promote }} of each group move up a tier, the bottom {{ league.demote }} move down.</li>
+  <li>{{ league.tiers }} tiers, from the lowest: {{ t('LEAGUE_T0') }}, {{ t('LEAGUE_T1') }}, {{ t('LEAGUE_T2') }}, {{ t('LEAGUE_T3') }}, {{ t('LEAGUE_T4') }}, {{ t('LEAGUE_T5') }}. Rewards are cosmetic.</li>
+</ul>
+<p>Until then the plain weekly board is shown instead.</p>
+<div class="clear"></div>
+
+<h2 id="daily">{{ t('DAILY') }}</h2>
+<ul>
+  <li>One board a day, <b>the same for everyone</b>: the same nodes for the same moves and the same event draws. A new one starts every day at 00:00 UTC.</li>
+  <li><b>{{ Economy.DAILY_RANKED_ATTEMPTS }} counted tries</b> a day. A try is spent when it starts, so quitting a bad start still uses it. After that you can practise on the day's board until tomorrow.</li>
+  <li>Your best counted try goes on the day's leaderboard.</li>
+  <li>The first try of the day refills one Campaign <a href="#fuses">fuse</a>.</li>
+  <li>Counted tries need a connection (the server hands them out); offline you can only practise.</li>
+  <li>The Daily uses exactly the Ranked rules.</li>
+</ul>
+
+<h2 id="campaign">{{ t('CAMPAIGN') }}</h2>
+<div class="float">{{ img('campaign_map', 'The Campaign map: chapter 2, GATES, with medals on the levels done.') }}</div>
+<p>{{ derived.levels_total }} levels in {{ derived.chapters_total }} chapters. Each chapter teaches one idea and ends with a test; every level changes a few rules (board, speed, events, modules, start). The full list with every target is on <a href="campaign.html">All Campaign levels</a>.</p>
+<h3>Targets and medals</h3>
+<ul>
+  <li>Each level has three score targets: {{ term('PASS') }}, {{ term('GREAT') }} and {{ term('PERFECT') }}, and a time limit.</li>
+  <li>The level ends when the time is up, when you crash, or <b>at once when you reach PERFECT</b>. Your medal is the best target your score reached; points are never lost on a crash, so a medal reached stays even if you crash later.</li>
+  <li>After reaching a medal you can finish the level from the pause menu.</li>
+  <li>{{ t('PASS') }} opens the next level. Levels you have cleared can be replayed any time for a better medal.</li>
+  <li>Many lessons have a {{ t('SHOW_DEMO') }} button on the briefing card: a short demonstration of the move.</li>
+</ul>
+<div class="clear"></div>
+<div class="float">{{ img('campaign_brief', 'The briefing card of 1-08 THREAD: goal, how-to, the three targets and the time.') }}</div>
+<h3 id="fuses">{{ t('FUSES') }}</h3>
+<ul>
+  <li>You have up to <b>{{ Economy.FUSE_MAX }} fuses</b>. One comes back every {{ Economy.FUSE_REGEN_S // 60 }} minutes (a full bank in {{ Economy.FUSE_MAX * Economy.FUSE_REGEN_S // 60 }} minutes).</li>
+  <li>A fuse burns only when you <b>fail a level you have not cleared yet</b> (no medal), including quitting it mid-run. Leaving from the briefing card costs nothing.</li>
+  <li>Replays of cleared levels are free. Chapter 1 never costs fuses.</li>
+  <li>Ranked, the Daily and practice never cost anything.</li>
+  <li>{{ t('FULL_RECHARGE') }} (an in-app purchase) refills the bank; the first Daily try of the day gives one fuse.</li>
+</ul>
+<h3>Chapter rewards</h3>
+<p>Finishing a chapter unlocks a colour accent for the free SIGNATURE theme ({{ t('COBALT') }}, {{ t('VIOLET') }}, {{ t('ACID') }}, {{ t('ROSE') }}, {{ t('ICE') }}, {{ t('GOLD') }}, {{ t('WHITE') }}). It is switched on at once; pick another or the original in Themes.</p>
+<div class="clear"></div>
+
+<h2 id="results">After a run</h2>
+<div class="float">{{ img('results', 'The results screen with the run’s stats.') }}</div>
+<ul>
+  <li>The results show the score, your best and the highest multiplier, plus the run's numbers: length, close calls, threads, squeezes, needles, gates, relays, wires and modules.</li>
+  <li>{{ t('REPLAY') }} plays the run back at 1×, 2× or 4× and can jump to the best moment.</li>
+  <li>{{ t('CREATE_VIDEO') }} makes a short vertical clip — the whole run or the best moments — and {{ t('SHARE') }} sends a result card.</li>
+</ul>
+<div class="clear"></div>
+
+<h2 id="fair">Fair by design</h2>
+<p>Nothing you can buy changes the score. Themes are cosmetic only (they never change hitboxes, timing or scoring), modules and attempts are never sold, and Ranked and the Daily are always free.</p>

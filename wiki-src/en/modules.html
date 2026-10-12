@@ -1,0 +1,44 @@
+title: Modules
+description: NEARCOIL modules — how module ports work and what PHASE, SURGE and CUT do, with exact durations and payouts.
+lead: Win a Circuit Event and the board offers a reward: one or two <b>ports</b>, each holding a module. Drive into the one you want. Modules are never sold; you only get them by playing.
+---
+<h2 id="ports">Ports ({{ t('CHOOSE') }})</h2>
+<div class="float">{{ img('ports', 'Two module ports after a won event: choose by steering.') }}</div>
+<ul>
+  <li>Ports open after a <b>won</b> event (on Campaign levels that allow modules). One or two appear {{ Circuit.PORT_REACH[0] }}–{{ Circuit.PORT_REACH[1] }} cells from your head, preferably on opposite sides of your heading, so it is a real fork.</li>
+  <li>You have {{ steps(Circuit.PORT_TIME) }} to steer into one. Driving into a port takes its module; the other port disappears.</li>
+  <li>What can be offered: {{ t('PHASE') }} unless you already carry one; {{ t('SURGE') }} always; {{ t('CUT') }} only when your body is at least {{ Circuit.CUT_MIN_LEN }} cells long and you don't carry one.</li>
+  <li>You carry at most one PHASE and one CUT at a time. The module you hold is shown on the right of the event bar.</li>
+</ul>
+<div class="clear"></div>
+
+<h2 id="phase">{{ t('PHASE') }}</h2>
+<div class="float">{{ img('phase', 'Lesson 4-01: carrying a PHASE, the head hops over a row of insulators.') }}</div>
+<p>While you carry a PHASE, your next crash into a conductor does not end the run: the head hops over that one cell and lands on the far side.</p>
+<ul>
+  <li>Works on any conductor: your body, pylons, live posts, bridge bars, wires and insulators. It hops exactly one cell, so the cell beyond must be free.</li>
+  <li>The board edge still kills; so does a conductor with no free cell behind it.</li>
+  <li>The hop pays +{{ Circuit.PHASE_PTS }} points (× multiplier) and +{{ Circuit.PHASE_FLOW }} charge — use it on purpose, not only as a spare life.</li>
+</ul>
+<div class="clear"></div>
+
+<h2 id="surge">{{ t('SURGE') }}</h2>
+<div class="float">{{ img('surge', 'SURGE running: the snake is faster, gains are bigger.') }}</div>
+<p>{{ secs(Circuit.SURGE_TIME, 135).capitalize() }} of overload ({{ Circuit.SURGE_TIME }} steps):</p>
+{{ table(['Effect', 'Value'], [
+  ['Speed', '+' + pct(Circuit.SURGE_SPEED_PCT) + ' on top of the multiplier bonus'],
+  ['Charge from everything', x(Circuit.SURGE_GAIN_PCT / 100)],
+  ['Points from everything', x(Circuit.SURGE_PTS_PCT / 100)],
+]) }}
+<p>Taking another SURGE while one runs adds its time on top.</p>
+<div class="clear"></div>
+
+<h2 id="cut">{{ t('CUT') }}</h2>
+<div class="float">{{ img('cut', 'Lesson 4-05: the next node cuts off the oldest part of the body.') }}</div>
+<p>The next node you eat after taking CUT severs the oldest part of your body.</p>
+<ul>
+  <li>It removes {{ pct(Circuit.CUT_PCT) }} of the body, the oldest part (the tail end), but never leaves fewer than {{ GameSim.START_LEN }} cells.</li>
+  <li>Every severed cell discharges into the meter: +{{ Circuit.CUT_FLOW_PER_CELL }} charge per cell.</li>
+  <li>It frees room on a crowded board; the price is less body to skim along.</li>
+</ul>
+<div class="clear"></div>

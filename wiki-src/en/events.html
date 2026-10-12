@@ -1,0 +1,92 @@
+title: Circuit Events
+description: NEARCOIL Circuit Events — GATE, RELAY, HOT ZONE and LIVE WIRE: how each works, timers, payouts, every variant and modifier, and when they appear.
+lead: Every so often the board throws a short challenge at you: a Circuit Event. There are four kinds — {{ t('GATE') }}, {{ t('RELAY') }}, {{ t('HOT ZONE') }} and {{ t('LIVE WIRE') }} — and each has variants. Winning one pays points and charge and opens a <a href="modules.html">module choice</a>.
+---
+<h2 id="rhythm">When events come</h2>
+<ul>
+  <li>The first event starts after <b>{{ steps(Circuit.FIRST_EVENT) }}</b> of free play.</li>
+  <li>Between events there are {{ Circuit.GAP_MIN }}–{{ Circuit.GAP_MAX }} steps of free play. The pause shrinks by {{ Circuit.GAP_SHRINK }} steps with every event you complete, but never below {{ Circuit.GAP_FLOOR }}. If an event ended while you were at ×5 or more, you get {{ Circuit.RECOVERY_HOT }} extra calm steps.</li>
+  <li>An event never starts while you are inside a gap, and new structures appear at least {{ Circuit.SAFE_DIST }} cells from your head, never right in your path. If the board is too crowded the event waits a moment and tries again.</li>
+  <li>The live event's name, progress and timer are shown in the bar under the meter. The first time you meet each kind, a card explains it.</li>
+  <li>Running out of time just ends the event without a reward. Structures disappear when the event ends (relay posts stay a while longer).</li>
+</ul>
+<h3>Which event (Ranked and Daily)</h3>
+<p>The kinds come from a shuffled bag that never gives the same kind twice in a row. {{ t('LIVE WIRE') }} joins only after the first {{ Circuit.WIRE_AFTER }} events. Harder variants unlock with the run's <b>intensity</b> — the number of events completed so far, plus one while you are at ×5 or more. The tables below give the intensity each variant needs and its weight in the draw. Campaign levels list exactly which events and variants they use (see <a href="campaign.html">all levels</a>).</p>
+<p>Modifiers can be added on top:</p>
+{{ table(['Modifier', 'For', 'From intensity', 'Chance', 'Effect'], [
+  ['<code>narrow</code>', t('GATE'), n(Circuit.MODIFIERS.narrow[1]), pct(Circuit.MODIFIERS.narrow[2]), 'every door is one cell deeper (up to 4)'],
+  ['<code>drift</code>', t('GATE'), n(Circuit.MODIFIERS.drift[1]), pct(Circuit.MODIFIERS.drift[2]), 'the gate slides sideways one cell every ' + n(Circuit.DRIFT_PERIOD) + ' steps (' + t('DRIFT GATE') + ')'],
+  ['<code>fast</code>', t('LIVE WIRE'), n(Circuit.MODIFIERS.fast[1]), pct(Circuit.MODIFIERS.fast[2]), 'the wire moves every 2 steps instead of every ' + n(Circuit.WIRE_PERIOD)],
+]) }}
+
+<h2 id="gate">{{ t('GATE') }}</h2>
+{{ shots(
+  img('gate', 'A gate course: two rows of pylons with the door between them; the next gate is already waiting.'),
+  img('gate_pass', 'A gate passed: the word shows its number in the course.'),
+  img('gate_double', t('DOUBLE GATE') + ': two doors, either counts.'),
+  img('gate_risk', t('RISK GATE') + ': the shallow door pays +25, the deep one +90.'),
+) }}
+<p>A gate is a <b>door</b> — a straight passage 1–4 cells long — with a lethal <b>pylon</b> on each side of every door cell. To pass it, drive into the door and out the far side <b>straight through</b>, without turning inside. Either direction works. The door's length is its <b>depth</b>; deeper doors pay more.</p>
+<ul>
+  <li>Each gate must be passed within <b>{{ steps(Circuit.GATE_TIME) }}</b>; the timer restarts for the next gate of a course.</li>
+  <li>A new door appears {{ Circuit.GATE_REACH[0] }}–{{ Circuit.GATE_REACH[1] }} cells from your head. A pylon is never placed in your lane within {{ Circuit.GATE_LANE_CLEAR }} cells ahead, or in the lanes beside it within {{ Circuit.GATE_SIDE_CLEAR }} cells.</li>
+  <li>Pylons are conductors: brushing them is a close call (paid in full), driving between them counts as tight steps. A gap of pylons alone is not a maneuver — the gate pays for it.</li>
+</ul>
+{{ table(['Gate in the course', '1st', '2nd', '3rd'], [
+  ['Door depth', n(Circuit.GATE_DEPTH[0]), n(Circuit.GATE_DEPTH[1]), n(Circuit.GATE_DEPTH[2])],
+  ['Points (× multiplier)', n(Circuit.GATE_PTS[0]), n(Circuit.GATE_PTS[1]), n(Circuit.GATE_PTS[2])],
+  ['Charge', n(Circuit.GATE_FLOW[0]), n(Circuit.GATE_FLOW[1]), n(Circuit.GATE_FLOW[2])],
+], 'num') }}
+<h3>Variants</h3>
+{{ director_table('gate') }}
+<ul>
+  <li><b>{{ t('RISK GATE') }}</b>: shallow door (depth {{ Circuit.RISK_SAFE[0] }}) +{{ Circuit.RISK_SAFE[1] }} points and {{ Circuit.RISK_SAFE[2] }} charge; deep door (depth {{ Circuit.RISK_DEEP[0] }}) +{{ Circuit.RISK_DEEP[1] }} points and {{ Circuit.RISK_DEEP[2] }} charge. The first one you pass ends the event.</li>
+  <li><b>{{ t('ECHO GATE') }}</b>: one door of depth {{ Circuit.ECHO_DEPTH }}, passed {{ Circuit.ECHO_PASSES }} times — there, back the other way, there again — each within {{ Circuit.ECHO_TIME }} steps. The passes pay {{ lst(Circuit.ECHO_PTS) }} points and {{ lst(Circuit.ECHO_FLOW) }} charge. One pass is already a win; the rest is bonus.</li>
+  <li><b>{{ t('GATE CHAIN') }}</b>: each next gate appears {{ Circuit.CHAIN_AHEAD[0] }}–{{ Circuit.CHAIN_AHEAD[1] }} cells straight ahead of where you left the last one, lined up with your exit.</li>
+</ul>
+
+<h2 id="relay">{{ t('RELAY') }}</h2>
+{{ shots(
+  img('relay', 'A relay: terminal 1 touched, number 2 is next.'),
+  img('relay_posts', 'After the relay: the touched terminals are live posts.'),
+  img('relay_bridge', t('BRIDGE RELAY') + ': the posts are joined by live bars.'),
+) }}
+<p>Numbered <b>terminals</b> appear around the board, at least {{ Circuit.RELAY_SPREAD }} cells apart. Steer your head onto them <b>in number order</b> before time runs out.</p>
+<ul>
+  <li>Time: {{ steps(Circuit.RELAY_TIME) }} for three terminals, {{ Circuit.RELAY_TIME_PER_EXTRA }} steps more for each extra one.</li>
+  <li>Each terminal: +{{ Circuit.RELAY_NODE_PTS }} points (× multiplier) and +{{ Circuit.RELAY_NODE_FLOW }} charge.</li>
+  <li>Completion: +{{ Circuit.RELAY_DONE_PTS }} points and at least {{ Circuit.RELAY_DONE_FLOW }} charge — always enough to reach the next multiplier (as long as you are below ×{{ Circuit.RELAY_STAGE_CAP + 1 }}). The harder variants (four, fast, dark, live) pay ×{{ Circuit.RELAY_BONUS_PCT / 100 }} on completion.</li>
+  <li>A touched terminal becomes a <b>live post</b> once your body has left it: lethal, but good for close calls. Posts stay {{ steps(Circuit.RELAY_POST_LIFE) }} after the relay ends ({{ Circuit.RELAY_BRIDGE_LIFE }} with a bridge).</li>
+</ul>
+<h3>Variants</h3>
+{{ director_table('relay') }}
+
+<h2 id="hot">{{ t('HOT ZONE') }}</h2>
+{{ shots(
+  img('hot', 'A hot zone appears: a 5×5 square.'),
+  img('hot_in', 'Inside the zone: the bank grows, shown on the event bar.'),
+  img('hot_cash', t('CASH') + ': leaving the square pays the bank out.'),
+) }}
+<p>A {{ Circuit.HOT_SIZE }}×{{ Circuit.HOT_SIZE }} square. While your head is inside it, charge and points <b>bank up</b>; leave the square to <b>cash in</b> ({{ t('CASH') }}). You can go in and out several times. If the zone overloads while your head is still inside, the bank burns ({{ t('BURNED') }}).</p>
+<ul>
+  <li>The zone lives {{ steps(Circuit.HOT_LIFE) }}; the last {{ Circuit.HOT_CRITICAL }} steps are a warning.</li>
+  <li>Every step inside banks {{ lst(Circuit.HOT_TICK) }} charge (rising by quarter of the zone's life) and {{ Circuit.HOT_TICK_PTS }} points.</li>
+  <li>Everything you earn inside is paid as usual <i>and</i> {{ pct(Circuit.HOT_GAIN_PCT) }} of it is banked on top.</li>
+  <li>Inside the zone close calls charge in full at any multiplier, and <a href="charge.html#hunger">hunger</a> does not apply.</li>
+  <li>Banked points are multiplied by your multiplier when you cash. The event counts as won once you have cashed at least {{ Circuit.HOT_SUCCESS }} charge.</li>
+</ul>
+<h3>Variants</h3>
+{{ director_table('hot') }}
+<p class="small">{{ t('RISING ZONE') }} lives {{ Circuit.HOT_LIFE + 16 }} steps and banks ×2 in its second half. {{ t('UNSTABLE ZONE') }} lives {{ Circuit.HOT_LIFE - 18 }}–{{ Circuit.HOT_LIFE + 12 }} steps and warns only {{ Circuit.HOT_CRITICAL_UNSTABLE }} steps before.</p>
+
+<h2 id="wire">{{ t('LIVE WIRE') }}</h2>
+<div class="float">{{ img('wire', 'A live wire: the first of three skims (' + t('SKIM %d/%d').replace('%d/%d', '1/3') + ').') }}</div>
+<p>A lethal bar {{ Circuit.WIRE_LEN }} cells long slides back and forth along a lane, one cell every {{ Circuit.WIRE_PERIOD }} steps. Pass right next to it <b>{{ Circuit.WIRE_SKIMS }} times</b> within {{ steps(Circuit.WIRE_TIME) }}. Touching it ends the run.</p>
+<ul>
+  <li>Skims count at least {{ Circuit.WIRE_SKIM_GAP }} steps apart.</li>
+  <li>Each skim: +{{ Circuit.WIRE_SKIM_PTS }} points (× multiplier) and +{{ Circuit.WIRE_SKIM_FLOW }} charge; beating the wire: +{{ Circuit.WIRE_DONE_PTS }} points and +{{ Circuit.WIRE_DONE_FLOW }} charge.</li>
+  <li>The wire never moves into or next to your head, nor onto the {{ Circuit.WIRE_AHEAD }} cells straight ahead of it.</li>
+</ul>
+<h3>Variants</h3>
+{{ director_table('wire') }}
+<div class="clear"></div>
