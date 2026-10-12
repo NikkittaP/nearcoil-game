@@ -1,5 +1,5 @@
 {
-	"generated": "2026-10-12 09:51:33 UTC",
+	"generated": "2026-10-12 11:24:02 UTC",
 	"version": "0.1.4",
 	"GameSim": {
 		"RULES_VERSION": 8,
@@ -566,6 +566,14 @@
 		"DPAD_EDGE": 18.0,
 		"DPAD_OVER_K": 0.42,
 		"BACK_DEBOUNCE_MS": 250
+	},
+	"GameController": {
+		"READY_TIME": 0.55,
+		"BRIEF_READY": 0.3,
+		"MAX_QUEUE": 2,
+		"COUNT_BEATS": 3,
+		"COUNT_BEAT": 0.5,
+		"HITSTOP_RATE": 0.3
 	},
 	"ranked": {
 		"id": "ranked",
