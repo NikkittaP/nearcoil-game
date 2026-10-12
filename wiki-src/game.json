@@ -1,5 +1,5 @@
 {
-	"generated": "2026-10-12 08:47:08 UTC",
+	"generated": "2026-10-12 09:44:16 UTC",
 	"version": "0.1.4",
 	"GameSim": {
 		"RULES_VERSION": 8,
@@ -5273,6 +5273,46 @@
 		"UPDATE_LATER": {
 			"en": "NOT NOW",
 			"ru": "НЕ СЕЙЧАС"
+		},
+		"UPDATE_ASKING": {
+			"en": "OPENING GOOGLE PLAY...",
+			"ru": "ОТКРЫВАЕМ GOOGLE PLAY..."
+		},
+		"UPDATE_DOWNLOADING": {
+			"en": "DOWNLOADING UPDATE: %d%%",
+			"ru": "СКАЧИВАЕТСЯ ОБНОВЛЕНИЕ: %d%%"
+		},
+		"UPDATE_INSTALLING": {
+			"en": "INSTALLING UPDATE...",
+			"ru": "УСТАНОВКА ОБНОВЛЕНИЯ..."
+		},
+		"UPDATE_READY_TITLE": {
+			"en": "UPDATE DOWNLOADED",
+			"ru": "ОБНОВЛЕНИЕ СКАЧАНО"
+		},
+		"UPDATE_READY_BODY": {
+			"en": "RESTART NEARCOIL TO INSTALL IT. IT TAKES A FEW SECONDS AND YOUR PROGRESS IS SAVED.",
+			"ru": "ПЕРЕЗАПУСТИТЕ NEARCOIL, ЧТОБЫ УСТАНОВИТЬ ЕГО. ЭТО ЗАЙМЁТ ПАРУ СЕКУНД, ПРОГРЕСС СОХРАНЁН."
+		},
+		"UPDATE_RESTART": {
+			"en": "RESTART",
+			"ru": "ПЕРЕЗАПУСК"
+		},
+		"UPDATE_READY_STRIP": {
+			"en": "UPDATE READY: RESTART",
+			"ru": "ОБНОВЛЕНИЕ ГОТОВО: ПЕРЕЗАПУСК"
+		},
+		"UPDATE_FAILED_TITLE": {
+			"en": "UPDATE FAILED",
+			"ru": "ОБНОВЛЕНИЕ НЕ УДАЛОСЬ"
+		},
+		"UPDATE_FAILED_BODY": {
+			"en": "GOOGLE PLAY COULD NOT UPDATE THE GAME. CHECK THE CONNECTION AND TRY AGAIN OR UPDATE IN THE STORE.",
+			"ru": "GOOGLE PLAY НЕ СМОГ ОБНОВИТЬ ИГРУ. ПРОВЕРЬТЕ СЕТЬ И ПОПРОБУЙТЕ ЕЩЁ РАЗ ИЛИ ОБНОВИТЕ В МАГАЗИНЕ."
+		},
+		"UPDATE_CLOSE": {
+			"en": "CLOSE",
+			"ru": "ЗАКРЫТЬ"
 		},
 		"CTRL_DPAD": {
 			"en": "D-PAD",
