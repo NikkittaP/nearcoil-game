@@ -82,7 +82,7 @@ lead: Точные числа, на которых держится справо
 <h3>Модификаторы</h3>
 {{ table(['Модификатор', 'Для', 'С интенсивности', 'Шанс', 'Что делает'], [
   ['<code>narrow</code>', t('GATE'), n(Circuit.MODIFIERS.narrow[1]), pct(Circuit.MODIFIERS.narrow[2]), 'каждые ворота на клетку длиннее (максимум 4)'],
-  ['<code>drift</code>', t('GATE'), n(Circuit.MODIFIERS.drift[1]), pct(Circuit.MODIFIERS.drift[2]), 'ворота сдвигаются на клетку каждые ' + n(Circuit.DRIFT_PERIOD) + ' шагов'],
+  ['<code>drift</code>', t('GATE'), n(Circuit.MODIFIERS.drift[1]), pct(Circuit.MODIFIERS.drift[2]), 'ворота сдвигаются на клетку каждые ' + n(Circuit.DRIFT_PERIOD) + ' шагов; за ' + n(Circuit.DRIFT_WARN) + ' шага контуры показывают, куда они сдвинутся, и они сдвигаются туда или остаются на месте (помешать может только занятая за это время клетка, голова в проходе или столб ближе ' + n(Circuit.DRIFT_CLEAR) + ' клеток прямо перед головой)'],
   ['<code>fast</code>', t('LIVE WIRE'), n(Circuit.MODIFIERS.fast[1]), pct(Circuit.MODIFIERS.fast[2]), 'провод движется каждые 2 шага вместо ' + n(Circuit.WIRE_PERIOD)],
 ]) }}
 
@@ -91,7 +91,7 @@ lead: Точные числа, на которых держится справо
   [t('GATE'), steps(Circuit.GATE_TIME) + ' на ворота; ворота появляются в ' + n(Circuit.GATE_REACH[0]) + '–' + n(Circuit.GATE_REACH[1]) + ' клетках от головы; столба нет на твоей линии ближе ' + n(Circuit.GATE_LANE_CLEAR) + ' клеток впереди и на соседних ближе ' + n(Circuit.GATE_SIDE_CLEAR)],
   [t('ECHO GATE'), n(Circuit.ECHO_PASSES) + ' прохода через ворота длиной ' + n(Circuit.ECHO_DEPTH) + ', по ' + n(Circuit.ECHO_TIME) + ' шагов на каждый'],
   [t('GATE CHAIN'), 'следующие ворота — в ' + n(Circuit.CHAIN_AHEAD[0]) + '–' + n(Circuit.CHAIN_AHEAD[1]) + ' клетках прямо за выходом'],
-  [t('RELAY'), steps(Circuit.RELAY_TIME) + ' на три клеммы, +' + n(Circuit.RELAY_TIME_PER_EXTRA) + ' шагов на каждую следующую; клеммы не ближе ' + n(Circuit.RELAY_SPREAD) + ' клеток друг к другу; стойки держатся ' + n(Circuit.RELAY_POST_LIFE) + ' шагов (' + n(Circuit.RELAY_BRIDGE_LIFE) + ' с мостом)'],
+  [t('RELAY'), steps(Circuit.RELAY_TIME) + ' на три клеммы, +' + n(Circuit.RELAY_TIME_PER_EXTRA) + ' шагов на каждую следующую; клеммы не ближе ' + n(Circuit.RELAY_SPREAD) + ' клеток друг к другу; стойки держатся ' + n(Circuit.RELAY_POST_LIFE) + ' шагов после конца своего реле (' + n(Circuit.RELAY_BRIDGE_LIFE) + ' с мостом, шины тоже), даже если уже началось следующее'],
   [t('HOT ZONE'), 'живёт ' + steps(Circuit.HOT_LIFE) + ', предупреждает за последние ' + n(Circuit.HOT_CRITICAL) + '; копит ' + n(Circuit.HOT_TICK_PTS) + ' очка за шаг внутри; засчитана, когда забрано ' + n(Circuit.HOT_SUCCESS) + ' заряда. ' + t('RISING ZONE') + ' живёт ' + n(Circuit.HOT_LIFE + 16) + ' шагов; ' + t('UNSTABLE ZONE') + ' — ' + n(Circuit.HOT_LIFE - 18) + '–' + n(Circuit.HOT_LIFE + 12) + ' шагов и предупреждает за ' + n(Circuit.HOT_CRITICAL_UNSTABLE)],
   [t('LIVE WIRE'), 'сдвигается на клетку каждые ' + n(Circuit.WIRE_PERIOD) + ' шага; ' + n(Circuit.WIRE_SKIMS) + ' прохода за ' + steps(Circuit.WIRE_TIME) + ', не чаще раза в ' + n(Circuit.WIRE_SKIM_GAP) + ' шагов; не встаёт на ' + n(Circuit.WIRE_AHEAD) + ' клетки прямо перед головой'],
   ['Порты модулей', 'в ' + n(Circuit.PORT_REACH[0]) + '–' + n(Circuit.PORT_REACH[1]) + ' клетках от головы, открыты ' + steps(Circuit.PORT_TIME) + '; ' + t('CUT') + ' предлагается при длине тела от ' + n(Circuit.CUT_MIN_LEN) + ' клеток'],

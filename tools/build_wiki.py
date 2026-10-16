@@ -69,6 +69,7 @@ UI = {
         "no_food": "no nodes", "walls": "insulators", "start_len": "starts {n} long", "start_x": "starts at ×{n}",
         "cap_x": "ceiling ×{n}", "speed_pct": "speed {n}%", "charge_pct": "charge {n}%", "drain_pct": "drain {n}%",
         "phase": "carries a PHASE", "surge": "starts in SURGE", "cut": "carries a CUT", "ports": "ports",
+        "start_port": "{m} port ahead at the start",
         "no_events": "no events", "events": "events",
         "ach": "Achievement", "ach_what": "What it asks", "tier": "Tier", "hidden": "hidden: shows as ??? until you earn it",
     },
@@ -87,6 +88,7 @@ UI = {
         "no_food": "без узлов", "walls": "изоляторы", "start_len": "старт: длина {n}", "start_x": "старт с ×{n}",
         "cap_x": "потолок ×{n}", "speed_pct": "скорость {n}%", "charge_pct": "заряд {n}%", "drain_pct": "утечка {n}%",
         "phase": "с ФАЗОЙ", "surge": "старт на ФОРСАЖЕ", "cut": "со СРЕЗОМ", "ports": "порты",
+        "start_port": "{m}: порт впереди на старте",
         "no_events": "без событий", "events": "события",
         "ach": "Достижение", "ach_what": "Что нужно", "tier": "Уровень", "hidden": "скрытое: до получения видно как ???",
     },
@@ -240,6 +242,8 @@ class Page:
             out.append(u["surge"])
         if l["start_cut"]:
             out.append(u["cut"])
+        if l.get("start_port"):
+            out.append(u["start_port"].format(m=self.t(l["start_port"].upper())))
         ev = []
         for k in l["events"]:
             key = {"gate": "GATE", "relay": "RELAY", "hot": "HOT ZONE", "wire": "LIVE WIRE"}[k]

@@ -1,8 +1,8 @@
 {
-	"generated": "2026-10-16 20:23:39 UTC",
+	"generated": "2026-10-16 21:22:17 UTC",
 	"version": "0.1.8",
 	"GameSim": {
-		"RULES_VERSION": 9,
+		"RULES_VERSION": 10,
 		"MIN_RULES_VERSION": 7,
 		"FIX_SERIAL_BASE": 67108864,
 		"W": 13,
@@ -295,6 +295,8 @@
 		"GATE_LANE_CLEAR": 6,
 		"GATE_SIDE_CLEAR": 2,
 		"DRIFT_PERIOD": 7,
+		"DRIFT_WARN": 4,
+		"DRIFT_CLEAR": 2,
 		"RELAY_TIME": 135,
 		"RELAY_TIME_PER_EXTRA": 35,
 		"RELAY_TIMED_PCT": 65,
@@ -341,6 +343,12 @@
 			10
 		],
 		"PORT_SPREAD": 5,
+		"START_PORT_AT": 2,
+		"START_PORT_REACH": [
+			3,
+			7
+		],
+		"START_PORT_GAP": 8,
 		"PHASE_FLOW": 170,
 		"PHASE_PTS": 50,
 		"SURGE_TIME": 60,
@@ -514,13 +522,25 @@
 		"FUSE_BONUS": 1,
 		"DAILY_RANKED_ATTEMPTS": 3,
 		"DAILY_BOARD": "best_of",
+		"RANKED_FREE_DAILY": 5,
+		"RANKED_PLUS_DAILY": 10,
+		"RANKED_DAILY_CAP": 15,
+		"RANKED_AD_RUNS": 1,
 		"PRODUCT_PLUS": "nearcoil_plus",
 		"PRODUCT_RECHARGE": "nearcoil_fuse_recharge",
 		"PRODUCT_THEME_PREFIX": "nearcoil_theme_",
+		"PRODUCT_RUNS_10": "nearcoil_ranked_runs_10",
+		"PRODUCT_RUNS_30": "nearcoil_ranked_runs_30",
+		"RUN_PACKS": {
+			"nearcoil_ranked_runs_10": 10,
+			"nearcoil_ranked_runs_30": 30
+		},
 		"PRICE_FALLBACK": {
 			"nearcoil_plus": "$4.99",
 			"nearcoil_fuse_recharge": "$0.99",
-			"theme": "$1.99"
+			"theme": "$1.99",
+			"nearcoil_ranked_runs_10": "$0.99",
+			"nearcoil_ranked_runs_30": "$1.99"
 		},
 		"PRICE_FALLBACK_MICROS": {
 			"nearcoil_plus": 4990000,
@@ -572,7 +592,7 @@
 		]
 	},
 	"DailySeed": {
-		"DAILY_TAG": "NEARCOIL_DAILY_v9_"
+		"DAILY_TAG": "NEARCOIL_DAILY_v10_"
 	},
 	"Main": {
 		"HUD_H": 166.0,
@@ -883,6 +903,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {}
 					},
@@ -914,6 +935,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {}
 					},
@@ -945,6 +967,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -983,6 +1006,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {}
 					},
@@ -1014,6 +1038,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -1052,6 +1077,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {}
 					},
@@ -1083,6 +1109,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -1121,6 +1148,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -1159,6 +1187,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -1197,6 +1226,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -1251,6 +1281,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -1297,6 +1328,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -1341,6 +1373,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -1385,6 +1418,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {}
 					},
@@ -1422,6 +1456,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -1466,6 +1501,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -1511,6 +1547,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {}
 					},
@@ -1550,6 +1587,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {}
 					},
@@ -1587,6 +1625,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -1639,6 +1678,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -1693,6 +1733,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -1708,7 +1749,7 @@
 						"name": "LIVE POSTS",
 						"hint": "TOUCHED TERMINALS STAY LIVE. GRAZE THEM",
 						"how": "PASS IN THE CELL NEXT TO A LIVE TERMINAL FOR CHARGE. HITTING IT KILLS",
-						"demo": "graze",
+						"demo": "post",
 						"targets": [
 							1250,
 							3550,
@@ -1738,6 +1779,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {}
 					},
@@ -1775,6 +1817,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {}
 					},
@@ -1812,6 +1855,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {}
 					},
@@ -1849,6 +1893,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {}
 					},
@@ -1886,6 +1931,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {}
 					},
@@ -1923,6 +1969,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -1967,6 +2014,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -2012,6 +2060,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {}
 					},
@@ -2047,6 +2096,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 2,
 						"goal": {
 							"en": [
@@ -2095,6 +2145,7 @@
 						"start_phase": 1,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -2137,6 +2188,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -2175,8 +2227,9 @@
 						"modules": [],
 						"ports": false,
 						"start_phase": 0,
-						"start_surge": true,
+						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "surge",
 						"intensity": 0,
 						"goal": {}
 					},
@@ -2213,6 +2266,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -2250,7 +2304,8 @@
 						"ports": false,
 						"start_phase": 0,
 						"start_surge": false,
-						"start_cut": 1,
+						"start_cut": 0,
+						"start_port": "cut",
 						"intensity": 0,
 						"goal": {}
 					},
@@ -2287,6 +2342,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -2331,6 +2387,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -2376,6 +2433,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {}
 					},
@@ -2412,6 +2470,7 @@
 						"start_phase": 1,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -2458,6 +2517,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 2,
 						"goal": {
 							"en": [
@@ -2512,6 +2572,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -2559,6 +2620,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {}
 					},
@@ -2601,6 +2663,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -2648,6 +2711,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -2695,6 +2759,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -2742,6 +2807,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {}
 					},
@@ -2785,6 +2851,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {}
 					},
@@ -2825,6 +2892,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -2880,6 +2948,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {}
 					},
@@ -2939,6 +3008,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 0,
 						"goal": {
 							"en": [
@@ -2998,6 +3068,7 @@
 						"start_phase": 0,
 						"start_surge": true,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 3,
 						"goal": {}
 					},
@@ -3038,6 +3109,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 1,
+						"start_port": "",
 						"intensity": 3,
 						"goal": {}
 					},
@@ -3080,6 +3152,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 3,
 						"goal": {
 							"en": [
@@ -3134,6 +3207,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 3,
 						"goal": {}
 					},
@@ -3179,6 +3253,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 3,
 						"goal": {
 							"en": [
@@ -3229,6 +3304,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 3,
 						"goal": {
 							"en": [
@@ -3279,6 +3355,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 3,
 						"goal": {}
 					},
@@ -3322,6 +3399,7 @@
 						"start_phase": 0,
 						"start_surge": true,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 3,
 						"goal": {
 							"en": [
@@ -3369,6 +3447,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 3,
 						"goal": {}
 					},
@@ -3409,6 +3488,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 4,
 						"goal": {
 							"en": [
@@ -3464,6 +3544,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 5,
 						"goal": {}
 					},
@@ -3503,6 +3584,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 5,
 						"goal": {}
 					},
@@ -3543,6 +3625,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 5,
 						"goal": {
 							"en": [
@@ -3590,6 +3673,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 5,
 						"goal": {}
 					},
@@ -3639,6 +3723,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 5,
 						"goal": {
 							"en": [
@@ -3686,6 +3771,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 5,
 						"goal": {}
 					},
@@ -3726,6 +3812,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 5,
 						"goal": {
 							"en": [
@@ -3769,6 +3856,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 5,
 						"goal": {}
 					},
@@ -3813,6 +3901,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 7,
 						"goal": {}
 					},
@@ -3857,6 +3946,7 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
+						"start_port": "",
 						"intensity": 7,
 						"goal": {
 							"en": [
@@ -4509,8 +4599,8 @@
 			"ru": "ПОКУПКА ОТМЕНЕНА"
 		},
 		"PURCHASE_PENDING": {
-			"en": "PAYMENT PENDING. IT UNLOCKS WHEN GOOGLE PLAY CONFIRMS IT.",
-			"ru": "ПЛАТЁЖ В ОБРАБОТКЕ. ОТКРОЕТСЯ ПОСЛЕ ПОДТВЕРЖДЕНИЯ GOOGLE PLAY."
+			"en": "PAYMENT PENDING. IT UNLOCKS ONCE THE STORE CONFIRMS IT.",
+			"ru": "ПЛАТЁЖ В ОБРАБОТКЕ. ОТКРОЕТСЯ ПОСЛЕ ПОДТВЕРЖДЕНИЯ МАГАЗИНА."
 		},
 		"NOTHING_TO_RESTORE": {
 			"en": "NO PURCHASES ON THIS GOOGLE ACCOUNT.",
@@ -5745,8 +5835,8 @@
 			"ru": "ПРОЙДИ ВОРОТА — ПОЯВИТСЯ ПОРТ С ФАЗОЙ"
 		},
 		"SURGE: FASTER, MORE CHARGE, MORE POINTS": {
-			"en": "SURGE IS ON FROM THE START: FASTER, MORE CHARGE, MORE POINTS",
-			"ru": "ФОРСАЖ ВКЛЮЧЁН С САМОГО СТАРТА: БЫСТРЕЕ, БОЛЬШЕ ЗАРЯДА И ОЧКОВ"
+			"en": "TAKE THE SURGE FROM THE PORT AHEAD: FASTER, MORE CHARGE, MORE POINTS",
+			"ru": "ВОЗЬМИ ФОРСАЖ ИЗ ПОРТА ВПЕРЕДИ: БЫСТРЕЕ, БОЛЬШЕ ЗАРЯДА И ОЧКОВ"
 		},
 		"SURGE PORT": {
 			"en": "SURGE PORT",
@@ -5757,8 +5847,8 @@
 			"ru": "ПРОЙДИ ВОРОТА ИЛИ РЕЛЕ И ВОЗЬМИ ФОРСАЖ ИЗ ПОРТА"
 		},
 		"THE NEXT NODE SEVERS YOUR OLDEST LINE": {
-			"en": "THE NEXT NODE CUTS OFF YOUR TAIL",
-			"ru": "СЛЕДУЮЩИЙ УЗЕЛ ОТРЕЖЕТ ЧАСТЬ ХВОСТА"
+			"en": "TAKE THE CUT FROM THE PORT AHEAD. THE NEXT NODE THEN CUTS OFF YOUR TAIL",
+			"ru": "ВОЗЬМИ СРЕЗ ИЗ ПОРТА ВПЕРЕДИ. СЛЕДУЮЩИЙ УЗЕЛ ОТРЕЖЕТ ЧАСТЬ ХВОСТА"
 		},
 		"CUT PORT": {
 			"en": "CUT PORT",
@@ -7123,6 +7213,122 @@
 		"END_GOAL_MISSED": {
 			"en": "GOAL NOT MET",
 			"ru": "ЗАДАЧА НЕ ВЫПОЛНЕНА"
+		},
+		"RANKED_RUNS": {
+			"en": "RANKED RUNS",
+			"ru": "ЗАБЕГИ НА РЕКОРД"
+		},
+		"RUNS_DAILY_USED": {
+			"en": "DAILY RUNS USED",
+			"ru": "ДНЕВНЫЕ ЗАБЕГИ КОНЧИЛИСЬ"
+		},
+		"RUNS_COMPLETE": {
+			"en": "RANKED COMPLETE FOR TODAY",
+			"ru": "НА СЕГОДНЯ ВСЁ"
+		},
+		"RUNS_DONE_TODAY": {
+			"en": "DONE FOR TODAY",
+			"ru": "НА СЕГОДНЯ ВСЁ"
+		},
+		"RUNS_TODAY": {
+			"en": "TODAY  %d / %d",
+			"ru": "СЕГОДНЯ  %d / %d"
+		},
+		"RUNS_NEW_IN": {
+			"en": "NEW RUNS IN %s",
+			"ru": "НОВЫЕ ЗАБЕГИ ЧЕРЕЗ %s"
+		},
+		"RUNS_BANK_KEPT": {
+			"en": "EXTRA RUNS KEPT: %d",
+			"ru": "ЗАПАС СОХРАНЁН: %d"
+		},
+		"RUNS_MORE_TODAY": {
+			"en": "UP TO %d MORE TODAY",
+			"ru": "СЕГОДНЯ МОЖНО ЕЩЁ %d"
+		},
+		"RUNS_FOOT": {
+			"en": "EXTRA RUNS NEVER EXPIRE. RANKED LIMIT: %d A DAY",
+			"ru": "ЗАПАС НЕ СГОРАЕТ. ЛИМИТ НА РЕКОРД: %d В ДЕНЬ"
+		},
+		"RUNS_FREE_PART": {
+			"en": "%d A DAY",
+			"ru": "%d В ДЕНЬ"
+		},
+		"RUNS_EXTRA_PART": {
+			"en": "AD OR EXTRA RUNS",
+			"ru": "РЕКЛАМА ИЛИ ЗАПАС"
+		},
+		"EXTRA_RUNS": {
+			"en": "EXTRA RUNS",
+			"ru": "ЗАПАС"
+		},
+		"RUNS_AD_CREDIT": {
+			"en": "%d FROM AD",
+			"ru": "%d ЗА РЕКЛАМУ"
+		},
+		"RUNS_USE_EXTRA": {
+			"en": "USE 1 EXTRA RUN",
+			"ru": "ВЗЯТЬ ЗАБЕГ ИЗ ЗАПАСА"
+		},
+		"PLAY_RANKED": {
+			"en": "PLAY RANKED",
+			"ru": "ИГРАТЬ НА РЕКОРД"
+		},
+		"RUNS_FROM_AD": {
+			"en": "RUN FROM THE AD",
+			"ru": "ЗАБЕГ ЗА РЕКЛАМУ"
+		},
+		"RUNS_WATCH_AD": {
+			"en": "WATCH AD  +1 RUN",
+			"ru": "ПОСМОТРИ РЕКЛАМУ  +1 ЗАБЕГ"
+		},
+		"AD_UNAVAILABLE": {
+			"en": "AD UNAVAILABLE",
+			"ru": "РЕКЛАМА НЕДОСТУПНА"
+		},
+		"TRY_LATER": {
+			"en": "TRY AGAIN LATER",
+			"ru": "ПОПРОБУЙ ПОЗЖЕ"
+		},
+		"AD_NO_REWARD": {
+			"en": "AD CLOSED EARLY: NO RUN",
+			"ru": "РЕКЛАМА ЗАКРЫТА РАНЬШЕ: БЕЗ ЗАБЕГА"
+		},
+		"RUNS_PACK_ONE": {
+			"en": "%d RUN",
+			"ru": "%d ЗАБЕГ"
+		},
+		"RUNS_PACK_FEW": {
+			"en": "%d RUNS",
+			"ru": "%d ЗАБЕГА"
+		},
+		"RUNS_PACK_MANY": {
+			"en": "%d RUNS",
+			"ru": "%d ЗАБЕГОВ"
+		},
+		"RUNS_ADDED_ONE": {
+			"en": "+%d EXTRA RUN",
+			"ru": "+%d ЗАБЕГ В ЗАПАС"
+		},
+		"RUNS_ADDED_FEW": {
+			"en": "+%d EXTRA RUNS",
+			"ru": "+%d ЗАБЕГА В ЗАПАС"
+		},
+		"RUNS_ADDED_MANY": {
+			"en": "+%d EXTRA RUNS",
+			"ru": "+%d ЗАБЕГОВ В ЗАПАС"
+		},
+		"RUNS_PLUS_LINE": {
+			"en": "NEARCOIL PLUS: %d RUNS A DAY + ALL THEMES  %s",
+			"ru": "NEARCOIL PLUS: %d ЗАБЕГОВ В ДЕНЬ + ВСЕ ТЕМЫ  %s"
+		},
+		"THANKS_PLUS_RUNS": {
+			"en": "THANK YOU! NEARCOIL PLUS IS ON.",
+			"ru": "СПАСИБО! NEARCOIL PLUS ВКЛЮЧЁН."
+		},
+		"PLUS_SUB": {
+			"en": "NEARCOIL PLUS  •  %d RANKED RUNS A DAY",
+			"ru": "NEARCOIL PLUS  •  %d ЗАБЕГОВ НА РЕКОРД В ДЕНЬ"
 		}
 	}
 }

@@ -82,7 +82,7 @@ lead: The exact numbers behind the guide: timings, thresholds, drain, event sche
 <h3>Modifiers</h3>
 {{ table(['Modifier', 'For', 'From intensity', 'Chance', 'Effect'], [
   ['<code>narrow</code>', t('GATE'), n(Circuit.MODIFIERS.narrow[1]), pct(Circuit.MODIFIERS.narrow[2]), 'every door one cell deeper (up to 4)'],
-  ['<code>drift</code>', t('GATE'), n(Circuit.MODIFIERS.drift[1]), pct(Circuit.MODIFIERS.drift[2]), 'the gate slides one cell every ' + n(Circuit.DRIFT_PERIOD) + ' steps'],
+  ['<code>drift</code>', t('GATE'), n(Circuit.MODIFIERS.drift[1]), pct(Circuit.MODIFIERS.drift[2]), 'the gate slides one cell every ' + n(Circuit.DRIFT_PERIOD) + ' steps; ' + n(Circuit.DRIFT_WARN) + ' steps before, outlines show where it goes, and it goes there or stays (only a cell taken meanwhile, your head in the door or a pylon within ' + n(Circuit.DRIFT_CLEAR) + ' cells straight ahead stops it)'],
   ['<code>fast</code>', t('LIVE WIRE'), n(Circuit.MODIFIERS.fast[1]), pct(Circuit.MODIFIERS.fast[2]), 'the wire moves every 2 steps instead of every ' + n(Circuit.WIRE_PERIOD)],
 ]) }}
 
@@ -91,7 +91,7 @@ lead: The exact numbers behind the guide: timings, thresholds, drain, event sche
   [t('GATE'), steps(Circuit.GATE_TIME) + ' per gate; the door appears ' + n(Circuit.GATE_REACH[0]) + '–' + n(Circuit.GATE_REACH[1]) + ' cells from the head; no pylon in your lane within ' + n(Circuit.GATE_LANE_CLEAR) + ' cells ahead or in the side lanes within ' + n(Circuit.GATE_SIDE_CLEAR)],
   [t('ECHO GATE'), n(Circuit.ECHO_PASSES) + ' passes through a door of depth ' + n(Circuit.ECHO_DEPTH) + ', ' + n(Circuit.ECHO_TIME) + ' steps each'],
   [t('GATE CHAIN'), 'the next gate ' + n(Circuit.CHAIN_AHEAD[0]) + '–' + n(Circuit.CHAIN_AHEAD[1]) + ' cells straight past your exit'],
-  [t('RELAY'), steps(Circuit.RELAY_TIME) + ' for three terminals, +' + n(Circuit.RELAY_TIME_PER_EXTRA) + ' steps per extra one; terminals at least ' + n(Circuit.RELAY_SPREAD) + ' cells apart; posts stay ' + n(Circuit.RELAY_POST_LIFE) + ' steps (' + n(Circuit.RELAY_BRIDGE_LIFE) + ' with a bridge)'],
+  [t('RELAY'), steps(Circuit.RELAY_TIME) + ' for three terminals, +' + n(Circuit.RELAY_TIME_PER_EXTRA) + ' steps per extra one; terminals at least ' + n(Circuit.RELAY_SPREAD) + ' cells apart; posts stay ' + n(Circuit.RELAY_POST_LIFE) + ' steps after their relay ends (' + n(Circuit.RELAY_BRIDGE_LIFE) + ' with a bridge, bars too), even if the next relay has begun'],
   [t('HOT ZONE'), 'lives ' + steps(Circuit.HOT_LIFE) + ', warns for the last ' + n(Circuit.HOT_CRITICAL) + '; banks ' + n(Circuit.HOT_TICK_PTS) + ' points per step inside; won once ' + n(Circuit.HOT_SUCCESS) + ' charge is cashed. ' + t('RISING ZONE') + ' lives ' + n(Circuit.HOT_LIFE + 16) + ' steps; ' + t('UNSTABLE ZONE') + ' ' + n(Circuit.HOT_LIFE - 18) + '–' + n(Circuit.HOT_LIFE + 12) + ' steps and warns ' + n(Circuit.HOT_CRITICAL_UNSTABLE) + ' steps before'],
   [t('LIVE WIRE'), 'moves one cell every ' + n(Circuit.WIRE_PERIOD) + ' steps; ' + n(Circuit.WIRE_SKIMS) + ' skims within ' + steps(Circuit.WIRE_TIME) + ', at least ' + n(Circuit.WIRE_SKIM_GAP) + ' steps apart; never moves onto the ' + n(Circuit.WIRE_AHEAD) + ' cells ahead of your head'],
   ['Module ports', n(Circuit.PORT_REACH[0]) + '–' + n(Circuit.PORT_REACH[1]) + ' cells from the head, open for ' + steps(Circuit.PORT_TIME) + '; ' + t('CUT') + ' is offered from a body of ' + n(Circuit.CUT_MIN_LEN) + ' cells'],
