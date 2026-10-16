@@ -1,8 +1,9 @@
 {
-	"generated": "2026-10-12 13:02:11 UTC",
-	"version": "0.1.4",
+	"generated": "2026-10-16 11:09:26 UTC",
+	"version": "0.1.8",
 	"GameSim": {
-		"RULES_VERSION": 8,
+		"RULES_VERSION": 9,
+		"MIN_RULES_VERSION": 7,
 		"FIX_SERIAL_BASE": 67108864,
 		"W": 13,
 		"H": 21,
@@ -496,6 +497,9 @@
 		"FUSE_FREE_CHAPTERS": [
 			1
 		],
+		"WEEKLY_DAILY_GOAL": 5,
+		"WEEKLY_DAILY_FUSES": 1,
+		"FUSE_BONUS": 1,
 		"DAILY_RANKED_ATTEMPTS": 3,
 		"DAILY_BOARD": "best_of",
 		"PRODUCT_PLUS": "nearcoil_plus",
@@ -556,7 +560,7 @@
 		]
 	},
 	"DailySeed": {
-		"DAILY_TAG": "NEARCOIL_DAILY_v8_"
+		"DAILY_TAG": "NEARCOIL_DAILY_v9_"
 	},
 	"Main": {
 		"HUD_H": 166.0,
@@ -565,6 +569,7 @@
 		"SLOW_FRAME_MS": 19.0,
 		"DPAD_EDGE": 18.0,
 		"DPAD_OVER_K": 0.42,
+		"TRACES_PER_LAUNCH": 30,
 		"BACK_DEBOUNCE_MS": 250
 	},
 	"GameController": {
@@ -3509,6 +3514,458 @@
 			}
 		]
 	},
+	"achievements": {
+		"categories": [
+			"core",
+			"nearcoil",
+			"daily",
+			"campaign",
+			"special"
+		],
+		"list": [
+			{
+				"id": "first_run",
+				"cat": "core",
+				"tier": 1,
+				"hidden": false,
+				"modes": [],
+				"title": {
+					"en": "FIRST SPARK",
+					"ru": "ПЕРВАЯ ИСКРА"
+				},
+				"desc": {
+					"en": "FINISH YOUR FIRST RUN",
+					"ru": "ЗАВЕРШИ ПЕРВЫЙ ЗАБЕГ"
+				}
+			},
+			{
+				"id": "score_1k",
+				"cat": "core",
+				"tier": 1,
+				"hidden": false,
+				"modes": [
+					"ranked",
+					"daily"
+				],
+				"title": {
+					"en": "POWERED UP",
+					"ru": "ПОД НАПРЯЖЕНИЕМ"
+				},
+				"desc": {
+					"en": "1,000 POINTS IN RANKED OR DAILY",
+					"ru": "1,000 ОЧКОВ НА РЕКОРД ИЛИ В ИСПЫТАНИИ ДНЯ"
+				}
+			},
+			{
+				"id": "score_5k",
+				"cat": "core",
+				"tier": 2,
+				"hidden": false,
+				"modes": [
+					"ranked",
+					"daily"
+				],
+				"title": {
+					"en": "HIGH VOLTAGE",
+					"ru": "ВЫСОКОЕ НАПРЯЖЕНИЕ"
+				},
+				"desc": {
+					"en": "5,000 POINTS IN RANKED OR DAILY",
+					"ru": "5,000 ОЧКОВ НА РЕКОРД ИЛИ В ИСПЫТАНИИ ДНЯ"
+				}
+			},
+			{
+				"id": "score_15k",
+				"cat": "core",
+				"tier": 3,
+				"hidden": false,
+				"modes": [
+					"ranked",
+					"daily"
+				],
+				"title": {
+					"en": "ARC FLASH",
+					"ru": "ДУГОВОЙ РАЗРЯД"
+				},
+				"desc": {
+					"en": "15,000 POINTS IN RANKED OR DAILY",
+					"ru": "15,000 ОЧКОВ НА РЕКОРД ИЛИ В ИСПЫТАНИИ ДНЯ"
+				}
+			},
+			{
+				"id": "secs_60",
+				"cat": "core",
+				"tier": 1,
+				"hidden": false,
+				"modes": [
+					"ranked",
+					"daily"
+				],
+				"title": {
+					"en": "STILL LIVE",
+					"ru": "ВСЁ ЕЩЁ ПОД ТОКОМ"
+				},
+				"desc": {
+					"en": "STAY ALIVE 60 S IN RANKED OR DAILY",
+					"ru": "ПРОДЕРЖИСЬ 60 С НА РЕКОРД ИЛИ В ИСПЫТАНИИ ДНЯ"
+				}
+			},
+			{
+				"id": "secs_120",
+				"cat": "core",
+				"tier": 2,
+				"hidden": false,
+				"modes": [
+					"ranked",
+					"daily"
+				],
+				"title": {
+					"en": "LONG CIRCUIT",
+					"ru": "ДЛИННАЯ ЦЕПЬ"
+				},
+				"desc": {
+					"en": "STAY ALIVE 120 S IN RANKED OR DAILY",
+					"ru": "ПРОДЕРЖИСЬ 120 С НА РЕКОРД ИЛИ В ИСПЫТАНИИ ДНЯ"
+				}
+			},
+			{
+				"id": "mult_5",
+				"cat": "core",
+				"tier": 2,
+				"hidden": false,
+				"modes": [
+					"ranked",
+					"daily"
+				],
+				"title": {
+					"en": "FULL CHARGE",
+					"ru": "ПОЛНЫЙ ЗАРЯД"
+				},
+				"desc": {
+					"en": "REACH ×5 IN RANKED OR DAILY",
+					"ru": "МНОЖИТЕЛЬ ×5 НА РЕКОРД ИЛИ В ИСПЫТАНИИ ДНЯ"
+				}
+			},
+			{
+				"id": "move_1",
+				"cat": "nearcoil",
+				"tier": 1,
+				"hidden": false,
+				"modes": [],
+				"title": {
+					"en": "NEAR COIL",
+					"ru": "НА ВОЛОСОК"
+				},
+				"desc": {
+					"en": "YOUR FIRST SQUEEZE, THREAD OR NEEDLE",
+					"ru": "ПЕРВЫЙ ЗАЖИМ, СКВОЗЬ ИЛИ ИГЛА"
+				}
+			},
+			{
+				"id": "run_moves_5",
+				"cat": "nearcoil",
+				"tier": 1,
+				"hidden": false,
+				"modes": [],
+				"title": {
+					"en": "THREAD THE NEEDLE",
+					"ru": "ИГОЛЬНОЕ УШКО"
+				},
+				"desc": {
+					"en": "5 MANEUVERS IN ONE RUN",
+					"ru": "5 МАНЁВРОВ ЗА ОДИН ЗАБЕГ"
+				}
+			},
+			{
+				"id": "run_moves_15",
+				"cat": "nearcoil",
+				"tier": 2,
+				"hidden": false,
+				"modes": [],
+				"title": {
+					"en": "KNIFE EDGE",
+					"ru": "ПО ЛЕЗВИЮ"
+				},
+				"desc": {
+					"en": "15 MANEUVERS IN ONE RUN",
+					"ru": "15 МАНЁВРОВ ЗА ОДИН ЗАБЕГ"
+				}
+			},
+			{
+				"id": "moves_50",
+				"cat": "nearcoil",
+				"tier": 2,
+				"hidden": false,
+				"modes": [],
+				"title": {
+					"en": "TIGHT WIRING",
+					"ru": "ПЛОТНЫЙ МОНТАЖ"
+				},
+				"desc": {
+					"en": "50 MANEUVERS IN TOTAL",
+					"ru": "50 МАНЁВРОВ ВСЕГО"
+				}
+			},
+			{
+				"id": "moves_250",
+				"cat": "nearcoil",
+				"tier": 3,
+				"hidden": false,
+				"modes": [],
+				"title": {
+					"en": "COIL MASTER",
+					"ru": "МАСТЕР ВИТКА"
+				},
+				"desc": {
+					"en": "250 MANEUVERS IN TOTAL",
+					"ru": "250 МАНЁВРОВ ВСЕГО"
+				}
+			},
+			{
+				"id": "chain_3",
+				"cat": "nearcoil",
+				"tier": 2,
+				"hidden": false,
+				"modes": [],
+				"title": {
+					"en": "CHAIN REACTION",
+					"ru": "ЦЕПНАЯ РЕАКЦИЯ"
+				},
+				"desc": {
+					"en": "3 MANEUVERS IN ONE CHAIN",
+					"ru": "3 МАНЁВРА В ОДНОЙ ЦЕПОЧКЕ"
+				}
+			},
+			{
+				"id": "mult_8",
+				"cat": "nearcoil",
+				"tier": 3,
+				"hidden": false,
+				"modes": [
+					"ranked",
+					"daily"
+				],
+				"title": {
+					"en": "NO FEAR",
+					"ru": "БЕЗ СТРАХА"
+				},
+				"desc": {
+					"en": "REACH ×8, THE TOP MULTIPLIER",
+					"ru": "МНОЖИТЕЛЬ ×8, ВЫШЕ НЕ БЫВАЕТ"
+				}
+			},
+			{
+				"id": "daily_1",
+				"cat": "daily",
+				"tier": 1,
+				"hidden": false,
+				"modes": [
+					"daily"
+				],
+				"title": {
+					"en": "DAILY DOSE",
+					"ru": "ДНЕВНАЯ ДОЗА"
+				},
+				"desc": {
+					"en": "FINISH A DAILY CHALLENGE ATTEMPT",
+					"ru": "ЗАВЕРШИ ПОПЫТКУ ИСПЫТАНИЯ ДНЯ"
+				}
+			},
+			{
+				"id": "daily_5",
+				"cat": "daily",
+				"tier": 1,
+				"hidden": false,
+				"modes": [
+					"daily"
+				],
+				"title": {
+					"en": "REGULAR",
+					"ru": "ЗАВСЕГДАТАЙ"
+				},
+				"desc": {
+					"en": "DAILY CHALLENGE ON 5 DAYS",
+					"ru": "ИСПЫТАНИЕ ДНЯ: 5 ДНЕЙ"
+				}
+			},
+			{
+				"id": "daily_20",
+				"cat": "daily",
+				"tier": 2,
+				"hidden": false,
+				"modes": [
+					"daily"
+				],
+				"title": {
+					"en": "DEDICATED",
+					"ru": "ПРЕДАННОСТЬ"
+				},
+				"desc": {
+					"en": "DAILY CHALLENGE ON 20 DAYS",
+					"ru": "ИСПЫТАНИЕ ДНЯ: 20 ДНЕЙ"
+				}
+			},
+			{
+				"id": "daily_record",
+				"cat": "daily",
+				"tier": 2,
+				"hidden": false,
+				"modes": [
+					"daily"
+				],
+				"title": {
+					"en": "GOOD DAY",
+					"ru": "УДАЧНЫЙ ДЕНЬ"
+				},
+				"desc": {
+					"en": "BEAT YOUR BEST DAILY SCORE FROM AN EARLIER DAY",
+					"ru": "ПОБЕЙ СВОЙ ЛУЧШИЙ СЧЁТ ИСПЫТАНИЯ ДНЯ"
+				}
+			},
+			{
+				"id": "daily_country",
+				"cat": "daily",
+				"tier": 3,
+				"hidden": false,
+				"modes": [
+					"daily"
+				],
+				"title": {
+					"en": "NATIONAL CONTENDER",
+					"ru": "ГОРДОСТЬ СТРАНЫ"
+				},
+				"desc": {
+					"en": "TOP 3 OF YOUR COUNTRY IN A DAILY CHALLENGE",
+					"ru": "ТОП-3 СТРАНЫ В ИСПЫТАНИИ ДНЯ"
+				}
+			},
+			{
+				"id": "daily_world",
+				"cat": "daily",
+				"tier": 3,
+				"hidden": false,
+				"modes": [
+					"daily"
+				],
+				"title": {
+					"en": "WORLD CONTENDER",
+					"ru": "НА МИРОВОЙ СЦЕНЕ"
+				},
+				"desc": {
+					"en": "TOP 10% OF THE WORLD IN A DAILY CHALLENGE",
+					"ru": "ТОП-10% МИРА В ИСПЫТАНИИ ДНЯ"
+				}
+			},
+			{
+				"id": "level_1",
+				"cat": "campaign",
+				"tier": 1,
+				"hidden": false,
+				"modes": [
+					"campaign"
+				],
+				"title": {
+					"en": "CONTACT",
+					"ru": "КОНТАКТ ЕСТЬ"
+				},
+				"desc": {
+					"en": "CLEAR YOUR FIRST CAMPAIGN LEVEL",
+					"ru": "ПРОЙДИ ПЕРВЫЙ УРОВЕНЬ КАМПАНИИ"
+				}
+			},
+			{
+				"id": "clean_clear",
+				"cat": "campaign",
+				"tier": 2,
+				"hidden": false,
+				"modes": [
+					"campaign"
+				],
+				"title": {
+					"en": "CLEAN RUN",
+					"ru": "ЧИСТАЯ РАБОТА"
+				},
+				"desc": {
+					"en": "CLEAR A LEVEL WITH FUSES ON THE FIRST TRY",
+					"ru": "ПРОЙДИ УРОВЕНЬ С ПРЕДОХРАНИТЕЛЯМИ С ПЕРВОЙ ПОПЫТКИ"
+				}
+			},
+			{
+				"id": "chapter",
+				"cat": "campaign",
+				"tier": 2,
+				"hidden": false,
+				"modes": [
+					"campaign"
+				],
+				"title": {
+					"en": "CIRCUIT CLOSED",
+					"ru": "ЦЕПЬ ЗАМКНУТА"
+				},
+				"desc": {
+					"en": "CLEAR EVERY LEVEL OF A CHAPTER",
+					"ru": "ПРОЙДИ ВСЕ УРОВНИ ГЛАВЫ"
+				}
+			},
+			{
+				"id": "perfect",
+				"cat": "campaign",
+				"tier": 3,
+				"hidden": false,
+				"modes": [
+					"campaign"
+				],
+				"title": {
+					"en": "PERFECT CONTACT",
+					"ru": "ИДЕАЛЬНЫЙ КОНТАКТ"
+				},
+				"desc": {
+					"en": "EARN PERFECT ON A LEVEL",
+					"ru": "ПОЛУЧИ ИДЕАЛ НА УРОВНЕ"
+				}
+			},
+			{
+				"id": "so_close",
+				"cat": "special",
+				"tier": 2,
+				"hidden": true,
+				"modes": [
+					"ranked"
+				],
+				"title": {
+					"en": "SO CLOSE",
+					"ru": "ТАК БЛИЗКО"
+				},
+				"desc": {
+					"en": "CRASH WITHIN 3 S OF BEATING YOUR RANKED BEST",
+					"ru": "РАЗБЕЙСЯ ЗА 3 С ПОСЛЕ НОВОГО РЕКОРДА"
+				}
+			},
+			{
+				"id": "last_chance",
+				"cat": "special",
+				"tier": 2,
+				"hidden": true,
+				"modes": [
+					"daily"
+				],
+				"title": {
+					"en": "LAST CHANCE",
+					"ru": "ПОСЛЕДНИЙ ШАНС"
+				},
+				"desc": {
+					"en": "BEAT YOUR DAILY BEST ON THE LAST ATTEMPT",
+					"ru": "УЛУЧШИ РЕКОРД ДНЯ В ПОСЛЕДНЕЙ ПОПЫТКЕ"
+				}
+			}
+		],
+		"ranks": {
+			"country_top": 3.0,
+			"country_min_total": 5.0,
+			"world_top_pct": 10.0,
+			"world_min_total": 20.0
+		}
+	},
 	"strings": {
 		"PLAY": {
 			"en": "PLAY",
@@ -4189,6 +4646,10 @@
 		"VIDEO_RENDERS": {
 			"en": "RENDERED ON YOUR PHONE. TAKES A MOMENT",
 			"ru": "СОБИРАЕТСЯ НА ТЕЛЕФОНЕ. НУЖНО ПОДОЖДАТЬ"
+		},
+		"VIDEO_LANG": {
+			"en": "VIDEO: %s",
+			"ru": "ВИДЕО: %s"
 		},
 		"BEAT_MY_SCORE": {
 			"en": "BEAT MY SCORE",
@@ -4895,8 +5356,8 @@
 			"ru": "ПО ОДНОМУ МОДУЛЮ ЗА РАЗ"
 		},
 		"YOU CARRY A PHASE. HOP ONE CONDUCTOR": {
-			"en": "YOU CARRY A PHASE: HOP OVER ONE OBSTACLE",
-			"ru": "У ТЕБЯ ФАЗА: ОДНО ПРЕПЯТСТВИЕ МОЖНО ПЕРЕПРЫГНУТЬ"
+			"en": "YOU CARRY A PHASE: HOP ONE OBSTACLE OR GO THROUGH THE EDGE",
+			"ru": "У ТЕБЯ ФАЗА: ПЕРЕПРЫГНИ ПРЕПЯТСТВИЕ ИЛИ ПРОЙДИ СКВОЗЬ КРАЙ"
 		},
 		"PHASE PORT": {
 			"en": "PHASE PORT",
@@ -5411,8 +5872,8 @@
 			"ru": "СОБЫТИЕ ПРОЙДЕНО. ВЪЕДЬ В ОДИН ИЗ ПОРТОВ, ЧТОБЫ ВЗЯТЬ ЕГО МОДУЛЬ."
 		},
 		"INTRO_PHASE": {
-			"en": "YOUR NEXT CRASH INTO YOUR BODY, A PYLON, A TERMINAL OR A WIRE HOPS OVER IT FOR A BONUS INSTEAD. WALLS STILL KILL.",
-			"ru": "СЛЕДУЮЩЕЕ СТОЛКНОВЕНИЕ С ТЕЛОМ, СТОЛБОМ, КЛЕММОЙ ИЛИ ПРОВОДОМ НЕ УБЬЁТ: ТЫ ПЕРЕПРЫГНЕШЬ ЕГО И ПОЛУЧИШЬ БОНУС. СТЕНЫ УБИВАЮТ."
+			"en": "YOUR NEXT CRASH DOES NOT KILL: YOU HOP OVER YOUR BODY, A PYLON, A TERMINAL OR A WIRE, OR GO THROUGH THE EDGE AND COME BACK IN ON THE OPPOSITE SIDE. ONE USE, WITH A BONUS.",
+			"ru": "СЛЕДУЮЩЕЕ СТОЛКНОВЕНИЕ НЕ УБЬЁТ: ПЕРЕПРЫГНЕШЬ ТЕЛО, СТОЛБ, КЛЕММУ ИЛИ ПРОВОД, А ЧЕРЕЗ КРАЙ ПОЛЯ ВЫЙДЕШЬ С ПРОТИВОПОЛОЖНОЙ СТОРОНЫ. ОДИН РАЗ, С БОНУСОМ."
 		},
 		"INTRO_SURGE": {
 			"en": "ABOUT 8 SECONDS OF OVERLOAD: FASTER, +40% CHARGE, POINTS ×1.5.",
@@ -5661,6 +6122,474 @@
 		"WELCOME_OFFLINE": {
 			"en": "NO CONNECTION. SKIP NOW AND SET IT LATER IN SETTINGS",
 			"ru": "НЕТ ПОДКЛЮЧЕНИЯ. ПРОПУСТИ И ЗАДАЙ ПОЗЖЕ В НАСТРОЙКАХ"
+		},
+		"INPUT_FLAG": {
+			"en": "CONTROLS MISFIRED?",
+			"ru": "УПРАВЛЕНИЕ ПОДВЕЛО?"
+		},
+		"INPUT_FLAG_SENT": {
+			"en": "THANKS, SENT",
+			"ru": "СПАСИБО, ОТПРАВЛЕНО"
+		},
+		"WHATS_NEW": {
+			"en": "WHAT'S NEW",
+			"ru": "ЧТО НОВОГО"
+		},
+		"WN_017_PHASE_EDGE": {
+			"en": "PHASE NOW ALSO TAKES YOU THROUGH THE ARENA EDGE: DRIVE INTO THE WALL AND COME BACK IN ON THE OPPOSITE SIDE.",
+			"ru": "ФАЗА ТЕПЕРЬ ПРОВОДИТ И СКВОЗЬ КРАЙ АРЕНЫ: ВЪЕДЬ В СТЕНУ И ВЫЙДЕШЬ С ПРОТИВОПОЛОЖНОЙ СТОРОНЫ, НА ТОЙ ЖЕ ЛИНИИ."
+		},
+		"WN_017_FOOD": {
+			"en": "FOOD NEVER APPEARS IN A DEAD END WHERE EATING IT MEANS CRASHING.",
+			"ru": "ЕДА БОЛЬШЕ НЕ ПОЯВЛЯЕТСЯ В ТУПИКЕ, ГДЕ ЕЁ НЕЛЬЗЯ СЪЕСТЬ БЕЗ АВАРИИ."
+		},
+		"WN_017_RECONNECT": {
+			"en": "LEADERBOARDS RECONNECT BY THEMSELVES WHEN YOU COME BACK TO THE GAME.",
+			"ru": "ТАБЛИЦЫ ЛИДЕРОВ САМИ ПЕРЕПОДКЛЮЧАЮТСЯ, КОГДА ТЫ ВОЗВРАЩАЕШЬСЯ В ИГРУ."
+		},
+		"WN_017_OLD_REPLAYS": {
+			"en": "REPLAYS RECORDED IN EARLIER VERSIONS PLAY BACK WITH THEIR OWN RULES.",
+			"ru": "ПОВТОРЫ ИЗ ПРЕЖНИХ ВЕРСИЙ ПРОИГРЫВАЮТСЯ ПО СВОИМ ПРАВИЛАМ."
+		},
+		"ACHIEVEMENTS": {
+			"en": "ACHIEVEMENTS",
+			"ru": "ДОСТИЖЕНИЯ"
+		},
+		"NAV_ACHIEVEMENTS": {
+			"en": "BADGES",
+			"ru": "ДОСТИЖЕНИЯ"
+		},
+		"ACH_COUNT": {
+			"en": "%d / %d UNLOCKED",
+			"ru": "ОТКРЫТО %d ИЗ %d"
+		},
+		"ACH_UNLOCKED": {
+			"en": "ACHIEVEMENT UNLOCKED",
+			"ru": "НОВОЕ ДОСТИЖЕНИЕ"
+		},
+		"ACH_UNLOCKED_ON": {
+			"en": "UNLOCKED %s",
+			"ru": "ОТКРЫТО %s"
+		},
+		"ACH_HIDDEN": {
+			"en": "HIDDEN ACHIEVEMENT. KEEP PLAYING",
+			"ru": "СКРЫТОЕ ДОСТИЖЕНИЕ. ИГРАЙ ДАЛЬШЕ"
+		},
+		"ACH_GOALS": {
+			"en": "NEXT ACHIEVEMENTS",
+			"ru": "БЛИЖАЙШИЕ ДОСТИЖЕНИЯ"
+		},
+		"ACH_MORE": {
+			"en": "+%d MORE",
+			"ru": "+ЕЩЁ %d"
+		},
+		"ACH_CAT_CORE": {
+			"en": "CORE",
+			"ru": "ОСНОВА"
+		},
+		"ACH_CAT_NEARCOIL": {
+			"en": "NEARCOIL",
+			"ru": "NEARCOIL"
+		},
+		"ACH_CAT_DAILY": {
+			"en": "DAILY",
+			"ru": "ДЕНЬ"
+		},
+		"ACH_CAT_CAMPAIGN": {
+			"en": "CAMPAIGN",
+			"ru": "КАМПАНИЯ"
+		},
+		"ACH_CAT_SPECIAL": {
+			"en": "SPECIAL",
+			"ru": "ОСОБЫЕ"
+		},
+		"SEC_SHORT": {
+			"en": "S",
+			"ru": "С"
+		},
+		"TO_BEST": {
+			"en": "%s TO YOUR BEST",
+			"ru": "ДО РЕКОРДА %s"
+		},
+		"WEEK_DAILY": {
+			"en": "THIS WEEK: %d / %d DAILY CHALLENGES",
+			"ru": "НА ЭТОЙ НЕДЕЛЕ: %d / %d ИСПЫТАНИЙ ДНЯ"
+		},
+		"WEEK_GOAL": {
+			"en": "%d DAYS IN ONE WEEK: +1 FUSE",
+			"ru": "%d ДНЕЙ ЗА НЕДЕЛЮ: +1 ПРЕДОХРАНИТЕЛЬ"
+		},
+		"WEEK_REWARD": {
+			"en": "WEEKLY GOAL DONE: +1 FUSE",
+			"ru": "ЦЕЛЬ НЕДЕЛИ ВЫПОЛНЕНА: +1 ПРЕДОХРАНИТЕЛЬ"
+		},
+		"WEEK_PAID": {
+			"en": "WEEKLY FUSE EARNED",
+			"ru": "ПРЕДОХРАНИТЕЛЬ НЕДЕЛИ ПОЛУЧЕН"
+		},
+		"DAILY_HISTORY": {
+			"en": "DAILY CHALLENGE • %s",
+			"ru": "ИСПЫТАНИЕ ДНЯ • %s"
+		},
+		"MONTHF_1": {
+			"en": "JANUARY",
+			"ru": "ЯНВАРЬ"
+		},
+		"MONTHF_2": {
+			"en": "FEBRUARY",
+			"ru": "ФЕВРАЛЬ"
+		},
+		"MONTHF_3": {
+			"en": "MARCH",
+			"ru": "МАРТ"
+		},
+		"MONTHF_4": {
+			"en": "APRIL",
+			"ru": "АПРЕЛЬ"
+		},
+		"MONTHF_5": {
+			"en": "MAY",
+			"ru": "МАЙ"
+		},
+		"MONTHF_6": {
+			"en": "JUNE",
+			"ru": "ИЮНЬ"
+		},
+		"MONTHF_7": {
+			"en": "JULY",
+			"ru": "ИЮЛЬ"
+		},
+		"MONTHF_8": {
+			"en": "AUGUST",
+			"ru": "АВГУСТ"
+		},
+		"MONTHF_9": {
+			"en": "SEPTEMBER",
+			"ru": "СЕНТЯБРЬ"
+		},
+		"MONTHF_10": {
+			"en": "OCTOBER",
+			"ru": "ОКТЯБРЬ"
+		},
+		"MONTHF_11": {
+			"en": "NOVEMBER",
+			"ru": "НОЯБРЬ"
+		},
+		"MONTHF_12": {
+			"en": "DECEMBER",
+			"ru": "ДЕКАБРЬ"
+		},
+		"ACH_FIRST_RUN": {
+			"en": "FIRST SPARK",
+			"ru": "ПЕРВАЯ ИСКРА"
+		},
+		"ACH_FIRST_RUN_D": {
+			"en": "FINISH YOUR FIRST RUN",
+			"ru": "ЗАВЕРШИ ПЕРВЫЙ ЗАБЕГ"
+		},
+		"ACH_SCORE_1K": {
+			"en": "POWERED UP",
+			"ru": "ПОД НАПРЯЖЕНИЕМ"
+		},
+		"ACH_SCORE_1K_D": {
+			"en": "%s POINTS IN RANKED OR DAILY",
+			"ru": "%s ОЧКОВ НА РЕКОРД ИЛИ В ИСПЫТАНИИ ДНЯ"
+		},
+		"ACH_SCORE_5K": {
+			"en": "HIGH VOLTAGE",
+			"ru": "ВЫСОКОЕ НАПРЯЖЕНИЕ"
+		},
+		"ACH_SCORE_5K_D": {
+			"en": "%s POINTS IN RANKED OR DAILY",
+			"ru": "%s ОЧКОВ НА РЕКОРД ИЛИ В ИСПЫТАНИИ ДНЯ"
+		},
+		"ACH_SCORE_15K": {
+			"en": "ARC FLASH",
+			"ru": "ДУГОВОЙ РАЗРЯД"
+		},
+		"ACH_SCORE_15K_D": {
+			"en": "%s POINTS IN RANKED OR DAILY",
+			"ru": "%s ОЧКОВ НА РЕКОРД ИЛИ В ИСПЫТАНИИ ДНЯ"
+		},
+		"ACH_SECS_60": {
+			"en": "STILL LIVE",
+			"ru": "ВСЁ ЕЩЁ ПОД ТОКОМ"
+		},
+		"ACH_SECS_60_D": {
+			"en": "STAY ALIVE %s S IN RANKED OR DAILY",
+			"ru": "ПРОДЕРЖИСЬ %s С НА РЕКОРД ИЛИ В ИСПЫТАНИИ ДНЯ"
+		},
+		"ACH_SECS_120": {
+			"en": "LONG CIRCUIT",
+			"ru": "ДЛИННАЯ ЦЕПЬ"
+		},
+		"ACH_SECS_120_D": {
+			"en": "STAY ALIVE %s S IN RANKED OR DAILY",
+			"ru": "ПРОДЕРЖИСЬ %s С НА РЕКОРД ИЛИ В ИСПЫТАНИИ ДНЯ"
+		},
+		"ACH_MULT_5": {
+			"en": "FULL CHARGE",
+			"ru": "ПОЛНЫЙ ЗАРЯД"
+		},
+		"ACH_MULT_5_D": {
+			"en": "REACH ×%s IN RANKED OR DAILY",
+			"ru": "МНОЖИТЕЛЬ ×%s НА РЕКОРД ИЛИ В ИСПЫТАНИИ ДНЯ"
+		},
+		"ACH_MOVE_1": {
+			"en": "NEAR COIL",
+			"ru": "НА ВОЛОСОК"
+		},
+		"ACH_MOVE_1_D": {
+			"en": "YOUR FIRST SQUEEZE, THREAD OR NEEDLE",
+			"ru": "ПЕРВЫЙ ЗАЖИМ, СКВОЗЬ ИЛИ ИГЛА"
+		},
+		"ACH_RUN_MOVES_5": {
+			"en": "THREAD THE NEEDLE",
+			"ru": "ИГОЛЬНОЕ УШКО"
+		},
+		"ACH_RUN_MOVES_5_D": {
+			"en": "%s MANEUVERS IN ONE RUN",
+			"ru": "%s МАНЁВРОВ ЗА ОДИН ЗАБЕГ"
+		},
+		"ACH_RUN_MOVES_15": {
+			"en": "KNIFE EDGE",
+			"ru": "ПО ЛЕЗВИЮ"
+		},
+		"ACH_RUN_MOVES_15_D": {
+			"en": "%s MANEUVERS IN ONE RUN",
+			"ru": "%s МАНЁВРОВ ЗА ОДИН ЗАБЕГ"
+		},
+		"ACH_MOVES_50": {
+			"en": "TIGHT WIRING",
+			"ru": "ПЛОТНЫЙ МОНТАЖ"
+		},
+		"ACH_MOVES_50_D": {
+			"en": "%s MANEUVERS IN TOTAL",
+			"ru": "%s МАНЁВРОВ ВСЕГО"
+		},
+		"ACH_MOVES_250": {
+			"en": "COIL MASTER",
+			"ru": "МАСТЕР ВИТКА"
+		},
+		"ACH_MOVES_250_D": {
+			"en": "%s MANEUVERS IN TOTAL",
+			"ru": "%s МАНЁВРОВ ВСЕГО"
+		},
+		"ACH_CHAIN_3": {
+			"en": "CHAIN REACTION",
+			"ru": "ЦЕПНАЯ РЕАКЦИЯ"
+		},
+		"ACH_CHAIN_3_D": {
+			"en": "%s MANEUVERS IN ONE CHAIN",
+			"ru": "%s МАНЁВРА В ОДНОЙ ЦЕПОЧКЕ"
+		},
+		"ACH_MULT_8": {
+			"en": "NO FEAR",
+			"ru": "БЕЗ СТРАХА"
+		},
+		"ACH_MULT_8_D": {
+			"en": "REACH ×%s, THE TOP MULTIPLIER",
+			"ru": "МНОЖИТЕЛЬ ×%s, ВЫШЕ НЕ БЫВАЕТ"
+		},
+		"ACH_DAILY_1": {
+			"en": "DAILY DOSE",
+			"ru": "ДНЕВНАЯ ДОЗА"
+		},
+		"ACH_DAILY_1_D": {
+			"en": "FINISH A DAILY CHALLENGE ATTEMPT",
+			"ru": "ЗАВЕРШИ ПОПЫТКУ ИСПЫТАНИЯ ДНЯ"
+		},
+		"ACH_DAILY_5": {
+			"en": "REGULAR",
+			"ru": "ЗАВСЕГДАТАЙ"
+		},
+		"ACH_DAILY_5_D": {
+			"en": "DAILY CHALLENGE ON %s DAYS",
+			"ru": "ИСПЫТАНИЕ ДНЯ: %s ДНЕЙ"
+		},
+		"ACH_DAILY_20": {
+			"en": "DEDICATED",
+			"ru": "ПРЕДАННОСТЬ"
+		},
+		"ACH_DAILY_20_D": {
+			"en": "DAILY CHALLENGE ON %s DAYS",
+			"ru": "ИСПЫТАНИЕ ДНЯ: %s ДНЕЙ"
+		},
+		"ACH_DAILY_RECORD": {
+			"en": "GOOD DAY",
+			"ru": "УДАЧНЫЙ ДЕНЬ"
+		},
+		"ACH_DAILY_RECORD_D": {
+			"en": "BEAT YOUR BEST DAILY SCORE FROM AN EARLIER DAY",
+			"ru": "ПОБЕЙ СВОЙ ЛУЧШИЙ СЧЁТ ИСПЫТАНИЯ ДНЯ"
+		},
+		"ACH_DAILY_COUNTRY": {
+			"en": "NATIONAL CONTENDER",
+			"ru": "ГОРДОСТЬ СТРАНЫ"
+		},
+		"ACH_DAILY_COUNTRY_D": {
+			"en": "TOP %s OF YOUR COUNTRY IN A DAILY CHALLENGE",
+			"ru": "ТОП-%s СТРАНЫ В ИСПЫТАНИИ ДНЯ"
+		},
+		"ACH_DAILY_WORLD": {
+			"en": "WORLD CONTENDER",
+			"ru": "НА МИРОВОЙ СЦЕНЕ"
+		},
+		"ACH_DAILY_WORLD_D": {
+			"en": "TOP %s%% OF THE WORLD IN A DAILY CHALLENGE",
+			"ru": "ТОП-%s%% МИРА В ИСПЫТАНИИ ДНЯ"
+		},
+		"ACH_LEVEL_1": {
+			"en": "CONTACT",
+			"ru": "КОНТАКТ ЕСТЬ"
+		},
+		"ACH_LEVEL_1_D": {
+			"en": "CLEAR YOUR FIRST CAMPAIGN LEVEL",
+			"ru": "ПРОЙДИ ПЕРВЫЙ УРОВЕНЬ КАМПАНИИ"
+		},
+		"ACH_CLEAN_CLEAR": {
+			"en": "CLEAN RUN",
+			"ru": "ЧИСТАЯ РАБОТА"
+		},
+		"ACH_CLEAN_CLEAR_D": {
+			"en": "CLEAR A LEVEL WITH FUSES ON THE FIRST TRY",
+			"ru": "ПРОЙДИ УРОВЕНЬ С ПРЕДОХРАНИТЕЛЯМИ С ПЕРВОЙ ПОПЫТКИ"
+		},
+		"ACH_CHAPTER": {
+			"en": "CIRCUIT CLOSED",
+			"ru": "ЦЕПЬ ЗАМКНУТА"
+		},
+		"ACH_CHAPTER_D": {
+			"en": "CLEAR EVERY LEVEL OF A CHAPTER",
+			"ru": "ПРОЙДИ ВСЕ УРОВНИ ГЛАВЫ"
+		},
+		"ACH_PERFECT": {
+			"en": "PERFECT CONTACT",
+			"ru": "ИДЕАЛЬНЫЙ КОНТАКТ"
+		},
+		"ACH_PERFECT_D": {
+			"en": "EARN PERFECT ON A LEVEL",
+			"ru": "ПОЛУЧИ ИДЕАЛ НА УРОВНЕ"
+		},
+		"ACH_SO_CLOSE": {
+			"en": "SO CLOSE",
+			"ru": "ТАК БЛИЗКО"
+		},
+		"ACH_SO_CLOSE_D": {
+			"en": "CRASH WITHIN %s S OF BEATING YOUR RANKED BEST",
+			"ru": "РАЗБЕЙСЯ ЗА %s С ПОСЛЕ НОВОГО РЕКОРДА"
+		},
+		"ACH_LAST_CHANCE": {
+			"en": "LAST CHANCE",
+			"ru": "ПОСЛЕДНИЙ ШАНС"
+		},
+		"ACH_LAST_CHANCE_D": {
+			"en": "BEAT YOUR DAILY BEST ON THE LAST ATTEMPT",
+			"ru": "УЛУЧШИ РЕКОРД ДНЯ В ПОСЛЕДНЕЙ ПОПЫТКЕ"
+		},
+		"WEEKDAYS": {
+			"en": "MTWTFSS",
+			"ru": "ПВСЧПСВ"
+		},
+		"WEEK_SHORT": {
+			"en": "WEEK %d/%d",
+			"ru": "НЕДЕЛЯ %d/%d"
+		},
+		"ACH_NEW": {
+			"en": "NEW!",
+			"ru": "НОВОЕ!"
+		},
+		"ACH_LOCKED": {
+			"en": "NOT UNLOCKED YET",
+			"ru": "ЕЩЁ НЕ ОТКРЫТО"
+		},
+		"PF_TITLE": {
+			"en": "PROFILE",
+			"ru": "ПРОФИЛЬ"
+		},
+		"NAV_PROFILE": {
+			"en": "PROFILE",
+			"ru": "ПРОФИЛЬ"
+		},
+		"PF_SINCE": {
+			"en": "PLAYING SINCE %s",
+			"ru": "В ИГРЕ С %s"
+		},
+		"PF_LEAGUE": {
+			"en": "%s LEAGUE",
+			"ru": "ЛИГА: %s"
+		},
+		"PF_RECORDS": {
+			"en": "RECORDS",
+			"ru": "РЕКОРДЫ"
+		},
+		"PF_RANK": {
+			"en": "#%s OF %s IN THE WORLD",
+			"ru": "#%s ИЗ %s В МИРЕ"
+		},
+		"PF_DAYS_ONE": {
+			"en": "%d DAY",
+			"ru": "%d ДЕНЬ"
+		},
+		"PF_DAYS_FEW": {
+			"en": "%d DAYS",
+			"ru": "%d ДНЯ"
+		},
+		"PF_DAYS_MANY": {
+			"en": "%d DAYS",
+			"ru": "%d ДНЕЙ"
+		},
+		"PF_MOVES": {
+			"en": "MANEUVERS",
+			"ru": "МАНЁВРЫ"
+		},
+		"PF_CHAIN": {
+			"en": "BEST CHAIN",
+			"ru": "ЛУЧШАЯ ЦЕПОЧКА"
+		},
+		"PF_OFFLINE": {
+			"en": "PROFILES NEED A CONNECTION",
+			"ru": "ПРОФИЛИ ДОСТУПНЫ ТОЛЬКО ОНЛАЙН"
+		},
+		"PF_NOT_FOUND": {
+			"en": "PLAYER NOT FOUND",
+			"ru": "ИГРОК НЕ НАЙДЕН"
+		},
+		"PF_LOADING": {
+			"en": "LOADING PROFILE",
+			"ru": "ЗАГРУЖАЮ ПРОФИЛЬ"
+		},
+		"PF_REPORT": {
+			"en": "REPORT NAME",
+			"ru": "ПОЖАЛОВАТЬСЯ НА ИМЯ"
+		},
+		"PF_SHARE_TEXT": {
+			"en": "MY NEARCOIL PROFILE. CAN YOU BEAT IT?",
+			"ru": "МОЙ ПРОФИЛЬ В NEARCOIL. СМОЖЕШЬ ЛУЧШЕ?"
+		},
+		"WN_017_ACHIEVEMENTS": {
+			"en": "ACHIEVEMENTS: 26 BADGES TO COLLECT. OPEN BADGES ON THE MAIN MENU.",
+			"ru": "26 ДОСТИЖЕНИЙ В КОЛЛЕКЦИЮ. ОТКРОЙ «ДОСТИЖЕНИЯ» В ГЛАВНОМ МЕНЮ."
+		},
+		"WN_017_WEEKLY": {
+			"en": "PLAY THE DAILY CHALLENGE ON 5 DAYS OF A WEEK FOR +1 FUSE. YOUR DAILY HISTORY IS IN BADGES.",
+			"ru": "ИСПЫТАНИЕ ДНЯ 5 ДНЕЙ ЗА НЕДЕЛЮ: +1 ПРЕДОХРАНИТЕЛЬ. ИСТОРИЯ ИСПЫТАНИЙ — В «ДОСТИЖЕНИЯХ»."
+		},
+		"WN_018_PROFILE": {
+			"en": "PLAYER PROFILES: RECORDS, ACHIEVEMENTS AND STATS ON ONE PAGE. TAP A PLAYER ON THE LEADERBOARD TO SEE THEIRS.",
+			"ru": "ПРОФИЛИ ИГРОКОВ: РЕКОРДЫ, ДОСТИЖЕНИЯ И СТАТИСТИКА НА ОДНОЙ СТРАНИЦЕ. НАЖМИ НА ИГРОКА В РЕЙТИНГЕ, ЧТОБЫ УВИДЕТЬ ЕГО ПРОФИЛЬ."
+		},
+		"WN_018_VIDEO": {
+			"en": "VIDEOS: YOUR NAME, MODE AND DATE ON EVERY CLIP, A CHOICE OF LANGUAGE, AND SPED-UP CLIPS ARE READY MUCH FASTER.",
+			"ru": "ВИДЕО: ИМЯ, РЕЖИМ И ДАТА В КАЖДОМ РОЛИКЕ, ВЫБОР ЯЗЫКА, А УСКОРЕННЫЕ РОЛИКИ ГОТОВЫ НАМНОГО БЫСТРЕЕ."
+		},
+		"WN_018_ACH": {
+			"en": "ACHIEVEMENTS: SWIPE BETWEEN TABS, TAP A BADGE TO SEE IT UP CLOSE.",
+			"ru": "ДОСТИЖЕНИЯ: ЛИСТАЙ ВКЛАДКИ СВАЙПОМ, НАЖМИ НА ЗНАЧОК, ЧТОБЫ РАССМОТРЕТЬ ЕГО."
+		},
+		"WN_018_TEXT": {
+			"en": "CLEANER LETTERING EVERYWHERE. THEMES: USE THEME TAKES YOU STRAIGHT BACK TO THE MENU.",
+			"ru": "БУКВЫ СТАЛИ ЧИЩЕ. ТЕМЫ: ВЫБОР ТЕМЫ СРАЗУ ВОЗВРАЩАЕТ В МЕНЮ."
 		}
 	}
 }

@@ -7,7 +7,7 @@ lead: Three ways to play the same rules: {{ t('RANKED') }} for the high score, t
 <p>The endless mode. One canonical ruleset for everyone: the standard board and speed, all four <a href="events.html">Circuit Events</a> and all three <a href="modules.html">modules</a>. The run lasts until you crash.</p>
 <ul>
   <li>Your best score goes on the online leaderboard: the world, your country (set in Settings, can be changed once in 30 days) or your platform, for all time or this week.</li>
-  <li>Every run on a board comes with its replay: tap a name to watch how it was played. The server re-plays submitted runs to check them.</li>
+  <li>Tap a name on a board for {{ t('PF_TITLE') }} (their <a href="achievements.html#profile">profile</a>) or {{ t('WATCH') }}: every run on a board comes with its replay. The server re-plays submitted runs to check them.</li>
   <li>Without a connection the run still counts locally and is sent later.</li>
 </ul>
 <h3 id="leagues">Weekly leagues</h3>
@@ -26,6 +26,7 @@ lead: Three ways to play the same rules: {{ t('RANKED') }} for the high score, t
   <li><b>{{ Economy.DAILY_RANKED_ATTEMPTS }} counted tries</b> a day. A try is spent when it starts, so quitting a bad start still uses it. After that you can practise on the day's board until tomorrow.</li>
   <li>Your best counted try goes on the day's leaderboard.</li>
   <li>The first try of the day refills one Campaign <a href="#fuses">fuse</a>.</li>
+  <li id="weekly"><b>Weekly goal:</b> finish a Daily Challenge on {{ Economy.WEEKLY_DAILY_GOAL }} different days of one week (Monday to Sunday, UTC) and you get +{{ Economy.WEEKLY_DAILY_FUSES }} fuse, once a week. It is paid even with a full bank (up to {{ Economy.FUSE_MAX + Economy.FUSE_BONUS }}/{{ Economy.FUSE_MAX }}). A second try on the same day or a practice run does not count. This month's Daily history is on the {{ t('ACH_CAT_DAILY') }} tab of <a href="achievements.html">{{ t('ACHIEVEMENTS') }}</a>.</li>
   <li>Counted tries need a connection (the server hands them out); offline you can only practise.</li>
   <li>The Daily uses exactly the Ranked rules.</li>
 </ul>
@@ -60,7 +61,8 @@ lead: Three ways to play the same rules: {{ t('RANKED') }} for the high score, t
 <ul>
   <li>The results show the score, your best and the highest multiplier, plus the run's numbers: length, close calls, threads, squeezes, needles, gates, relays, wires and modules.</li>
   <li>{{ t('REPLAY') }} plays the run back at 1×, 2× or 4× and can jump to the best moment.</li>
-  <li>{{ t('CREATE_VIDEO') }} makes a short vertical clip — the whole run or the best moments — and {{ t('SHARE') }} sends a result card.</li>
+  <li>New <a href="achievements.html">achievements</a> appear as cards over the results, followed by the next ones you are close to.</li>
+  <li id="video">{{ t('CREATE_VIDEO') }} makes a vertical 60 fps clip: {{ t('FULL_RUN') }} or {{ t('BEST_MOMENTS') }}, at 1×, 2×, 4× or 8×. Every clip names you, the mode and the date. The language button ({{ t('VIDEO_LANG') % t('LANG_en') }}) picks the clip's language, so you can play in one language and share in another. Clips at the speed and language of your recording are ready instantly; the rest are rendered on the phone, which takes a few seconds. {{ t('SHARE') }} sends a result card instead.</li>
 </ul>
 <div class="clear"></div>
 

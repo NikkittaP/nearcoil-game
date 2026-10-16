@@ -1,0 +1,40 @@
+title: Achievements and profile
+description: NEARCOIL achievements — all of them with what each one asks — the weekly Daily goal and the player profile.
+lead: Achievements mark what you have done in the game; your <b>profile</b> puts them on one page with your records, and anyone on a leaderboard can open it.
+---
+<h2 id="how">How they work</h2>
+<ul>
+  <li>{{ len(achievements.list) }} achievements in {{ len(achievements.categories) }} categories: {{ t('ACH_CAT_CORE') }}, {{ t('ACH_CAT_NEARCOIL') }}, {{ t('ACH_CAT_DAILY') }}, {{ t('ACH_CAT_CAMPAIGN') }} and {{ t('ACH_CAT_SPECIAL') }}. Open them with {{ t('NAV_ACHIEVEMENTS') }} on the main menu; swipe left or right to change the tab.</li>
+  <li>They are checked when a run ends: a new one appears as a card over the results (three or more as one stack). Nothing pops up during a run.</li>
+  <li>Score, survival and multiplier achievements count in {{ t('RANKED') }} and the {{ t('DAILY') }} only: Campaign levels pay differently and some start charged.</li>
+  <li>Badges have one to three rims (the tier, ● in the tables below); tier three has a gold rim. Two achievements are hidden and show as ??? until you earn them.</li>
+  <li>Tap a badge to see it up close: what it asks, the date you earned it, or how far along you are.</li>
+  <li>Progress comes from what the game already counts, so an update never takes an achievement away and earlier play counts.</li>
+</ul>
+<div class="clear"></div>
+{{ shots(img('achievements', 'ACHIEVEMENTS: a tab per category, earned badges lit, progress under the rest.'), img('achievement_card', 'An achievement up close: the badge, what it asks and the day it was earned.')) }}
+<h2 id="core">{{ t('ACH_CAT_CORE') }}</h2>
+{{ achievement_table('core') }}
+<h2 id="nearcoil">{{ t('ACH_CAT_NEARCOIL') }}</h2>
+<p>Maneuvers are {{ t('SQUEEZE') }}, {{ t('THREAD') }} and {{ t('NEEDLE') }} (see <a href="close-calls.html">Close calls and maneuvers</a>); a chain is several of them in a row.</p>
+{{ achievement_table('nearcoil') }}
+<h2 id="daily">{{ t('ACH_CAT_DAILY') }}</h2>
+<div class="float">{{ img('achievements_daily', 'The Daily tab: this month\'s Daily Challenges and the weekly goal.') }}</div>
+<p>The tab opens with this month's calendar: days with a finished Daily Challenge are lit, today is outlined. Under it is the <a href="modes.html#weekly">weekly goal</a>: {{ Economy.WEEKLY_DAILY_GOAL }} different days of a week pay +{{ Economy.WEEKLY_DAILY_FUSES }} fuse. The contender achievements need a big enough board: at least {{ achievements_ranks('country_min_total') }} players in your country, {{ achievements_ranks('world_min_total') }} in the world.</p>
+<div class="clear"></div>
+{{ achievement_table('daily') }}
+<h2 id="campaign">{{ t('ACH_CAT_CAMPAIGN') }}</h2>
+{{ achievement_table('campaign') }}
+<h2 id="special">{{ t('ACH_CAT_SPECIAL') }}</h2>
+{{ achievement_table('special') }}
+
+<h2 id="profile">{{ t('PF_TITLE') }}</h2>
+<div class="float">{{ img('profile', 'Your profile: records, every achievement and the play stats.') }}</div>
+<ul>
+  <li>Your own page opens with {{ t('NAV_PROFILE') }} on the main menu. Another player's opens from any leaderboard: tap their row, then {{ t('PF_TITLE') }}.</li>
+  <li>On it: their best badge as the emblem, name and country, since when they play and their league; the records ({{ t('RANKED') }} with the place in the world, this week, the {{ t('DAILY') }} and the days played, the {{ t('CAMPAIGN') }} with medals); every achievement with the day it was earned; and the play stats.</li>
+  <li>The records come from the leaderboards. Achievements, Campaign medals and stats are what the player's game reports: they are shown as they are and never rank anyone.</li>
+  <li>The share button makes the page an image to send. {{ t('PF_REPORT') }} on someone's page reports a name.</li>
+  <li>Players taken off the boards have no public page.</li>
+</ul>
+<div class="clear"></div>

@@ -23,7 +23,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "wiki-src"
 OUT = ROOT / "wiki"
 LANGS = ["en", "ru"]
-PAGES = ["index", "basics", "close-calls", "charge", "events", "modules", "modes", "campaign", "glossary"]
+PAGES = ["index", "basics", "close-calls", "charge", "events", "modules", "modes", "achievements", "campaign", "glossary"]
 STEP_MS = 150   # a typical early-run step, for "about N s" conversions
 SITE = "https://nikkittap.github.io/nearcoil-game/"
 
@@ -70,6 +70,7 @@ UI = {
         "cap_x": "ceiling ×{n}", "speed_pct": "speed {n}%", "charge_pct": "charge {n}%", "drain_pct": "drain {n}%",
         "phase": "carries a PHASE", "surge": "starts in SURGE", "cut": "carries a CUT", "ports": "ports",
         "no_events": "no events", "events": "events",
+        "ach": "Achievement", "ach_what": "What it asks", "tier": "Tier", "hidden": "hidden: shows as ??? until you earn it",
     },
     "ru": {
         "wiki": "Справочник", "home": "NEARCOIL", "contents": "На этой странице", "lang": "English",
@@ -87,6 +88,7 @@ UI = {
         "cap_x": "потолок ×{n}", "speed_pct": "скорость {n}%", "charge_pct": "заряд {n}%", "drain_pct": "утечка {n}%",
         "phase": "с ФАЗОЙ", "surge": "старт на ФОРСАЖЕ", "cut": "со СРЕЗОМ", "ports": "порты",
         "no_events": "без событий", "events": "события",
+        "ach": "Достижение", "ach_what": "Что нужно", "tier": "Уровень", "hidden": "скрытое: до получения видно как ???",
     },
 }
 
@@ -262,6 +264,25 @@ class Page:
             out.append(self.chapter_table(ch["n"]))
         return Safe("".join(out))
 
+    def achievement_table(self, cat):
+        """One category's achievements as the game words them: name, what it
+        asks, tier (rims of the badge)."""
+        u = self.ui
+        rows = []
+        for a in self.d["achievements"]["list"]:
+            if a["cat"] != cat:
+                continue
+            what = html.escape(a["desc"][self.lang])
+            if a["hidden"]:
+                what += f'<br><span class="muted small">{u["hidden"]}</span>'
+            rows.append([f'<b class="term">{html.escape(a["title"][self.lang])}</b>', what, "●" * a["tier"] + "○" * (3 - a["tier"])])
+        if not rows:
+            raise NameError(f"no achievements in category '{cat}'")
+        return self.table([u["ach"], u["ach_what"], u["tier"]], rows)
+
+    def achievements_ranks(self, k):
+        return self.n(self.d["achievements"]["ranks"][k])
+
     def glossary(self):
         u = self.ui
         other = "en" if self.lang == "ru" else "ru"
@@ -279,7 +300,8 @@ class Page:
     def env(self):
         e = {k: wrap(v) for k, v in self.d.items() if k not in ("strings",)}
         for name in ("n", "t", "term", "secs", "steps", "pct", "x", "lst", "img", "shots", "meter", "table", "flow_table",
-                     "speed_table", "growth_table", "director_table", "chapter_table", "chapters", "glossary", "plural"):
+                     "speed_table", "growth_table", "director_table", "chapter_table", "chapters", "glossary", "plural",
+                     "achievement_table", "achievements_ranks"):
             e[name] = getattr(self, name)
         e.update({"min": min, "max": max, "round": round, "len": len, "sum": sum, "int": int, "str": str, "Safe": Safe})
         return e
