@@ -1,5 +1,5 @@
 {
-	"generated": "2026-10-16 11:09:26 UTC",
+	"generated": "2026-10-16 19:38:01 UTC",
 	"version": "0.1.8",
 	"GameSim": {
 		"RULES_VERSION": 9,
@@ -4263,6 +4263,26 @@
 			"en": "AS THE SNAKE SEES IT, NOT THE SCREEN.",
 			"ru": "ОТ ГОЛОВЫ ЗМЕИ, А НЕ ОТ ЭКРАНА."
 		},
+		"SET_VOLKEYS": {
+			"en": "VOLUME KEYS",
+			"ru": "КНОПКИ ГРОМКОСТИ"
+		},
+		"VOLKEYS_UP_LEFT": {
+			"en": "+ LEFT",
+			"ru": "+ ВЛЕВО"
+		},
+		"VOLKEYS_UP_RIGHT": {
+			"en": "+ RIGHT",
+			"ru": "+ ВПРАВО"
+		},
+		"VOLKEYS_HELP_UP_LEFT": {
+			"en": "IN A RUN: VOLUME + TURNS LEFT, VOLUME - TURNS RIGHT",
+			"ru": "В ЗАБЕГЕ: ГРОМКОСТЬ + ПОВОРАЧИВАЕТ НАЛЕВО, - НАПРАВО"
+		},
+		"VOLKEYS_HELP_UP_RIGHT": {
+			"en": "IN A RUN: VOLUME + TURNS RIGHT, VOLUME - TURNS LEFT",
+			"ru": "В ЗАБЕГЕ: ГРОМКОСТЬ + ПОВОРАЧИВАЕТ НАПРАВО, - НАЛЕВО"
+		},
 		"CTRL_SWIPE_HELP": {
 			"en": "FLICK THE WAY YOU WANT TO GO. SHORT IS ENOUGH.",
 			"ru": "СМАХНИ ТУДА, КУДА ХОЧЕШЬ. ХВАТИТ КОРОТКОГО."
@@ -4965,11 +4985,11 @@
 		},
 		"NEEDLE GATE": {
 			"en": "NEEDLE GATE",
-			"ru": "ИГОЛЬНЫЕ ВОРОТА"
+			"ru": "УЗКИЕ ВОРОТА"
 		},
 		"DRIFT GATE": {
-			"en": "DRIFT GATE",
-			"ru": "ПЛАВАЮЩИЕ ВОРОТА"
+			"en": "MOVING GATE",
+			"ru": "ПОДВИЖНЫЕ ВОРОТА"
 		},
 		"RISK GATE": {
 			"en": "RISK GATE",
@@ -5016,8 +5036,8 @@
 			"ru": "ГОРЯЧАЯ ЗОНА"
 		},
 		"DRIFT ZONE": {
-			"en": "DRIFT ZONE",
-			"ru": "ПЛАВАЮЩАЯ ЗОНА"
+			"en": "MOVING ZONE",
+			"ru": "ПОДВИЖНАЯ ЗОНА"
 		},
 		"SHRINK ZONE": {
 			"en": "SHRINK ZONE",
@@ -5145,7 +5165,7 @@
 		},
 		"STEER INTO THE RED NODES": {
 			"en": "STEER YOUR HEAD INTO THE NODES",
-			"ru": "НАПРАВЛЯЙ ГОЛОВУ В УЗЛЫ"
+			"ru": "ВЕДИ ГОЛОВУ К УЗЛАМ И СЪЕДАЙ ИХ"
 		},
 		"LONGER LINE": {
 			"en": "LONGER BODY",
@@ -5153,7 +5173,7 @@
 		},
 		"EVERY NODE MAKES YOUR LINE LONGER": {
 			"en": "EVERY NODE MAKES YOUR BODY LONGER",
-			"ru": "КАЖДЫЙ УЗЕЛ УДЛИНЯЕТ ТЕЛО"
+			"ru": "КАЖДЫЙ СЪЕДЕННЫЙ УЗЕЛ УДЛИНЯЕТ ТЕЛО"
 		},
 		"CLOSE PASS": {
 			"en": "CLOSE PASS",
@@ -5161,7 +5181,7 @@
 		},
 		"PASS RIGHT NEXT TO YOUR OWN LINE": {
 			"en": "PASS RIGHT NEXT TO YOUR OWN BODY",
-			"ru": "ПРОЙДИ ВПРИТИРКУ К СВОЕМУ ТЕЛУ"
+			"ru": "ЕЗЖАЙ ВПЛОТНУЮ К СВОЕМУ ТЕЛУ"
 		},
 		"SKIM": {
 			"en": "SKIM",
@@ -5169,43 +5189,43 @@
 		},
 		"RIDE ALONG A LINE TO KEEP THE CHARGE": {
 			"en": "RIDE ALONG YOUR BODY TO KEEP THE CHARGE",
-			"ru": "СКОЛЬЗИ ВДОЛЬ ТЕЛА, ЧТОБЫ ДЕРЖАТЬ ЗАРЯД"
+			"ru": "ЕЗЖАЙ ВДОЛЬ ТЕЛА, ЧТОБЫ ШКАЛА НЕ ПУСТЕЛА"
 		},
 		"X2": {
-			"en": "X2",
-			"ru": "X2"
+			"en": "×2",
+			"ru": "МНОЖИТЕЛЬ"
 		},
 		"FILL THE METER. X2 DOUBLES EVERY POINT": {
-			"en": "FILL THE METER. X2 DOUBLES EVERY POINT",
-			"ru": "ЗАПОЛНИ ШКАЛУ. X2 УДВАИВАЕТ КАЖДОЕ ОЧКО"
+			"en": "FILL THE METER UP TOP: EVERY POINT COUNTS DOUBLE",
+			"ru": "ЗАПОЛНИ ШКАЛУ ВВЕРХУ — ОЧКИ ПОЙДУТ ВДВОЙНЕ"
 		},
 		"INSULATORS": {
 			"en": "INSULATORS",
 			"ru": "ИЗОЛЯТОРЫ"
 		},
 		"BRUSH A LIT BLOCK FOR CHARGE. NEVER HIT IT": {
-			"en": "BRUSH A LIT BLOCK FOR CHARGE. NEVER HIT IT",
-			"ru": "ПРОЙДИ ВПРИТИРКУ К ГОРЯЩЕМУ БЛОКУ. НЕ ВРЕЗАЙСЯ"
+			"en": "PASS RIGHT NEXT TO CHARGED BLOCKS. NEVER HIT THEM",
+			"ru": "ЕЗЖАЙ ВПЛОТНУЮ К ЗАРЯЖЕННЫМ БЛОКАМ, НО НЕ ВРЕЗАЙСЯ"
 		},
 		"SLIP BETWEEN YOUR LINE AND A BLOCK": {
 			"en": "SLIP BETWEEN YOUR BODY AND A BLOCK",
 			"ru": "ПРОСКОЧИ МЕЖДУ ТЕЛОМ И БЛОКОМ"
 		},
 		"GO THROUGH THE GAP IN YOUR OWN LINE": {
-			"en": "DRIVE THROUGH A GAP IN YOUR OWN BODY",
-			"ru": "ПРОЕДЬ СКВОЗЬ ЩЕЛЬ В СВОЁМ ТЕЛЕ"
+			"en": "SLIP THROUGH A NARROW GAP TO THE OTHER SIDE",
+			"ru": "ПРОСКОЧИ ЧЕРЕЗ УЗКУЮ ЩЕЛЬ НА ДРУГУЮ СТОРОНУ"
 		},
 		"HOLD A LONG CORRIDOR TO THE END": {
 			"en": "HOLD A LONG CORRIDOR TO THE END",
-			"ru": "ПРОЙДИ ДЛИННЫЙ КОРИДОР ДО КОНЦА"
+			"ru": "ПРОЙДИ ДЛИННЫЙ УЗКИЙ КОРИДОР ДО КОНЦА"
 		},
 		"SIGNAL TEST": {
 			"en": "SIGNAL TEST",
 			"ru": "ЭКЗАМЕН: СИГНАЛ"
 		},
 		"CHARGE TO X2 AND HOLD IT": {
-			"en": "CHARGE TO X2 AND HOLD IT",
-			"ru": "НАБЕРИ X2 И УДЕРЖИ ЕГО"
+			"en": "THE LONGER YOU STAY AT ×2 OR ABOVE, THE MORE YOU SCORE",
+			"ru": "ЧЕМ ДОЛЬШЕ ДЕРЖИШЬ ×2 И ВЫШЕ, ТЕМ БОЛЬШЕ ОЧКОВ"
 		},
 		"THREAD THE NEEDLE": {
 			"en": "THREAD THE NEEDLE",
@@ -5213,47 +5233,47 @@
 		},
 		"DRIVE STRAIGHT THROUGH THE GATE": {
 			"en": "DRIVE STRAIGHT THROUGH THE GATE",
-			"ru": "ПРОЙДИ ПРЯМО СКВОЗЬ ВОРОТА"
+			"ru": "ПРОЕЗЖАЙ ВОРОТА НАСКВОЗЬ"
 		},
 		"DEEP DOORS": {
-			"en": "DEEP DOORS",
-			"ru": "ГЛУБОКИЕ ДВЕРИ"
+			"en": "LONG GATES",
+			"ru": "ДЛИННЫЕ ВОРОТА"
 		},
 		"DEEPER DOORS PAY MORE": {
-			"en": "DEEPER DOORS PAY MORE",
-			"ru": "ЧЕМ ГЛУБЖЕ ДВЕРЬ, ТЕМ БОЛЬШЕ ОЧКОВ"
+			"en": "LONGER GATES PAY MORE",
+			"ru": "ЧЕМ ДЛИННЕЕ ВОРОТА, ТЕМ БОЛЬШЕ ОЧКОВ"
 		},
 		"CHAIN": {
 			"en": "CHAIN",
 			"ru": "ЦЕПОЧКА"
 		},
 		"EACH GATE LINES UP BEHIND THE LAST": {
-			"en": "EACH GATE LINES UP BEHIND THE LAST",
-			"ru": "КАЖДЫЕ ВОРОТА ВСТАЮТ ЗА ПРЕДЫДУЩИМИ"
+			"en": "GATES COME ONE AFTER ANOTHER",
+			"ru": "ВОРОТА ИДУТ ОДНИ ЗА ДРУГИМИ"
 		},
 		"TWO DOORS. TAKE EITHER": {
-			"en": "TWO DOORS. TAKE EITHER",
-			"ru": "ДВЕ ДВЕРИ. ЛЮБАЯ ПОДОЙДЁТ"
+			"en": "TWO GATES SIDE BY SIDE. EITHER ONE COUNTS",
+			"ru": "ДВОЕ ВОРОТ РЯДОМ. ПОДОЙДУТ ЛЮБЫЕ"
 		},
 		"RISK": {
 			"en": "RISK",
 			"ru": "РИСК"
 		},
 		"SHALLOW DOOR +25. DEEP DOOR +90": {
-			"en": "SHALLOW DOOR +25. DEEP DOOR +90",
-			"ru": "МЕЛКАЯ ДВЕРЬ +25. ГЛУБОКАЯ +90"
+			"en": "SHORT GATE +25, LONG GATE +90",
+			"ru": "КОРОТКИЕ ВОРОТА +25, ДЛИННЫЕ +90"
 		},
 		"PASS THROUGH, THEN BACK THROUGH AGAIN": {
-			"en": "PASS THROUGH, THEN BACK THROUGH AGAIN",
-			"ru": "ПРОЙДИ НАСКВОЗЬ, ПОТОМ ОБРАТНО"
+			"en": "DRIVE THROUGH, THEN TURN AROUND AND COME BACK THROUGH",
+			"ru": "ПРОЕДЬ ВОРОТА, ПОТОМ РАЗВЕРНИСЬ И ПРОЕДЬ ОБРАТНО"
 		},
 		"PILLAR GATES": {
 			"en": "PILLAR GATES",
 			"ru": "ВОРОТА И ИЗОЛЯТОРЫ"
 		},
 		"GATES AMONG THE INSULATORS": {
-			"en": "GATES AMONG THE INSULATORS",
-			"ru": "ВОРОТА СРЕДИ ИЗОЛЯТОРОВ"
+			"en": "GATES AMONG CHARGED BLOCKS",
+			"ru": "ВОРОТА СРЕДИ ЗАРЯЖЕННЫХ БЛОКОВ"
 		},
 		"GAUNTLET": {
 			"en": "GAUNTLET",
@@ -5268,16 +5288,16 @@
 			"ru": "ВЫСОКИЕ СТАВКИ"
 		},
 		"ALWAYS TAKE THE DEEP DOOR": {
-			"en": "ALWAYS TAKE THE DEEP DOOR",
-			"ru": "ВСЕГДА БЕРИ ГЛУБОКУЮ ДВЕРЬ"
+			"en": "THE LONG GATE PAYS MORE",
+			"ru": "ДЛИННЫЕ ВОРОТА ДАЮТ БОЛЬШЕ ОЧКОВ"
 		},
 		"GATE TEST": {
 			"en": "GATE TEST",
 			"ru": "ЭКЗАМЕН: ВОРОТА"
 		},
 		"ALL GATES. KEEP YOUR CHARGE": {
-			"en": "ALL GATES. KEEP YOUR CHARGE",
-			"ru": "ВСЕ ВОРОТА. СОХРАНИ ЗАРЯД"
+			"en": "EVERY KIND OF GATE. PASS THEM BACK TO BACK TO KEEP THE MULTIPLIER UP",
+			"ru": "ВСЕ ВИДЫ ВОРОТ. ПРОЕЗЖАЙ ИХ ПОДРЯД, ЧТОБЫ МНОЖИТЕЛЬ НЕ ПАДАЛ"
 		},
 		"CIRCUIT": {
 			"en": "CIRCUIT",
@@ -5288,140 +5308,140 @@
 			"ru": "СОБЕРИ СВОЮ ЦЕПЬ"
 		},
 		"TOUCH THE TERMINALS IN ORDER": {
-			"en": "TOUCH THE TERMINALS IN ORDER",
-			"ru": "КОСНИСЬ КЛЕММ ПО ПОРЯДКУ"
+			"en": "DRIVE ONTO THE TERMINALS BY NUMBER",
+			"ru": "НАЕЗЖАЙ НА КЛЕММЫ ПО НОМЕРАМ"
 		},
 		"LIVE POSTS": {
 			"en": "LIVE POSTS",
 			"ru": "КЛЕММЫ ПОД ТОКОМ"
 		},
 		"TOUCHED TERMINALS STAY LIVE. GRAZE THEM": {
-			"en": "TOUCHED TERMINALS STAY LIVE. SKIM THEM",
-			"ru": "ПРОЙДЕННЫЕ КЛЕММЫ ПОД ТОКОМ. ПРОХОДИ ВПРИТИРКУ"
+			"en": "A TERMINAL YOU DROVE ONTO IS LIVE. PASS RIGHT NEXT TO IT, NEVER INTO IT",
+			"ru": "КЛЕММА, НА КОТОРУЮ ТЫ НАЕХАЛ, ПОД ТОКОМ. ЕЗЖАЙ ВПЛОТНУЮ, НО НЕ ВРЕЗАЙСЯ"
 		},
 		"FOUR POINT": {
-			"en": "FOUR POINT",
-			"ru": "ЧЕТЫРЕ ТОЧКИ"
+			"en": "FOUR TERMINALS",
+			"ru": "ЧЕТЫРЕ КЛЕММЫ"
 		},
 		"FOUR TERMINALS. MORE TIME, MORE PAY": {
 			"en": "FOUR TERMINALS. MORE TIME, MORE PAY",
-			"ru": "ЧЕТЫРЕ КЛЕММЫ. БОЛЬШЕ ВРЕМЕНИ И ОЧКОВ"
+			"ru": "ЧЕТЫРЕ КЛЕММЫ: БОЛЬШЕ ВРЕМЕНИ И БОЛЬШЕ ОЧКОВ"
 		},
 		"LESS TIME. BIGGER PAYOUT": {
 			"en": "LESS TIME. BIGGER PAYOUT",
-			"ru": "МЕНЬШЕ ВРЕМЕНИ. БОЛЬШЕ НАГРАДА"
+			"ru": "ВРЕМЕНИ МЕНЬШЕ, НАГРАДА БОЛЬШЕ"
 		},
 		"BRIDGE": {
 			"en": "BRIDGE",
 			"ru": "МОСТ"
 		},
 		"THE RELAY LEAVES ITS WIRING BEHIND": {
-			"en": "THE RELAY LEAVES ITS WIRING BEHIND",
-			"ru": "РЕЛЕ ОСТАВЛЯЕТ ЗА СОБОЙ ПРОВОДКУ"
+			"en": "WHEN THE RELAY IS DONE, LIVE BARS JOIN ITS TERMINALS",
+			"ru": "ПОСЛЕ РЕЛЕ КЛЕММЫ СОЕДИНЯТСЯ ШИНАМИ ПОД ТОКОМ"
 		},
 		"THE LAST TERMINAL APPEARS LATE": {
 			"en": "THE LAST TERMINAL APPEARS LATE",
 			"ru": "ПОСЛЕДНЯЯ КЛЕММА ПОЯВЛЯЕТСЯ ПОЗДНО"
 		},
 		"BANK INSIDE THE ZONE. LEAVE TO CASH": {
-			"en": "BANK INSIDE THE ZONE. LEAVE TO CASH",
-			"ru": "КОПИ В ЗОНЕ. ВЫЙДИ, ЧТОБЫ ЗАБРАТЬ"
+			"en": "POINTS BUILD UP WHILE YOU'RE IN THE ZONE. LEAVE TO COLLECT THEM",
+			"ru": "ОЧКИ КОПЯТСЯ, ПОКА ТЫ В ЗОНЕ. ВЫЕДЕШЬ — ЗАБЕРЁШЬ"
 		},
 		"RISING HEAT": {
 			"en": "RISING HEAT",
-			"ru": "РАСТУЩИЙ ЖАР"
+			"ru": "ЗОНА РАЗГОРАЕТСЯ"
 		},
 		"THE ZONE PAYS MORE THE LONGER YOU STAY": {
 			"en": "THE ZONE PAYS MORE THE LONGER YOU STAY",
-			"ru": "ЧЕМ ДОЛЬШЕ В ЗОНЕ, ТЕМ БОЛЬШЕ ОЧКОВ"
+			"ru": "ЧЕМ ДОЛЬШЕ ТЫ В ЗОНЕ, ТЕМ БЫСТРЕЕ КОПЯТСЯ ОЧКИ"
 		},
 		"MAZE": {
 			"en": "MAZE",
 			"ru": "ЛАБИРИНТ"
 		},
 		"RELAYS IN A MAZE OF INSULATORS": {
-			"en": "RELAYS IN A MAZE OF INSULATORS",
-			"ru": "РЕЛЕ В ЛАБИРИНТЕ ИЗОЛЯТОРОВ"
+			"en": "RELAYS AMONG CHARGED BLOCKS",
+			"ru": "РЕЛЕ СРЕДИ ЗАРЯЖЕННЫХ БЛОКОВ"
 		},
 		"CIRCUIT TEST": {
 			"en": "CIRCUIT TEST",
 			"ru": "ЭКЗАМЕН: ЦЕПЬ"
 		},
 		"GATES, RELAYS AND HEAT": {
-			"en": "GATES, RELAYS AND HEAT",
-			"ru": "ВОРОТА, РЕЛЕ И ЖАР"
+			"en": "GATES, RELAYS AND HOT ZONES",
+			"ru": "ВОРОТА, РЕЛЕ И ГОРЯЧИЕ ЗОНЫ"
 		},
 		"ONE POWER AT A TIME": {
 			"en": "ONE POWER AT A TIME",
 			"ru": "ПО ОДНОМУ МОДУЛЮ ЗА РАЗ"
 		},
 		"YOU CARRY A PHASE. HOP ONE CONDUCTOR": {
-			"en": "YOU CARRY A PHASE: HOP ONE OBSTACLE OR GO THROUGH THE EDGE",
-			"ru": "У ТЕБЯ ФАЗА: ПЕРЕПРЫГНИ ПРЕПЯТСТВИЕ ИЛИ ПРОЙДИ СКВОЗЬ КРАЙ"
+			"en": "YOU HAVE A PHASE: IT SAVES YOU FROM ONE CRASH",
+			"ru": "У ТЕБЯ ЕСТЬ ФАЗА: ОНА СПАСЁТ ОТ ОДНОГО СТОЛКНОВЕНИЯ"
 		},
 		"PHASE PORT": {
 			"en": "PHASE PORT",
 			"ru": "ПОРТ ФАЗЫ"
 		},
 		"WIN AN EVENT, STEER INTO THE PORT": {
-			"en": "WIN AN EVENT, STEER INTO THE PORT",
-			"ru": "ВЫИГРАЙ СОБЫТИЕ И НАПРАВЬ ГОЛОВУ В ПОРТ"
+			"en": "CLEAR A GATE AND A PORT WITH A PHASE APPEARS",
+			"ru": "ПРОЙДИ ВОРОТА — ПОЯВИТСЯ ПОРТ С ФАЗОЙ"
 		},
 		"SURGE: FASTER, MORE CHARGE, MORE POINTS": {
-			"en": "SURGE: FASTER, MORE CHARGE, MORE POINTS",
-			"ru": "ФОРСАЖ: БЫСТРЕЕ, БОЛЬШЕ ЗАРЯДА И ОЧКОВ"
+			"en": "SURGE IS ON FROM THE START: FASTER, MORE CHARGE, MORE POINTS",
+			"ru": "ФОРСАЖ ВКЛЮЧЁН С САМОГО СТАРТА: БЫСТРЕЕ, БОЛЬШЕ ЗАРЯДА И ОЧКОВ"
 		},
 		"SURGE PORT": {
 			"en": "SURGE PORT",
 			"ru": "ПОРТ ФОРСАЖА"
 		},
 		"TAKE THE SURGE, THEN CHASE THE GATE": {
-			"en": "TAKE THE SURGE, THEN CHASE THE GATE",
-			"ru": "ВОЗЬМИ ФОРСАЖ И ЛЕТИ К ВОРОТАМ"
+			"en": "CLEAR A GATE OR A RELAY, TAKE THE SURGE FROM ITS PORT",
+			"ru": "ПРОЙДИ ВОРОТА ИЛИ РЕЛЕ И ВОЗЬМИ ФОРСАЖ ИЗ ПОРТА"
 		},
 		"THE NEXT NODE SEVERS YOUR OLDEST LINE": {
 			"en": "THE NEXT NODE CUTS OFF YOUR TAIL",
-			"ru": "СЛЕДУЮЩИЙ УЗЕЛ ОТРЕЖЕТ ХВОСТ"
+			"ru": "СЛЕДУЮЩИЙ УЗЕЛ ОТРЕЖЕТ ЧАСТЬ ХВОСТА"
 		},
 		"CUT PORT": {
 			"en": "CUT PORT",
 			"ru": "ПОРТ СРЕЗА"
 		},
 		"GROW LONG. CUT FREE": {
-			"en": "GROW LONG. CUT FREE",
-			"ru": "ОТРАСТИ ПОДЛИННЕЕ. СРЕЖЬ ХВОСТ"
+			"en": "CUT IS ONLY OFFERED TO A LONG BODY. GROW, THEN TAKE IT",
+			"ru": "СРЕЗ ДАЮТ ТОЛЬКО ДЛИННОМУ ТЕЛУ. ОТРАСТИ И ВОЗЬМИ ЕГО"
 		},
 		"CHOICE": {
 			"en": "CHOICE",
 			"ru": "ВЫБОР"
 		},
 		"PHASE OR SURGE. CHOOSE BY STEERING": {
-			"en": "PHASE OR SURGE. CHOOSE BY STEERING",
-			"ru": "ФАЗА ИЛИ ФОРСАЖ. ВЫБИРАЙ ПОВОРОТОМ"
+			"en": "TWO PORTS: PHASE AND SURGE. DRIVE INTO THE ONE YOU WANT",
+			"ru": "ДВА ПОРТА: ФАЗА И ФОРСАЖ. ВЪЕДЬ В ТОТ, ЧТО НУЖЕН"
 		},
 		"FULL KIT": {
 			"en": "FULL KIT",
 			"ru": "ПОЛНЫЙ НАБОР"
 		},
 		"EVERY MODULE IN THE POOL": {
-			"en": "EVERY MODULE IN THE POOL",
-			"ru": "ВСЕ МОДУЛИ В ИГРЕ"
+			"en": "ALL THREE MODULES IN THE PORTS",
+			"ru": "В ПОРТАХ ВСЕ ТРИ МОДУЛЯ"
 		},
 		"PHASE RUN": {
 			"en": "PHASE RUN",
 			"ru": "ФАЗОВЫЙ ЗАБЕГ"
 		},
 		"HOP THE BARRIERS": {
-			"en": "HOP THE BARRIERS",
-			"ru": "ПЕРЕПРЫГИВАЙ БАРЬЕРЫ"
+			"en": "BARRIERS EVERYWHERE. A PHASE GETS YOU OVER THEM",
+			"ru": "БАРЬЕРЫ ПОВСЮДУ. ФАЗА ПОМОЖЕТ ИХ ПЕРЕПРЫГНУТЬ"
 		},
 		"MODULE TEST": {
 			"en": "MODULE TEST",
 			"ru": "ЭКЗАМЕН: МОДУЛИ"
 		},
 		"USE EVERYTHING": {
-			"en": "USE EVERYTHING",
-			"ru": "ИСПОЛЬЗУЙ ВСЁ"
+			"en": "GATES, RELAYS, ZONES AND EVERY MODULE",
+			"ru": "ВОРОТА, РЕЛЕ, ЗОНЫ И ВСЕ МОДУЛИ"
 		},
 		"MOTION": {
 			"en": "MOTION",
@@ -5432,56 +5452,56 @@
 			"ru": "ПОЛЕ ДАЁТ СДАЧИ"
 		},
 		"SKIM THE MOVING WIRE THREE TIMES": {
-			"en": "SKIM THE MOVING WIRE THREE TIMES",
-			"ru": "ТРИЖДЫ ПРОСКОЛЬЗНИ ВДОЛЬ ПРОВОДА"
+			"en": "PASS RIGHT NEXT TO THE WIRE THREE TIMES",
+			"ru": "ТРИЖДЫ ПРОЕДЬ ВПЛОТНУЮ К ПРОВОДУ"
 		},
 		"LONG WIRE": {
 			"en": "LONG WIRE",
 			"ru": "ДЛИННЫЙ ПРОВОД"
 		},
 		"A LONGER BAR SWEEPS THE LANE": {
-			"en": "A LONGER BAR SWEEPS THE LANE",
-			"ru": "ДЛИННЫЙ ПРОВОД МЕТЁТ ПОЛОСУ"
+			"en": "A LONGER WIRE BLOCKS MORE OF THE BOARD",
+			"ru": "ДЛИННЫЙ ПРОВОД ПЕРЕКРЫВАЕТ БОЛЬШЕ МЕСТА"
 		},
 		"THE GATE SLIDES. MEET IT": {
-			"en": "THE GATE SLIDES. MEET IT",
-			"ru": "ВОРОТА СЪЕЗЖАЮТ. ЛОВИ ИХ"
+			"en": "THE GATE SHIFTS SIDEWAYS NOW AND THEN. AIM AHEAD OF IT",
+			"ru": "ВОРОТА ВРЕМЯ ОТ ВРЕМЕНИ СДВИГАЮТСЯ ВБОК. ЦЕЛЬСЯ С УПРЕЖДЕНИЕМ"
 		},
 		"THE HOT ZONE WANDERS": {
-			"en": "THE HOT ZONE WANDERS",
-			"ru": "ГОРЯЧАЯ ЗОНА БЛУЖДАЕТ"
+			"en": "THE HOT ZONE MOVES AROUND THE BOARD",
+			"ru": "ГОРЯЧАЯ ЗОНА ПЕРЕМЕЩАЕТСЯ ПО ПОЛЮ"
 		},
 		"THE LAST TERMINAL KEEPS MOVING": {
 			"en": "THE LAST TERMINAL KEEPS MOVING",
-			"ru": "ПОСЛЕДНЯЯ КЛЕММА ДВИЖЕТСЯ"
+			"ru": "ПОСЛЕДНЯЯ КЛЕММА ПЕРЕМЕЩАЕТСЯ"
 		},
 		"TWIN WIRES": {
 			"en": "TWIN WIRES",
 			"ru": "ДВА ПРОВОДА"
 		},
 		"TWO WIRES. ONE LANE EACH": {
-			"en": "TWO WIRES. ONE LANE EACH",
-			"ru": "ДВА ПРОВОДА. У КАЖДОГО СВОЯ ПОЛОСА"
+			"en": "TWO WIRES AT ONCE. PASSES BESIDE EITHER ONE COUNT",
+			"ru": "ДВА ПРОВОДА СРАЗУ. ЗАСЧИТЫВАЕТСЯ ПРОЕЗД ВПЛОТНУЮ К ЛЮБОМУ"
 		},
 		"FAST WIRE": {
 			"en": "FAST WIRE",
 			"ru": "БЫСТРЫЙ ПРОВОД"
 		},
 		"FASTER. SAME RULE": {
-			"en": "FASTER. SAME RULES",
-			"ru": "БЫСТРЕЕ. ПРАВИЛА ТЕ ЖЕ"
+			"en": "THE WIRES MOVE FASTER",
+			"ru": "ПРОВОДА ДВИЖУТСЯ БЫСТРЕЕ"
 		},
 		"THE ZONE CLOSES IN. CASH IN TIME": {
-			"en": "THE ZONE CLOSES IN. CASH IN TIME",
-			"ru": "ЗОНА СЖИМАЕТСЯ. ЗАБЕРИ ВОВРЕМЯ"
+			"en": "THE ZONE SHRINKS. LEAVE BEFORE IT'S GONE",
+			"ru": "ЗОНА СЖИМАЕТСЯ. ВЫЕЗЖАЙ, ПОКА НЕ ПОЗДНО"
 		},
 		"MOVING PARTS": {
 			"en": "MOVING PARTS",
 			"ru": "ДВИЖУЩИЕСЯ ЧАСТИ"
 		},
 		"WIRES, DRIFT AND LIVE TERMINALS": {
-			"en": "WIRES, DRIFT AND MOVING TERMINALS",
-			"ru": "ПРОВОДА, ДРЕЙФ И ПОДВИЖНЫЕ КЛЕММЫ"
+			"en": "WIRES, MOVING GATES AND TERMINALS",
+			"ru": "ПРОВОДА, ПОДВИЖНЫЕ ВОРОТА И КЛЕММЫ"
 		},
 		"MOTION TEST": {
 			"en": "MOTION TEST",
@@ -5504,32 +5524,32 @@
 			"ru": "ФОРСАЖ И ВОРОТА"
 		},
 		"SURGE INTO DEEP GATES": {
-			"en": "SURGE INTO DEEP GATES",
-			"ru": "НА ФОРСАЖЕ В ГЛУБОКИЕ ВОРОТА"
+			"en": "SURGE FROM THE START, LONGER GATES",
+			"ru": "ФОРСАЖ С САМОГО СТАРТА, ВОРОТА ДЛИННЕЕ ОБЫЧНОГО"
 		},
 		"RELAY CUT": {
 			"en": "RELAY CUT",
 			"ru": "РЕЛЕ И СРЕЗ"
 		},
 		"LONG LINE, FAST RELAYS, ONE CUT": {
-			"en": "LONG BODY, FAST RELAYS, ONE CUT",
-			"ru": "ДЛИННОЕ ТЕЛО, БЫСТРЫЕ РЕЛЕ, ОДИН СРЕЗ"
+			"en": "A LONG BODY, FAST RELAYS AND ONE CUT IN HAND",
+			"ru": "ТЕЛО ДЛИННОЕ, РЕЛЕ БЫСТРЫЕ, ОДИН СРЕЗ В ЗАПАСЕ"
 		},
 		"HOT AT X4": {
-			"en": "HOT AT X4",
-			"ru": "ЖАР НА X4"
+			"en": "ZONES AT ×4",
+			"ru": "ЗОНЫ НА ×4"
 		},
 		"START HOT. HOLD THE ZONE": {
-			"en": "START AT X4. STAY IN THE ZONE",
-			"ru": "СТАРТ С X4. ДЕРЖИСЬ В ЗОНЕ"
+			"en": "YOU START AT ×4. BUILD POINTS UP IN THE HOT ZONES",
+			"ru": "СТАРТ С МНОЖИТЕЛЕМ ×4. КОПИ ОЧКИ В ГОРЯЧИХ ЗОНАХ"
 		},
 		"WIRE NEEDLE": {
-			"en": "WIRE NEEDLE",
-			"ru": "ПРОВОД И ИГЛА"
+			"en": "WIRE AND GATE",
+			"ru": "ПРОВОД И ВОРОТА"
 		},
 		"WIRE, THEN A DEEP GATE": {
-			"en": "WIRE, THEN A DEEP GATE",
-			"ru": "ПРОВОД, ПОТОМ ГЛУБОКИЕ ВОРОТА"
+			"en": "LIVE WIRES AND LONG GATES",
+			"ru": "ПРОВОДА ПОД ТОКОМ И ДЛИННЫЕ ВОРОТА"
 		},
 		"UNSTABLE": {
 			"en": "UNSTABLE",
@@ -5540,28 +5560,28 @@
 			"ru": "ЗОНА ПЕРЕГРЕВАЕТСЯ ПОЧТИ БЕЗ ПРЕДУПРЕЖДЕНИЯ"
 		},
 		"ECHO DRIFT": {
-			"en": "ECHO DRIFT",
-			"ru": "ДРЕЙФУЮЩЕЕ ЭХО"
+			"en": "MOVING ECHO",
+			"ru": "ПОДВИЖНОЕ ЭХО"
 		},
 		"AN ECHO GATE THAT WON'T STAY PUT": {
-			"en": "AN ECHO GATE THAT WON'T STAY PUT",
-			"ru": "ВОРОТА-ЭХО НЕ СТОЯТ НА МЕСТЕ"
+			"en": "AN ECHO GATE THAT SHIFTS SIDEWAYS",
+			"ru": "ВОРОТА-ЭХО СДВИГАЮТСЯ ВБОК"
 		},
 		"DARK BRIDGE": {
 			"en": "DARK BRIDGE",
 			"ru": "ТЁМНЫЙ МОСТ"
 		},
 		"BUILD THE BRIDGE IN THE DARK": {
-			"en": "BUILD THE BRIDGE IN THE DARK",
-			"ru": "ПОСТРОЙ МОСТ В ТЕМНОТЕ"
+			"en": "LATE TERMINALS, BRIDGE BARS AND WIRES",
+			"ru": "ПОЗДНИЕ КЛЕММЫ, ШИНЫ И ПРОВОДА"
 		},
 		"RISK SURGE": {
 			"en": "RISK SURGE",
 			"ru": "РИСК НА ФОРСАЖЕ"
 		},
 		"DEEP DOORS UNDER SURGE": {
-			"en": "DEEP DOORS UNDER SURGE",
-			"ru": "ГЛУБОКИЕ ДВЕРИ НА ФОРСАЖЕ"
+			"en": "SHORT OR LONG GATES, ALL ON SURGE",
+			"ru": "КОРОТКИЕ И ДЛИННЫЕ ВОРОТА НА ФОРСАЖЕ"
 		},
 		"FULL CIRCUIT": {
 			"en": "FULL CIRCUIT",
@@ -5576,8 +5596,8 @@
 			"ru": "ЭКЗАМЕН: ПЕРЕГРУЗКА"
 		},
 		"REACH X5": {
-			"en": "REACH X5",
-			"ru": "РАЗГОНИСЬ ДО X5"
+			"en": "PUSH THE MULTIPLIER TO ×5",
+			"ru": "РАЗГОНИ МНОЖИТЕЛЬ ДО ×5"
 		},
 		"MELTDOWN": {
 			"en": "MELTDOWN",
@@ -5609,39 +5629,39 @@
 		},
 		"CHARGE DRAINS TWICE AS FAST": {
 			"en": "CHARGE DRAINS TWICE AS FAST",
-			"ru": "ЗАРЯД УХОДИТ ВДВОЕ БЫСТРЕЕ"
+			"ru": "ШКАЛА ПУСТЕЕТ ВДВОЕ БЫСТРЕЕ"
 		},
 		"THE CAGE": {
 			"en": "THE CAGE",
 			"ru": "КЛЕТКА"
 		},
 		"INSULATORS EVERYWHERE": {
-			"en": "INSULATORS EVERYWHERE",
-			"ru": "ИЗОЛЯТОРЫ ПОВСЮДУ"
+			"en": "CHARGED BLOCKS EVERYWHERE",
+			"ru": "ЗАРЯЖЕННЫЕ БЛОКИ ПОВСЮДУ"
 		},
 		"STORM": {
 			"en": "STORM",
 			"ru": "ШТОРМ"
 		},
 		"WIRES AND HEAT": {
-			"en": "WIRES AND HEAT",
-			"ru": "ПРОВОДА И ЖАР"
+			"en": "WIRES AND HOT ZONES",
+			"ru": "ПРОВОДА И ГОРЯЧИЕ ЗОНЫ"
 		},
 		"GLASS JAW": {
 			"en": "GLASS CEILING",
 			"ru": "СТЕКЛЯННЫЙ ПОТОЛОК"
 		},
 		"X3 IS THE CEILING. SCORE ANYWAY": {
-			"en": "X3 IS THE CEILING. SCORE ANYWAY",
-			"ru": "ВЫШЕ X3 НЕ ПОДНЯТЬСЯ. НАБИРАЙ ВСЁ РАВНО"
+			"en": "THE MULTIPLIER STOPS AT ×3. SCORE ANYWAY",
+			"ru": "МНОЖИТЕЛЬ НЕ ВЫШЕ ×3. НАБИРАЙ ОЧКИ И ТАК"
 		},
 		"HIGH VOLTAGE": {
 			"en": "HIGH VOLTAGE",
 			"ru": "ВЫСОКОЕ НАПРЯЖЕНИЕ"
 		},
 		"START AT X3": {
-			"en": "START AT X3",
-			"ru": "СТАРТ С X3"
+			"en": "START AT ×3",
+			"ru": "СТАРТ С МНОЖИТЕЛЕМ ×3"
 		},
 		"NO MODULES": {
 			"en": "NO MODULES",
@@ -5656,8 +5676,8 @@
 			"ru": "КРИТИЧЕСКАЯ МАССА"
 		},
 		"EVERY MODIFIER IS LIVE": {
-			"en": "NARROW, DRIFTING GATES. FAST WIRES",
-			"ru": "УЗКИЕ ПЛАВАЮЩИЕ ВОРОТА. БЫСТРЫЕ ПРОВОДА"
+			"en": "LONG MOVING GATES. FAST WIRES",
+			"ru": "ДЛИННЫЕ ПОДВИЖНЫЕ ВОРОТА. БЫСТРЫЕ ПРОВОДА"
 		},
 		"THE WHOLE MACHINE. FULL POWER": {
 			"en": "THE WHOLE MACHINE. FULL POWER",
@@ -5848,28 +5868,28 @@
 			"ru": "ВЫЙТИ ИЗ ИГРЫ"
 		},
 		"INTRO_GATE": {
-			"en": "DRIVE THROUGH THE DOOR BETWEEN THE PYLONS BEFORE TIME RUNS OUT. DEEPER DOORS PAY MORE. PYLONS KILL.",
-			"ru": "ПРОЕДЬ СКВОЗЬ ДВЕРЬ МЕЖДУ СТОЛБАМИ, ПОКА НЕ ВЫШЛО ВРЕМЯ. ЧЕМ ГЛУБЖЕ ДВЕРЬ, ТЕМ БОЛЬШЕ ОЧКОВ. СТОЛБЫ УБИВАЮТ."
+			"en": "DRIVE BETWEEN THE GATE'S PYLONS STRAIGHT THROUGH BEFORE TIME RUNS OUT. LONGER GATES PAY MORE. PYLONS KILL.",
+			"ru": "ПРОЕДЬ МЕЖДУ СТОЛБАМИ ВОРОТ НАСКВОЗЬ, ПОКА НЕ ВЫШЛО ВРЕМЯ. ЧЕМ ДЛИННЕЕ ВОРОТА, ТЕМ БОЛЬШЕ ОЧКОВ. СТОЛБЫ УБИВАЮТ."
 		},
 		"INTRO_RELAY": {
 			"en": "TOUCH THE TERMINALS IN NUMBER ORDER BEFORE TIME RUNS OUT. TOUCHED ONES STAY LIVE: SKIM THEM FOR CHARGE, DON'T HIT THEM.",
-			"ru": "КОСНИСЬ КЛЕММ ПО ПОРЯДКУ НОМЕРОВ, ПОКА НЕ ВЫШЛО ВРЕМЯ. ТРОНУТЫЕ ОСТАЮТСЯ ПОД ТОКОМ: ПРОХОДИ ВПРИТИРКУ, НО НЕ ВРЕЗАЙСЯ."
+			"ru": "НАЕЗЖАЙ НА КЛЕММЫ ПО НОМЕРАМ, ПОКА НЕ ВЫШЛО ВРЕМЯ. ПОСЛЕ НАЕЗДА КЛЕММА ПОД ТОКОМ: ЕЗЖАЙ ВПЛОТНУЮ, НО НЕ ВРЕЗАЙСЯ."
 		},
 		"INTRO_HOT": {
 			"en": "INSIDE THE ZONE CHARGE AND POINTS BANK UP. LEAVE IT TO CASH THEM IN BEFORE IT OVERLOADS, OR THEY BURN.",
 			"ru": "ПОКА ТЫ В ЗОНЕ, КОПЯТСЯ ЗАРЯД И ОЧКИ. ВЫЙДИ, ЧТОБЫ ЗАБРАТЬ ИХ, ПОКА ЗОНА НЕ ПЕРЕГРЕЛАСЬ, ИНАЧЕ ВСЁ СГОРИТ."
 		},
 		"INTRO_WIRE": {
-			"en": "THE WIRE SLIDES ALONG ITS LANE. PASS RIGHT NEXT TO IT 3 TIMES. TOUCHING IT KILLS.",
-			"ru": "ПРОВОД ЕЗДИТ ПО СВОЕЙ ЛИНИИ. ПРОЙДИ ВПРИТИРКУ К НЕМУ 3 РАЗА. КАСАНИЕ УБИВАЕТ."
+			"en": "THE WIRE MOVES BACK AND FORTH. PASS RIGHT NEXT TO IT 3 TIMES. TOUCHING IT KILLS.",
+			"ru": "ПРОВОД ХОДИТ ТУДА-СЮДА. ПРОЕДЬ ВПЛОТНУЮ К НЕМУ 3 РАЗА. КАСАНИЕ УБИВАЕТ."
 		},
 		"INTRO_PORTS_T": {
 			"en": "MODULE PORTS",
 			"ru": "ПОРТЫ МОДУЛЕЙ"
 		},
 		"INTRO_PORTS": {
-			"en": "EVENT WON. DRIVE INTO ONE OF THE PORTS TO TAKE ITS MODULE.",
-			"ru": "СОБЫТИЕ ПРОЙДЕНО. ВЪЕДЬ В ОДИН ИЗ ПОРТОВ, ЧТОБЫ ВЗЯТЬ ЕГО МОДУЛЬ."
+			"en": "EVENT CLEARED. DRIVE INTO ONE OF THE PORTS TO TAKE ITS MODULE.",
+			"ru": "ЗАДАНИЕ ВЫПОЛНЕНО. ВЪЕДЬ В ОДИН ИЗ ПОРТОВ, ЧТОБЫ ВЗЯТЬ ЕГО МОДУЛЬ."
 		},
 		"INTRO_PHASE": {
 			"en": "YOUR NEXT CRASH DOES NOT KILL: YOU HOP OVER YOUR BODY, A PYLON, A TERMINAL OR A WIRE, OR GO THROUGH THE EDGE AND COME BACK IN ON THE OPPOSITE SIDE. ONE USE, WITH A BONUS.",
@@ -5953,91 +5973,91 @@
 		},
 		"DRIVE IN THE CELL RIGHT BESIDE YOUR BODY. EACH CLOSE CALL CHARGES THE METER": {
 			"en": "DRIVE IN THE CELL RIGHT BESIDE YOUR BODY. EACH CLOSE CALL CHARGES THE METER",
-			"ru": "ЕДЬ В СОСЕДНЕЙ КЛЕТКЕ ВДОЛЬ СВОЕГО ТЕЛА. КАЖДОЕ СБЛИЖЕНИЕ ЗАРЯЖАЕТ ШКАЛУ"
+			"ru": "ДЕРЖИСЬ В СОСЕДНЕЙ КЛЕТКЕ ОТ ТЕЛА, НЕ КАСАЯСЬ ЕГО. ЗА КАЖДОЕ СБЛИЖЕНИЕ — ОЧКИ И ЗАРЯД"
 		},
 		"KEEP CLOSE CALLS COMING AND THE CHARGE WON'T DRAIN": {
 			"en": "KEEP CLOSE CALLS COMING AND THE CHARGE WON'T DRAIN",
-			"ru": "ПОКА ИДУТ СБЛИЖЕНИЯ, ЗАРЯД НЕ ПАДАЕТ"
+			"ru": "ВДАЛИ ОТ ТЕЛА ШКАЛА ПОНЕМНОГУ ПУСТЕЕТ. СБЛИЖЕНИЯ СНОВА ЕЁ ЗАПОЛНЯЮТ"
 		},
 		"CLOSE CALLS FILL THE METER UP TOP. FULL METER: X2": {
-			"en": "CLOSE CALLS FILL THE METER UP TOP. FULL METER: X2",
-			"ru": "СБЛИЖЕНИЯ ЗАПОЛНЯЮТ ШКАЛУ ВВЕРХУ. ПОЛНАЯ ШКАЛА: X2"
+			"en": "CLOSE CALLS FILL THE METER. THE HIGHER THE MULTIPLIER, THE MORE EVERYTHING PAYS",
+			"ru": "ШКАЛУ ЗАПОЛНЯЮТ СБЛИЖЕНИЯ. ЧЕМ ВЫШЕ МНОЖИТЕЛЬ, ТЕМ БОЛЬШЕ ОЧКОВ ЗА ВСЁ"
 		},
 		"PASS IN THE CELL NEXT TO A LIT BLOCK. IT LIGHTS AGAIN SOON": {
-			"en": "PASS IN THE CELL NEXT TO A LIT BLOCK. IT LIGHTS AGAIN SOON",
-			"ru": "ПРОЕЗЖАЙ В СОСЕДНЕЙ КЛЕТКЕ ОТ ГОРЯЩЕГО БЛОКА. ОН СКОРО ЗАГОРИТСЯ СНОВА"
+			"en": "A CHARGED BLOCK GLOWS. PASS BESIDE IT: IT GIVES ITS CHARGE, GOES DARK AND RECHARGES SOON",
+			"ru": "ЗАРЯЖЕННЫЙ БЛОК СВЕТИТСЯ. ПРОЕДЬ РЯДОМ — ОН ОТДАСТ ЗАРЯД, ПОГАСНЕТ И СКОРО ЗАРЯДИТСЯ СНОВА"
 		},
 		"DRIVE 2 OR MORE CELLS WITH BODY OR BLOCK ON BOTH SIDES": {
 			"en": "DRIVE 2 OR MORE CELLS WITH BODY OR BLOCK ON BOTH SIDES",
-			"ru": "ПРОЕДЬ 2+ КЛЕТКИ ТАК, ЧТОБЫ С ОБЕИХ СТОРОН БЫЛИ ТЕЛО ИЛИ БЛОК"
+			"ru": "ПРОЕДЬ ХОТЯ БЫ 2 КЛЕТКИ ТАК, ЧТОБЫ СЛЕВА И СПРАВА БЫЛИ ТЕЛО ИЛИ БЛОКИ"
 		},
 		"LEAVE A ONE-CELL GAP IN YOUR BODY AND DRIVE THROUGH IT TO THE OTHER SIDE": {
-			"en": "LEAVE A ONE-CELL GAP IN YOUR BODY AND DRIVE THROUGH IT TO THE OTHER SIDE",
-			"ru": "ОСТАВЬ В ТЕЛЕ ЩЕЛЬ В ОДНУ КЛЕТКУ И ПРОЕДЬ ЧЕРЕЗ НЕЁ НА ДРУГУЮ СТОРОНУ"
+			"en": "A GAP IS ONE CELL WIDE, BETWEEN YOUR BODY AND A BLOCK OR TWO PARTS OF YOUR BODY. GO THROUGH AND OUT",
+			"ru": "ЩЕЛЬ — ПРОХОД В ОДНУ КЛЕТКУ МЕЖДУ ТЕЛОМ И БЛОКОМ ИЛИ МЕЖДУ ДВУМЯ ЧАСТЯМИ ТЕЛА. ПРОЕДЬ ЕЁ НАСКВОЗЬ"
 		},
 		"DRIVE 6 OR MORE CELLS IN A ONE-CELL CORRIDOR OF YOUR BODY": {
-			"en": "DRIVE 6 OR MORE CELLS IN A ONE-CELL CORRIDOR OF YOUR BODY",
-			"ru": "ПРОЕДЬ 6+ КЛЕТОК ПО КОРИДОРУ ШИРИНОЙ В КЛЕТКУ МЕЖДУ ЛИНИЯМИ ТЕЛА"
+			"en": "A CORRIDOR ONE CELL WIDE, WALLED BY YOUR BODY OR BLOCKS. DRIVE 6 CELLS OR MORE ALONG IT",
+			"ru": "КОРИДОР ШИРИНОЙ В КЛЕТКУ, ЕГО СТЕНЫ — ТЕЛО ИЛИ БЛОКИ. ПРОЕДЬ ПО НЕМУ 6 КЛЕТОК И БОЛЬШЕ"
 		},
 		"REACH X2, THEN KEEP CLOSE CALLS COMING SO IT DOESN'T DRAIN": {
-			"en": "REACH X2, THEN KEEP CLOSE CALLS COMING SO IT DOESN'T DRAIN",
-			"ru": "ДОЙДИ ДО X2 И НЕ ПРЕРЫВАЙ СБЛИЖЕНИЯ, ЧТОБЫ ЗАРЯД НЕ УПАЛ"
+			"en": "REACH ×2 AND STAY CLOSE TO YOUR BODY: CLOSE CALLS KEEP THE MULTIPLIER UP",
+			"ru": "ДОБЕРИСЬ ДО ×2 И ДЕРЖИСЬ БЛИЗКО К ТЕЛУ: ПОКА ИДУТ СБЛИЖЕНИЯ, МНОЖИТЕЛЬ НЕ ПАДАЕТ"
 		},
 		"ENTER THE DOOR BETWEEN THE PYLONS AND LEAVE ON THE FAR SIDE WITHOUT TURNING": {
-			"en": "ENTER THE DOOR BETWEEN THE PYLONS AND LEAVE ON THE FAR SIDE WITHOUT TURNING",
-			"ru": "ВЪЕДЬ В ДВЕРЬ МЕЖДУ СТОЛБАМИ И ВЫЕДИ С ДРУГОЙ СТОРОНЫ, НЕ ПОВОРАЧИВАЯ"
+			"en": "DRIVE BETWEEN THE GATE'S PYLONS STRAIGHT TO THE FAR SIDE, NO TURNS INSIDE. HITTING A PYLON ENDS THE RUN",
+			"ru": "ЕЗЖАЙ МЕЖДУ СТОЛБАМИ ВОРОТ ПРЯМО, НЕ СВОРАЧИВАЯ ВНУТРИ. ЗАДЕНЕШЬ СТОЛБ — ЗАБЕГ ОКОНЧЕН"
 		},
 		"DEPTH IS THE LENGTH OF THE PASSAGE BETWEEN THE PYLONS": {
-			"en": "DEPTH IS THE LENGTH OF THE PASSAGE BETWEEN THE PYLONS",
-			"ru": "ГЛУБИНА: ДЛИНА ПРОХОДА МЕЖДУ СТОЛБАМИ"
+			"en": "A GATE'S LENGTH IS HOW MANY CELLS YOU DRIVE BETWEEN ITS PYLONS",
+			"ru": "ДЛИНА ВОРОТ — СКОЛЬКО КЛЕТОК ЕХАТЬ МЕЖДУ СТОЛБАМИ"
 		},
 		"THE NEXT GATE APPEARS AHEAD, RIGHT PAST THE LAST EXIT": {
-			"en": "THE NEXT GATE APPEARS AHEAD, RIGHT PAST THE LAST EXIT",
-			"ru": "СЛЕДУЮЩИЕ ВОРОТА ПОЯВЛЯЮТСЯ ВПЕРЕДИ, СРАЗУ ЗА ВЫХОДОМ ИЗ ПРОШЛЫХ"
+			"en": "A NEW GATE APPEARS NEAR THE EXIT OF THE LAST ONE. WATCH WHICH WAY IT FACES",
+			"ru": "НОВЫЕ ВОРОТА ПОЯВЛЯЮТСЯ НЕДАЛЕКО ОТ ВЫХОДА ИЗ ПРЕДЫДУЩИХ. СМОТРИ, КУДА ОНИ ПОВЁРНУТЫ"
 		},
 		"ONLY THE FIRST DOOR YOU DRIVE THROUGH COUNTS": {
-			"en": "ONLY THE FIRST DOOR YOU DRIVE THROUGH COUNTS",
-			"ru": "ЗАСЧИТЫВАЕТСЯ ТОЛЬКО ПЕРВАЯ ДВЕРЬ, ЧЕРЕЗ КОТОРУЮ ПРОЕДЕШЬ"
+			"en": "ONLY THE FIRST GATE YOU DRIVE THROUGH COUNTS. THE MULTIPLIER APPLIES",
+			"ru": "ЗАСЧИТАЮТСЯ ТОЛЬКО ТЕ ВОРОТА, ЧТО ПРОЕДЕШЬ ПЕРВЫМИ. ОЧКИ УМНОЖАЮТСЯ НА МНОЖИТЕЛЬ"
 		},
 		"DRIVE THROUGH THE SAME GATE THREE TIMES: THERE, BACK, THERE AGAIN": {
 			"en": "DRIVE THROUGH THE SAME GATE THREE TIMES: THERE, BACK, THERE AGAIN",
-			"ru": "ПРОЕДЬ ОДНИ ВОРОТА ТРИЖДЫ: ТУДА, ОБРАТНО И СНОВА ТУДА"
+			"ru": "ОДНИ И ТЕ ЖЕ ВОРОТА ТРИ РАЗА: ТУДА, ОБРАТНО И СНОВА ТУДА"
 		},
 		"STEER ONTO TERMINALS 1, 2, 3 IN ORDER BEFORE TIME RUNS OUT": {
-			"en": "STEER ONTO TERMINALS 1, 2, 3 IN ORDER BEFORE TIME RUNS OUT",
-			"ru": "НАЕЗЖАЙ НА КЛЕММЫ 1, 2, 3 ПО ПОРЯДКУ, ПОКА НЕ ВЫШЛО ВРЕМЯ"
+			"en": "FIRST 1, THEN 2, THEN 3. FINISH BEFORE THE RELAY TIMER RUNS OUT",
+			"ru": "СНАЧАЛА 1, ПОТОМ 2, ПОТОМ 3. УСПЕЙ, ПОКА ИДЁТ ТАЙМЕР РЕЛЕ"
 		},
 		"PASS IN THE CELL NEXT TO A LIVE TERMINAL FOR CHARGE. HITTING IT KILLS": {
-			"en": "PASS IN THE CELL NEXT TO A LIVE TERMINAL FOR CHARGE. HITTING IT KILLS",
-			"ru": "ПРОЕЗЖАЙ В СОСЕДНЕЙ КЛЕТКЕ ОТ ЖИВОЙ КЛЕММЫ ЗА ЗАРЯДОМ. ВРЕЗАТЬСЯ НЕЛЬЗЯ"
+			"en": "PASSING RIGHT NEXT TO A LIVE TERMINAL CHARGES THE METER, LIKE A CLOSE CALL WITH YOUR BODY",
+			"ru": "ПРОЕЗД ВПЛОТНУЮ К КЛЕММЕ ПОД ТОКОМ ЗАРЯЖАЕТ ШКАЛУ, КАК СБЛИЖЕНИЕ С ТЕЛОМ"
 		},
 		"WHEN THE RELAY IS DONE ITS TERMINALS JOIN WITH LIVE BARS: SKIM THEM": {
-			"en": "WHEN THE RELAY IS DONE ITS TERMINALS JOIN WITH LIVE BARS: SKIM THEM",
-			"ru": "КОГДА РЕЛЕ ЗАМКНЁТСЯ, МЕЖДУ КЛЕММАМИ ВСТАНУТ ШИНЫ ПОД ТОКОМ: ПРОХОДИ ВПРИТИРКУ"
+			"en": "PASS RIGHT NEXT TO THE BARS FOR CHARGE. THEY KILL LIKE TERMINALS",
+			"ru": "ПРОЕЗЖАЙ ВДОЛЬ ШИН ВПЛОТНУЮ — ЭТО ЗАРЯД. КАСАТЬСЯ ИХ НЕЛЬЗЯ"
 		},
 		"WHILE YOUR HEAD IS IN THE SQUARE, POINTS BANK UP. LEAVE BEFORE IT OVERLOADS": {
-			"en": "WHILE YOUR HEAD IS IN THE SQUARE, POINTS BANK UP. LEAVE BEFORE IT OVERLOADS",
-			"ru": "ПОКА ГОЛОВА В КВАДРАТЕ, КОПЯТСЯ ОЧКИ. ВЫЙДИ ДО ПЕРЕГРЕВА, ИНАЧЕ ОНИ СГОРЯТ"
+			"en": "LEAVE BEFORE THE ZONE OVERHEATS, OR WHAT YOU BUILT UP BURNS",
+			"ru": "ВЫЕЗЖАЙ, ПОКА ЗОНА НЕ ПЕРЕГРЕЛАСЬ, ИНАЧЕ НАКОПЛЕННОЕ СГОРИТ"
 		},
 		"DRIVE INTO YOUR BODY OR A PYLON: THE PHASE CARRIES YOU OVER IT ONCE": {
-			"en": "DRIVE STRAIGHT INTO THE BARRIER OR YOUR BODY: THE PHASE CARRIES YOU OVER IT ONCE",
-			"ru": "ВЪЕДЬ ПРЯМО В БАРЬЕР ИЛИ В СВОЁ ТЕЛО: ФАЗА ОДИН РАЗ ПЕРЕНЕСЁТ ТЕБЯ ЧЕРЕЗ НЕГО"
+			"en": "DRIVE INTO A BARRIER OR YOUR BODY: YOU HOP OVER IT. INTO THE EDGE: YOU COME BACK IN ON THE OPPOSITE SIDE",
+			"ru": "ВЪЕДЬ В БАРЬЕР ИЛИ В СВОЁ ТЕЛО — ПЕРЕПРЫГНЕШЬ ЕГО. В КРАЙ ПОЛЯ — ВЫЙДЕШЬ С ПРОТИВОПОЛОЖНОЙ СТОРОНЫ"
 		},
 		"FINISH AN EVENT, THEN DRIVE INTO THE PORT THAT APPEARS": {
-			"en": "FINISH AN EVENT, THEN DRIVE INTO THE PORT THAT APPEARS",
-			"ru": "ЗАВЕРШИ СОБЫТИЕ, ПОТОМ ВЪЕДЬ В ПОЯВИВШИЙСЯ ПОРТ"
+			"en": "A PORT IS A CELL WITH A MODULE ICON. DRIVE INTO IT TO GET THE PHASE",
+			"ru": "ПОРТ — КЛЕТКА СО ЗНАЧКОМ МОДУЛЯ. ВЪЕДЬ В НЕГО, ЧТОБЫ ПОЛУЧИТЬ ФАЗУ"
 		},
 		"AFTER AN EVENT TWO PORTS APPEAR: DRIVE INTO THE ONE YOU WANT": {
-			"en": "AFTER AN EVENT TWO PORTS APPEAR: DRIVE INTO THE ONE YOU WANT",
-			"ru": "ПОСЛЕ СОБЫТИЯ ПОЯВЯТСЯ ДВА ПОРТА: ВЪЕДЬ В НУЖНЫЙ"
+			"en": "THE PORTS APPEAR WHEN YOU CLEAR A GATE, A RELAY OR A ZONE. YOU GET ONLY ONE",
+			"ru": "ПОРТЫ ПОЯВЛЯЮТСЯ, КОГДА ПРОЙДЕШЬ ВОРОТА, РЕЛЕ ИЛИ ЗОНУ. ВЗЯТЬ МОЖНО ТОЛЬКО ОДИН"
 		},
 		"WITH A PHASE, DRIVE STRAIGHT INTO A BARRIER: YOU HOP THROUGH": {
-			"en": "WITH A PHASE, DRIVE STRAIGHT INTO A BARRIER: YOU HOP THROUGH",
-			"ru": "С ФАЗОЙ ВЪЕЗЖАЙ ПРЯМО В БАРЬЕР: ПЕРЕПРЫГНЕШЬ ЕГО"
+			"en": "WITH A PHASE, DRIVE STRAIGHT INTO A BARRIER TO HOP IT. NEW PHASES COME FROM PORTS",
+			"ru": "С ФАЗОЙ ВЪЕЗЖАЙ ПРЯМО В БАРЬЕР — ПЕРЕПРЫГНЕШЬ. НОВУЮ ФАЗУ БЕРИ В ПОРТАХ"
 		},
 		"PASS IN THE CELL NEXT TO THE MOVING WIRE 3 TIMES. TOUCHING IT KILLS": {
-			"en": "PASS IN THE CELL NEXT TO THE MOVING WIRE 3 TIMES. TOUCHING IT KILLS",
-			"ru": "ПРОЕДЬ В СОСЕДНЕЙ КЛЕТКЕ ОТ ДВИЖУЩЕГОСЯ ПРОВОДА 3 РАЗА. КАСАНИЕ УБИВАЕТ"
+			"en": "THE WIRE MOVES BACK AND FORTH. PASS IN THE CELL NEXT TO IT, NEVER TOUCH IT",
+			"ru": "ПРОВОД ХОДИТ ТУДА-СЮДА. ПРОЕЗЖАЙ В СОСЕДНЕЙ КЛЕТКЕ ОТ НЕГО, НО НЕ КАСАЙСЯ"
 		},
 		"SHOW_DEMO": {
 			"en": "SHOW ME",

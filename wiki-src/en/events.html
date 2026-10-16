@@ -23,10 +23,10 @@ lead: Every so often the board throws a short challenge at you: a Circuit Event.
 {{ shots(
   img('gate', 'A gate course: two rows of pylons with the door between them; the next gate is already waiting.'),
   img('gate_pass', 'A gate passed: the word shows its number in the course.'),
-  img('gate_double', t('DOUBLE GATE') + ': two doors, either counts.'),
-  img('gate_risk', t('RISK GATE') + ': the shallow door pays +25, the deep one +90.'),
+  img('gate_double', t('DOUBLE GATE') + ': two gates side by side, either counts.'),
+  img('gate_risk', t('RISK GATE') + ': the short gate pays +25, the long one +90 (times the multiplier).'),
 ) }}
-<p>A gate is a <b>door</b> — a straight passage 1–4 cells long — with a lethal <b>pylon</b> on each side of every door cell. To pass it, drive into the door and out the far side <b>straight through</b>, without turning inside. Either direction works. The door's length is its <b>depth</b>; deeper doors pay more.</p>
+<p>A gate is a <b>door</b> — a straight passage 1–4 cells long — with a lethal <b>pylon</b> on each side of every door cell. To pass it, drive into the door and out the far side <b>straight through</b>, without turning inside. Either direction works. The longer the gate, the more it pays.</p>
 <ul>
   <li>Each gate has its own timer (shown in the bar); it restarts for the next gate of a course.</li>
   <li>A new door appears a short drive from your head, never with a pylon right in your path.</li>
@@ -39,7 +39,7 @@ lead: Every so often the board throws a short challenge at you: a Circuit Event.
 <h3>Variants</h3>
 {{ variants_table('gate') }}
 <ul>
-  <li><b>{{ t('RISK GATE') }}</b>: shallow door (depth {{ Circuit.RISK_SAFE[0] }}) +{{ Circuit.RISK_SAFE[1] }} points; deep door (depth {{ Circuit.RISK_DEEP[0] }}) +{{ Circuit.RISK_DEEP[1] }} points and much more charge. The first one you pass ends the event.</li>
+  <li><b>{{ t('RISK GATE') }}</b>: shallow door (depth {{ Circuit.RISK_SAFE[0] }}) +{{ Circuit.RISK_SAFE[1] }} points; deep door (depth {{ Circuit.RISK_DEEP[0] }}) +{{ Circuit.RISK_DEEP[1] }} points and much more charge, times the multiplier. The first one you pass ends the event.</li>
   <li><b>{{ t('ECHO GATE') }}</b>: one door of depth {{ Circuit.ECHO_DEPTH }}, passed {{ Circuit.ECHO_PASSES }} times — there, back the other way, there again — each against a short timer. The passes pay {{ lst(Circuit.ECHO_PTS) }} points. One pass is already a win; the rest is bonus.</li>
   <li><b>{{ t('GATE CHAIN') }}</b>: each next gate appears straight ahead of where you left the last one, lined up with your exit.</li>
 </ul>
