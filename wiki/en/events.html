@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Circuit Events — NEARCOIL Guide</title>
-<meta name="description" content="NEARCOIL Circuit Events — GATE, RELAY, HOT ZONE and LIVE WIRE: how each works, timers, payouts, every variant and modifier, and when they appear.">
+<meta name="description" content="NEARCOIL Circuit Events — GATE, RELAY, HOT ZONE and LIVE WIRE: what each asks of you, what it pays, its variants, and how events feed the multiplier.">
 <link rel="canonical" href="https://nikkittap.github.io/nearcoil-game/wiki/en/events.html">
 <link rel="alternate" hreflang="en" href="https://nikkittap.github.io/nearcoil-game/wiki/en/events.html">
 <link rel="alternate" hreflang="ru" href="https://nikkittap.github.io/nearcoil-game/wiki/ru/events.html">
@@ -13,7 +13,7 @@
 <link rel="apple-touch-icon" href="../../img/favicon-180.png">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Circuit Events — NEARCOIL Guide">
-<meta property="og:description" content="NEARCOIL Circuit Events — GATE, RELAY, HOT ZONE and LIVE WIRE: how each works, timers, payouts, every variant and modifier, and when they appear.">
+<meta property="og:description" content="NEARCOIL Circuit Events — GATE, RELAY, HOT ZONE and LIVE WIRE: what each asks of you, what it pays, its variants, and how events feed the multiplier.">
 <meta property="og:image" content="https://nikkittap.github.io/nearcoil-game/img/feature_big.jpg">
 <link rel="stylesheet" href="../wiki.css">
 </head>
@@ -27,7 +27,7 @@
 <div class="layout">
   <aside class="side">
     <details open><summary>Pages</summary>
-    <ol><li><a href="index.html">NEARCOIL guide</a></li><li><a href="basics.html">Board, controls, speed</a></li><li><a href="close-calls.html">Close calls and maneuvers</a></li><li><a href="charge.html">Charge and multiplier</a></li><li class="on"><a href="events.html">Circuit Events</a></li><li><a href="modules.html">Modules</a></li><li><a href="modes.html">Game modes</a></li><li><a href="achievements.html">Achievements and profile</a></li><li><a href="campaign.html">All Campaign levels</a></li><li><a href="glossary.html">Glossary</a></li></ol>
+    <ol><li><a href="index.html">NEARCOIL guide</a></li><li><a href="basics.html">Board, controls, speed</a></li><li><a href="close-calls.html">Close calls and maneuvers</a></li><li><a href="charge.html">Charge and multiplier</a></li><li class="on"><a href="events.html">Circuit Events</a></li><li><a href="modules.html">Modules</a></li><li><a href="modes.html">Game modes</a></li><li><a href="achievements.html">Achievements and profile</a></li><li><a href="campaign.html">All Campaign levels</a></li><li><a href="advanced.html">Advanced mechanics</a></li><li><a href="glossary.html">Glossary</a></li></ol>
     </details>
   </aside>
   <main class="content">
@@ -36,71 +36,71 @@
     <nav class="toc"><b>On this page</b><ol><li><a href="#rhythm">When events come</a></li><li><a href="#gate">GATE</a></li><li><a href="#relay">RELAY</a></li><li><a href="#hot">HOT ZONE</a></li><li><a href="#wire">LIVE WIRE</a></li></ol></nav>
     <h2 id="rhythm">When events come</h2>
 <ul>
-  <li>The first event starts after <b>95 steps (about 14.2 s)</b> of free play.</li>
-  <li>Between events there are 95–140 steps of free play. The pause shrinks by 6 steps with every event you complete, but never below 70. If an event ended while you were at ×5 or more, you get 18 extra calm steps.</li>
-  <li>An event never starts while you are inside a gap, and new structures appear at least 4 cells from your head, never right in your path. If the board is too crowded the event waits a moment and tries again.</li>
-  <li>The live event's name, progress and timer are shown in the bar under the meter. The first time you meet each kind, a card explains it.</li>
-  <li>Running out of time just ends the event without a reward. Structures disappear when the event ends (relay posts stay a while longer).</li>
+  <li>The first event comes after a short stretch of free play. After that, <b>Circuit Events appear periodically and become more frequent as the run becomes more intense</b>: the more events you complete, the shorter the calm between them. After an event at a high multiplier you get a little extra breathing room.</li>
+  <li>An event never starts while you are inside a gap, and new structures never appear right next to your head or in your path.</li>
+  <li>The live event's name, progress and time left are shown in the bar under the meter. The first time you meet each kind, a card explains it.</li>
+  <li>Running out of time just ends the event without a reward — no penalty beyond the missed payout. Structures disappear when the event ends (relay posts stay a while longer).</li>
 </ul>
+<div class="box tip"><p><b>Why they matter:</b> events pay big points and big charge. At high multipliers, where close calls barely move the meter, they are what keeps the multiplier alive. A won event also opens a <a href="modules.html">module choice</a>.</p></div>
 <h3>Which event (Ranked and Daily)</h3>
-<p>The kinds come from a shuffled bag that never gives the same kind twice in a row. LIVE WIRE joins only after the first 2 events. Harder variants unlock with the run's <b>intensity</b> — the number of events completed so far, plus one while you are at ×5 or more. The tables below give the intensity each variant needs and its weight in the draw. Campaign levels list exactly which events and variants they use (see <a href="campaign.html">all levels</a>).</p>
-<p>Modifiers can be added on top (in Ranked and Daily by chance, as below; a Campaign level that lists a modifier puts it on every event it fits):</p>
-<div class="tw"><table class=""><thead><tr><th>Modifier</th><th>For</th><th>From intensity</th><th>Chance</th><th>Effect</th></tr></thead><tbody><tr><td><code>narrow</code></td><td>GATE</td><td>4</td><td>30%</td><td>every door is one cell deeper (up to 4)</td></tr><tr><td><code>drift</code></td><td>GATE</td><td>5</td><td>30%</td><td>the gate slides sideways one cell every 7 steps (DRIFT GATE)</td></tr><tr><td><code>fast</code></td><td>LIVE WIRE</td><td>5</td><td>40%</td><td>the wire moves every 2 steps instead of every 3</td></tr></tbody></table></div>
+<p>The kind is random but never the same twice in a row; LIVE WIRE only joins after the first few events. Harder variants start to appear as the run heats up — the more events you have completed, and especially at ×5 and above. Campaign levels list exactly which events and variants they use (see <a href="campaign.html">all levels</a>).</p>
+<p>A gate or a wire can also carry a modifier (in Ranked and Daily by chance, later in the run; a Campaign level that lists a modifier puts it on every event it fits):</p>
+<div class="tw"><table class=""><thead><tr><th>Modifier</th><th>For</th><th>Effect</th></tr></thead><tbody><tr><td><code>narrow</code></td><td>GATE</td><td>every door is one cell deeper (up to 4)</td></tr><tr><td><code>drift</code></td><td>GATE</td><td>the gate keeps sliding sideways (DRIFT GATE)</td></tr><tr><td><code>fast</code></td><td>LIVE WIRE</td><td>the wire moves faster</td></tr></tbody></table></div>
 
 <h2 id="gate">GATE</h2>
 <div class="shots"><figure><a href="../img/en/gate.webp"><img src="../img/en/gate.webp" width="720" height="1280" loading="lazy" alt="A gate course: two rows of pylons with the door between them; the next gate is already waiting."></a><figcaption>A gate course: two rows of pylons with the door between them; the next gate is already waiting.</figcaption></figure><figure><a href="../img/en/gate_pass.webp"><img src="../img/en/gate_pass.webp" width="720" height="1280" loading="lazy" alt="A gate passed: the word shows its number in the course."></a><figcaption>A gate passed: the word shows its number in the course.</figcaption></figure><figure><a href="../img/en/gate_double.webp"><img src="../img/en/gate_double.webp" width="720" height="1280" loading="lazy" alt="DOUBLE GATE: two doors, either counts."></a><figcaption>DOUBLE GATE: two doors, either counts.</figcaption></figure><figure><a href="../img/en/gate_risk.webp"><img src="../img/en/gate_risk.webp" width="720" height="1280" loading="lazy" alt="RISK GATE: the shallow door pays +25, the deep one +90."></a><figcaption>RISK GATE: the shallow door pays +25, the deep one +90.</figcaption></figure></div>
 <p>A gate is a <b>door</b> — a straight passage 1–4 cells long — with a lethal <b>pylon</b> on each side of every door cell. To pass it, drive into the door and out the far side <b>straight through</b>, without turning inside. Either direction works. The door's length is its <b>depth</b>; deeper doors pay more.</p>
 <ul>
-  <li>Each gate must be passed within <b>85 steps (about 12.8 s)</b>; the timer restarts for the next gate of a course.</li>
-  <li>A new door appears 4–11 cells from your head. A pylon is never placed in your lane within 6 cells ahead, or in the lanes beside it within 2 cells.</li>
+  <li>Each gate has its own timer (shown in the bar); it restarts for the next gate of a course.</li>
+  <li>A new door appears a short drive from your head, never with a pylon right in your path.</li>
   <li>Pylons are conductors: brushing them is a close call (paid in full), driving between them counts as tight steps. A gap of pylons alone is not a maneuver — the gate pays for it.</li>
 </ul>
-<div class="tw"><table class="num"><thead><tr><th>Gate in the course</th><th>1st</th><th>2nd</th><th>3rd</th></tr></thead><tbody><tr><td>Door depth</td><td>1</td><td>2</td><td>3</td></tr><tr><td>Points (× multiplier)</td><td>30</td><td>60</td><td>120</td></tr><tr><td>Charge</td><td>60</td><td>90</td><td>130</td></tr></tbody></table></div>
+<div class="tw"><table class="num"><thead><tr><th>Gate in the course</th><th>1st</th><th>2nd</th><th>3rd</th></tr></thead><tbody><tr><td>Door depth</td><td>1</td><td>2</td><td>3</td></tr><tr><td>Points (× multiplier)</td><td>30</td><td>60</td><td>120</td></tr></tbody></table></div>
 <h3>Variants</h3>
-<div class="tw"><table class=""><thead><tr><th>Variant</th><th>On screen</th><th>Unlocks at intensity</th><th>Weight</th><th>What changes</th></tr></thead><tbody><tr><td><code>course</code></td><td>NEEDLE GATE</td><td>0</td><td>4</td><td>three gates in a row, doors 1, 2 and 3 cells deep</td></tr><tr><td><code>chain</code></td><td>GATE CHAIN</td><td>1</td><td>3</td><td>each next gate stands 3–8 cells straight past the last exit</td></tr><tr><td><code>risk</code></td><td>RISK GATE</td><td>2</td><td>3</td><td>one shallow door and one deep door; only the first one you drive through counts</td></tr><tr><td><code>double</code></td><td>DOUBLE GATE</td><td>3</td><td>2</td><td>two doors at once, take either</td></tr><tr><td><code>echo</code></td><td>ECHO GATE</td><td>3</td><td>2</td><td>one gate: through, back, through again</td></tr></tbody></table></div>
+<div class="tw"><table class=""><thead><tr><th>On screen</th><th>What changes</th></tr></thead><tbody><tr><td>NEEDLE GATE</td><td>three gates in a row, doors 1, 2 and 3 cells deep</td></tr><tr><td>GATE CHAIN</td><td>each next gate stands straight ahead of where you left the last one</td></tr><tr><td>RISK GATE</td><td>one shallow door and one deep door; only the first one you drive through counts</td></tr><tr><td>DOUBLE GATE</td><td>two doors at once, take either</td></tr><tr><td>ECHO GATE</td><td>one gate: through, back, through again</td></tr></tbody></table></div>
 <ul>
-  <li><b>RISK GATE</b>: shallow door (depth 1) +25 points and 40 charge; deep door (depth 3) +90 points and 200 charge. The first one you pass ends the event.</li>
-  <li><b>ECHO GATE</b>: one door of depth 2, passed 3 times — there, back the other way, there again — each within 60 steps. The passes pay 40, 70, 110 points and 70, 100, 150 charge. One pass is already a win; the rest is bonus.</li>
-  <li><b>GATE CHAIN</b>: each next gate appears 3–8 cells straight ahead of where you left the last one, lined up with your exit.</li>
+  <li><b>RISK GATE</b>: shallow door (depth 1) +25 points; deep door (depth 3) +90 points and much more charge. The first one you pass ends the event.</li>
+  <li><b>ECHO GATE</b>: one door of depth 2, passed 3 times — there, back the other way, there again — each against a short timer. The passes pay 40, 70, 110 points. One pass is already a win; the rest is bonus.</li>
+  <li><b>GATE CHAIN</b>: each next gate appears straight ahead of where you left the last one, lined up with your exit.</li>
 </ul>
 
 <h2 id="relay">RELAY</h2>
 <div class="shots"><figure><a href="../img/en/relay.webp"><img src="../img/en/relay.webp" width="720" height="1280" loading="lazy" alt="A relay: terminal 1 touched, number 2 is next."></a><figcaption>A relay: terminal 1 touched, number 2 is next.</figcaption></figure><figure><a href="../img/en/relay_posts.webp"><img src="../img/en/relay_posts.webp" width="720" height="1280" loading="lazy" alt="After the relay: the touched terminals are live posts."></a><figcaption>After the relay: the touched terminals are live posts.</figcaption></figure><figure><a href="../img/en/relay_bridge.webp"><img src="../img/en/relay_bridge.webp" width="720" height="1280" loading="lazy" alt="BRIDGE RELAY: the posts are joined by live bars."></a><figcaption>BRIDGE RELAY: the posts are joined by live bars.</figcaption></figure></div>
-<p>Numbered <b>terminals</b> appear around the board, at least 5 cells apart. Steer your head onto them <b>in number order</b> before time runs out.</p>
+<p>Numbered <b>terminals</b> appear spread around the board. Steer your head onto them <b>in number order</b> before time runs out.</p>
 <ul>
-  <li>Time: 135 steps (about 20.2 s) for three terminals, 35 steps more for each extra one.</li>
-  <li>Each terminal: +15 points (× multiplier) and +30 charge.</li>
-  <li>Completion: +90 points and at least 120 charge — always enough to reach the next multiplier (as long as you are below ×5). The harder variants (four, fast, dark, live) pay ×1.5 on completion.</li>
-  <li>A touched terminal becomes a <b>live post</b> once your body has left it: lethal, but good for close calls. Posts stay 70 steps (about 10.5 s) after the relay ends (110 with a bridge).</li>
+  <li>More terminals come with more time.</li>
+  <li>Each terminal: +15 points (× multiplier) and some charge.</li>
+  <li>Completion: +90 points and always enough charge to reach the next multiplier (as long as you are below ×5). The harder variants (four, fast, dark, live) pay ×1.5 on completion.</li>
+  <li>A touched terminal becomes a <b>live post</b> once your body has left it: lethal, but good for close calls. Posts stay for a while after the relay ends.</li>
 </ul>
 <h3>Variants</h3>
-<div class="tw"><table class=""><thead><tr><th>Variant</th><th>On screen</th><th>Unlocks at intensity</th><th>Weight</th><th>What changes</th></tr></thead><tbody><tr><td><code>three</code></td><td>RELAY</td><td>0</td><td>4</td><td>three terminals in number order</td></tr><tr><td><code>timed</code></td><td>FAST RELAY</td><td>2</td><td>2</td><td>two thirds of the time, bigger payout</td></tr><tr><td><code>four</code></td><td>RELAY 4</td><td>3</td><td>2</td><td>four terminals, more time, bigger payout</td></tr><tr><td><code>hidden</code></td><td>DARK RELAY</td><td>3</td><td>2</td><td>the last terminal shows only when it is next</td></tr><tr><td><code>bridge</code></td><td>BRIDGE RELAY</td><td>4</td><td>2</td><td>on completion the terminals are joined by live bars</td></tr><tr><td><code>moving</code></td><td>MOVING RELAY</td><td>5</td><td>2</td><td>the last terminal side-steps every 6 steps</td></tr></tbody></table></div>
+<div class="tw"><table class=""><thead><tr><th>On screen</th><th>What changes</th></tr></thead><tbody><tr><td>RELAY</td><td>three terminals in number order</td></tr><tr><td>FAST RELAY</td><td>two thirds of the time, bigger payout</td></tr><tr><td>RELAY 4</td><td>four terminals, more time, bigger payout</td></tr><tr><td>DARK RELAY</td><td>the last terminal shows only when it is next</td></tr><tr><td>BRIDGE RELAY</td><td>on completion the terminals are joined by live bars</td></tr><tr><td>MOVING RELAY</td><td>the last terminal keeps side-stepping</td></tr></tbody></table></div>
 
 <h2 id="hot">HOT ZONE</h2>
 <div class="shots"><figure><a href="../img/en/hot.webp"><img src="../img/en/hot.webp" width="720" height="1280" loading="lazy" alt="A hot zone appears: a 5×5 square."></a><figcaption>A hot zone appears: a 5×5 square.</figcaption></figure><figure><a href="../img/en/hot_in.webp"><img src="../img/en/hot_in.webp" width="720" height="1280" loading="lazy" alt="Inside the zone: the bank grows, shown on the event bar."></a><figcaption>Inside the zone: the bank grows, shown on the event bar.</figcaption></figure><figure><a href="../img/en/hot_cash.webp"><img src="../img/en/hot_cash.webp" width="720" height="1280" loading="lazy" alt="CASH: leaving the square pays the bank out."></a><figcaption>CASH: leaving the square pays the bank out.</figcaption></figure></div>
 <p>A 5×5 square. While your head is inside it, charge and points <b>bank up</b>; leave the square to <b>cash in</b> (CASH). You can go in and out several times. If the zone overloads while your head is still inside, the bank burns (BURNED).</p>
 <ul>
-  <li>The zone lives 84 steps (about 12.6 s); the last 18 steps are a warning.</li>
-  <li>Every step inside banks 2, 3, 4, 6 charge (rising by quarter of the zone's life) and 2 points.</li>
+  <li>The zone lives a limited time and flashes a warning before it overloads. Get out when it warns.</li>
+  <li>Every step inside banks charge and points, and the zone banks faster as it ages.</li>
   <li>Everything you earn inside is paid as usual <i>and</i> 50% of it is banked on top.</li>
   <li>Inside the zone close calls charge in full at any multiplier, and <a href="charge.html#hunger">hunger</a> does not apply.</li>
-  <li>Banked points are multiplied by your multiplier when you cash. The event counts as won once you have cashed at least 70 charge.</li>
+  <li>Banked points are multiplied by your multiplier when you cash. The event counts as won once you have cashed in a decent amount.</li>
 </ul>
 <h3>Variants</h3>
-<div class="tw"><table class=""><thead><tr><th>Variant</th><th>On screen</th><th>Unlocks at intensity</th><th>Weight</th><th>What changes</th></tr></thead><tbody><tr><td><code>static</code></td><td>HOT ZONE</td><td>0</td><td>4</td><td>the plain zone</td></tr><tr><td><code>escalate</code></td><td>RISING ZONE</td><td>2</td><td>2</td><td>lives longer; banks twice as fast in its second half</td></tr><tr><td><code>drift</code></td><td>DRIFT ZONE</td><td>3</td><td>2</td><td>slides diagonally, one cell every 9 steps</td></tr><tr><td><code>shrink</code></td><td>SHRINK ZONE</td><td>3</td><td>2</td><td>closes to 3×3 at half time</td></tr><tr><td><code>preserve</code></td><td>HOLD ZONE</td><td>4</td><td>2</td><td>no charge drain while your head is inside</td></tr><tr><td><code>unstable</code></td><td>UNSTABLE ZONE</td><td>5</td><td>2</td><td>random lifetime, very short warning</td></tr></tbody></table></div>
-<p class="small">RISING ZONE lives 100 steps and banks ×2 in its second half. UNSTABLE ZONE lives 66–96 steps and warns only 7 steps before.</p>
+<div class="tw"><table class=""><thead><tr><th>On screen</th><th>What changes</th></tr></thead><tbody><tr><td>HOT ZONE</td><td>the plain zone</td></tr><tr><td>RISING ZONE</td><td>lives longer; banks twice as fast in its second half</td></tr><tr><td>DRIFT ZONE</td><td>slowly slides diagonally</td></tr><tr><td>SHRINK ZONE</td><td>closes to 3×3 at half time</td></tr><tr><td>HOLD ZONE</td><td>no charge drain while your head is inside</td></tr><tr><td>UNSTABLE ZONE</td><td>random lifetime, very short warning</td></tr></tbody></table></div>
 
 <h2 id="wire">LIVE WIRE</h2>
 <div class="float"><figure><a href="../img/en/wire.webp"><img src="../img/en/wire.webp" width="720" height="1280" loading="lazy" alt="A live wire: the first of three skims (SKIM 1/3)."></a><figcaption>A live wire: the first of three skims (SKIM 1/3).</figcaption></figure></div>
-<p>A lethal bar 3 cells long slides back and forth along a lane, one cell every 3 steps. Pass right next to it <b>3 times</b> within 140 steps (about 21 s). Touching it ends the run.</p>
+<p>A lethal bar 3 cells long slides back and forth along a lane. Pass right next to it <b>3 times</b> before time runs out. Touching it ends the run.</p>
 <ul>
-  <li>Skims count at least 5 steps apart.</li>
-  <li>Each skim: +25 points (× multiplier) and +45 charge; beating the wire: +100 points and +110 charge.</li>
-  <li>The wire never moves into or next to your head, nor onto the 3 cells straight ahead of it.</li>
+  <li>Skims must be a moment apart: one long ride along the wire does not count three times.</li>
+  <li>Each skim: +25 points (× multiplier); beating the wire: +100 points and a big charge boost.</li>
+  <li>The wire never moves into your head or right in front of it: if you crash, you drove into it.</li>
 </ul>
 <h3>Variants</h3>
-<div class="tw"><table class=""><thead><tr><th>Variant</th><th>On screen</th><th>Unlocks at intensity</th><th>Weight</th><th>What changes</th></tr></thead><tbody><tr><td><code>patrol</code></td><td>LIVE WIRE</td><td>0</td><td>4</td><td>one 3-cell bar</td></tr><tr><td><code>long</code></td><td>LIVE WIRE</td><td>3</td><td>2</td><td>one 5-cell bar</td></tr><tr><td><code>twin</code></td><td>LIVE WIRE</td><td>4</td><td>2</td><td>two bars, one lane each</td></tr></tbody></table></div>
+<div class="tw"><table class=""><thead><tr><th>On screen</th><th>What changes</th></tr></thead><tbody><tr><td>LIVE WIRE</td><td>one 3-cell bar</td></tr><tr><td>LIVE WIRE</td><td>one 5-cell bar</td></tr><tr><td>LIVE WIRE</td><td>two bars, one lane each</td></tr></tbody></table></div>
 <div class="clear"></div>
+<p class="small">Event schedule, draw odds and exact timers: <a href="advanced.html#schedule">Advanced mechanics</a>.</p>
 
     <nav class="pager"><a href="charge.html">← Charge and multiplier</a><span></span><a href="modules.html">Modules →</a></nav>
   </main>

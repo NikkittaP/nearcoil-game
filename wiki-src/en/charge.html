@@ -1,44 +1,41 @@
 title: Charge and multiplier
-description: The NEARCOIL charge meter: thresholds for ×2–×8, how charge is earned, held and drained, the speed bonus, the machine stages and hunger.
+description: The NEARCOIL charge meter: how ×1–×8 is built and kept, why grazing carries the early levels and maneuvers and events the high ones, the machine stages and hunger.
 lead: The meter above the board is the heart of the score. It sets the multiplier from ×1 to ×{{ len(GameSim.FLOW_LEVELS) }}, and the multiplier multiplies every point.
 ---
 <h2 id="meter">The meter</h2>
-<p>Charge is a number from 0 to {{ GameSim.FLOW_MAX }}. The meter shows it as segments, one per multiplier step; filling a segment raises the multiplier by one.</p>
+<p>The meter is split into segments, one per multiplier step; filling a segment raises the multiplier by one. Play safe and it drains; keep playing close and it stays up.</p>
 {{ meter(1, '×1: an empty run.') }}
 {{ meter(3, '×3: two segments full, the third filling.') }}
 {{ meter(5, '×5: overload begins — the last segments jitter and arc.') }}
 {{ meter(8, '×' + str(len(GameSim.FLOW_LEVELS)) + ': the top.') }}
 
-<h2 id="levels">Multiplier levels</h2>
-{{ flow_table() }}
-<ul>
-  <li><b>Charge from</b> — charge needed for that multiplier. ×2 takes about three ordinary close calls; ×5 and above need maneuvers and events.</li>
-  <li><b>Speed bonus</b> — how much faster the snake moves at that multiplier.</li>
-  <li><b>Close-call charge kept</b> — the share of charge from close calls, skims and tight steps you actually get at that level (maneuvers and events are not reduced).</li>
-  <li><b>Drain</b> — charge lost per step once the hold time is over: less while your head is within 2 cells of a conductor (setting up the next move), more in open space.</li>
-</ul>
-
-<h2 id="earn">Earning charge</h2>
-{{ table(['Source', 'Charge'], [
-  ['Close call / skim / double', n(GameSim.FLOW_GRAZE) + ' / ' + n(GameSim.FLOW_SKIM) + ' / ' + n(GameSim.FLOW_DOUBLE) + ' (reduced at higher levels)'],
-  ['Tight step with a fresh side', n(GameSim.FLOW_TIGHT) + ' (reduced at higher levels)'],
-  [t('SQUEEZE') + ' / ' + t('THREAD') + ' / ' + t('NEEDLE'), lst([GameSim.FLOW_SQUEEZE, GameSim.FLOW_THREAD, GameSim.FLOW_NEEDLE]) + ', ×1–×2 for a chain'],
-  ['Gates', lst(Circuit.GATE_FLOW) + ' per gate'],
-  ['Relay', n(Circuit.RELAY_NODE_FLOW) + ' per terminal; completion gives at least ' + n(Circuit.RELAY_DONE_FLOW) + ' and always enough for the next multiplier (up to ×5)'],
-  ['Hot zone', 'everything it banked, on leaving'],
-  ['Live wire', n(Circuit.WIRE_SKIM_FLOW) + ' per skim, ' + n(Circuit.WIRE_DONE_FLOW) + ' when beaten'],
-  ['PHASE hop', n(Circuit.PHASE_FLOW)],
-  ['CUT', n(Circuit.CUT_FLOW_PER_CELL) + ' per severed cell'],
+<h2 id="levels">How the multiplier climbs</h2>
+<p>Each step up the multiplier is worth more and is harder to hold:</p>
+{{ table(['Multiplier', 'Pace', t('GRAZE') + ' effectiveness', 'Charge decay'], [
+  ['<b>×1–×2</b>', 'Calm', 'High', 'Slow'],
+  ['<b>×3–×4</b>', 'Brisk', 'Reduced', 'Moderate'],
+  ['<b>×5–×6</b>', 'Fast', 'Low', 'Fast'],
+  ['<b>×7–×' + str(len(GameSim.FLOW_LEVELS)) + '</b>', 'Very fast', 'Very low', 'Very fast'],
 ]) }}
-<p>During SURGE every gain is ×{{ Circuit.SURGE_GAIN_PCT / 100 }}. Some Campaign levels scale all gains (e.g. "charge 130%").</p>
+<div class="box tip"><p><b>Regular grazing is enough to build the early multiplier levels.</b> At higher multipliers, risky maneuvers ({{ t('SQUEEZE') }}, {{ t('THREAD') }}, {{ t('NEEDLE') }}) and Circuit Events become the main way to keep the multiplier alive.</p></div>
 
-<h2 id="hold">Holding and draining</h2>
+<h2 id="earn">What builds charge</h2>
+<p>From small to big:</p>
 <ul>
-  <li>After a gain the meter holds for <b>{{ steps(GameSim.FLOW_GRACE) }}</b>. A gain from close calls buys a shorter hold at higher levels (the same share as the charge kept); a maneuver or an event buys the full hold.</li>
-  <li>Inside a gap (a tight step) the meter never drains.</li>
-  <li>After the hold the meter drains every step by the amount in the table above.</li>
-  <li>Levels are lost <b>one at a time</b>: after dropping a level there is a {{ GameSim.FLOW_DROP_GRACE }}-step breather before the next one starts draining.</li>
-  <li>Inside a {{ t('HOLD ZONE') }} the meter does not drain while your head is in the square.</li>
+  <li><b>Close calls and skims</b> — a little each, and less the higher you are. Great for ×1–×3, not enough on their own beyond that.</li>
+  <li><b>Tight steps</b> inside a one-cell gap — a little per step.</li>
+  <li><b>Maneuvers</b> — {{ t('SQUEEZE') }}, then {{ t('THREAD') }}, then {{ t('NEEDLE') }}: a big boost that does not shrink at high multipliers, and more in a <a href="close-calls.html#chains">chain</a>.</li>
+  <li><b><a href="events.html">Circuit Events</a></b> — the biggest boosts. Completing a {{ t('RELAY') }} always lifts you at least one multiplier step (up to ×{{ Circuit.RELAY_STAGE_CAP + 1 }}).</li>
+  <li><b>Modules</b> — a PHASE hop, the body cut off by CUT, and everything during SURGE (+{{ pct(Circuit.SURGE_GAIN_PCT - 100) }} charge).</li>
+</ul>
+<p>Some Campaign levels scale all gains (e.g. "charge 130%").</p>
+
+<h2 id="hold">Keeping it alive</h2>
+<ul>
+  <li>After a gain the meter <b>holds for a moment</b>, then starts to drain. A maneuver or an event buys a longer hold than a close call.</li>
+  <li>It drains <b>slower while you stay near a wall</b> of body or structures (setting up the next move) and faster in open space.</li>
+  <li>Inside a gap the meter never drains. Inside a {{ t('HOLD ZONE') }} neither.</li>
+  <li>Levels are lost <b>one at a time</b>, with a short breather after each drop — a quick move can still save the run.</li>
 </ul>
 <div class="box tip"><p>Keeping a high multiplier means chaining: a close call or maneuver every couple of seconds. Skimming along a lane keeps the meter steady even when each skim adds little.</p></div>
 
@@ -56,7 +53,7 @@ lead: The meter above the board is the heart of the score. It sets the multiplie
 
 <h2 id="hunger">Hunger</h2>
 <div class="float">{{ img('hud', 'A healthy run: nodes eaten regularly, close calls pay in full.') }}</div>
-<p>Close play against <b>your own body</b> fades if you go long without eating. For <b>{{ steps(GameSim.HUNGER_GRACE) }}</b> after the last node (or the start) it pays in full; then over the next {{ steps(GameSim.HUNGER_FADE) }} its value falls steadily to zero. The next node brings it back in full at once.</p>
+<p>Close play against <b>your own body</b> fades if you go a long while without eating: for some time after the last node it pays in full, then its value falls steadily to zero. The next node brings it back in full at once.</p>
 <p>Hunger reduces the <b>points</b> of close calls and of SQUEEZE / THREAD / NEEDLE against your body. It does not touch:</p>
 <ul>
   <li>charge (the multiplier still climbs);</li>
@@ -66,3 +63,4 @@ lead: The meter above the board is the heart of the score. It sets the multiplie
 </ul>
 <p>The game shows it: the node starts to ripple its brackets (faster and brighter the hungrier you are), body arcs dim, and the first close call at half value or less says <code>{{ t('HINT_HUNGRY') }}</code>. Normal play eats far more often than this and never notices; it exists so that circling along your own body forever does not pay.</p>
 <div class="clear"></div>
+<p class="small">Exact thresholds, drain per step and hold times: <a href="advanced.html#levels">Advanced mechanics</a>.</p>

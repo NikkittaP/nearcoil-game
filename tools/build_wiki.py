@@ -23,7 +23,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "wiki-src"
 OUT = ROOT / "wiki"
 LANGS = ["en", "ru"]
-PAGES = ["index", "basics", "close-calls", "charge", "events", "modules", "modes", "achievements", "campaign", "glossary"]
+PAGES = ["index", "basics", "close-calls", "charge", "events", "modules", "modes", "achievements", "campaign", "advanced", "glossary"]
 STEP_MS = 150   # a typical early-run step, for "about N s" conversions
 SITE = "https://nikkittap.github.io/nearcoil-game/"
 
@@ -209,6 +209,15 @@ class Page:
                          self.n(lo), self.n(w), VARIANT_TEXT[self.lang].get(v, "")])
         return self.table([u["variant"], u["label"], u["from"], u["weight"], u["what"]], rows)
 
+    def variants_table(self, kind):
+        """Variants of one event kind for players: on-screen name and what changes (no draw numbers)."""
+        u = self.ui
+        rows = []
+        for v, lo, w in self.d["Circuit"]["DIRECTOR"][kind]:
+            key = VARIANT_LABELS.get(v, v.upper())
+            rows.append([html.escape(self.t(key)) if key in self.d["strings"] else key, VARIANT_TEXT[self.lang].get(v, "")])
+        return self.table([u["label"], u["what"]], rows)
+
     def level_notes(self, l):
         u = self.ui
         out = []
@@ -300,7 +309,7 @@ class Page:
     def env(self):
         e = {k: wrap(v) for k, v in self.d.items() if k not in ("strings",)}
         for name in ("n", "t", "term", "secs", "steps", "pct", "x", "lst", "img", "shots", "meter", "table", "flow_table",
-                     "speed_table", "growth_table", "director_table", "chapter_table", "chapters", "glossary", "plural",
+                     "speed_table", "growth_table", "director_table", "variants_table", "chapter_table", "chapters", "glossary", "plural",
                      "achievement_table", "achievements_ranks"):
             e[name] = getattr(self, name)
         e.update({"min": min, "max": max, "round": round, "len": len, "sum": sum, "int": int, "str": str, "Safe": Safe})
@@ -340,7 +349,7 @@ VARIANT_LABELS = {
 VARIANT_TEXT = {
     "en": {
         "course": "three gates in a row, doors 1, 2 and 3 cells deep",
-        "chain": "each next gate stands 3–8 cells straight past the last exit",
+        "chain": "each next gate stands straight ahead of where you left the last one",
         "risk": "one shallow door and one deep door; only the first one you drive through counts",
         "double": "two doors at once, take either",
         "echo": "one gate: through, back, through again",
@@ -348,11 +357,11 @@ VARIANT_TEXT = {
         "four": "four terminals, more time, bigger payout",
         "timed": "two thirds of the time, bigger payout",
         "hidden": "the last terminal shows only when it is next",
-        "moving": "the last terminal side-steps every 6 steps",
+        "moving": "the last terminal keeps side-stepping",
         "bridge": "on completion the terminals are joined by live bars",
         "static": "the plain zone",
         "escalate": "lives longer; banks twice as fast in its second half",
-        "drift": "slides diagonally, one cell every 9 steps",
+        "drift": "slowly slides diagonally",
         "shrink": "closes to 3×3 at half time",
         "preserve": "no charge drain while your head is inside",
         "unstable": "random lifetime, very short warning",
@@ -362,7 +371,7 @@ VARIANT_TEXT = {
     },
     "ru": {
         "course": "трое ворот подряд, двери глубиной 1, 2 и 3 клетки",
-        "chain": "следующие ворота встают в 3–8 клетках прямо за выходом из прошлых",
+        "chain": "следующие ворота встают прямо по ходу, на линии выхода из прошлых",
         "risk": "мелкая и глубокая дверь; засчитывается только первая, в которую проехал",
         "double": "две двери сразу, подойдёт любая",
         "echo": "одни ворота: туда, обратно и снова туда",
@@ -370,11 +379,11 @@ VARIANT_TEXT = {
         "four": "четыре клеммы, больше времени, больше награда",
         "timed": "две трети времени, больше награда",
         "hidden": "последняя клемма видна, только когда до неё очередь",
-        "moving": "последняя клемма смещается каждые 6 шагов",
+        "moving": "последняя клемма всё время смещается",
         "bridge": "после завершения клеммы соединяются шинами под током",
         "static": "обычная зона",
         "escalate": "живёт дольше, во второй половине копит вдвое быстрее",
-        "drift": "плывёт по диагонали, на клетку каждые 9 шагов",
+        "drift": "медленно плывёт по диагонали",
         "shrink": "к середине срока сжимается до 3×3",
         "preserve": "пока голова внутри, заряд не утекает",
         "unstable": "случайный срок жизни, предупреждение в самом конце",
@@ -395,7 +404,7 @@ GLOSSARY = [
     ("THREAD", {"en": "Driving through a gap that splits the board in two: there is no short way round.",
                 "ru": "Проезд сквозь щель, которая делит поле надвое: короткого пути в обход нет."}),
     ("NEEDLE", {"en": "A corridor of 6 cells or more with something on both sides.", "ru": "Коридор от 6 клеток, с обеих сторон что-то есть."}),
-    ("CHAIN %d", {"en": "Maneuvers less than 30 steps apart: each next one pays more, up to ×2.", "ru": "Манёвры с паузой меньше 30 шагов: каждый следующий дороже, до ×2."}),
+    ("CHAIN %d", {"en": "Maneuvers in quick succession: each next one pays more, up to ×2.", "ru": "Манёвры один за другим, без долгих пауз: каждый следующий дороже, до ×2."}),
     ({"en": "CHARGE", "ru": "ЗАРЯД"}, {"en": "The segmented meter above the board. Risky moves fill it; it drains when you play safe.",
                                         "ru": "Сегментная шкала над полем. Рискованные манёвры её наполняют, в спокойной игре заряд утекает."}),
     ({"en": "MULTIPLIER ×N", "ru": "МНОЖИТЕЛЬ ×N"}, {"en": "×1…×8, set by how full the charge meter is. Multiplies every point and adds speed.",

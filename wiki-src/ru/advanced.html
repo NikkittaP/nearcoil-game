@@ -1,0 +1,98 @@
+title: Тонкости механики
+description: NEARCOIL во всех подробностях для борьбы за рекорды: длина шага, пороги и утечка заряда, правила распознавания, голод, расписание событий и их веса, точные числа событий и модулей.
+lead: Точные числа, на которых держится справочник: тайминги, пороги, утечка, расписание событий и вероятности. Всё берётся прямо из игры, поэтому всегда актуально.
+---
+<div class="box"><p>Здесь собраны подробности механики для тех, кто хочет выжать максимум из забегов на рекорд. <b>Чтобы получать удовольствие от NEARCOIL и хорошо играть, знать эти числа не нужно</b> — всё важное остальной справочник объясняет простыми словами.</p></div>
+
+<h2 id="speed">Скорость</h2>
+<p>Базовая длина шага зависит только от того, сколько узлов съедено:</p>
+{{ speed_table() }}
+<p>Множитель добавляет от +{{ GameSim.FLOW_SPEED_PCT[1] }}% на ×2 до +{{ GameSim.FLOW_SPEED_PCT[-1] }}% на ×{{ len(GameSim.FLOW_LEVELS) }} (см. <a href="#levels">таблицу</a>), ФОРСАЖ — ещё +{{ Circuit.SURGE_SPEED_PCT }}%. Шаг никогда не бывает короче {{ GameSim.MIN_INTERVAL }} мс.</p>
+<div class="formula">шаг = базовый шаг × 100 / (100 + прибавка множителя % + прибавка ФОРСАЖА %), но не меньше {{ GameSim.MIN_INTERVAL }} мс</div>
+<p class="small">«Около N с» на этой странице считается для типичного раннего шага в 150 мс.</p>
+
+<h2 id="growth">Рост и расстановка узлов</h2>
+{{ growth_table() }}
+<p>После {{ len(GameSim.GROWTH) }}-го узла каждый следующий добавляет {{ GameSim.GROW_LATE }} {{ plural(GameSim.GROW_LATE, ('', ''), ('клетку', 'клетки', 'клеток')) }}.</p>
+<ul>
+  <li>Узел никогда не появляется ближе 4 клеток (по шагам) к голове.</li>
+  <li>Клетки вплотную к телу и на средней дистанции (до 11 клеток) выпадают чаще.</li>
+</ul>
+<p class="small">Смахивание срабатывает, когда палец сдвинулся примерно на {{ int(Main.FLICK_DP) }} dp.</p>
+
+<h2 id="levels">Пороги множителя</h2>
+<p>Заряд — число от 0 до {{ GameSim.FLOW_MAX }}.</p>
+{{ flow_table() }}
+<ul>
+  <li><b>Заряд от</b> — сколько заряда нужно для этого множителя.</li>
+  <li><b>Заряд за сближения</b> — какая доля заряда от сближений, скольжения и тесных шагов доходит до тебя на этой ступени (манёвры и события не урезаются; в горячей зоне сближения всегда заряжают полностью).</li>
+  <li><b>Утечка</b> — сколько заряда теряется за шаг после окончания удержания: меньшее значение — пока голова в пределах 2 клеток от проводника, большее — на просторе.</li>
+</ul>
+
+<h2 id="charge">Заряд по источникам</h2>
+{{ table(['Источник', 'Заряд'], [
+  ['Сближение / скольжение / двойное', n(GameSim.FLOW_GRAZE) + ' / ' + n(GameSim.FLOW_SKIM) + ' / ' + n(GameSim.FLOW_DOUBLE) + ' (× доля за сближения выше)'],
+  ['Тесный шаг со свежей стороной', n(GameSim.FLOW_TIGHT) + ' (× доля за сближения выше)'],
+  [t('SQUEEZE') + ' / ' + t('THREAD') + ' / ' + t('NEEDLE'), lst([GameSim.FLOW_SQUEEZE, GameSim.FLOW_THREAD, GameSim.FLOW_NEEDLE]) + ', × бонус серии'],
+  ['Ворота (1-е / 2-е / 3-и)', lst(Circuit.GATE_FLOW)],
+  [t('RISK GATE') + ' (мелкая / глубокая дверь)', n(Circuit.RISK_SAFE[2]) + ' / ' + n(Circuit.RISK_DEEP[2])],
+  [t('ECHO GATE') + ' (проходы)', lst(Circuit.ECHO_FLOW)],
+  ['Реле', n(Circuit.RELAY_NODE_FLOW) + ' за клемму; завершение — минимум ' + n(Circuit.RELAY_DONE_FLOW) + ' и всегда достаточно для следующего множителя (ниже ×' + str(Circuit.RELAY_STAGE_CAP + 1) + ')'],
+  ['Горячая зона', lst(Circuit.HOT_TICK) + ' в копилку за шаг внутри (по четвертям срока), + ' + pct(Circuit.HOT_GAIN_PCT) + ' от всего заработанного внутри'],
+  ['Провод под током', n(Circuit.WIRE_SKIM_FLOW) + ' за проход, ' + n(Circuit.WIRE_DONE_FLOW) + ' за победу'],
+  ['Прыжок ФАЗЫ', n(Circuit.PHASE_FLOW)],
+  ['СРЕЗ', n(Circuit.CUT_FLOW_PER_CELL) + ' за каждую отрезанную клетку'],
+]) }}
+<p>На ФОРСАЖЕ любой прирост умножается на {{ n(Circuit.SURGE_GAIN_PCT / 100) }}.</p>
+
+<h2 id="hold">Удержание и утечка</h2>
+<ul>
+  <li>После прироста шкала держится {{ steps(GameSim.FLOW_GRACE) }}. Прирост от сближений покупает удержание, урезанное в той же доле, что и заряд; манёвр или событие — полное.</li>
+  <li>После падения на ступень есть передышка в {{ GameSim.FLOW_DROP_GRACE }} шагов, прежде чем начнёт утекать следующая.</li>
+  <li>Голод: игра у своего тела оплачивается полностью {{ steps(GameSim.HUNGER_GRACE) }} после последнего узла, затем за {{ steps(GameSim.HUNGER_FADE) }} равномерно падает до нуля.</li>
+</ul>
+
+<h2 id="detection">Как распознаются сближения и манёвры</h2>
+<ul>
+  <li>{{ GameSim.MIN_AGE }} клеток тела сразу за головой никогда не дают сближения.</li>
+  <li>Клетка поля, где голова только что дала сближение, не может дать новое ещё {{ GameSim.GRAZE_COOLDOWN }} шагов.</li>
+  <li>Сближение не позже чем через {{ GameSim.SKIM_GAP + 1 }} шага после прошлого — это {{ t('SKIM') }}.</li>
+  <li>Изолятор загорается снова через {{ GameSim.WALL_REARM }} шагов после выплаты.</li>
+  <li>Длина щели: {{ t('SQUEEZE') }} — {{ GameSim.SQUEEZE_MIN }}–{{ GameSim.NEEDLE_MIN - 1 }} тесных шагов, {{ t('NEEDLE') }} — от {{ GameSim.NEEDLE_MIN }}, {{ t('THREAD') }} — 1–{{ GameSim.THREAD_MAX }}, если обхода короче {{ GameSim.DETOUR_MIN }} клеток нет.</li>
+  <li>Манёвр продолжает серию, если сделан меньше чем через {{ GameSim.CHAIN_WINDOW }} шагов после предыдущего.</li>
+</ul>
+
+<h2 id="schedule">Расписание событий</h2>
+<ul>
+  <li>Первое событие начинается после {{ steps(Circuit.FIRST_EVENT) }} свободной игры.</li>
+  <li>Между событиями — {{ Circuit.GAP_MIN }}–{{ Circuit.GAP_MAX }} шагов, на {{ Circuit.GAP_SHRINK }} меньше за каждое пройденное событие, но не меньше {{ Circuit.GAP_FLOOR }}. Если событие закончилось на ×5 и выше, добавляется {{ Circuit.RECOVERY_HOT }} спокойных шагов.</li>
+  <li>Новые конструкции появляются не ближе {{ Circuit.SAFE_DIST }} клеток от головы.</li>
+  <li>Виды тянутся из перемешанного мешка без повторов подряд; {{ t('LIVE WIRE') }} добавляется после первых {{ Circuit.WIRE_AFTER }} событий.</li>
+  <li><b>Интенсивность</b> = число пройденных событий, +1 пока у тебя ×5 и выше. Она открывает сложные варианты ниже; вес — доля варианта при выборе.</li>
+</ul>
+<h3>Варианты: открытие и вес</h3>
+<p><b>{{ t('GATE') }}</b></p>
+{{ director_table('gate') }}
+<p><b>{{ t('RELAY') }}</b></p>
+{{ director_table('relay') }}
+<p><b>{{ t('HOT ZONE') }}</b></p>
+{{ director_table('hot') }}
+<p><b>{{ t('LIVE WIRE') }}</b></p>
+{{ director_table('wire') }}
+<h3>Модификаторы</h3>
+{{ table(['Модификатор', 'Для', 'С интенсивности', 'Шанс', 'Что делает'], [
+  ['<code>narrow</code>', t('GATE'), n(Circuit.MODIFIERS.narrow[1]), pct(Circuit.MODIFIERS.narrow[2]), 'каждая дверь на клетку глубже (максимум 4)'],
+  ['<code>drift</code>', t('GATE'), n(Circuit.MODIFIERS.drift[1]), pct(Circuit.MODIFIERS.drift[2]), 'ворота сдвигаются на клетку каждые ' + n(Circuit.DRIFT_PERIOD) + ' шагов'],
+  ['<code>fast</code>', t('LIVE WIRE'), n(Circuit.MODIFIERS.fast[1]), pct(Circuit.MODIFIERS.fast[2]), 'провод движется каждые 2 шага вместо ' + n(Circuit.WIRE_PERIOD)],
+]) }}
+
+<h2 id="events">Тайминги и расстановка событий</h2>
+{{ table(['Событие', 'Подробности'], [
+  [t('GATE'), steps(Circuit.GATE_TIME) + ' на ворота; дверь появляется в ' + n(Circuit.GATE_REACH[0]) + '–' + n(Circuit.GATE_REACH[1]) + ' клетках от головы; столба нет на твоей линии ближе ' + n(Circuit.GATE_LANE_CLEAR) + ' клеток впереди и на соседних ближе ' + n(Circuit.GATE_SIDE_CLEAR)],
+  [t('ECHO GATE'), n(Circuit.ECHO_PASSES) + ' прохода через дверь глубиной ' + n(Circuit.ECHO_DEPTH) + ', по ' + n(Circuit.ECHO_TIME) + ' шагов на каждый'],
+  [t('GATE CHAIN'), 'следующие ворота — в ' + n(Circuit.CHAIN_AHEAD[0]) + '–' + n(Circuit.CHAIN_AHEAD[1]) + ' клетках прямо за выходом'],
+  [t('RELAY'), steps(Circuit.RELAY_TIME) + ' на три клеммы, +' + n(Circuit.RELAY_TIME_PER_EXTRA) + ' шагов на каждую следующую; клеммы не ближе ' + n(Circuit.RELAY_SPREAD) + ' клеток друг к другу; стойки держатся ' + n(Circuit.RELAY_POST_LIFE) + ' шагов (' + n(Circuit.RELAY_BRIDGE_LIFE) + ' с мостом)'],
+  [t('HOT ZONE'), 'живёт ' + steps(Circuit.HOT_LIFE) + ', предупреждает за последние ' + n(Circuit.HOT_CRITICAL) + '; копит ' + n(Circuit.HOT_TICK_PTS) + ' очка за шаг внутри; засчитана, когда забрано ' + n(Circuit.HOT_SUCCESS) + ' заряда. ' + t('RISING ZONE') + ' живёт ' + n(Circuit.HOT_LIFE + 16) + ' шагов; ' + t('UNSTABLE ZONE') + ' — ' + n(Circuit.HOT_LIFE - 18) + '–' + n(Circuit.HOT_LIFE + 12) + ' шагов и предупреждает за ' + n(Circuit.HOT_CRITICAL_UNSTABLE)],
+  [t('LIVE WIRE'), 'сдвигается на клетку каждые ' + n(Circuit.WIRE_PERIOD) + ' шага; ' + n(Circuit.WIRE_SKIMS) + ' прохода за ' + steps(Circuit.WIRE_TIME) + ', не чаще раза в ' + n(Circuit.WIRE_SKIM_GAP) + ' шагов; не встаёт на ' + n(Circuit.WIRE_AHEAD) + ' клетки прямо перед головой'],
+  ['Порты модулей', 'в ' + n(Circuit.PORT_REACH[0]) + '–' + n(Circuit.PORT_REACH[1]) + ' клетках от головы, открыты ' + steps(Circuit.PORT_TIME) + '; ' + t('CUT') + ' предлагается при длине тела от ' + n(Circuit.CUT_MIN_LEN) + ' клеток'],
+]) }}

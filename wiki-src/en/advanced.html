@@ -1,0 +1,98 @@
+title: Advanced mechanics
+description: NEARCOIL in full detail for leaderboard players: step times, charge thresholds and drain, detection rules, hunger timing, the Circuit Event schedule and draw weights, exact event and module numbers.
+lead: The exact numbers behind the guide: timings, thresholds, drain, event scheduling and draw weights. All of it comes straight from the game, so it stays up to date.
+---
+<div class="box"><p>This page contains detailed mechanics intended for players who want to optimize leaderboard runs. <b>You do not need to know these values to enjoy or play NEARCOIL effectively</b> — the rest of the guide explains everything that matters in plain words.</p></div>
+
+<h2 id="speed">Speed</h2>
+<p>The base step time depends only on how many nodes you have eaten:</p>
+{{ speed_table() }}
+<p>The multiplier adds +{{ GameSim.FLOW_SPEED_PCT[1] }}% at ×2 up to +{{ GameSim.FLOW_SPEED_PCT[-1] }}% at ×{{ len(GameSim.FLOW_LEVELS) }} (see <a href="#levels">the table</a>), and SURGE another +{{ Circuit.SURGE_SPEED_PCT }}%. The step never gets shorter than {{ GameSim.MIN_INTERVAL }} ms.</p>
+<div class="formula">step = base step × 100 / (100 + multiplier bonus % + SURGE bonus %), at least {{ GameSim.MIN_INTERVAL }} ms</div>
+<p class="small">"About N s" on this page assumes a typical early step of 150 ms.</p>
+
+<h2 id="growth">Growth and node placement</h2>
+{{ growth_table() }}
+<p>After the {{ len(GameSim.GROWTH) }}th node every node adds {{ GameSim.GROW_LATE }} cells.</p>
+<ul>
+  <li>A node is never closer than 4 cells (in steps) to the head.</li>
+  <li>Cells right next to your body and at middle distance (up to 11 cells) are weighted up.</li>
+</ul>
+<p class="small">Swipe controls fire once the finger has moved about {{ int(Main.FLICK_DP) }} dp.</p>
+
+<h2 id="levels">Multiplier thresholds</h2>
+<p>Charge is a number from 0 to {{ GameSim.FLOW_MAX }}.</p>
+{{ flow_table() }}
+<ul>
+  <li><b>Charge from</b> — charge needed for that multiplier.</li>
+  <li><b>Close-call charge kept</b> — the share of charge from close calls, skims and tight steps you get at that level (maneuvers and events are not reduced; inside a hot zone close calls always charge in full).</li>
+  <li><b>Drain</b> — charge lost per step once the hold is over: the lower value while your head is within 2 cells of a conductor, the higher one in open space.</li>
+</ul>
+
+<h2 id="charge">Charge per source</h2>
+{{ table(['Source', 'Charge'], [
+  ['Close call / skim / double', n(GameSim.FLOW_GRAZE) + ' / ' + n(GameSim.FLOW_SKIM) + ' / ' + n(GameSim.FLOW_DOUBLE) + ' (× close-call share above)'],
+  ['Tight step with a fresh side', n(GameSim.FLOW_TIGHT) + ' (× close-call share above)'],
+  [t('SQUEEZE') + ' / ' + t('THREAD') + ' / ' + t('NEEDLE'), lst([GameSim.FLOW_SQUEEZE, GameSim.FLOW_THREAD, GameSim.FLOW_NEEDLE]) + ', × chain bonus'],
+  ['Gates (1st / 2nd / 3rd)', lst(Circuit.GATE_FLOW)],
+  [t('RISK GATE') + ' (shallow / deep door)', n(Circuit.RISK_SAFE[2]) + ' / ' + n(Circuit.RISK_DEEP[2])],
+  [t('ECHO GATE') + ' (passes)', lst(Circuit.ECHO_FLOW)],
+  ['Relay', n(Circuit.RELAY_NODE_FLOW) + ' per terminal; completion at least ' + n(Circuit.RELAY_DONE_FLOW) + ' and always enough for the next multiplier (below ×' + str(Circuit.RELAY_STAGE_CAP + 1) + ')'],
+  ['Hot zone', lst(Circuit.HOT_TICK) + ' banked per step inside (by quarter of its life), + ' + pct(Circuit.HOT_GAIN_PCT) + ' of everything earned inside'],
+  ['Live wire', n(Circuit.WIRE_SKIM_FLOW) + ' per skim, ' + n(Circuit.WIRE_DONE_FLOW) + ' when beaten'],
+  ['PHASE hop', n(Circuit.PHASE_FLOW)],
+  ['CUT', n(Circuit.CUT_FLOW_PER_CELL) + ' per severed cell'],
+]) }}
+<p>During SURGE every gain is {{ x(Circuit.SURGE_GAIN_PCT / 100) }}.</p>
+
+<h2 id="hold">Hold and drain</h2>
+<ul>
+  <li>After a gain the meter holds for {{ steps(GameSim.FLOW_GRACE) }}. A gain from close calls buys a hold shortened by the same close-call share; a maneuver or an event buys the full hold.</li>
+  <li>After dropping a level there is a {{ GameSim.FLOW_DROP_GRACE }}-step breather before the next level starts draining.</li>
+  <li>Hunger: close play against your own body pays in full for {{ steps(GameSim.HUNGER_GRACE) }} after the last node, then fades linearly to zero over the next {{ steps(GameSim.HUNGER_FADE) }}.</li>
+</ul>
+
+<h2 id="detection">Close-call and maneuver detection</h2>
+<ul>
+  <li>The {{ GameSim.MIN_AGE }} body cells right behind the head never count as a close call.</li>
+  <li>A board cell that just produced a close call can't produce another for {{ GameSim.GRAZE_COOLDOWN }} steps.</li>
+  <li>A close call within {{ GameSim.SKIM_GAP + 1 }} steps of the previous one is a {{ t('SKIM') }}.</li>
+  <li>An insulator re-arms {{ GameSim.WALL_REARM }} steps after it paid.</li>
+  <li>Gap length: {{ t('SQUEEZE') }} {{ GameSim.SQUEEZE_MIN }}–{{ GameSim.NEEDLE_MIN - 1 }} tight steps, {{ t('NEEDLE') }} {{ GameSim.NEEDLE_MIN }}+, {{ t('THREAD') }} 1–{{ GameSim.THREAD_MAX }} with no way round shorter than {{ GameSim.DETOUR_MIN }} cells.</li>
+  <li>A maneuver continues the chain if it comes less than {{ GameSim.CHAIN_WINDOW }} steps after the previous one.</li>
+</ul>
+
+<h2 id="schedule">Circuit Event schedule</h2>
+<ul>
+  <li>The first event starts after {{ steps(Circuit.FIRST_EVENT) }} of free play.</li>
+  <li>Between events: {{ Circuit.GAP_MIN }}–{{ Circuit.GAP_MAX }} steps, {{ Circuit.GAP_SHRINK }} fewer for every event you complete, never below {{ Circuit.GAP_FLOOR }}. An event that ended while you were at ×5 or more adds {{ Circuit.RECOVERY_HOT }} calm steps.</li>
+  <li>New structures appear at least {{ Circuit.SAFE_DIST }} cells from your head.</li>
+  <li>The kinds come from a shuffled bag with no repeats in a row; {{ t('LIVE WIRE') }} joins after the first {{ Circuit.WIRE_AFTER }} events.</li>
+  <li><b>Intensity</b> = events completed so far, +1 while you are at ×5 or more. It unlocks the harder variants below; the weight is the variant's share in the draw.</li>
+</ul>
+<h3>Variants: unlock and weight</h3>
+<p><b>{{ t('GATE') }}</b></p>
+{{ director_table('gate') }}
+<p><b>{{ t('RELAY') }}</b></p>
+{{ director_table('relay') }}
+<p><b>{{ t('HOT ZONE') }}</b></p>
+{{ director_table('hot') }}
+<p><b>{{ t('LIVE WIRE') }}</b></p>
+{{ director_table('wire') }}
+<h3>Modifiers</h3>
+{{ table(['Modifier', 'For', 'From intensity', 'Chance', 'Effect'], [
+  ['<code>narrow</code>', t('GATE'), n(Circuit.MODIFIERS.narrow[1]), pct(Circuit.MODIFIERS.narrow[2]), 'every door one cell deeper (up to 4)'],
+  ['<code>drift</code>', t('GATE'), n(Circuit.MODIFIERS.drift[1]), pct(Circuit.MODIFIERS.drift[2]), 'the gate slides one cell every ' + n(Circuit.DRIFT_PERIOD) + ' steps'],
+  ['<code>fast</code>', t('LIVE WIRE'), n(Circuit.MODIFIERS.fast[1]), pct(Circuit.MODIFIERS.fast[2]), 'the wire moves every 2 steps instead of every ' + n(Circuit.WIRE_PERIOD)],
+]) }}
+
+<h2 id="events">Event timings and placement</h2>
+{{ table(['Event', 'Details'], [
+  [t('GATE'), steps(Circuit.GATE_TIME) + ' per gate; the door appears ' + n(Circuit.GATE_REACH[0]) + '–' + n(Circuit.GATE_REACH[1]) + ' cells from the head; no pylon in your lane within ' + n(Circuit.GATE_LANE_CLEAR) + ' cells ahead or in the side lanes within ' + n(Circuit.GATE_SIDE_CLEAR)],
+  [t('ECHO GATE'), n(Circuit.ECHO_PASSES) + ' passes through a door of depth ' + n(Circuit.ECHO_DEPTH) + ', ' + n(Circuit.ECHO_TIME) + ' steps each'],
+  [t('GATE CHAIN'), 'the next gate ' + n(Circuit.CHAIN_AHEAD[0]) + '–' + n(Circuit.CHAIN_AHEAD[1]) + ' cells straight past your exit'],
+  [t('RELAY'), steps(Circuit.RELAY_TIME) + ' for three terminals, +' + n(Circuit.RELAY_TIME_PER_EXTRA) + ' steps per extra one; terminals at least ' + n(Circuit.RELAY_SPREAD) + ' cells apart; posts stay ' + n(Circuit.RELAY_POST_LIFE) + ' steps (' + n(Circuit.RELAY_BRIDGE_LIFE) + ' with a bridge)'],
+  [t('HOT ZONE'), 'lives ' + steps(Circuit.HOT_LIFE) + ', warns for the last ' + n(Circuit.HOT_CRITICAL) + '; banks ' + n(Circuit.HOT_TICK_PTS) + ' points per step inside; won once ' + n(Circuit.HOT_SUCCESS) + ' charge is cashed. ' + t('RISING ZONE') + ' lives ' + n(Circuit.HOT_LIFE + 16) + ' steps; ' + t('UNSTABLE ZONE') + ' ' + n(Circuit.HOT_LIFE - 18) + '–' + n(Circuit.HOT_LIFE + 12) + ' steps and warns ' + n(Circuit.HOT_CRITICAL_UNSTABLE) + ' steps before'],
+  [t('LIVE WIRE'), 'moves one cell every ' + n(Circuit.WIRE_PERIOD) + ' steps; ' + n(Circuit.WIRE_SKIMS) + ' skims within ' + steps(Circuit.WIRE_TIME) + ', at least ' + n(Circuit.WIRE_SKIM_GAP) + ' steps apart; never moves onto the ' + n(Circuit.WIRE_AHEAD) + ' cells ahead of your head'],
+  ['Module ports', n(Circuit.PORT_REACH[0]) + '–' + n(Circuit.PORT_REACH[1]) + ' cells from the head, open for ' + steps(Circuit.PORT_TIME) + '; ' + t('CUT') + ' is offered from a body of ' + n(Circuit.CUT_MIN_LEN) + ' cells'],
+]) }}

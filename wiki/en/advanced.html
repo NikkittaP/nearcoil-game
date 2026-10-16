@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advanced mechanics — NEARCOIL Guide</title>
+<meta name="description" content="NEARCOIL in full detail for leaderboard players: step times, charge thresholds and drain, detection rules, hunger timing, the Circuit Event schedule and draw weights, exact event and module numbers.">
+<link rel="canonical" href="https://nikkittap.github.io/nearcoil-game/wiki/en/advanced.html">
+<link rel="alternate" hreflang="en" href="https://nikkittap.github.io/nearcoil-game/wiki/en/advanced.html">
+<link rel="alternate" hreflang="ru" href="https://nikkittap.github.io/nearcoil-game/wiki/ru/advanced.html">
+<meta name="theme-color" content="#0d0e12">
+<link rel="icon" href="../../img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../img/favicon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Advanced mechanics — NEARCOIL Guide">
+<meta property="og:description" content="NEARCOIL in full detail for leaderboard players: step times, charge thresholds and drain, detection rules, hunger timing, the Circuit Event schedule and draw weights, exact event and module numbers.">
+<meta property="og:image" content="https://nikkittap.github.io/nearcoil-game/img/feature_big.jpg">
+<link rel="stylesheet" href="../wiki.css">
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="brand" href="index.html"><img src="../../img/favicon-32.png" width="22" height="22" alt="">NEARCOIL <span>Guide</span></a>
+    <nav class="links"><a href="../../">NEARCOIL</a><a href="../ru/advanced.html" hreflang="ru" lang="ru">Русский</a></nav>
+  </div>
+</header>
+<div class="layout">
+  <aside class="side">
+    <details open><summary>Pages</summary>
+    <ol><li><a href="index.html">NEARCOIL guide</a></li><li><a href="basics.html">Board, controls, speed</a></li><li><a href="close-calls.html">Close calls and maneuvers</a></li><li><a href="charge.html">Charge and multiplier</a></li><li><a href="events.html">Circuit Events</a></li><li><a href="modules.html">Modules</a></li><li><a href="modes.html">Game modes</a></li><li><a href="achievements.html">Achievements and profile</a></li><li><a href="campaign.html">All Campaign levels</a></li><li class="on"><a href="advanced.html">Advanced mechanics</a></li><li><a href="glossary.html">Glossary</a></li></ol>
+    </details>
+  </aside>
+  <main class="content">
+    <h1>Advanced mechanics</h1>
+    <p class="lead">The exact numbers behind the guide: timings, thresholds, drain, event scheduling and draw weights. All of it comes straight from the game, so it stays up to date.</p>
+    <nav class="toc"><b>On this page</b><ol><li><a href="#speed">Speed</a></li><li><a href="#growth">Growth and node placement</a></li><li><a href="#levels">Multiplier thresholds</a></li><li><a href="#charge">Charge per source</a></li><li><a href="#hold">Hold and drain</a></li><li><a href="#detection">Close-call and maneuver detection</a></li><li><a href="#schedule">Circuit Event schedule</a></li><li><a href="#events">Event timings and placement</a></li></ol></nav>
+    <div class="box"><p>This page contains detailed mechanics intended for players who want to optimize leaderboard runs. <b>You do not need to know these values to enjoy or play NEARCOIL effectively</b> — the rest of the guide explains everything that matters in plain words.</p></div>
+
+<h2 id="speed">Speed</h2>
+<p>The base step time depends only on how many nodes you have eaten:</p>
+<div class="tw"><table class="num"><thead><tr><th>Nodes eaten</th><th>Step</th><th>Cells per second</th></tr></thead><tbody><tr><td>0+</td><td>165 ms</td><td>6.1</td></tr><tr><td>5+</td><td>158 ms</td><td>6.3</td></tr><tr><td>10+</td><td>152 ms</td><td>6.6</td></tr><tr><td>15+</td><td>147 ms</td><td>6.8</td></tr><tr><td>20+</td><td>143 ms</td><td>7</td></tr><tr><td>25+</td><td>140 ms</td><td>7.1</td></tr><tr><td>30+</td><td>137 ms</td><td>7.3</td></tr></tbody></table></div>
+<p>The multiplier adds +5% at ×2 up to +30% at ×8 (see <a href="#levels">the table</a>), and SURGE another +14%. The step never gets shorter than 84 ms.</p>
+<div class="formula">step = base step × 100 / (100 + multiplier bonus % + SURGE bonus %), at least 84 ms</div>
+<p class="small">"About N s" on this page assumes a typical early step of 150 ms.</p>
+
+<h2 id="growth">Growth and node placement</h2>
+<div class="tw"><table class="num"><thead><tr><th>Node</th><th>Growth</th><th>Length after</th></tr></thead><tbody><tr><td>1</td><td>+4</td><td>10</td></tr><tr><td>2</td><td>+4</td><td>14</td></tr><tr><td>3</td><td>+4</td><td>18</td></tr><tr><td>4</td><td>+4</td><td>22</td></tr><tr><td>5</td><td>+3</td><td>25</td></tr><tr><td>6</td><td>+3</td><td>28</td></tr><tr><td>7</td><td>+3</td><td>31</td></tr><tr><td>8</td><td>+3</td><td>34</td></tr><tr><td>9</td><td>+3</td><td>37</td></tr><tr><td>10</td><td>+3</td><td>40</td></tr><tr><td>11</td><td>+2</td><td>42</td></tr><tr><td>12</td><td>+2</td><td>44</td></tr></tbody></table></div>
+<p>After the 10th node every node adds 2 cells.</p>
+<ul>
+  <li>A node is never closer than 4 cells (in steps) to the head.</li>
+  <li>Cells right next to your body and at middle distance (up to 11 cells) are weighted up.</li>
+</ul>
+<p class="small">Swipe controls fire once the finger has moved about 16 dp.</p>
+
+<h2 id="levels">Multiplier thresholds</h2>
+<p>Charge is a number from 0 to 2,450.</p>
+<div class="tw"><table class="num"><thead><tr><th>Multiplier</th><th>Charge from</th><th>Span</th><th>Speed bonus</th><th>Close-call charge kept</th><th>Drain in open space</th><th>Drain near body</th></tr></thead><tbody><tr><td><b>×1</b></td><td>0</td><td>90</td><td>+0%</td><td>100%</td><td>2/step</td><td>1/step</td></tr><tr><td><b>×2</b></td><td>90</td><td>160</td><td>+5%</td><td>75%</td><td>3/step</td><td>2/step</td></tr><tr><td><b>×3</b></td><td>250</td><td>230</td><td>+9%</td><td>45%</td><td>4/step</td><td>3/step</td></tr><tr><td><b>×4</b></td><td>480</td><td>340</td><td>+14%</td><td>25%</td><td>7/step</td><td>5/step</td></tr><tr><td><b>×5</b></td><td>820</td><td>400</td><td>+20%</td><td>15%</td><td>10/step</td><td>7/step</td></tr><tr><td><b>×6</b></td><td>1,220</td><td>460</td><td>+25%</td><td>10%</td><td>13/step</td><td>9/step</td></tr><tr><td><b>×7</b></td><td>1,680</td><td>520</td><td>+28%</td><td>8%</td><td>16/step</td><td>11/step</td></tr><tr><td><b>×8</b></td><td>2,200</td><td>250</td><td>+30%</td><td>8%</td><td>19/step</td><td>13/step</td></tr></tbody></table></div>
+<ul>
+  <li><b>Charge from</b> — charge needed for that multiplier.</li>
+  <li><b>Close-call charge kept</b> — the share of charge from close calls, skims and tight steps you get at that level (maneuvers and events are not reduced; inside a hot zone close calls always charge in full).</li>
+  <li><b>Drain</b> — charge lost per step once the hold is over: the lower value while your head is within 2 cells of a conductor, the higher one in open space.</li>
+</ul>
+
+<h2 id="charge">Charge per source</h2>
+<div class="tw"><table class=""><thead><tr><th>Source</th><th>Charge</th></tr></thead><tbody><tr><td>Close call / skim / double</td><td>30 / 9 / 45 (× close-call share above)</td></tr><tr><td>Tight step with a fresh side</td><td>12 (× close-call share above)</td></tr><tr><td>SQUEEZE / THREAD / NEEDLE</td><td>100, 240, 340, × chain bonus</td></tr><tr><td>Gates (1st / 2nd / 3rd)</td><td>60, 90, 130</td></tr><tr><td>RISK GATE (shallow / deep door)</td><td>40 / 200</td></tr><tr><td>ECHO GATE (passes)</td><td>70, 100, 150</td></tr><tr><td>Relay</td><td>30 per terminal; completion at least 120 and always enough for the next multiplier (below ×5)</td></tr><tr><td>Hot zone</td><td>2, 3, 4, 6 banked per step inside (by quarter of its life), + 50% of everything earned inside</td></tr><tr><td>Live wire</td><td>45 per skim, 110 when beaten</td></tr><tr><td>PHASE hop</td><td>170</td></tr><tr><td>CUT</td><td>4 per severed cell</td></tr></tbody></table></div>
+<p>During SURGE every gain is ×1.40.</p>
+
+<h2 id="hold">Hold and drain</h2>
+<ul>
+  <li>After a gain the meter holds for 16 steps (about 2.4 s). A gain from close calls buys a hold shortened by the same close-call share; a maneuver or an event buys the full hold.</li>
+  <li>After dropping a level there is a 10-step breather before the next level starts draining.</li>
+  <li>Hunger: close play against your own body pays in full for 200 steps (about 30 s) after the last node, then fades linearly to zero over the next 200 steps (about 30 s).</li>
+</ul>
+
+<h2 id="detection">Close-call and maneuver detection</h2>
+<ul>
+  <li>The 5 body cells right behind the head never count as a close call.</li>
+  <li>A board cell that just produced a close call can't produce another for 60 steps.</li>
+  <li>A close call within 3 steps of the previous one is a SKIM.</li>
+  <li>An insulator re-arms 40 steps after it paid.</li>
+  <li>Gap length: SQUEEZE 2–5 tight steps, NEEDLE 6+, THREAD 1–4 with no way round shorter than 10 cells.</li>
+  <li>A maneuver continues the chain if it comes less than 30 steps after the previous one.</li>
+</ul>
+
+<h2 id="schedule">Circuit Event schedule</h2>
+<ul>
+  <li>The first event starts after 95 steps (about 14.2 s) of free play.</li>
+  <li>Between events: 95–140 steps, 6 fewer for every event you complete, never below 70. An event that ended while you were at ×5 or more adds 18 calm steps.</li>
+  <li>New structures appear at least 4 cells from your head.</li>
+  <li>The kinds come from a shuffled bag with no repeats in a row; LIVE WIRE joins after the first 2 events.</li>
+  <li><b>Intensity</b> = events completed so far, +1 while you are at ×5 or more. It unlocks the harder variants below; the weight is the variant's share in the draw.</li>
+</ul>
+<h3>Variants: unlock and weight</h3>
+<p><b>GATE</b></p>
+<div class="tw"><table class=""><thead><tr><th>Variant</th><th>On screen</th><th>Unlocks at intensity</th><th>Weight</th><th>What changes</th></tr></thead><tbody><tr><td><code>course</code></td><td>NEEDLE GATE</td><td>0</td><td>4</td><td>three gates in a row, doors 1, 2 and 3 cells deep</td></tr><tr><td><code>chain</code></td><td>GATE CHAIN</td><td>1</td><td>3</td><td>each next gate stands straight ahead of where you left the last one</td></tr><tr><td><code>risk</code></td><td>RISK GATE</td><td>2</td><td>3</td><td>one shallow door and one deep door; only the first one you drive through counts</td></tr><tr><td><code>double</code></td><td>DOUBLE GATE</td><td>3</td><td>2</td><td>two doors at once, take either</td></tr><tr><td><code>echo</code></td><td>ECHO GATE</td><td>3</td><td>2</td><td>one gate: through, back, through again</td></tr></tbody></table></div>
+<p><b>RELAY</b></p>
+<div class="tw"><table class=""><thead><tr><th>Variant</th><th>On screen</th><th>Unlocks at intensity</th><th>Weight</th><th>What changes</th></tr></thead><tbody><tr><td><code>three</code></td><td>RELAY</td><td>0</td><td>4</td><td>three terminals in number order</td></tr><tr><td><code>timed</code></td><td>FAST RELAY</td><td>2</td><td>2</td><td>two thirds of the time, bigger payout</td></tr><tr><td><code>four</code></td><td>RELAY 4</td><td>3</td><td>2</td><td>four terminals, more time, bigger payout</td></tr><tr><td><code>hidden</code></td><td>DARK RELAY</td><td>3</td><td>2</td><td>the last terminal shows only when it is next</td></tr><tr><td><code>bridge</code></td><td>BRIDGE RELAY</td><td>4</td><td>2</td><td>on completion the terminals are joined by live bars</td></tr><tr><td><code>moving</code></td><td>MOVING RELAY</td><td>5</td><td>2</td><td>the last terminal keeps side-stepping</td></tr></tbody></table></div>
+<p><b>HOT ZONE</b></p>
+<div class="tw"><table class=""><thead><tr><th>Variant</th><th>On screen</th><th>Unlocks at intensity</th><th>Weight</th><th>What changes</th></tr></thead><tbody><tr><td><code>static</code></td><td>HOT ZONE</td><td>0</td><td>4</td><td>the plain zone</td></tr><tr><td><code>escalate</code></td><td>RISING ZONE</td><td>2</td><td>2</td><td>lives longer; banks twice as fast in its second half</td></tr><tr><td><code>drift</code></td><td>DRIFT ZONE</td><td>3</td><td>2</td><td>slowly slides diagonally</td></tr><tr><td><code>shrink</code></td><td>SHRINK ZONE</td><td>3</td><td>2</td><td>closes to 3×3 at half time</td></tr><tr><td><code>preserve</code></td><td>HOLD ZONE</td><td>4</td><td>2</td><td>no charge drain while your head is inside</td></tr><tr><td><code>unstable</code></td><td>UNSTABLE ZONE</td><td>5</td><td>2</td><td>random lifetime, very short warning</td></tr></tbody></table></div>
+<p><b>LIVE WIRE</b></p>
+<div class="tw"><table class=""><thead><tr><th>Variant</th><th>On screen</th><th>Unlocks at intensity</th><th>Weight</th><th>What changes</th></tr></thead><tbody><tr><td><code>patrol</code></td><td>LIVE WIRE</td><td>0</td><td>4</td><td>one 3-cell bar</td></tr><tr><td><code>long</code></td><td>LIVE WIRE</td><td>3</td><td>2</td><td>one 5-cell bar</td></tr><tr><td><code>twin</code></td><td>LIVE WIRE</td><td>4</td><td>2</td><td>two bars, one lane each</td></tr></tbody></table></div>
+<h3>Modifiers</h3>
+<div class="tw"><table class=""><thead><tr><th>Modifier</th><th>For</th><th>From intensity</th><th>Chance</th><th>Effect</th></tr></thead><tbody><tr><td><code>narrow</code></td><td>GATE</td><td>4</td><td>30%</td><td>every door one cell deeper (up to 4)</td></tr><tr><td><code>drift</code></td><td>GATE</td><td>5</td><td>30%</td><td>the gate slides one cell every 7 steps</td></tr><tr><td><code>fast</code></td><td>LIVE WIRE</td><td>5</td><td>40%</td><td>the wire moves every 2 steps instead of every 3</td></tr></tbody></table></div>
+
+<h2 id="events">Event timings and placement</h2>
+<div class="tw"><table class=""><thead><tr><th>Event</th><th>Details</th></tr></thead><tbody><tr><td>GATE</td><td>85 steps (about 12.8 s) per gate; the door appears 4–11 cells from the head; no pylon in your lane within 6 cells ahead or in the side lanes within 2</td></tr><tr><td>ECHO GATE</td><td>3 passes through a door of depth 2, 60 steps each</td></tr><tr><td>GATE CHAIN</td><td>the next gate 3–8 cells straight past your exit</td></tr><tr><td>RELAY</td><td>135 steps (about 20.2 s) for three terminals, +35 steps per extra one; terminals at least 5 cells apart; posts stay 70 steps (110 with a bridge)</td></tr><tr><td>HOT ZONE</td><td>lives 84 steps (about 12.6 s), warns for the last 18; banks 2 points per step inside; won once 70 charge is cashed. RISING ZONE lives 100 steps; UNSTABLE ZONE 66–96 steps and warns 7 steps before</td></tr><tr><td>LIVE WIRE</td><td>moves one cell every 3 steps; 3 skims within 140 steps (about 21 s), at least 5 steps apart; never moves onto the 3 cells ahead of your head</td></tr><tr><td>Module ports</td><td>4–10 cells from the head, open for 75 steps (about 11.2 s); CUT is offered from a body of 24 cells</td></tr></tbody></table></div>
+
+    <nav class="pager"><a href="campaign.html">← All Campaign levels</a><span></span><a href="glossary.html">Glossary →</a></nav>
+  </main>
+</div>
+<footer class="foot">
+  <p>Numbers and screenshots are taken from the game, version 0.1.8 (2026-10-16).</p>
+  <p><a href="https://play.google.com/store/apps/details?id=com.nikitapetrovapps.nearcoil">Get it on Google Play</a> · <a href="../../privacy/">Privacy policy</a> · <a href="mailto:nikitapetrovapps@gmail.com">nikitapetrovapps@gmail.com</a></p>
+</footer>
+</body>
+</html>

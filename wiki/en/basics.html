@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Board, controls, speed — NEARCOIL Guide</title>
-<meta name="description" content="NEARCOIL basics: the 13×21 grid, flick, turn and D-pad controls, step speed, growth per node and how nodes are placed.">
+<meta name="description" content="NEARCOIL basics: the 13×21 grid, flick, turn and D-pad controls, how the speed builds up, growth and where nodes appear.">
 <link rel="canonical" href="https://nikkittap.github.io/nearcoil-game/wiki/en/basics.html">
 <link rel="alternate" hreflang="en" href="https://nikkittap.github.io/nearcoil-game/wiki/en/basics.html">
 <link rel="alternate" hreflang="ru" href="https://nikkittap.github.io/nearcoil-game/wiki/ru/basics.html">
@@ -13,7 +13,7 @@
 <link rel="apple-touch-icon" href="../../img/favicon-180.png">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Board, controls, speed — NEARCOIL Guide">
-<meta property="og:description" content="NEARCOIL basics: the 13×21 grid, flick, turn and D-pad controls, step speed, growth per node and how nodes are placed.">
+<meta property="og:description" content="NEARCOIL basics: the 13×21 grid, flick, turn and D-pad controls, how the speed builds up, growth and where nodes appear.">
 <meta property="og:image" content="https://nikkittap.github.io/nearcoil-game/img/feature_big.jpg">
 <link rel="stylesheet" href="../wiki.css">
 </head>
@@ -27,7 +27,7 @@
 <div class="layout">
   <aside class="side">
     <details open><summary>Pages</summary>
-    <ol><li><a href="index.html">NEARCOIL guide</a></li><li class="on"><a href="basics.html">Board, controls, speed</a></li><li><a href="close-calls.html">Close calls and maneuvers</a></li><li><a href="charge.html">Charge and multiplier</a></li><li><a href="events.html">Circuit Events</a></li><li><a href="modules.html">Modules</a></li><li><a href="modes.html">Game modes</a></li><li><a href="achievements.html">Achievements and profile</a></li><li><a href="campaign.html">All Campaign levels</a></li><li><a href="glossary.html">Glossary</a></li></ol>
+    <ol><li><a href="index.html">NEARCOIL guide</a></li><li class="on"><a href="basics.html">Board, controls, speed</a></li><li><a href="close-calls.html">Close calls and maneuvers</a></li><li><a href="charge.html">Charge and multiplier</a></li><li><a href="events.html">Circuit Events</a></li><li><a href="modules.html">Modules</a></li><li><a href="modes.html">Game modes</a></li><li><a href="achievements.html">Achievements and profile</a></li><li><a href="campaign.html">All Campaign levels</a></li><li><a href="advanced.html">Advanced mechanics</a></li><li><a href="glossary.html">Glossary</a></li></ol>
     </details>
   </aside>
   <main class="content">
@@ -47,7 +47,7 @@
 <div class="float"><figure><a href="../img/en/controls.webp"><img src="../img/en/controls.webp" width="720" height="1280" loading="lazy" alt="The first-run choice. It can be changed later in Settings → Controls."></a><figcaption>The first-run choice. It can be changed later in Settings → Controls.</figcaption></figure></div>
 <p>Three schemes, picked on the first run and changeable in Settings:</p>
 <h3>FLICK (default)</h3>
-<p>Flick the way you want to go. It fires mid-gesture as soon as the finger has moved about 16 dp, so a very short flick is enough, and an L-shaped gesture makes two turns without lifting the finger. Screen direction = travel direction, which helps when the snake is heading down or sideways.</p>
+<p>Flick the way you want to go. It fires mid-gesture, so a very short flick is enough, and an L-shaped gesture makes two turns without lifting the finger. Screen direction = travel direction, which helps when the snake is heading down or sideways.</p>
 <h3>TURN LEFT / RIGHT</h3>
 <p>Tap the left or right half of the screen to turn left or right <i>as the snake sees it</i> (when it heads down, "left" is on the right of the screen). It fires on touch-down. Good for one-handed play.</p>
 <h3>D-PAD</h3>
@@ -59,21 +59,21 @@
 <div class="clear"></div>
 
 <h2 id="speed">Speed</h2>
-<p>The step time depends on how many nodes you have eaten (never on time alone, so a patient player is not rushed), and on the multiplier.</p>
-<div class="tw"><table class="num"><thead><tr><th>Nodes eaten</th><th>Step</th><th>Cells per second</th></tr></thead><tbody><tr><td>0+</td><td>165 ms</td><td>6.1</td></tr><tr><td>5+</td><td>158 ms</td><td>6.3</td></tr><tr><td>10+</td><td>152 ms</td><td>6.6</td></tr><tr><td>15+</td><td>147 ms</td><td>6.8</td></tr><tr><td>20+</td><td>143 ms</td><td>7</td></tr><tr><td>25+</td><td>140 ms</td><td>7.1</td></tr><tr><td>30+</td><td>137 ms</td><td>7.3</td></tr></tbody></table></div>
-<p>On top of that, the multiplier makes the snake faster: +5% at ×2 up to +30% at ×8 (see <a href="charge.html#levels">the table</a>), and the SURGE module adds another +14%. The step never gets shorter than 84 ms.</p>
-<div class="formula">step = base step × 100 / (100 + multiplier bonus % + SURGE bonus %), at least 84 ms</div>
-<p class="small">The board runs at its own step rate whatever the screen refresh rate: 60, 90 or 120 Hz only make the motion smoother.</p>
+<ul>
+  <li>The snake <b>speeds up as you eat</b>: quickly over the first nodes, then more and more gently. It never speeds up on time alone, so a patient player is not rushed.</li>
+  <li>A <b>higher multiplier makes it faster</b> too, so the game gets more demanding exactly when your score is growing fastest. Dropping a level slows you down again.</li>
+  <li>The SURGE module adds a short extra burst of speed.</li>
+  <li>Speed changes gradually, never in random jumps.</li>
+</ul>
+<p class="small">The board runs at its own step rate whatever the screen refresh rate: 60, 90 or 120 Hz only make the motion smoother. Exact step times: <a href="advanced.html#speed">Advanced mechanics</a>.</p>
 
 <h2 id="growth">Nodes and growth</h2>
-<p>Each node is worth <b>10 × multiplier</b> points and makes the body longer. Early nodes grow it more, so there is soon enough body to build lanes with:</p>
-<div class="tw"><table class="num"><thead><tr><th>Node</th><th>Growth</th><th>Length after</th></tr></thead><tbody><tr><td>1</td><td>+4</td><td>10</td></tr><tr><td>2</td><td>+4</td><td>14</td></tr><tr><td>3</td><td>+4</td><td>18</td></tr><tr><td>4</td><td>+4</td><td>22</td></tr><tr><td>5</td><td>+3</td><td>25</td></tr><tr><td>6</td><td>+3</td><td>28</td></tr><tr><td>7</td><td>+3</td><td>31</td></tr><tr><td>8</td><td>+3</td><td>34</td></tr><tr><td>9</td><td>+3</td><td>37</td></tr><tr><td>10</td><td>+3</td><td>40</td></tr><tr><td>11</td><td>+2</td><td>42</td></tr><tr><td>12</td><td>+2</td><td>44</td></tr></tbody></table></div>
-<p>After the 10th node every node adds 2 cells.</p>
+<p>Each node is worth <b>10 × multiplier</b> points and makes the body longer. The first nodes grow it more, so there is soon enough body to build lanes with; later nodes add a little each.</p>
 <h3>Where nodes appear</h3>
 <ul>
   <li>Never on the body or a structure, never on an event target, and always reachable from the head.</li>
-  <li>Never closer than 4 cells (in steps) to the head.</li>
-  <li>Cells right next to your body and at middle distance (up to 11 cells) are more likely: nodes tend to pull you back along your own lanes.</li>
+  <li>Never right in front of your head.</li>
+  <li>Cells next to your body and at middle distance are more likely: nodes tend to pull you back along your own lanes.</li>
   <li>The placement is seeded, so a replay or a Daily board always gets the same nodes for the same moves.</li>
 </ul>
 <p>Going long without eating has a cost: see <a href="charge.html#hunger">hunger</a>.</p>

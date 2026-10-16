@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Modules — NEARCOIL Guide</title>
-<meta name="description" content="NEARCOIL modules — how module ports work and what PHASE, SURGE and CUT do, with exact durations and payouts.">
+<meta name="description" content="NEARCOIL modules — how module ports work and what PHASE, SURGE and CUT do and what they pay.">
 <link rel="canonical" href="https://nikkittap.github.io/nearcoil-game/wiki/en/modules.html">
 <link rel="alternate" hreflang="en" href="https://nikkittap.github.io/nearcoil-game/wiki/en/modules.html">
 <link rel="alternate" hreflang="ru" href="https://nikkittap.github.io/nearcoil-game/wiki/ru/modules.html">
@@ -13,7 +13,7 @@
 <link rel="apple-touch-icon" href="../../img/favicon-180.png">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Modules — NEARCOIL Guide">
-<meta property="og:description" content="NEARCOIL modules — how module ports work and what PHASE, SURGE and CUT do, with exact durations and payouts.">
+<meta property="og:description" content="NEARCOIL modules — how module ports work and what PHASE, SURGE and CUT do and what they pay.">
 <meta property="og:image" content="https://nikkittap.github.io/nearcoil-game/img/feature_big.jpg">
 <link rel="stylesheet" href="../wiki.css">
 </head>
@@ -27,7 +27,7 @@
 <div class="layout">
   <aside class="side">
     <details open><summary>Pages</summary>
-    <ol><li><a href="index.html">NEARCOIL guide</a></li><li><a href="basics.html">Board, controls, speed</a></li><li><a href="close-calls.html">Close calls and maneuvers</a></li><li><a href="charge.html">Charge and multiplier</a></li><li><a href="events.html">Circuit Events</a></li><li class="on"><a href="modules.html">Modules</a></li><li><a href="modes.html">Game modes</a></li><li><a href="achievements.html">Achievements and profile</a></li><li><a href="campaign.html">All Campaign levels</a></li><li><a href="glossary.html">Glossary</a></li></ol>
+    <ol><li><a href="index.html">NEARCOIL guide</a></li><li><a href="basics.html">Board, controls, speed</a></li><li><a href="close-calls.html">Close calls and maneuvers</a></li><li><a href="charge.html">Charge and multiplier</a></li><li><a href="events.html">Circuit Events</a></li><li class="on"><a href="modules.html">Modules</a></li><li><a href="modes.html">Game modes</a></li><li><a href="achievements.html">Achievements and profile</a></li><li><a href="campaign.html">All Campaign levels</a></li><li><a href="advanced.html">Advanced mechanics</a></li><li><a href="glossary.html">Glossary</a></li></ol>
     </details>
   </aside>
   <main class="content">
@@ -37,9 +37,9 @@
     <h2 id="ports">Ports (CHOOSE)</h2>
 <div class="float"><figure><a href="../img/en/ports.webp"><img src="../img/en/ports.webp" width="720" height="1280" loading="lazy" alt="Two module ports after a won event: choose by steering."></a><figcaption>Two module ports after a won event: choose by steering.</figcaption></figure></div>
 <ul>
-  <li>Ports open after a <b>won</b> event (on Campaign levels that allow modules). One or two appear 4–10 cells from your head, preferably on opposite sides of your heading, so it is a real fork.</li>
-  <li>You have 75 steps (about 11.2 s) to steer into one. Driving into a port takes its module; the other port disappears.</li>
-  <li>What can be offered: PHASE unless you already carry one; SURGE always; CUT only when your body is at least 24 cells long and you don't carry one.</li>
+  <li>Ports open after a <b>won</b> event (on Campaign levels that allow modules). One or two appear a short drive from your head, preferably on opposite sides of your heading, so it is a real fork.</li>
+  <li>You have a few seconds to steer into one. Driving into a port takes its module; the other port disappears.</li>
+  <li>What can be offered: PHASE unless you already carry one; SURGE always; CUT only when your body is long enough and you don't carry one.</li>
   <li>You carry at most one PHASE and one CUT at a time. The module you hold is shown on the right of the event bar.</li>
 </ul>
 <div class="clear"></div>
@@ -51,13 +51,13 @@
   <li>Works on any conductor: your body, pylons, live posts, bridge bars, wires and insulators. It hops exactly one cell, so the cell beyond must be free.</li>
   <li>Drive into the board edge instead and the PHASE takes you through it: you come back in on the opposite side, same row or column, for the same payout. The charge is spent on the edge, so if your body or a conductor sits where you come in, the run ends.</li>
   <li>A conductor with no free cell behind it still kills. One PHASE, one use: after it, walls kill again.</li>
-  <li>The hop pays +50 points (× multiplier) and +170 charge — use it on purpose, not only as a spare life.</li>
+  <li>The hop pays +50 points (× multiplier) and a solid charge boost — use it on purpose, not only as a spare life.</li>
 </ul>
 <div class="clear"></div>
 
 <h2 id="surge">SURGE</h2>
 <div class="float"><figure><a href="../img/en/surge.webp"><img src="../img/en/surge.webp" width="720" height="1280" loading="lazy" alt="SURGE running: the snake is faster, gains are bigger."></a><figcaption>SURGE running: the snake is faster, gains are bigger.</figcaption></figure></div>
-<p>About 8.1 s of overload (60 steps):</p>
+<p>About 8.1 s of overload:</p>
 <div class="tw"><table class=""><thead><tr><th>Effect</th><th>Value</th></tr></thead><tbody><tr><td>Speed</td><td>+14% on top of the multiplier bonus</td></tr><tr><td>Charge from everything</td><td>×1.40</td></tr><tr><td>Points from everything</td><td>×1.50</td></tr></tbody></table></div>
 <p>Taking another SURGE while one runs adds its time on top.</p>
 <div class="clear"></div>
@@ -67,7 +67,7 @@
 <p>The next node you eat after taking CUT severs the oldest part of your body.</p>
 <ul>
   <li>It removes 35% of the body, the oldest part (the tail end), but never leaves fewer than 6 cells.</li>
-  <li>Every severed cell discharges into the meter: +4 charge per cell.</li>
+  <li>Every severed cell discharges into the meter: the longer the snake, the bigger the boost.</li>
   <li>It frees room on a crowded board; the price is less body to skim along.</li>
 </ul>
 <div class="clear"></div>
