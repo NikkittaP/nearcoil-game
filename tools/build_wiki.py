@@ -258,7 +258,11 @@ class Page:
         rows = []
         for l in ch["levels"]:
             p, g, pf = l["targets"]
-            rows.append([f"<b>{l['id']}</b>", f"<b>{html.escape(self.t(l['name']))}</b><br><span class=\"muted\">{html.escape(self.t(l['hint']))}</span>",
+            goal = ""
+            if l.get("goal"):
+                # The level goal, as the briefing words it: failing it fails the level.
+                goal = f"<br><span class=\"small\"><b>{html.escape(self.t('GOAL'))}:</b> {html.escape('; '.join(l['goal'][self.lang]))}</span>"
+            rows.append([f"<b>{l['id']}</b>", f"<b>{html.escape(self.t(l['name']))}</b><br><span class=\"muted\">{html.escape(self.t(l['hint']))}</span>{goal}",
                          f"{l['time']} {u['s']}", self.n(p), self.n(g), self.n(pf), f"<span class=\"small\">{self.level_notes(l)}</span>"])
         return self.table([u["level"], u["name"] + " / " + u["goal"], u["time"], u["pass"], u["great"], u["perfect"], u["notes"]], rows, "levels")
 

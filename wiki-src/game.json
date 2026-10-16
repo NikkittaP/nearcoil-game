@@ -1,5 +1,5 @@
 {
-	"generated": "2026-10-16 19:38:01 UTC",
+	"generated": "2026-10-16 20:23:39 UTC",
 	"version": "0.1.8",
 	"GameSim": {
 		"RULES_VERSION": 9,
@@ -138,8 +138,20 @@
 			"SELF": 2,
 			"WIRE": 3,
 			"TIME": 4,
-			"CLEAR": 5
+			"CLEAR": 5,
+			"GOAL_BROKEN": 6,
+			"GOAL_MISSED": 7
 		},
+		"DEATH_NAMES": [
+			"",
+			"wall",
+			"self",
+			"wire",
+			"time",
+			"clear",
+			"goal_broken",
+			"goal_missed"
+		],
 		"Ev": {
 			"GRAZE": 0,
 			"SQUEEZE_START": 1,
@@ -871,7 +883,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {}
 					},
 					{
 						"id": "1-02",
@@ -901,7 +914,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {}
 					},
 					{
 						"id": "1-03",
@@ -931,7 +945,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"MAKE A CLOSE CALL 10 TIMES"
+							],
+							"ru": [
+								"ПРОЕЗЖАЙ ВПРИТИРКУ 10 РАЗ"
+							]
+						}
 					},
 					{
 						"id": "1-04",
@@ -961,7 +983,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {}
 					},
 					{
 						"id": "1-05",
@@ -991,7 +1014,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"PUSH THE MULTIPLIER TO ×2"
+							],
+							"ru": [
+								"РАЗГОНИ МНОЖИТЕЛЬ ДО ×2"
+							]
+						}
 					},
 					{
 						"id": "1-06",
@@ -1021,7 +1052,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {}
 					},
 					{
 						"id": "1-07",
@@ -1051,7 +1083,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"DO A SQUEEZE 2 TIMES"
+							],
+							"ru": [
+								"СДЕЛАЙ ЗАЖИМ 2 РАЗА"
+							]
+						}
 					},
 					{
 						"id": "1-08",
@@ -1081,7 +1121,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"SLIP THROUGH A GAP"
+							],
+							"ru": [
+								"ПРОСКОЧИ СКВОЗЬ ЩЕЛЬ"
+							]
+						}
 					},
 					{
 						"id": "1-09",
@@ -1111,7 +1159,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"DRIVE A LONG CORRIDOR"
+							],
+							"ru": [
+								"ПРОЙДИ ДЛИННЫЙ КОРИДОР"
+							]
+						}
 					},
 					{
 						"id": "1-10",
@@ -1141,7 +1197,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"REACH ×2 WITHIN 20 S, THEN DON'T DROP BELOW IT"
+							],
+							"ru": [
+								"НАБЕРИ ×2 ЗА 20 С И НЕ ОПУСКАЙСЯ НИЖЕ"
+							]
+						}
 					}
 				]
 			},
@@ -1187,7 +1251,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"DRIVE THROUGH A GATE 3 TIMES"
+							],
+							"ru": [
+								"ПРОЕДЬ ВОРОТА 3 РАЗА"
+							]
+						}
 					},
 					{
 						"id": "2-02",
@@ -1225,7 +1297,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"DRIVE THROUGH A GATE 3 TIMES"
+							],
+							"ru": [
+								"ПРОЕДЬ ВОРОТА 3 РАЗА"
+							]
+						}
 					},
 					{
 						"id": "2-03",
@@ -1261,7 +1341,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"DRIVE THROUGH A GATE 5 TIMES"
+							],
+							"ru": [
+								"ПРОЕДЬ ВОРОТА 5 РАЗ"
+							]
+						}
 					},
 					{
 						"id": "2-04",
@@ -1297,7 +1385,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {}
 					},
 					{
 						"id": "2-05",
@@ -1333,7 +1422,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"DRIVE THROUGH A LONG GATE 2 TIMES"
+							],
+							"ru": [
+								"ПРОЕДЬ ДЛИННЫЕ ВОРОТА 2 РАЗА"
+							]
+						}
 					},
 					{
 						"id": "2-06",
@@ -1369,7 +1466,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"DRIVE THROUGH A GATE 3 TIMES"
+							],
+							"ru": [
+								"ПРОЕДЬ ВОРОТА 3 РАЗА"
+							]
+						}
 					},
 					{
 						"id": "2-07",
@@ -1406,7 +1511,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {}
 					},
 					{
 						"id": "2-08",
@@ -1444,7 +1550,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {}
 					},
 					{
 						"id": "2-09",
@@ -1480,7 +1587,17 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"NEVER TAKE THE SHORT GATE",
+								"DRIVE THROUGH A LONG GATE 3 TIMES"
+							],
+							"ru": [
+								"НЕ ЕЗДИ В КОРОТКИЕ ВОРОТА",
+								"ПРОЕДЬ ДЛИННЫЕ ВОРОТА 3 РАЗА"
+							]
+						}
 					},
 					{
 						"id": "2-10",
@@ -1522,7 +1639,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"DRIVE THROUGH A GATE 8 TIMES"
+							],
+							"ru": [
+								"ПРОЕДЬ ВОРОТА 8 РАЗ"
+							]
+						}
 					}
 				]
 			},
@@ -1568,7 +1693,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"COMPLETE A RELAY"
+							],
+							"ru": [
+								"ПРОЙДИ РЕЛЕ"
+							]
+						}
 					},
 					{
 						"id": "3-02",
@@ -1605,7 +1738,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {}
 					},
 					{
 						"id": "3-03",
@@ -1641,7 +1775,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {}
 					},
 					{
 						"id": "3-04",
@@ -1677,7 +1812,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {}
 					},
 					{
 						"id": "3-05",
@@ -1713,7 +1849,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {}
 					},
 					{
 						"id": "3-06",
@@ -1749,7 +1886,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {}
 					},
 					{
 						"id": "3-07",
@@ -1785,7 +1923,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"CASH IN A HOT ZONE 2 TIMES"
+							],
+							"ru": [
+								"ЗАБЕРИ ОЧКИ ИЗ ГОРЯЧЕЙ ЗОНЫ 2 РАЗА"
+							]
+						}
 					},
 					{
 						"id": "3-08",
@@ -1821,7 +1967,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"DON'T LET A ZONE BURN YOUR POINTS"
+							],
+							"ru": [
+								"НЕ ДАЙ ЗОНЕ СЖЕЧЬ НАКОПЛЕННОЕ"
+							]
+						}
 					},
 					{
 						"id": "3-09",
@@ -1858,7 +2012,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {}
 					},
 					{
 						"id": "3-10",
@@ -1892,7 +2047,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 2
+						"intensity": 2,
+						"goal": {
+							"en": [
+								"COMPLETE A GATE, RELAY OR ZONE 4 TIMES"
+							],
+							"ru": [
+								"ВЫПОЛНИ ЗАДАНИЕ: ВОРОТА, РЕЛЕ ИЛИ ЗОНУ 4 РАЗА"
+							]
+						}
 					}
 				]
 			},
@@ -1932,7 +2095,15 @@
 						"start_phase": 1,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"HOP OVER SOMETHING WITH PHASE"
+							],
+							"ru": [
+								"ПЕРЕПРЫГНИ ПРЕГРАДУ ФАЗОЙ"
+							]
+						}
 					},
 					{
 						"id": "4-02",
@@ -1966,7 +2137,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"TAKE PHASE FROM A PORT"
+							],
+							"ru": [
+								"ВОЗЬМИ ФАЗУ ИЗ ПОРТА"
+							]
+						}
 					},
 					{
 						"id": "4-03",
@@ -1998,7 +2177,8 @@
 						"start_phase": 0,
 						"start_surge": true,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {}
 					},
 					{
 						"id": "4-04",
@@ -2033,7 +2213,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"TAKE SURGE FROM A PORT"
+							],
+							"ru": [
+								"ВОЗЬМИ ФОРСАЖ ИЗ ПОРТА"
+							]
+						}
 					},
 					{
 						"id": "4-05",
@@ -2063,7 +2251,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 1,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {}
 					},
 					{
 						"id": "4-06",
@@ -2098,7 +2287,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"CUT YOUR TAIL"
+							],
+							"ru": [
+								"СРЕЖЬ ХВОСТ"
+							]
+						}
 					},
 					{
 						"id": "4-07",
@@ -2134,7 +2331,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"TAKE A MODULE FROM A PORT 2 TIMES"
+							],
+							"ru": [
+								"ВОЗЬМИ МОДУЛЬ ИЗ ПОРТА 2 РАЗА"
+							]
+						}
 					},
 					{
 						"id": "4-08",
@@ -2171,7 +2376,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {}
 					},
 					{
 						"id": "4-09",
@@ -2206,7 +2412,15 @@
 						"start_phase": 1,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"HOP OVER SOMETHING WITH PHASE 2 TIMES"
+							],
+							"ru": [
+								"ПЕРЕПРЫГНИ ПРЕГРАДУ ФАЗОЙ 2 РАЗА"
+							]
+						}
 					},
 					{
 						"id": "4-10",
@@ -2244,7 +2458,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 2
+						"intensity": 2,
+						"goal": {
+							"en": [
+								"TAKE A MODULE FROM A PORT 3 TIMES"
+							],
+							"ru": [
+								"ВОЗЬМИ МОДУЛЬ ИЗ ПОРТА 3 РАЗА"
+							]
+						}
 					}
 				]
 			},
@@ -2290,7 +2512,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"PASS RIGHT NEXT TO THE WIRE 3 TIMES"
+							],
+							"ru": [
+								"ПРОЕДЬ ВПЛОТНУЮ К ПРОВОДУ 3 РАЗА"
+							]
+						}
 					},
 					{
 						"id": "5-02",
@@ -2329,7 +2559,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {}
 					},
 					{
 						"id": "5-03",
@@ -2370,7 +2601,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"DRIVE THROUGH A GATE 3 TIMES"
+							],
+							"ru": [
+								"ПРОЕДЬ ВОРОТА 3 РАЗА"
+							]
+						}
 					},
 					{
 						"id": "5-04",
@@ -2409,7 +2648,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"CASH IN A HOT ZONE 2 TIMES"
+							],
+							"ru": [
+								"ЗАБЕРИ ОЧКИ ИЗ ГОРЯЧЕЙ ЗОНЫ 2 РАЗА"
+							]
+						}
 					},
 					{
 						"id": "5-05",
@@ -2448,7 +2695,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"COMPLETE A RELAY"
+							],
+							"ru": [
+								"ПРОЙДИ РЕЛЕ"
+							]
+						}
 					},
 					{
 						"id": "5-06",
@@ -2487,7 +2742,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {}
 					},
 					{
 						"id": "5-07",
@@ -2529,7 +2785,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {}
 					},
 					{
 						"id": "5-08",
@@ -2568,7 +2825,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"DON'T LET A ZONE BURN YOUR POINTS"
+							],
+							"ru": [
+								"НЕ ДАЙ ЗОНЕ СЖЕЧЬ НАКОПЛЕННОЕ"
+							]
+						}
 					},
 					{
 						"id": "5-09",
@@ -2615,7 +2880,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {}
 					},
 					{
 						"id": "5-10",
@@ -2673,7 +2939,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 0
+						"intensity": 0,
+						"goal": {
+							"en": [
+								"COMPLETE A GATE, RELAY OR ZONE 4 TIMES"
+							],
+							"ru": [
+								"ВЫПОЛНИ ЗАДАНИЕ: ВОРОТА, РЕЛЕ ИЛИ ЗОНУ 4 РАЗА"
+							]
+						}
 					}
 				]
 			},
@@ -2724,7 +2998,8 @@
 						"start_phase": 0,
 						"start_surge": true,
 						"start_cut": 0,
-						"intensity": 3
+						"intensity": 3,
+						"goal": {}
 					},
 					{
 						"id": "6-02",
@@ -2763,7 +3038,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 1,
-						"intensity": 3
+						"intensity": 3,
+						"goal": {}
 					},
 					{
 						"id": "6-03",
@@ -2804,7 +3080,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 3
+						"intensity": 3,
+						"goal": {
+							"en": [
+								"DON'T DROP BELOW ×3"
+							],
+							"ru": [
+								"НЕ ОПУСКАЙСЯ НИЖЕ ×3"
+							]
+						}
 					},
 					{
 						"id": "6-04",
@@ -2850,7 +3134,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 3
+						"intensity": 3,
+						"goal": {}
 					},
 					{
 						"id": "6-05",
@@ -2894,7 +3179,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 3
+						"intensity": 3,
+						"goal": {
+							"en": [
+								"DON'T LET A ZONE BURN YOUR POINTS"
+							],
+							"ru": [
+								"НЕ ДАЙ ЗОНЕ СЖЕЧЬ НАКОПЛЕННОЕ"
+							]
+						}
 					},
 					{
 						"id": "6-06",
@@ -2936,7 +3229,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 3
+						"intensity": 3,
+						"goal": {
+							"en": [
+								"DRIVE THROUGH A GATE 3 TIMES"
+							],
+							"ru": [
+								"ПРОЕДЬ ВОРОТА 3 РАЗА"
+							]
+						}
 					},
 					{
 						"id": "6-07",
@@ -2978,7 +3279,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 3
+						"intensity": 3,
+						"goal": {}
 					},
 					{
 						"id": "6-08",
@@ -3020,7 +3322,15 @@
 						"start_phase": 0,
 						"start_surge": true,
 						"start_cut": 0,
-						"intensity": 3
+						"intensity": 3,
+						"goal": {
+							"en": [
+								"DRIVE THROUGH A LONG GATE"
+							],
+							"ru": [
+								"ПРОЕДЬ ДЛИННЫЕ ВОРОТА"
+							]
+						}
 					},
 					{
 						"id": "6-09",
@@ -3059,7 +3369,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 3
+						"intensity": 3,
+						"goal": {}
 					},
 					{
 						"id": "6-10",
@@ -3098,7 +3409,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 4
+						"intensity": 4,
+						"goal": {
+							"en": [
+								"PUSH THE MULTIPLIER TO ×5"
+							],
+							"ru": [
+								"РАЗГОНИ МНОЖИТЕЛЬ ДО ×5"
+							]
+						}
 					}
 				]
 			},
@@ -3145,7 +3464,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 5
+						"intensity": 5,
+						"goal": {}
 					},
 					{
 						"id": "7-02",
@@ -3183,7 +3503,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 5
+						"intensity": 5,
+						"goal": {}
 					},
 					{
 						"id": "7-03",
@@ -3222,7 +3543,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 5
+						"intensity": 5,
+						"goal": {
+							"en": [
+								"REACH ×2 WITHIN 25 S, THEN DON'T DROP BELOW IT"
+							],
+							"ru": [
+								"НАБЕРИ ×2 ЗА 25 С И НЕ ОПУСКАЙСЯ НИЖЕ"
+							]
+						}
 					},
 					{
 						"id": "7-04",
@@ -3261,7 +3590,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 5
+						"intensity": 5,
+						"goal": {}
 					},
 					{
 						"id": "7-05",
@@ -3309,7 +3639,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 5
+						"intensity": 5,
+						"goal": {
+							"en": [
+								"DON'T LET A ZONE BURN YOUR POINTS"
+							],
+							"ru": [
+								"НЕ ДАЙ ЗОНЕ СЖЕЧЬ НАКОПЛЕННОЕ"
+							]
+						}
 					},
 					{
 						"id": "7-06",
@@ -3348,7 +3686,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 5
+						"intensity": 5,
+						"goal": {}
 					},
 					{
 						"id": "7-07",
@@ -3387,7 +3726,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 5
+						"intensity": 5,
+						"goal": {
+							"en": [
+								"DON'T DROP BELOW ×3"
+							],
+							"ru": [
+								"НЕ ОПУСКАЙСЯ НИЖЕ ×3"
+							]
+						}
 					},
 					{
 						"id": "7-08",
@@ -3422,7 +3769,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 5
+						"intensity": 5,
+						"goal": {}
 					},
 					{
 						"id": "7-09",
@@ -3465,7 +3813,8 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 7
+						"intensity": 7,
+						"goal": {}
 					},
 					{
 						"id": "7-10",
@@ -3508,7 +3857,15 @@
 						"start_phase": 0,
 						"start_surge": false,
 						"start_cut": 0,
-						"intensity": 7
+						"intensity": 7,
+						"goal": {
+							"en": [
+								"PUSH THE MULTIPLIER TO ×6"
+							],
+							"ru": [
+								"РАЗГОНИ МНОЖИТЕЛЬ ДО ×6"
+							]
+						}
 					}
 				]
 			}
@@ -5596,8 +5953,8 @@
 			"ru": "ЭКЗАМЕН: ПЕРЕГРУЗКА"
 		},
 		"REACH X5": {
-			"en": "PUSH THE MULTIPLIER TO ×5",
-			"ru": "РАЗГОНИ МНОЖИТЕЛЬ ДО ×5"
+			"en": "AT ×5 EVERY POINT COUNTS FIVE TIMES",
+			"ru": "НА ×5 КАЖДОЕ ОЧКО СТОИТ ВПЯТЕРО"
 		},
 		"MELTDOWN": {
 			"en": "MELTDOWN",
@@ -6610,6 +6967,162 @@
 		"WN_018_TEXT": {
 			"en": "CLEANER LETTERING EVERYWHERE. THEMES: USE THEME TAKES YOU STRAIGHT BACK TO THE MENU.",
 			"ru": "БУКВЫ СТАЛИ ЧИЩЕ. ТЕМЫ: ВЫБОР ТЕМЫ СРАЗУ ВОЗВРАЩАЕТ В МЕНЮ."
+		},
+		"GOAL": {
+			"en": "GOAL",
+			"ru": "ЗАДАЧА"
+		},
+		"GOAL_RULE": {
+			"en": "STARS COME FROM POINTS, BUT ONLY WITH THE GOAL MET",
+			"ru": "ЗВЁЗДЫ ДАЮТСЯ ЗА ОЧКИ, НО ТОЛЬКО ЕСЛИ ЗАДАЧА ВЫПОЛНЕНА"
+		},
+		"GOAL_HOLD": {
+			"en": "DON'T DROP BELOW ×%d",
+			"ru": "НЕ ОПУСКАЙСЯ НИЖЕ ×%d"
+		},
+		"GOAL_HOLD_BY": {
+			"en": "REACH ×%d WITHIN %d S, THEN DON'T DROP BELOW IT",
+			"ru": "НАБЕРИ ×%d ЗА %d С И НЕ ОПУСКАЙСЯ НИЖЕ"
+		},
+		"GOAL_HOLD_REACH": {
+			"en": "REACH ×%d, THEN DON'T DROP BELOW IT",
+			"ru": "НАБЕРИ ×%d И НЕ ОПУСКАЙСЯ НИЖЕ"
+		},
+		"GOAL_REACH": {
+			"en": "PUSH THE MULTIPLIER TO ×%d",
+			"ru": "РАЗГОНИ МНОЖИТЕЛЬ ДО ×%d"
+		},
+		"GOAL_HUD_HOLD": {
+			"en": "KEEP ×%d",
+			"ru": "НЕ НИЖЕ ×%d"
+		},
+		"GOAL_HUD_REACH": {
+			"en": "REACH ×%d",
+			"ru": "НАБЕРИ ×%d"
+		},
+		"GOAL_TIMES_ONE": {
+			"en": "%d TIME",
+			"ru": "%d РАЗ"
+		},
+		"GOAL_TIMES_FEW": {
+			"en": "%d TIMES",
+			"ru": "%d РАЗА"
+		},
+		"GOAL_TIMES_MANY": {
+			"en": "%d TIMES",
+			"ru": "%d РАЗ"
+		},
+		"GOAL_DO_GRAZE": {
+			"en": "MAKE A CLOSE CALL",
+			"ru": "ПРОЕЗЖАЙ ВПРИТИРКУ"
+		},
+		"GOAL_DO_SQUEEZE": {
+			"en": "DO A SQUEEZE",
+			"ru": "СДЕЛАЙ ЗАЖИМ"
+		},
+		"GOAL_DO_THREAD": {
+			"en": "SLIP THROUGH A GAP",
+			"ru": "ПРОСКОЧИ СКВОЗЬ ЩЕЛЬ"
+		},
+		"GOAL_DO_NEEDLE": {
+			"en": "DRIVE A LONG CORRIDOR",
+			"ru": "ПРОЙДИ ДЛИННЫЙ КОРИДОР"
+		},
+		"GOAL_DO_GATE": {
+			"en": "DRIVE THROUGH A GATE",
+			"ru": "ПРОЕДЬ ВОРОТА"
+		},
+		"GOAL_DO_LONG_GATE": {
+			"en": "DRIVE THROUGH A LONG GATE",
+			"ru": "ПРОЕДЬ ДЛИННЫЕ ВОРОТА"
+		},
+		"GOAL_DO_EVENT": {
+			"en": "COMPLETE A GATE, RELAY OR ZONE",
+			"ru": "ВЫПОЛНИ ЗАДАНИЕ: ВОРОТА, РЕЛЕ ИЛИ ЗОНУ"
+		},
+		"GOAL_DO_RELAY": {
+			"en": "COMPLETE A RELAY",
+			"ru": "ПРОЙДИ РЕЛЕ"
+		},
+		"GOAL_DO_CASH": {
+			"en": "CASH IN A HOT ZONE",
+			"ru": "ЗАБЕРИ ОЧКИ ИЗ ГОРЯЧЕЙ ЗОНЫ"
+		},
+		"GOAL_DO_SKIM": {
+			"en": "PASS RIGHT NEXT TO THE WIRE",
+			"ru": "ПРОЕДЬ ВПЛОТНУЮ К ПРОВОДУ"
+		},
+		"GOAL_DO_MODULE": {
+			"en": "TAKE A MODULE FROM A PORT",
+			"ru": "ВОЗЬМИ МОДУЛЬ ИЗ ПОРТА"
+		},
+		"GOAL_DO_PICK_PHASE": {
+			"en": "TAKE PHASE FROM A PORT",
+			"ru": "ВОЗЬМИ ФАЗУ ИЗ ПОРТА"
+		},
+		"GOAL_DO_PICK_SURGE": {
+			"en": "TAKE SURGE FROM A PORT",
+			"ru": "ВОЗЬМИ ФОРСАЖ ИЗ ПОРТА"
+		},
+		"GOAL_DO_PICK_CUT": {
+			"en": "TAKE CUT FROM A PORT",
+			"ru": "ВОЗЬМИ СРЕЗ ИЗ ПОРТА"
+		},
+		"GOAL_DO_HOP": {
+			"en": "HOP OVER SOMETHING WITH PHASE",
+			"ru": "ПЕРЕПРЫГНИ ПРЕГРАДУ ФАЗОЙ"
+		},
+		"GOAL_DO_CUT": {
+			"en": "CUT YOUR TAIL",
+			"ru": "СРЕЖЬ ХВОСТ"
+		},
+		"GOAL_NO_SHORT_GATE": {
+			"en": "NEVER TAKE THE SHORT GATE",
+			"ru": "НЕ ЕЗДИ В КОРОТКИЕ ВОРОТА"
+		},
+		"GOAL_NO_BURN": {
+			"en": "DON'T LET A ZONE BURN YOUR POINTS",
+			"ru": "НЕ ДАЙ ЗОНЕ СЖЕЧЬ НАКОПЛЕННОЕ"
+		},
+		"GOAL_NO_EVENT_FAIL": {
+			"en": "DON'T FAIL A GATE, RELAY OR ZONE",
+			"ru": "НЕ ПРОВАЛИ НИ ОДНОГО ЗАДАНИЯ"
+		},
+		"MEDAL_KEEPS_GOAL": {
+			"en": "IT STAYS UNLESS YOU BREAK THE GOAL",
+			"ru": "ЭТО ТВОЁ, ЕСЛИ НЕ ПРОВАЛИШЬ ЗАДАЧУ"
+		},
+		"END_WALL": {
+			"en": "CRASHED INTO THE WALL",
+			"ru": "УДАР О СТЕНУ"
+		},
+		"END_SELF": {
+			"en": "CRASHED INTO YOUR BODY",
+			"ru": "УДАР О СВОЁ ТЕЛО"
+		},
+		"END_WIRE": {
+			"en": "CRASHED INTO AN OBSTACLE",
+			"ru": "УДАР О ПРЕГРАДУ"
+		},
+		"END_TIME": {
+			"en": "TIME'S UP",
+			"ru": "ВРЕМЯ ВЫШЛО"
+		},
+		"END_CLEAR": {
+			"en": "PERFECT: THE LEVEL ENDS EARLY",
+			"ru": "ИДЕАЛ: УРОВЕНЬ ЗАВЕРШЁН ДОСРОЧНО"
+		},
+		"END_FINISH": {
+			"en": "ENDED FROM PAUSE",
+			"ru": "ЗАВЕРШЕНО ИЗ ПАУЗЫ"
+		},
+		"END_GOAL_BROKEN": {
+			"en": "GOAL BROKEN",
+			"ru": "ЗАДАЧА ПРОВАЛЕНА"
+		},
+		"END_GOAL_MISSED": {
+			"en": "GOAL NOT MET",
+			"ru": "ЗАДАЧА НЕ ВЫПОЛНЕНА"
 		}
 	}
 }
