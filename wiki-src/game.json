@@ -1,5 +1,5 @@
 {
-	"generated": "2026-10-16 21:22:17 UTC",
+	"generated": "2026-10-16 21:29:14 UTC",
 	"version": "0.1.8",
 	"GameSim": {
 		"RULES_VERSION": 10,
@@ -1942,7 +1942,7 @@
 						"how": "WHILE YOUR HEAD IS IN THE SQUARE, POINTS BANK UP. LEAVE BEFORE IT OVERLOADS",
 						"demo": "hot",
 						"targets": [
-							550,
+							925,
 							1500,
 							3175
 						],
@@ -1987,7 +1987,7 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							625,
+							1050,
 							1425,
 							3300
 						],
@@ -2862,7 +2862,7 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							625,
+							925,
 							1875,
 							4050
 						],
@@ -3218,7 +3218,7 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1175,
+							1825,
 							3500,
 							6275
 						],
@@ -3271,7 +3271,7 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							875,
+							1225,
 							2650,
 							4950
 						],
@@ -3516,7 +3516,7 @@
 						"how": "",
 						"demo": "",
 						"targets": [
-							1600,
+							1725,
 							4925,
 							9125
 						],
@@ -7329,6 +7329,10 @@
 		"PLUS_SUB": {
 			"en": "NEARCOIL PLUS  •  %d RANKED RUNS A DAY",
 			"ru": "NEARCOIL PLUS  •  %d ЗАБЕГОВ НА РЕКОРД В ДЕНЬ"
+		},
+		"RUNS_LEFT": {
+			"en": "FREE RUNS TODAY: %d",
+			"ru": "СЕГОДНЯ БЕСПЛАТНО: %d"
 		}
 	}
 }
