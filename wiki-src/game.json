@@ -1,6 +1,6 @@
 {
-	"generated": "2026-10-16 21:29:14 UTC",
-	"version": "0.1.8",
+	"generated": "2026-10-17 11:15:19 UTC",
+	"version": "0.1.9",
 	"GameSim": {
 		"RULES_VERSION": 10,
 		"MIN_RULES_VERSION": 7,
@@ -7041,6 +7041,26 @@
 		"WN_017_WEEKLY": {
 			"en": "PLAY THE DAILY CHALLENGE ON 5 DAYS OF A WEEK FOR +1 FUSE. YOUR DAILY HISTORY IS IN BADGES.",
 			"ru": "ИСПЫТАНИЕ ДНЯ 5 ДНЕЙ ЗА НЕДЕЛЮ: +1 ПРЕДОХРАНИТЕЛЬ. ИСТОРИЯ ИСПЫТАНИЙ — В «ДОСТИЖЕНИЯХ»."
+		},
+		"WN_019_GOALS": {
+			"en": "CAMPAIGN: MANY LEVELS NOW SET A TASK ON TOP OF THE SCORE - HOLD A MULTIPLIER, MAKE CLOSE CALLS, CLEAR GATES.",
+			"ru": "КАМПАНИЯ: У МНОГИХ УРОВНЕЙ ПОЯВИЛАСЬ ЗАДАЧА ПОМИМО ОЧКОВ - УДЕРЖАТЬ МНОЖИТЕЛЬ, НАБРАТЬ СБЛИЖЕНИЯ, ПРОЙТИ ВОРОТА."
+		},
+		"WN_019_RANKED": {
+			"en": "RANKED: 5 FREE RUNS A DAY (10 WITH PLUS), UP TO 15 WITH EXTRA RUN PACKS.",
+			"ru": "НА РЕКОРД: 5 БЕСПЛАТНЫХ ЗАБЕГОВ В ДЕНЬ (10 С PLUS), ДО 15 С НАБОРАМИ ДОПОЛНИТЕЛЬНЫХ ЗАБЕГОВ."
+		},
+		"WN_019_BOARDS": {
+			"en": "SWIPE A LEADERBOARD TO FLIP BETWEEN BOARDS.",
+			"ru": "ТАБЛИЦЫ РЕЙТИНГА ЛИСТАЮТСЯ СВАЙПОМ."
+		},
+		"WN_019_VOLUME": {
+			"en": "ANDROID: STEER WITH THE VOLUME BUTTONS (SETTINGS > CONTROLS).",
+			"ru": "ANDROID: ПОВОРАЧИВАТЬ МОЖНО КНОПКАМИ ГРОМКОСТИ (НАСТРОЙКИ > УПРАВЛЕНИЕ)."
+		},
+		"WN_019_GATES": {
+			"en": "DRIFTING GATES SHOW WHERE THEY WILL SLIDE, OLD RELAY POSTS FADE AWAY. SHARPER LETTERING, CLEARER HINTS AND DEMOS.",
+			"ru": "ПОДВИЖНЫЕ ВОРОТА ЗАРАНЕЕ ПОКАЗЫВАЮТ, КУДА СДВИНУТСЯ. СТАРЫЕ СТОЛБЫ РЕЛЕ ГАСНУТ. БУКВЫ ЧЁТЧЕ, ПОДСКАЗКИ И ДЕМО ПОНЯТНЕЕ."
 		},
 		"WN_018_PROFILE": {
 			"en": "PLAYER PROFILES: RECORDS, ACHIEVEMENTS AND STATS ON ONE PAGE. TAP A PLAYER ON THE LEADERBOARD TO SEE THEIRS.",
