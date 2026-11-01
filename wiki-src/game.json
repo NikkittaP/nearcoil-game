@@ -1,5 +1,5 @@
 {
-	"generated": "2026-10-31 17:11:48 UTC",
+	"generated": "2026-11-01 15:49:31 UTC",
 	"version": "0.1.20",
 	"GameSim": {
 		"RULES_VERSION": 10,
@@ -596,6 +596,22 @@
 	},
 	"DailySeed": {
 		"DAILY_TAG": "NEARCOIL_DAILY_v10_"
+	},
+	"Flick": {
+		"CHAIN_K": 1.2,
+		"MAX_TURNS": 2,
+		"SAME_COS": 0.5,
+		"COURSE_COS": 0.866,
+		"CONT_K": 1.5,
+		"CONT_AXIS": 0.466,
+		"CONT_LONG": 3.0,
+		"CONT_AXIS_LONG": 0.839,
+		"CONT_BEND": 0.2,
+		"CONT_JITTER": 0.25,
+		"TRAIL_MAX": 48,
+		"WEAVE_LEAN": 0.15,
+		"REST_MS": 300,
+		"REST_R": 0.3
 	},
 	"Main": {
 		"HUD_H": 166.0,
@@ -6272,25 +6288,25 @@
 			"sv": "UNDER EN RUNDA: VOLYM + SVÄNGER HÖGER, VOLYM - SVÄNGER VÄNSTER"
 		},
 		"CTRL_SWIPE_HELP": {
-			"en": "FLICK THE WAY YOU WANT TO GO. SHORT IS ENOUGH.",
-			"ru": "СМАХНИ ТУДА, КУДА ХОЧЕШЬ. ХВАТИТ КОРОТКОГО.",
-			"de": "WISCH IN DIE RICHTUNG, IN DIE DU WILLST. KURZ REICHT.",
-			"es": "DESLIZA HACIA DONDE QUIERAS IR. BASTA CON UN TOQUE CORTO.",
-			"fr": "GLISSE DANS LA DIRECTION VOULUE. UN PETIT GESTE SUFFIT.",
-			"it": "SCORRI VERSO DOVE VUOI ANDARE. BASTA UN GESTO BREVE.",
-			"pt": "DESLIZE PARA ONDE QUER IR. UM GESTO CURTO BASTA.",
-			"nl": "VEEG DE KANT OP DIE JE WILT. KORT IS GENOEG.",
-			"pl": "PRZESUŃ TAM, GDZIE CHCESZ JECHAĆ. WYSTARCZY KRÓTKO.",
-			"tr": "GİTMEK İSTEDİĞİN YÖNE KAYDIR. KISA YETER.",
-			"id": "USAP KE ARAH YANG KAMU MAU. SINGKAT SAJA CUKUP.",
-			"vi": "VUỐT VỀ HƯỚNG BẠN MUỐN ĐI. VUỐT NGẮN LÀ ĐỦ.",
-			"ja": "行きたい方向にフリック。短くてOK。",
-			"ko": "가고 싶은 방향으로 스와이프. 짧게도 충분합니다.",
-			"zh_CN": "向想去的方向滑动。轻轻一划就够。",
-			"zh_TW": "往想去的方向滑。輕輕一滑就夠。",
-			"th": "ปัดไปทางที่อยากไป ปัดสั้นๆ ก็พอ",
-			"hi": "जिधर जाना है उधर स्वाइप करो। छोटा स्वाइप काफ़ी है।",
-			"sv": "SVEP DIT DU VILL. ETT KORT SVEP RÄCKER."
+			"en": "FLICK THE WAY YOU WANT TO GO, WITHOUT LIFTING.",
+			"ru": "СМАХИВАЙ ТУДА, КУДА ХОЧЕШЬ, НЕ ОТРЫВАЯ ПАЛЬЦА.",
+			"de": "WISCH IN DIE RICHTUNG, IN DIE DU WILLST, OHNE ABZUSETZEN.",
+			"es": "DESLIZA HACIA DONDE QUIERAS IR, SIN LEVANTAR EL DEDO.",
+			"fr": "GLISSE DANS LA DIRECTION VOULUE, SANS LEVER LE DOIGT.",
+			"it": "SCORRI VERSO DOVE VUOI ANDARE, SENZA ALZARE IL DITO.",
+			"pt": "DESLIZE PARA ONDE QUER IR, SEM LEVANTAR O DEDO.",
+			"nl": "VEEG DE KANT OP DIE JE WILT, ZONDER LOS TE LATEN.",
+			"pl": "PRZESUŃ TAM, GDZIE CHCESZ JECHAĆ, BEZ ODRYWANIA PALCA.",
+			"tr": "GİTMEK İSTEDİĞİN YÖNE KAYDIR, PARMAĞINI KALDIRMADAN.",
+			"id": "USAP KE ARAH YANG KAMU MAU, TANPA MENGANGKAT JARI.",
+			"vi": "VUỐT VỀ HƯỚNG BẠN MUỐN ĐI, KHÔNG CẦN NHẤC NGÓN TAY.",
+			"ja": "行きたい方向にフリック。指は離さなくてOK。",
+			"ko": "가고 싶은 방향으로 스와이프. 손가락을 떼지 않아도 됩니다.",
+			"zh_CN": "向想去的方向滑动，手指不必离开屏幕。",
+			"zh_TW": "往想去的方向滑，手指不必離開螢幕。",
+			"th": "ปัดไปทางที่อยากไป ไม่ต้องยกนิ้ว",
+			"hi": "जिधर जाना है उधर स्वाइप करो, उँगली उठाए बिना।",
+			"sv": "SVEP DIT DU VILL, UTAN ATT LYFTA FINGRET."
 		},
 		"WATCH_BEST": {
 			"en": "BEST RUN",
