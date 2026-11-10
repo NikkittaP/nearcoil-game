@@ -497,6 +497,7 @@ def add_toc(body):
 SHELL = """<!DOCTYPE html>
 <html lang="{lang}">
 <head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="5e2cd663-6ad2-4dd6-bb33-b5962e952df7"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{head_title}</title>
