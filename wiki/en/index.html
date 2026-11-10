@@ -8,29 +8,34 @@
 <link rel="canonical" href="https://nikkittap.github.io/nearcoil-game/wiki/en/index.html">
 <link rel="alternate" hreflang="en" href="https://nikkittap.github.io/nearcoil-game/wiki/en/index.html">
 <link rel="alternate" hreflang="ru" href="https://nikkittap.github.io/nearcoil-game/wiki/ru/index.html">
-<meta name="theme-color" content="#0d0e12">
+<meta name="theme-color" content="#111418">
 <link rel="icon" href="../../img/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../img/favicon-180.png">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NEARCOIL guide">
 <meta property="og:description" content="How NEARCOIL works: close calls, charge and the multiplier, maneuvers, Circuit Events, modules, game modes and all 70 Campaign levels.">
 <meta property="og:image" content="https://nikkittap.github.io/nearcoil-game/img/feature_big.jpg">
-<link rel="stylesheet" href="../wiki.css">
+<link rel="stylesheet" href="../../assets/studio.css?v=2">
+<link rel="stylesheet" href="../wiki.css?v=2">
+<script src="../../assets/studio.js?v=2" defer></script>
 </head>
-<body>
-<header class="top">
+<body id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="studio-bar"><div class="studio-bar-inner"><a class="studio-brand" href="/" data-local="nikkittap.github.io/index.html" aria-label="Nikita Petrov Apps home">Nikita Petrov Apps</a><nav class="studio-nav" aria-label="Studio navigation"><a href="/#projects" data-local="nikkittap.github.io/index.html#projects">All projects</a><a href="../../">NEARCOIL</a></nav></div></header>
+<div class="top">
   <div class="bar">
     <a class="brand" href="index.html"><img src="../../img/favicon-32.png" width="22" height="22" alt="">NEARCOIL <span>Guide</span></a>
-    <nav class="links"><a href="../../">NEARCOIL</a><a href="../ru/index.html" hreflang="ru" lang="ru">Русский</a></nav>
+    <nav class="links" aria-label="Guide"><a href="../../">NEARCOIL</a><a href="../ru/index.html" hreflang="ru" lang="ru">Русский</a></nav>
   </div>
-</header>
+</div>
 <div class="layout">
   <aside class="side">
-    <details open><summary>Pages</summary>
-    <ol><li class="on"><a href="index.html">NEARCOIL guide</a></li><li><a href="basics.html">Board, controls, speed</a></li><li><a href="close-calls.html">Close calls and maneuvers</a></li><li><a href="charge.html">Charge and multiplier</a></li><li><a href="events.html">Circuit Events</a></li><li><a href="modules.html">Modules</a></li><li><a href="modes.html">Game modes</a></li><li><a href="achievements.html">Achievements and profile</a></li><li><a href="campaign.html">All Campaign levels</a></li><li><a href="advanced.html">Advanced mechanics</a></li><li><a href="glossary.html">Glossary</a></li></ol>
+    <details open data-collapse-mobile><summary>Pages</summary>
+    <nav aria-label="Pages"><ol><li class="on"><a href="index.html" aria-current="page">NEARCOIL guide</a></li><li><a href="basics.html">Board, controls, speed</a></li><li><a href="close-calls.html">Close calls and maneuvers</a></li><li><a href="charge.html">Charge and multiplier</a></li><li><a href="events.html">Circuit Events</a></li><li><a href="modules.html">Modules</a></li><li><a href="modes.html">Game modes</a></li><li><a href="achievements.html">Achievements and profile</a></li><li><a href="campaign.html">All Campaign levels</a></li><li><a href="advanced.html">Advanced mechanics</a></li><li><a href="glossary.html">Glossary</a></li></ol></nav>
     </details>
   </aside>
-  <main class="content">
+  <main class="content" id="main">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/" data-local="nikkittap.github.io/index.html">All projects</a><span aria-hidden="true">/</span><a href="../../">NEARCOIL</a><span aria-hidden="true">/</span><span aria-current="page">Guide</span></nav>
     <h1>NEARCOIL guide</h1>
     <p class="lead">Classic Snake with one dangerous rule: <b>passing right next to your own body charges a multiplier</b>. It is easy to start: play close to your own body, build the multiplier, pull off risky maneuvers, survive Circuit Events and keep the chain going. This guide explains what each word on the screen means and how the score is made.</p>
     <nav class="toc"><b>On this page</b><ol><li><a href="#rule">The one rule</a></li><li><a href="#screen">What is on the screen</a></li><li><a href="#pages">Sections</a></li><li><a href="#how-score">Where points come from</a></li></ol></nav>
@@ -67,13 +72,14 @@
 
 <h2 id="how-score">Where points come from</h2>
 <p>Every source below is multiplied by the current multiplier at the moment it is scored.</p>
-<div class="tw"><table class=""><thead><tr><th>Source</th><th>Base points</th></tr></thead><tbody><tr><td>Eating a node</td><td>10</td></tr><tr><td>Close call (GRAZE), per body cell</td><td>2</td></tr><tr><td>SQUEEZE / THREAD / NEEDLE</td><td>15, 60, 150 + 4 per cell of the gap, ×1–×2 for a chain</td></tr><tr><td>Gates passed</td><td>30, 60, 120 (1st / 2nd / 3rd gate)</td></tr><tr><td>Relay</td><td>15 per terminal, 90 on completion</td></tr><tr><td>Hot zone</td><td>what it banked, paid on leaving</td></tr><tr><td>Live wire</td><td>25 per skim, 100 when beaten</td></tr><tr><td>PHASE hop</td><td>50</td></tr></tbody></table></div>
+<div class="tw" role="region" tabindex="0" aria-label="Data table"><table class=""><thead><tr><th>Source</th><th>Base points</th></tr></thead><tbody><tr><td>Eating a node</td><td>10</td></tr><tr><td>Close call (GRAZE), per body cell</td><td>2</td></tr><tr><td>SQUEEZE / THREAD / NEEDLE</td><td>15, 60, 150 + 4 per cell of the gap, ×1–×2 for a chain</td></tr><tr><td>Gates passed</td><td>30, 60, 120 (1st / 2nd / 3rd gate)</td></tr><tr><td>Relay</td><td>15 per terminal, 90 on completion</td></tr><tr><td>Hot zone</td><td>what it banked, paid on leaving</td></tr><tr><td>Live wire</td><td>25 per skim, 100 when beaten</td></tr><tr><td>PHASE hop</td><td>50</td></tr></tbody></table></div>
 <p>Points are never taken away: a crash ends the run, but the score you made stays. The multiplier is what you risk.</p>
 
     <nav class="pager"><span></span><a href="basics.html">Board, controls, speed →</a></nav>
   </main>
 </div>
 <footer class="foot">
+  <p><a href="/" data-local="nikkittap.github.io/index.html">Nikita Petrov Apps</a> · <a href="../../">NEARCOIL</a> · <a href="index.html">Guide</a></p>
   <p>Numbers and screenshots are taken from the game, version 0.1.23 (2026-11-09).</p>
   <p><a href="https://play.google.com/store/apps/details?id=com.nikitapetrovapps.nearcoil">Get it on Google Play</a> · <a href="../../privacy/">Privacy policy</a> · <a href="mailto:nikitapetrovapps@gmail.com">nikitapetrovapps@gmail.com</a></p>
 </footer>

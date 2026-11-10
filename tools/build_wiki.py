@@ -55,6 +55,7 @@ def wrap(v):
 
 UI = {
     "en": {
+        "table_label": "Data table", "projects": "All projects", "skip": "Skip to content", "breadcrumb": "Breadcrumb", "studio_nav": "Studio navigation",
         "wiki": "Guide", "home": "NEARCOIL", "contents": "On this page", "lang": "Русский",
         "footer": "Numbers and screenshots are taken from the game, version {v} ({d}).",
         "play": "Get it on Google Play", "privacy": "Privacy policy", "menu": "Pages",
@@ -74,6 +75,7 @@ UI = {
         "ach": "Achievement", "ach_what": "What it asks", "tier": "Tier", "hidden": "hidden: shows as ??? until you earn it",
     },
     "ru": {
+        "table_label": "Таблица данных", "projects": "Все проекты", "skip": "К содержимому", "breadcrumb": "Навигационная цепочка", "studio_nav": "Навигация сайта",
         "wiki": "Справочник", "home": "NEARCOIL", "contents": "На этой странице", "lang": "English",
         "footer": "Числа и скриншоты взяты из игры, версия {v} ({d}).",
         "play": "Скачать в Google Play", "privacy": "Политика конфиденциальности", "menu": "Разделы",
@@ -179,7 +181,7 @@ class Page:
     def table(self, head, rows, cls=""):
         h = "".join(f"<th>{c}</th>" for c in head)
         b = "".join("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>" for r in rows)
-        return Safe(f'<div class="tw"><table class="{cls}"><thead><tr>{h}</tr></thead><tbody>{b}</tbody></table></div>')
+        return Safe(f'<div class="tw" role="region" tabindex="0" aria-label="{self.ui["table_label"]}"><table class="{cls}"><thead><tr>{h}</tr></thead><tbody>{b}</tbody></table></div>')
 
     def flow_table(self):
         u = self.ui
@@ -501,29 +503,34 @@ SHELL = """<!DOCTYPE html>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{site}wiki/{lang}/{file}">
 {alternates}
-<meta name="theme-color" content="#0d0e12">
+<meta name="theme-color" content="#111418">
 <link rel="icon" href="../../img/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../img/favicon-180.png">
 <meta property="og:type" content="article">
 <meta property="og:title" content="{head_title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:image" content="{site}img/feature_big.jpg">
-<link rel="stylesheet" href="../wiki.css">
+<link rel="stylesheet" href="../../assets/studio.css?v=2">
+<link rel="stylesheet" href="../wiki.css?v=2">
+<script src="../../assets/studio.js?v=2" defer></script>
 </head>
-<body>
-<header class="top">
+<body id="top">
+<a class="skip-link" href="#main">{skip}</a>
+<header class="studio-bar"><div class="studio-bar-inner"><a class="studio-brand" href="/" data-local="nikkittap.github.io/index.html" aria-label="Nikita Petrov Apps home">Nikita Petrov Apps</a><nav class="studio-nav" aria-label="{studio_nav}"><a href="/#projects" data-local="nikkittap.github.io/index.html#projects">{projects}</a><a href="../../">NEARCOIL</a></nav></div></header>
+<div class="top">
   <div class="bar">
     <a class="brand" href="index.html"><img src="../../img/favicon-32.png" width="22" height="22" alt="">NEARCOIL <span>{wiki}</span></a>
-    <nav class="links"><a href="../../">{home_label}</a><a href="../{other}/{file}" hreflang="{other}" lang="{other}">{lang_label}</a></nav>
+    <nav class="links" aria-label="{wiki}"><a href="../../">{home_label}</a><a href="../{other}/{file}" hreflang="{other}" lang="{other}">{lang_label}</a></nav>
   </div>
-</header>
+</div>
 <div class="layout">
   <aside class="side">
-    <details open><summary>{menu}</summary>
-    <ol>{nav}</ol>
+    <details open data-collapse-mobile><summary>{menu}</summary>
+    <nav aria-label="{menu}"><ol>{nav}</ol></nav>
     </details>
   </aside>
-  <main class="content">
+  <main class="content" id="main">
+    <nav class="breadcrumbs" aria-label="{breadcrumb}"><a href="/" data-local="nikkittap.github.io/index.html">{projects}</a><span aria-hidden="true">/</span><a href="../../">NEARCOIL</a><span aria-hidden="true">/</span>{crumb}</nav>
     <h1>{title}</h1>
     {lead}
     {toc}
@@ -532,6 +539,7 @@ SHELL = """<!DOCTYPE html>
   </main>
 </div>
 <footer class="foot">
+  <p><a href="/" data-local="nikkittap.github.io/index.html">Nikita Petrov Apps</a> · <a href="../../">NEARCOIL</a> · <a href="index.html">{wiki}</a></p>
   <p>{footer}</p>
   <p><a href="https://play.google.com/store/apps/details?id=com.nikitapetrovapps.nearcoil">{play}</a> · <a href="../../privacy/">{privacy}</a> · <a href="mailto:nikitapetrovapps@gmail.com">nikitapetrovapps@gmail.com</a></p>
 </footer>
@@ -570,6 +578,8 @@ def build(check=False, langs=None):
             nav = "".join(
                 f'<li{" class=\"on\"" if s == slug else ""}><a href="{s}.html">{html.escape(metas[(lang, s)][0].get("title", s))}</a></li>'
                 for s in PAGES)
+            nav = nav.replace(f'href="{slug}.html"', f'href="{slug}.html" aria-current="page"')
+            crumb = f'<span aria-current="page">{ui["wiki"]}</span>' if slug == "index" else (f'<a href="index.html">{ui["wiki"]}</a><span aria-hidden="true">/</span><span aria-current="page">{html.escape(meta.get("title", slug))}</span>')
             prev_ = PAGES[i - 1] if i > 0 else None
             next_ = PAGES[i + 1] if i + 1 < len(PAGES) else None
             pager = '<nav class="pager">'
@@ -586,6 +596,7 @@ def build(check=False, langs=None):
                 lang=lang, other=other, title=html.escape(meta.get("title", slug)), wiki=ui["wiki"],
                 head_title=html.escape(meta["title"] if slug == "index" else f'{meta.get("title", slug)} — NEARCOIL {ui["wiki"]}'),
                 desc=html.escape(meta.get("description", "")), site=SITE, file=file, alternates=alternates,
+                skip=ui["skip"], projects=ui["projects"], breadcrumb=ui["breadcrumb"], studio_nav=ui["studio_nav"], crumb=crumb,
                 home_label=ui["home"], lang_label=ui["lang"], menu=ui["menu"], nav=nav, lead=lead, toc=toc,
                 body=html_body, pager=pager, play=ui["play"], privacy=ui["privacy"],
                 footer=ui["footer"].format(v=html.escape(data.get("version", "?")), d=html.escape(data.get("generated", "")[:10])))

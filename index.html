@@ -61,24 +61,26 @@ footer{padding:40px 0 60px; text-align:center; color:var(--muted); font-size:.9r
   .grid{grid-template-columns:1fr}
   .themes{grid-template-columns:repeat(3,1fr)}
 }
+
 </style>
 <meta name="google-site-verification" content="So_TVng6UCbM_l2oMc98kqteVNrKF6HWI7qK7xkyp5g" />
+  <link rel="stylesheet" href="assets/studio.css?v=2">
+  <link rel="stylesheet" href="assets/product.css?v=2">
+  <script src="assets/studio.js?v=2" defer></script>
 </head>
-<body>
+<body class="project-page project-near" id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="studio-bar"><div class="studio-bar-inner">
+  <a class="studio-brand" href="/" data-local="nikkittap.github.io/index.html" aria-label="Nikita Petrov Apps home">Nikita Petrov Apps</a>
+  <nav class="studio-nav" aria-label="Studio navigation"><a href="/#projects" data-local="nikkittap.github.io/index.html#projects">All projects</a><a class="studio-youtube" href="https://www.youtube.com/@NikitaPetrovApps">YouTube</a></nav>
+</div></div>
 
-<header>
+<header class="product-hero">
   <div class="wrap">
-    <span class="badge-pill">STAY CLOSE. SCORE MORE.</span>
-    <h1>Classic Snake. <span class="hot">One dangerous rule.</span></h1>
-    <p class="sub">Skim your own body and your score multiplies. Every Close Call charges the chain and fills a pot of points; eat to cash it in. Linger too long and you may not get out.</p>
-
-    <div class="hero-art">
-      <picture>
-        <source srcset="img/feature_big.webp" type="image/webp">
-        <img src="img/feature_big.jpg" width="1794" height="876"
-             alt="NEARCOIL wordmark next to a cream snake coiled inside its own body">
-      </picture>
-    </div>
+    <p class="product-identity"><img src="img/favicon-180.png" width="32" height="32" alt="">Android · Snake arcade</p>
+    <span class="badge-pill">Currently in closed testing</span>
+    <h1>NEARCOIL</h1>
+    <p class="sub">A Snake arcade game with close-call scoring. Move next to your own body to build the multiplier, then survive the run. Includes a campaign, ranked leaderboards, daily challenges, and replays.</p>
 
     <div class="cta-row">
       <a class="ghost accent" href="https://play.google.com/store/apps/details?id=com.nikitapetrovapps.nearcoil">Get it on Google Play</a>
@@ -88,24 +90,34 @@ footer{padding:40px 0 60px; text-align:center; color:var(--muted); font-size:.9r
     </div>
     <p class="note">Currently in closed testing — the Play link works once you've joined as a tester.</p>
   </div>
+<div class="wrap">
+
+    <div class="hero-art">
+      <picture>
+        <source srcset="img/feature_big.webp" type="image/webp">
+        <img src="img/feature_big.jpg" width="1794" height="876"
+             alt="NEARCOIL wordmark next to a cream snake coiled inside its own body">
+      </picture>
+    </div>
+</div>
 </header>
 
-<main>
+<main id="main">
   <div class="wrap">
     <section>
-      <h2>What's inside</h2>
+      <h2>Features</h2>
       <div class="grid">
-        <div class="card"><h3>CAMPAIGN</h3><p>70 hand-made levels in 7 chapters: gates, circuits, moving boards, power modules and a final meltdown. Up to three medals each.</p></div>
-        <div class="card"><h3>RANKED</h3><p>World, country and weekly leaderboards, with weekly leagues as the player base grows. Tap a name to watch how that run was played.</p></div>
-        <div class="card"><h3>DAILY CHALLENGE</h3><p>One board a day, the same for everyone. Three attempts count, then practice until tomorrow.</p></div>
-        <div class="card"><h3>REPLAYS AND CLIPS</h3><p>Watch any run at 1×, 2× or 4×, jump to the best moment, and share a result card or a short vertical video.</p></div>
-        <div class="card"><h3>ONE THUMB</h3><p>Flick the way you want to go, or tap the left / right half to turn. Smooth on 90 and 120 Hz screens.</p></div>
-        <div class="card"><h3>FAIR BY DESIGN</h3><p>No banners, no forced ads: the only ad is one you choose to watch for an extra Ranked run. Daily is always free, everyone has the same daily Ranked limit, and nothing you can buy changes the score.</p></div>
+        <div class="card"><h3>Campaign</h3><p>70 hand-made levels in 7 chapters: gates, circuits, moving boards, power modules and a final meltdown. Up to three medals each.</p></div>
+        <div class="card"><h3>Ranked</h3><p>World, country and weekly leaderboards, with weekly leagues as the player base grows. Tap a name to watch how that run was played.</p></div>
+        <div class="card"><h3>Daily challenge</h3><p>One board a day, the same for everyone. Three attempts count, then practice until tomorrow.</p></div>
+        <div class="card"><h3>Replays &amp; clips</h3><p>Watch any run at 1×, 2× or 4×, jump to the best moment, and share a result card or a short vertical video.</p></div>
+        <div class="card"><h3>Controls</h3><p>Flick the way you want to go, or tap the left / right half to turn. Smooth on 90 and 120 Hz screens.</p></div>
+        <div class="card"><h3>Ads &amp; purchases</h3><p>No banners, no forced ads: the only ad is one you choose to watch for an extra Ranked run. Daily is always free, everyone has the same daily Ranked limit, and nothing you can buy changes the score.</p></div>
       </div>
     </section>
 
     <section>
-      <h2>How it works</h2>
+      <h2>Game guide</h2>
       <p style="color:var(--muted); margin:0">Close calls, the multiplier, SQUEEZE / THREAD / NEEDLE, Circuit Events, modules and all 70 Campaign levels, with the exact numbers: read the <a href="wiki/en/index.html">game guide</a> · <a href="wiki/ru/index.html">справочник на русском</a>.</p>
     </section>
 
@@ -134,6 +146,7 @@ footer{padding:40px 0 60px; text-align:center; color:var(--muted); font-size:.9r
     <p>NEARCOIL · <a href="wiki/">Game guide</a> · <a href="privacy/">Privacy policy</a> · <a href="mailto:nikitapetrovapps@gmail.com">nikitapetrovapps@gmail.com</a></p>
     <p>© 2026 Nikita Petrov Apps · not affiliated with Google.</p>
   </div>
+  <p class="studio-footer-link"><a href="/" data-local="nikkittap.github.io/index.html">Nikita Petrov Apps</a></p>
 </footer>
 
 </body>

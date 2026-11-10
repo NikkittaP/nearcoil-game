@@ -8,29 +8,34 @@
 <link rel="canonical" href="https://nikkittap.github.io/nearcoil-game/wiki/ru/modules.html">
 <link rel="alternate" hreflang="en" href="https://nikkittap.github.io/nearcoil-game/wiki/en/modules.html">
 <link rel="alternate" hreflang="ru" href="https://nikkittap.github.io/nearcoil-game/wiki/ru/modules.html">
-<meta name="theme-color" content="#0d0e12">
+<meta name="theme-color" content="#111418">
 <link rel="icon" href="../../img/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../img/favicon-180.png">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Модули — NEARCOIL Справочник">
 <meta property="og:description" content="Модули NEARCOIL — как работают порты и что делают ФАЗА, ФОРСАЖ и СРЕЗ и что они приносят.">
 <meta property="og:image" content="https://nikkittap.github.io/nearcoil-game/img/feature_big.jpg">
-<link rel="stylesheet" href="../wiki.css">
+<link rel="stylesheet" href="../../assets/studio.css?v=2">
+<link rel="stylesheet" href="../wiki.css?v=2">
+<script src="../../assets/studio.js?v=2" defer></script>
 </head>
-<body>
-<header class="top">
+<body id="top">
+<a class="skip-link" href="#main">К содержимому</a>
+<header class="studio-bar"><div class="studio-bar-inner"><a class="studio-brand" href="/" data-local="nikkittap.github.io/index.html" aria-label="Nikita Petrov Apps home">Nikita Petrov Apps</a><nav class="studio-nav" aria-label="Навигация сайта"><a href="/#projects" data-local="nikkittap.github.io/index.html#projects">Все проекты</a><a href="../../">NEARCOIL</a></nav></div></header>
+<div class="top">
   <div class="bar">
     <a class="brand" href="index.html"><img src="../../img/favicon-32.png" width="22" height="22" alt="">NEARCOIL <span>Справочник</span></a>
-    <nav class="links"><a href="../../">NEARCOIL</a><a href="../en/modules.html" hreflang="en" lang="en">English</a></nav>
+    <nav class="links" aria-label="Справочник"><a href="../../">NEARCOIL</a><a href="../en/modules.html" hreflang="en" lang="en">English</a></nav>
   </div>
-</header>
+</div>
 <div class="layout">
   <aside class="side">
-    <details open><summary>Разделы</summary>
-    <ol><li><a href="index.html">Справочник NEARCOIL</a></li><li><a href="basics.html">Поле, управление, скорость</a></li><li><a href="close-calls.html">Сближения и манёвры</a></li><li><a href="charge.html">Заряд и множитель</a></li><li><a href="events.html">События</a></li><li class="on"><a href="modules.html">Модули</a></li><li><a href="modes.html">Режимы игры</a></li><li><a href="achievements.html">Достижения и профиль</a></li><li><a href="campaign.html">Все уровни кампании</a></li><li><a href="advanced.html">Тонкости механики</a></li><li><a href="glossary.html">Словарь</a></li></ol>
+    <details open data-collapse-mobile><summary>Разделы</summary>
+    <nav aria-label="Разделы"><ol><li><a href="index.html">Справочник NEARCOIL</a></li><li><a href="basics.html">Поле, управление, скорость</a></li><li><a href="close-calls.html">Сближения и манёвры</a></li><li><a href="charge.html">Заряд и множитель</a></li><li><a href="events.html">События</a></li><li class="on"><a href="modules.html" aria-current="page">Модули</a></li><li><a href="modes.html">Режимы игры</a></li><li><a href="achievements.html">Достижения и профиль</a></li><li><a href="campaign.html">Все уровни кампании</a></li><li><a href="advanced.html">Тонкости механики</a></li><li><a href="glossary.html">Словарь</a></li></ol></nav>
     </details>
   </aside>
-  <main class="content">
+  <main class="content" id="main">
+    <nav class="breadcrumbs" aria-label="Навигационная цепочка"><a href="/" data-local="nikkittap.github.io/index.html">Все проекты</a><span aria-hidden="true">/</span><a href="../../">NEARCOIL</a><span aria-hidden="true">/</span><a href="index.html">Справочник</a><span aria-hidden="true">/</span><span aria-current="page">Модули</span></nav>
     <h1>Модули</h1>
     <p class="lead">Выиграй событие — и поле предложит награду: один или два <b>порта</b>, в каждом модуль. Въедь в тот, который нужен. Модули не продаются, их можно только заработать в игре.</p>
     <nav class="toc"><b>На этой странице</b><ol><li><a href="#ports">Порты (ВЫБЕРИ)</a></li><li><a href="#phase">ФАЗА</a></li><li><a href="#surge">ФОРСАЖ</a></li><li><a href="#cut">СРЕЗ</a></li></ol></nav>
@@ -58,7 +63,7 @@
 <h2 id="surge">ФОРСАЖ</h2>
 <div class="float"><figure><a href="../img/ru/surge.webp"><img src="../img/ru/surge.webp" width="720" height="1280" loading="lazy" alt="Идёт ФОРСАЖ: змейка быстрее, приросты крупнее."></a><figcaption>Идёт ФОРСАЖ: змейка быстрее, приросты крупнее.</figcaption></figure></div>
 <p>Около 8,1 с перегрузки:</p>
-<div class="tw"><table class=""><thead><tr><th>Эффект</th><th>Значение</th></tr></thead><tbody><tr><td>Скорость</td><td>+14 % сверх прибавки множителя</td></tr><tr><td>Заряд от всего</td><td>×1,40</td></tr><tr><td>Очки от всего</td><td>×1,50</td></tr></tbody></table></div>
+<div class="tw" role="region" tabindex="0" aria-label="Таблица данных"><table class=""><thead><tr><th>Эффект</th><th>Значение</th></tr></thead><tbody><tr><td>Скорость</td><td>+14 % сверх прибавки множителя</td></tr><tr><td>Заряд от всего</td><td>×1,40</td></tr><tr><td>Очки от всего</td><td>×1,50</td></tr></tbody></table></div>
 <p>Если взять ФОРСАЖ, пока идёт другой, его время добавится сверху.</p>
 <div class="clear"></div>
 
@@ -76,6 +81,7 @@
   </main>
 </div>
 <footer class="foot">
+  <p><a href="/" data-local="nikkittap.github.io/index.html">Nikita Petrov Apps</a> · <a href="../../">NEARCOIL</a> · <a href="index.html">Справочник</a></p>
   <p>Числа и скриншоты взяты из игры, версия 0.1.23 (2026-11-09).</p>
   <p><a href="https://play.google.com/store/apps/details?id=com.nikitapetrovapps.nearcoil">Скачать в Google Play</a> · <a href="../../privacy/">Политика конфиденциальности</a> · <a href="mailto:nikitapetrovapps@gmail.com">nikitapetrovapps@gmail.com</a></p>
 </footer>
