@@ -25,7 +25,7 @@ OUT = ROOT / "wiki"
 LANGS = ["en", "ru"]
 PAGES = ["index", "basics", "close-calls", "charge", "events", "modules", "modes", "achievements", "campaign", "advanced", "glossary"]
 STEP_MS = 150   # a typical early-run step, for "about N s" conversions
-SITE = "https://nikkittap.github.io/nearcoil-game/"
+SITE = "https://nikitapetrovapps.com/nearcoil-game/"
 
 
 class Safe(str):
