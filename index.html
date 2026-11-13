@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NEARCOIL — classic Snake with one dangerous rule (Android)</title>
-<meta name="description" content="Skim your own tail and your score multiplies. 70 Campaign levels, Ranked leaderboards, a Daily Challenge, replays and video clips. Optional rewarded ads only.">
+<meta name="description" content="Skim your own tail and your score multiplies. 70 Campaign levels, endless Classic, Ranked leaderboards, a Daily Challenge, replays and video clips. Optional rewarded ads only.">
 <link rel="canonical" href="https://nikitapetrovapps.com/nearcoil-game/">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#0d0e12">
@@ -56,11 +56,24 @@ h2{font-size:1.5rem; margin:0 0 18px; letter-spacing:-.01em}
 .themes figure{margin:0; text-align:center}
 .themes img{width:100%; height:auto; display:block; border-radius:22%}
 .themes figcaption{font-size:.8rem; color:var(--muted); margin-top:6px; letter-spacing:.06em}
+.watch{display:flex; gap:28px; align-items:center}
+.watch p{color:var(--muted); margin:0 0 12px}
+.video{position:relative; flex:0 0 300px; width:300px; aspect-ratio:9/16; display:block; border-radius:8px; overflow:hidden; background:#000; border:1px solid var(--border)}
+.video img,.video iframe{position:absolute; inset:0; width:100%; height:100%; border:0; display:block; object-fit:cover}
+.video .play{position:absolute; left:50%; top:62%; width:68px; height:68px; margin:-34px 0 0 -34px; border-radius:50%; background:rgba(0,0,0,.62); border:2px solid #fff}
+.video .play::after{content:""; position:absolute; left:26px; top:20px; border-style:solid; border-width:14px 0 14px 22px; border-color:transparent transparent transparent #fff}
+.video:hover .play,.video:focus-visible .play{background:var(--accent); border-color:var(--accent)}
+.shots{display:grid; grid-auto-flow:column; grid-auto-columns:180px; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:10px; margin:0}
+.shots figure{margin:0; scroll-snap-align:start}
+.shots img{width:100%; height:auto; display:block; border-radius:6px; border:1px solid var(--border)}
 footer{padding:40px 0 60px; text-align:center; color:var(--muted); font-size:.9rem; border-top:1px solid var(--border)}
 @media(max-width:640px){
   h1{font-size:1.7rem}
   .grid{grid-template-columns:1fr}
   .themes{grid-template-columns:repeat(3,1fr)}
+  .watch{flex-direction:column; align-items:stretch}
+  .video{flex:none; width:min(300px,100%); margin:0 auto}
+  .shots{grid-auto-columns:150px}
 }
 
 </style>
@@ -81,7 +94,7 @@ footer{padding:40px 0 60px; text-align:center; color:var(--muted); font-size:.9r
     <p class="product-identity"><img src="img/favicon-180.png" width="32" height="32" alt="">Android &amp; iOS · Snake arcade</p>
     <span class="badge-pill">Currently in closed testing</span>
     <h1>NEARCOIL</h1>
-    <p class="sub">A Snake arcade game with close-call scoring. Move next to your own body to build the multiplier, then survive the run. Includes a campaign, ranked leaderboards, daily challenges, and replays.</p>
+    <p class="sub">A Snake arcade game with close-call scoring. Move next to your own body to build the multiplier, then survive the run. Includes a campaign, an endless Classic mode, ranked leaderboards, daily challenges, and replays.</p>
 
     <div class="cta-row">
       <a class="ghost accent" href="https://play.google.com/store/apps/details?id=com.nikitapetrovapps.nearcoil">Google Play (closed testing)</a>
@@ -89,7 +102,7 @@ footer{padding:40px 0 60px; text-align:center; color:var(--muted); font-size:.9r
       <a class="ghost" href="privacy/">Privacy policy</a>
       <a class="ghost" href="mailto:nikitapetrovapps@gmail.com">Contact the developer</a>
     </div>
-    <p class="note">Currently in closed testing — the Play link works once you've joined as a tester. Release on Android and iOS is planned together once payment setup is complete.</p>
+    <p class="note">Currently in closed testing — the Play link works once you've joined as a tester. The Android release is coming soon; iOS follows later.</p>
   </div>
 <div class="wrap">
 
@@ -106,13 +119,43 @@ footer{padding:40px 0 60px; text-align:center; color:var(--muted); font-size:.9r
 <main id="main">
   <div class="wrap">
     <section>
+      <h2>See it in motion</h2>
+      <div class="watch">
+        <a class="video" href="https://www.youtube.com/shorts/ejd5TbqCq1E" data-yt="ejd5TbqCq1E" aria-label="Play the NEARCOIL gameplay video (YouTube)">
+          <img src="img/video_poster.webp" width="540" height="960" loading="lazy" alt="NEARCOIL: one more run">
+          <span class="play" aria-hidden="true"></span>
+        </a>
+        <div>
+          <p>Every turn you take next to your own body charges the multiplier: GRAZE, SQUEEZE, THREAD, NEEDLE. Eat to bank the points, and don't get trapped in your own coil.</p>
+          <p>The video plays from YouTube once you press play; nothing is loaded from YouTube before that. <a href="https://www.youtube.com/@NikitaPetrovApps">More videos on the channel</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Screenshots</h2>
+      <div class="shots">
+        <figure><img src="img/shot_01_close.webp" width="432" height="768" loading="lazy" alt="Close calls: stay next to your own body and the multiplier grows."></figure>
+        <figure><img src="img/shot_02_charge.webp" width="432" height="768" loading="lazy" alt="Skim to charge, eat to cash the points in."></figure>
+        <figure><img src="img/shot_03_course.webp" width="432" height="768" loading="lazy" alt="Your own body is the course."></figure>
+        <figure><img src="img/shot_04_daily.webp" width="432" height="768" loading="lazy" alt="Daily Challenge: one board a day, the same for everyone."></figure>
+        <figure><img src="img/shot_05_campaign.webp" width="432" height="768" loading="lazy" alt="Campaign: 70 levels in 7 chapters."></figure>
+        <figure><img src="img/shot_06_ranked.webp" width="432" height="768" loading="lazy" alt="Ranked leaderboards: world, country and weekly."></figure>
+        <figure><img src="img/shot_07_themes.webp" width="432" height="768" loading="lazy" alt="Two free themes and six premium ones."></figure>
+        <figure><img src="img/shot_08_premium.webp" width="432" height="768" loading="lazy" alt="Premium themes restyle the board, snake, HUD and sound."></figure>
+      </div>
+    </section>
+
+    <section>
       <h2>Features</h2>
       <div class="grid">
         <div class="card"><h3>Campaign</h3><p>70 hand-made levels in 7 chapters: gates, circuits, moving boards, power modules and a final meltdown. Up to three medals each.</p></div>
+        <div class="card"><h3>Classic</h3><p>Endless snake with no limits, no ads and no leaderboard: just play, as long as you like, even offline. Classic keeps its own best score.</p></div>
         <div class="card"><h3>Ranked</h3><p>World, country and weekly leaderboards, with weekly leagues as the player base grows. Tap a name to watch how that run was played.</p></div>
         <div class="card"><h3>Daily challenge</h3><p>One board a day, the same for everyone. Three attempts count, then practice until tomorrow.</p></div>
         <div class="card"><h3>Replays &amp; clips</h3><p>Watch any run at 1×, 2× or 4×, jump to the best moment, and share a result card or a short vertical video.</p></div>
         <div class="card"><h3>Controls</h3><p>Flick the way you want to go, or tap the left / right half to turn. Smooth on 90 and 120 Hz screens.</p></div>
+        <div class="card"><h3>Offline &amp; cloud save</h3><p>Campaign and Classic play anywhere; scores and progress catch up when you are back online. Save your progress with Google or Apple to keep it on a new phone.</p></div>
         <div class="card"><h3>Ads &amp; purchases</h3><p>No banners, no forced ads: the only ad is one you choose to watch for an extra Ranked run. Daily is always free, everyone has the same daily Ranked limit, and nothing you can buy changes the score.</p></div>
       </div>
     </section>
@@ -150,5 +193,19 @@ footer{padding:40px 0 60px; text-align:center; color:var(--muted); font-size:.9r
   <p class="studio-footer-link"><a href="/" data-local="nikkittap.github.io/index.html">Nikita Petrov Apps</a></p>
 </footer>
 
+<script>
+document.querySelectorAll('a.video[data-yt]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + a.dataset.yt + '?autoplay=1&playsinline=1&rel=0';
+    f.title = 'NEARCOIL gameplay video';
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    a.replaceWith(Object.assign(document.createElement('div'), {className: 'video'}));
+    document.querySelector('.watch .video').appendChild(f);
+  });
+});
+</script>
 </body>
 </html>
