@@ -21,3 +21,7 @@ data, `wiki/img/<lang>/` the screenshots; `python tools/build_wiki.py` writes `w
 The data and screenshots come from the game repository: `bash tools/wiki_update.sh` there
 (see its `docs/WIKI.md`) exports them and rebuilds. A page placeholder the game no longer
 has, or a missing screenshot, stops the build with the file and line.
+
+## Shared website navigation
+
+The generator shell in `tools/build_wiki.py` supplies studio navigation, breadcrumbs, language switching, and the current-page state. `wiki/wiki.css` controls the guide layout. Shared site CSS and JavaScript are copied from the adjacent `nikkittap.github.io` checkout with its `tools/sync-studio.py`. The privacy page uses the same studio navigation and document styles; its policy wording and update date are unchanged by the styling pass.
